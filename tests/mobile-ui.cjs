@@ -15,7 +15,7 @@ const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http:
    assert.equal(await page.getByRole('button',{name:'Da approfondire',exact:true}).count(),0);
    assert.equal(await page.locator('#favoriteCount').textContent(),'2');
    assert.ok(await page.locator('.score').first().textContent());
-   const bounds=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,overflow:Array.from(document.querySelectorAll('body *')).filter(e=>e.getBoundingClientRect().right>innerWidth+1).slice(0,10).map(e=>({tag:e.tagName,id:e.id,class:e.className,right:e.getBoundingClientRect().right}))}));
+   const bounds=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,overflow:Array.from(document.querySelectorAll('body *')).filter(e=>e.getBoundingClientRect().right>innerWidth+1||e.scrollWidth>e.clientWidth+2).slice(0,10).map(e=>({tag:e.tagName,id:e.id,class:e.className,right:e.getBoundingClientRect().right,scroll:e.scrollWidth,client:e.clientWidth}))}));
    assert.ok(bounds.scroll<=bounds.width+1,'horizontal overflow: '+JSON.stringify(bounds));
    await page.locator('#scoreHelp').click();await page.locator('#detailDialog[open]').waitFor();
    assert.ok((await page.locator('#detailContent').textContent()).includes('70%'));await page.locator('#closeDetail').click();
