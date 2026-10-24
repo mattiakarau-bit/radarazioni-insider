@@ -1,49 +1,46 @@
-"""Conservative, auditable SCREENING score (not a BUY decision or ML)."""
+"""Two independent rule scores. Neither score is a validated BUY signal."""
 from __future__ import annotations
 
 
 def screen(item: dict, fin: dict | None, insider_count: int = 1) -> dict:
-    score, reasons, warnings = 0, [], []
-    amount = item['amount']
-    if amount >= 500_000:
-        score += 25; reasons.append('Acquisto di almeno 500.000 USD')
-    elif amount >= 100_000:
-        score += 18; reasons.append('Acquisto di almeno 100.000 USD')
-    elif amount >= 25_000:
-        score += 10; reasons.append('Acquisto di almeno 25.000 USD')
-    elif amount >= 5_000:
-        score += 4
+    fin = fin or {}
+    amount = item.get('amount', 0)
+    strength = 50 if amount >= 500_000 else 35 if amount >= 100_000 else 20 if amount >= 25_000 else 8 if amount >= 5_000 else 0
+    insider_reasons = [f'Importo dichiarato: {amount:,.2f} USD']
     title = item.get('officer_title', '').upper()
     if any(t in title for t in ('CEO', 'CHIEF EXECUTIVE', 'CFO', 'CHIEF FINANCIAL')):
-        score += 15; reasons.append('Acquisto di CEO/CFO')
+        strength += 30
+        insider_reasons.append('Ruolo dichiarato CEO/CFO')
     elif item.get('officer') or item.get('director'):
-        score += 10; reasons.append('Acquisto di dirigente o amministratore')
-    if insider_count >= 2:
-        score += 10; reasons.append('Più insider distinti nello stesso intervallo di 14 giorni')
-    if fin:
-        if fin.get('revenue_growing') is True:
-            score += 20; reasons.append('Fatturato annuale in crescita nel periodo verificabile')
-        if fin.get('eps_growing') is True:
-            score += 20; reasons.append('Utili per azione in crescita nel periodo verificabile')
-        if fin.get('cashflow_positive') is True:
-            score += 10; reasons.append('Flussi di cassa operativi positivi in tre esercizi')
-        for key, name in [('revenue_growing', 'Fatturato'), ('eps_growing', 'Utili per azione'), ('cashflow_positive', 'Flusso di cassa')]:
-            if fin.get(key) is None:
-                warnings.append(f'{name}: dati annuali insufficienti')
-            elif fin.get(key) is False:
-                warnings.append(f'{name}: requisito non soddisfatto')
-    else:
-        warnings.append('Dati finanziari non disponibili')
-    warnings.extend(['Prezzo corrente, ribasso dai massimi e valutazione NON verificati',
-                     'Modello ML NON ancora addestrato e validato'])
-    completeness = sum(fin.get(k) is not None for k in ('revenue_growing', 'eps_growing', 'cashflow_positive')) if fin else 0
-    if completeness < 3:
-        score = min(score, 49)
-        warnings.append('Analisi finanziaria incompleta: punteggio limitato a 49/100')
-    ready = bool(fin and fin.get('revenue_growing') is True and
-                 fin.get('eps_growing') is True and fin.get('cashflow_positive') is True and
-                 score >= 70 and amount >= 25_000)
-    return {'score': min(score, 100), 'financial_data_complete': completeness == 3, 'priority': 'Da approfondire' if ready else 'Osservazione',
-            'notify': ready, 'reasons': reasons, 'warnings': warnings,
-            'model': 'Regole trasparenti v2 (NON machine learning)',
-            'buy_signal': False}
+        strength += 20
+        insider_reasons.append('Ruolo dichiarato dirigente/amministratore')
+    # Names, joint owners and legal entities are not evidence of independent decisions.
+    # Reserve the remaining 20 points until affiliations can be verified from sources.
+    warnings = ['Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster',
+                'La forza misura importo e ruolo, non il rendimento atteso',
+                'Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100',
+                'Modello ML NON addestrato/validato; nessuna notifica BUY']
+    opportunity = 0
+    reasons = []
+    for key, name, weight in [('revenue_growing', 'Fatturato annuale in crescita', 25),
+                              ('eps_growing', 'EPS annuale in crescita', 25),
+                              ('cashflow_positive', 'Cassa operativa positiva per tre esercizi consecutivi', 20)]:
+        if fin.get(key) is True:
+            opportunity += weight
+            reasons.append(name)
+        else:
+            warnings.append(name + (': dati insufficienti' if fin.get(key) is None else ': requisito non soddisfatto'))
+    # No verified valuation provider exists yet. Do not accept caller-supplied flags
+    # or treat cashflow positivity as evidence of cheapness or adequate free cashflow.
+    opportunity = min(opportunity, 49)
+    if fin.get('cashflow_positive') is not True:
+        opportunity = min(opportunity, 39)
+        warnings.append('Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100')
+    return {'insider_strength_score': strength, 'opportunity_score': opportunity,
+            'score': opportunity,  # Compatibility for old clients: never expose strength as opportunity.
+            'insider_reasons': insider_reasons, 'reasons': reasons, 'warnings': warnings,
+            'independence_verified': False, 'verified_independent_insiders': None,
+            'valuation_verified': False,
+            'financial_data_complete': all(fin.get(k) is not None for k in ('revenue_growing', 'eps_growing', 'cashflow_positive')),
+            'priority': 'Opportunità non verificata', 'notify': False, 'buy_signal': False,
+            'model': 'Due punteggi a regole v3 (NON machine learning)'}
