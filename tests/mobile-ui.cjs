@@ -21,7 +21,8 @@ const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http:
    // Star a company, hide it with filters, then confirm favorites retain all operations.
    const first=page.locator('#results .card').filter({has:page.locator('.star[aria-pressed="false"]')}).first();const symbol=await first.locator('.ticker').textContent();
    await first.locator('.star').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===3);
-   await page.locator('#minAmount').fill('999999999');await page.locator('#filtersForm button[type=submit]').click();
+   await page.locator('#minAmount').fill('1000000000');await page.locator('#filtersForm button[type=submit]').click();
+   await page.waitForFunction(()=>document.querySelectorAll('#results .card').length===0);
    assert.equal(await page.locator('#results .card').count(),0);
    await page.locator('nav [data-page=favorites]').click();await page.locator('#favoriteItems .card').first().waitFor();
    assert.ok((await page.locator('#favoriteItems').textContent()).includes(symbol));
