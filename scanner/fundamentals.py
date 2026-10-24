@@ -1,6 +1,7 @@
 """Extract point-in-time annual SEC XBRL facts. Missing data is never converted into growth."""
 from __future__ import annotations
 from datetime import date
+import math
 
 REVENUE_TAGS = ["RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues", "SalesRevenueNet", "RevenueFromContractWithCustomerIncludingAssessedTax", "SalesRevenueGoodsNet"]
 
@@ -27,7 +28,7 @@ def _annual(facts: dict, tags: list[str], unit: str, as_of: str) -> list[dict]:
             if not end_year.isdigit():
                 continue
             year = int(end_year)
-            if "val" not in entry:
+            if not isinstance(entry.get("val"), (int, float)) or not math.isfinite(entry["val"]):
                 continue
             if year not in values or entry["filed"] > values[year]["filed"]:
                 values[year] = {"year": year, "value": entry["val"], "filed": entry["filed"]}
@@ -56,6 +57,6 @@ def summarize_company_facts(facts: dict, as_of: str) -> dict:
         "cashflow_years": cashflow,
         "revenue_growing": _trend(revenues),
         "eps_growing": _trend(eps),
-        "cashflow_positive": all(p["value"] > 0 for p in cashflow[-3:]) if len(cashflow) >= 3 else None,
+        "cashflow_positive": all(p["value"] > 0 for p in cashflow[-3:]) if len(cashflow) >= 3 and all(cashflow[i]["year"] - cashflow[i-1]["year"] == 1 for i in range(len(cashflow)-2, len(cashflow))) else None,
         "company_name": facts.get("entityName"),
     }

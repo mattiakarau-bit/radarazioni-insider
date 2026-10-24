@@ -36,10 +36,14 @@ def screen(item: dict, fin: dict | None, insider_count: int = 1) -> dict:
         warnings.append('Dati finanziari non disponibili')
     warnings.extend(['Prezzo corrente, ribasso dai massimi e valutazione NON verificati',
                      'Modello ML NON ancora addestrato e validato'])
+    completeness = sum(fin.get(k) is not None for k in ('revenue_growing', 'eps_growing', 'cashflow_positive')) if fin else 0
+    if completeness < 3:
+        score = min(score, 49)
+        warnings.append('Analisi finanziaria incompleta: punteggio limitato a 49/100')
     ready = bool(fin and fin.get('revenue_growing') is True and
                  fin.get('eps_growing') is True and fin.get('cashflow_positive') is True and
                  score >= 70 and amount >= 25_000)
-    return {'score': min(score, 100), 'priority': 'Da approfondire' if ready else 'Osservazione',
+    return {'score': min(score, 100), 'financial_data_complete': completeness == 3, 'priority': 'Da approfondire' if ready else 'Osservazione',
             'notify': ready, 'reasons': reasons, 'warnings': warnings,
-            'model': 'Regole trasparenti v1 (NON machine learning)',
+            'model': 'Regole trasparenti v2 (NON machine learning)',
             'buy_signal': False}

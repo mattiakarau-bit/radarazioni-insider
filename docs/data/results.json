@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "last_scan_utc": "2026-10-24T13:00:56+00:00",
   "status": "Parziale",
   "source": "SEC EDGAR index + SEC Form 4 + SEC XBRL companyfacts",
@@ -16,7 +16,7 @@
     "new_forms_this_run": 180,
     "unprocessed_listed_forms": 2858,
     "lookback_days": 7,
-    "transactions_stored": 110,
+    "transactions_stored": 81,
     "note": "Non equivale a copertura totale o in tempo reale dei mercati USA"
   },
   "errors": [
@@ -24,11 +24,11 @@
   ],
   "filings": [
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/905591/0001193125-26-430508.txt#tx0",
+      "id": "0001193125-26-430508#tx0",
       "company": "Corebridge Financial, Inc.",
       "symbol": "CRBG",
       "cik": 1889539,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "NIPPON LIFE INSURANCE CO",
       "officer_title": "",
@@ -129,6 +129,7 @@
       },
       "analysis": {
         "score": 35,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -141,550 +142,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093762/0001012975-26-000982.txt#tx0",
+      "id": "0001012975-26-000982#tx0",
       "company": "Rent the Runway, Inc.",
       "symbol": "RENT",
       "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "STORY3 Capital Partners, LLC, S3 RR Aggregator, LLC, Rising Sons Capital, LLC, Comisar Peter Harley",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093762/0001012975-26-000982.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "STORY3 Capital Partners, LLC",
-        "S3 RR Aggregator, LLC",
-        "Rising Sons Capital, LLC",
-        "Comisar Peter Harley"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093681/0001012975-26-000982.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "STORY3 Capital Partners, LLC, S3 RR Aggregator, LLC, Rising Sons Capital, LLC, Comisar Peter Harley",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093681/0001012975-26-000982.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "STORY3 Capital Partners, LLC",
-        "S3 RR Aggregator, LLC",
-        "Rising Sons Capital, LLC",
-        "Comisar Peter Harley"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093677/0001012975-26-000982.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "STORY3 Capital Partners, LLC, S3 RR Aggregator, LLC, Rising Sons Capital, LLC, Comisar Peter Harley",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093677/0001012975-26-000982.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "STORY3 Capital Partners, LLC",
-        "S3 RR Aggregator, LLC",
-        "Rising Sons Capital, LLC",
-        "Comisar Peter Harley"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093669/0001012975-26-000981.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Nexus Capital Management LP, Gateway Runway, LLC, Gateway Runway Intermediate Holdings, Inc., NEXUS SPECIAL SITUATIONS III, L.P., NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P., Nexus Special Situations GP III, LP, Nexus Partners III, LLC, Cohen Michael S, Flesh Daniel E., Giangiacomo Damian",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093669/0001012975-26-000981.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Nexus Capital Management LP",
-        "Gateway Runway, LLC",
-        "Gateway Runway Intermediate Holdings, Inc.",
-        "NEXUS SPECIAL SITUATIONS III, L.P.",
-        "NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P.",
-        "Nexus Special Situations GP III, LP",
-        "Nexus Partners III, LLC",
-        "Cohen Michael S",
-        "Flesh Daniel E.",
-        "Giangiacomo Damian"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093646/0001012975-26-000982.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "STORY3 Capital Partners, LLC, S3 RR Aggregator, LLC, Rising Sons Capital, LLC, Comisar Peter Harley",
       "officer_title": "",
@@ -793,6 +260,7 @@
       },
       "analysis": {
         "score": 85,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -807,430 +275,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093303/0001012975-26-000981.txt#tx0",
+      "id": "0001012975-26-000981#tx0",
       "company": "Rent the Runway, Inc.",
       "symbol": "RENT",
       "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Nexus Capital Management LP, Gateway Runway, LLC, Gateway Runway Intermediate Holdings, Inc., NEXUS SPECIAL SITUATIONS III, L.P., NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P., Nexus Special Situations GP III, LP, Nexus Partners III, LLC, Cohen Michael S, Flesh Daniel E., Giangiacomo Damian",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093303/0001012975-26-000981.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Nexus Capital Management LP",
-        "Gateway Runway, LLC",
-        "Gateway Runway Intermediate Holdings, Inc.",
-        "NEXUS SPECIAL SITUATIONS III, L.P.",
-        "NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P.",
-        "Nexus Special Situations GP III, LP",
-        "Nexus Partners III, LLC",
-        "Cohen Michael S",
-        "Flesh Daniel E.",
-        "Giangiacomo Damian"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093261/0001012975-26-000981.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Nexus Capital Management LP, Gateway Runway, LLC, Gateway Runway Intermediate Holdings, Inc., NEXUS SPECIAL SITUATIONS III, L.P., NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P., Nexus Special Situations GP III, LP, Nexus Partners III, LLC, Cohen Michael S, Flesh Daniel E., Giangiacomo Damian",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093261/0001012975-26-000981.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Nexus Capital Management LP",
-        "Gateway Runway, LLC",
-        "Gateway Runway Intermediate Holdings, Inc.",
-        "NEXUS SPECIAL SITUATIONS III, L.P.",
-        "NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P.",
-        "Nexus Special Situations GP III, LP",
-        "Nexus Partners III, LLC",
-        "Cohen Michael S",
-        "Flesh Daniel E.",
-        "Giangiacomo Damian"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2092595/0001012975-26-000981.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Nexus Capital Management LP, Gateway Runway, LLC, Gateway Runway Intermediate Holdings, Inc., NEXUS SPECIAL SITUATIONS III, L.P., NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P., Nexus Special Situations GP III, LP, Nexus Partners III, LLC, Cohen Michael S, Flesh Daniel E., Giangiacomo Damian",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": true,
-      "shares": 632922.0,
-      "unit_price": 3.55,
-      "amount": 2246873.1,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2092595/0001012975-26-000981.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Nexus Capital Management LP",
-        "Gateway Runway, LLC",
-        "Gateway Runway Intermediate Holdings, Inc.",
-        "NEXUS SPECIAL SITUATIONS III, L.P.",
-        "NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P.",
-        "Nexus Special Situations GP III, LP",
-        "Nexus Partners III, LLC",
-        "Cohen Michael S",
-        "Flesh Daniel E.",
-        "Giangiacomo Damian"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 85,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2092583/0001012975-26-000981.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Nexus Capital Management LP, Gateway Runway, LLC, Gateway Runway Intermediate Holdings, Inc., NEXUS SPECIAL SITUATIONS III, L.P., NEXUS SPECIAL SITUATIONS III (CAYMAN), L.P., Nexus Special Situations GP III, LP, Nexus Partners III, LLC, Cohen Michael S, Flesh Daniel E., Giangiacomo Damian",
       "officer_title": "",
@@ -1345,6 +399,7 @@
       },
       "analysis": {
         "score": 85,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -1359,16 +414,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/792326/0001213900-26-112120.txt#tx0",
+      "id": "0001213900-26-112120#tx0",
       "company": "Blackstone Private Real Estate Credit & Income Fund",
       "symbol": "NONE",
       "cik": 2049733,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
       "officer_title": "",
@@ -1378,7 +433,7 @@
       "shares": 76335.878,
       "unit_price": 26.2,
       "amount": 2000000.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/792326/0001213900-26-112120.txt",
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2032432/0001213900-26-112120.txt",
       "code": "P",
       "source": "SEC Form 4",
       "owners": [
@@ -1402,6 +457,7 @@
       },
       "analysis": {
         "score": 35,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -1413,242 +469,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2149592/0001213900-26-112120.txt#tx0",
+      "id": "0001213900-26-112119#tx0",
       "company": "Blackstone Private Real Estate Credit & Income Fund",
       "symbol": "NONE",
       "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 76335.878,
-      "unit_price": 26.2,
-      "amount": 2000000.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2149592/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2129285/0001213900-26-112120.txt#tx0",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 76335.878,
-      "unit_price": 26.2,
-      "amount": 2000000.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2129285/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2057896/0001213900-26-112120.txt#tx0",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 76335.878,
-      "unit_price": 26.2,
-      "amount": 2000000.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2057896/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2049733/0001213900-26-112120.txt#tx0",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 76335.878,
-      "unit_price": 26.2,
-      "amount": 2000000.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2049733/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2049733/0001213900-26-112119.txt#tx0",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Blackstone Holdings IV L.P., Blackstone Holdings IV GP L.P., Blackstone Holdings IV GP Management (Delaware) L.P., Blackstone Holdings IV GP Management L.L.C., Blackstone Holdings I L.P., Blackstone Holdings I/II GP L.L.C., Blackstone Inc., Blackstone Group Management L.L.C., SCHWARZMAN STEPHEN A",
       "officer_title": "",
@@ -1684,6 +517,7 @@
       },
       "analysis": {
         "score": 35,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -1695,602 +529,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2032432/0001213900-26-112120.txt#tx0",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 76335.878,
-      "unit_price": 26.2,
-      "amount": 2000000.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2032432/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2094454/0001012975-26-000980.txt#tx0",
+      "id": "0001012975-26-000980#tx0",
       "company": "Rent the Runway, Inc.",
       "symbol": "RENT",
       "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "CHS US Investments LLC, CHS GP LP, CHS UGP LLC, CHS Platform Holdings Pte. Ltd., APS US Management LLC",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 458245.0,
-      "unit_price": 3.55,
-      "amount": 1626769.75,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2094454/0001012975-26-000980.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "CHS US Investments LLC",
-        "CHS GP LP",
-        "CHS UGP LLC",
-        "CHS Platform Holdings Pte. Ltd.",
-        "APS US Management LLC"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 75,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2094392/0001012975-26-000980.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "CHS US Investments LLC, CHS GP LP, CHS UGP LLC, CHS Platform Holdings Pte. Ltd., APS US Management LLC",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 458245.0,
-      "unit_price": 3.55,
-      "amount": 1626769.75,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2094392/0001012975-26-000980.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "CHS US Investments LLC",
-        "CHS GP LP",
-        "CHS UGP LLC",
-        "CHS Platform Holdings Pte. Ltd.",
-        "APS US Management LLC"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 75,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093899/0001012975-26-000980.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "CHS US Investments LLC, CHS GP LP, CHS UGP LLC, CHS Platform Holdings Pte. Ltd., APS US Management LLC",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 458245.0,
-      "unit_price": 3.55,
-      "amount": 1626769.75,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093899/0001012975-26-000980.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "CHS US Investments LLC",
-        "CHS GP LP",
-        "CHS UGP LLC",
-        "CHS Platform Holdings Pte. Ltd.",
-        "APS US Management LLC"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 75,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093898/0001012975-26-000980.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "CHS US Investments LLC, CHS GP LP, CHS UGP LLC, CHS Platform Holdings Pte. Ltd., APS US Management LLC",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 458245.0,
-      "unit_price": 3.55,
-      "amount": 1626769.75,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2093898/0001012975-26-000980.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "CHS US Investments LLC",
-        "CHS GP LP",
-        "CHS UGP LLC",
-        "CHS Platform Holdings Pte. Ltd.",
-        "APS US Management LLC"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2022,
-            "value": -170.3,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -43.17,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -31.52,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": -17.62,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 1.88,
-            "filed": "2026-04-14"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2022,
-            "value": -42300000,
-            "filed": "2024-04-11"
-          },
-          {
-            "year": 2023,
-            "value": -47700000,
-            "filed": "2025-04-15"
-          },
-          {
-            "year": 2024,
-            "value": -15700000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2025,
-            "value": 12900000,
-            "filed": "2026-04-14"
-          },
-          {
-            "year": 2026,
-            "value": 3500000,
-            "filed": "2026-04-14"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc."
-      },
-      "analysis": {
-        "score": 75,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
-        ],
-        "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093897/0001012975-26-000980.txt#tx0",
-      "company": "Rent the Runway, Inc.",
-      "symbol": "RENT",
-      "cik": 1468327,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "CHS US Investments LLC, CHS GP LP, CHS UGP LLC, CHS Platform Holdings Pte. Ltd., APS US Management LLC",
       "officer_title": "",
@@ -2400,6 +651,7 @@
       },
       "analysis": {
         "score": 75,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -2413,16 +665,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/792326/0001213900-26-112120.txt#tx1",
+      "id": "0001213900-26-112120#tx1",
       "company": "Blackstone Private Real Estate Credit & Income Fund",
       "symbol": "NONE",
       "cik": 2049733,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
       "officer_title": "",
@@ -2432,7 +684,7 @@
       "shares": 27718.571,
       "unit_price": 26.2,
       "amount": 726226.56,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/792326/0001213900-26-112120.txt",
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2032432/0001213900-26-112120.txt",
       "code": "P",
       "source": "SEC Form 4",
       "owners": [
@@ -2456,6 +708,7 @@
       },
       "analysis": {
         "score": 35,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -2467,242 +720,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2149592/0001213900-26-112120.txt#tx1",
+      "id": "0001213900-26-112119#tx1",
       "company": "Blackstone Private Real Estate Credit & Income Fund",
       "symbol": "NONE",
       "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 27718.571,
-      "unit_price": 26.2,
-      "amount": 726226.56,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2149592/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2129285/0001213900-26-112120.txt#tx1",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 27718.571,
-      "unit_price": 26.2,
-      "amount": 726226.56,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2129285/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2057896/0001213900-26-112120.txt#tx1",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 27718.571,
-      "unit_price": 26.2,
-      "amount": 726226.56,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2057896/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2049733/0001213900-26-112120.txt#tx1",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 27718.571,
-      "unit_price": 26.2,
-      "amount": 726226.56,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2049733/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2049733/0001213900-26-112119.txt#tx1",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Blackstone Holdings IV L.P., Blackstone Holdings IV GP L.P., Blackstone Holdings IV GP Management (Delaware) L.P., Blackstone Holdings IV GP Management L.L.C., Blackstone Holdings I L.P., Blackstone Holdings I/II GP L.L.C., Blackstone Inc., Blackstone Group Management L.L.C., SCHWARZMAN STEPHEN A",
       "officer_title": "",
@@ -2738,6 +768,7 @@
       },
       "analysis": {
         "score": 35,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -2749,114 +780,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2032432/0001213900-26-112120.txt#tx1",
-      "company": "Blackstone Private Real Estate Credit & Income Fund",
-      "symbol": "NONE",
-      "cik": 2049733,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Blackstone Private Multi-Asset Credit & Income Fund, Blackstone Private Credit Strategies LLC, Blackstone Intermediary Holdco L.L.C., BLACKSTONE SECURITIES PARTNERS L.P., Blackstone Advisory Services L.L.C., Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P., BREC Offshore Feeder GP, L.L.C.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 27718.571,
-      "unit_price": 26.2,
-      "amount": 726226.56,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2032432/0001213900-26-112120.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Blackstone Private Multi-Asset Credit & Income Fund",
-        "Blackstone Private Credit Strategies LLC",
-        "Blackstone Intermediary Holdco L.L.C.",
-        "BLACKSTONE SECURITIES PARTNERS L.P.",
-        "Blackstone Advisory Services L.L.C.",
-        "Blackstone Private Real Estate Credit & Income Fund (Offshore Strategic Feeder Fund) L.P.",
-        "BREC Offshore Feeder GP, L.L.C."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
-      },
-      "analysis": {
-        "score": 35,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2114459/0001213900-26-111971.txt#tx0",
+      "id": "0001213900-26-111971#tx0",
       "company": "Cascade Real Assets Fund",
       "symbol": "CRAFX",
       "cik": 2114459,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Worley Matthew Eugene",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": false,
-      "shares": 41909.531,
-      "unit_price": 10.29,
-      "amount": 431249.07,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/2114459/0001213900-26-111971.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Worley Matthew Eugene"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": null,
-      "analysis": {
-        "score": 28,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 100.000 USD",
-          "Acquisto di dirigente o amministratore"
-        ],
-        "warnings": [
-          "Dati finanziari non disponibili",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2090481/0001213900-26-111971.txt#tx0",
-      "company": "Cascade Real Assets Fund",
-      "symbol": "CRAFX",
-      "cik": 2114459,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Worley Matthew Eugene",
       "officer_title": "",
@@ -2876,6 +812,7 @@
       "fundamentals": null,
       "analysis": {
         "score": 28,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -2885,147 +822,19 @@
         "warnings": [
           "Dati finanziari non disponibili",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt#tx2",
+      "id": "0001013594-26-001082#tx2",
       "company": "Silvercrest Asset Management Group Inc.",
       "symbol": "SAMG",
       "cik": 1549966,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": false,
-      "shares": 14744.0,
-      "unit_price": 10.33,
-      "amount": 152305.52,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Equinox Partners Investment Management LLC",
-        "EQUINOX PARTNERS LP"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2021,
-            "value": 131603000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 123217000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 117410000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 123651000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 125319000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2021,
-            "value": 1.52,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 1.92,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 0.96,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 1,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 0.56,
-            "filed": "2026-03-16"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2021,
-            "value": 44278000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 23383000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 20975000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 21590000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 18607000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "revenue_growing": false,
-        "eps_growing": false,
-        "cashflow_positive": true,
-        "company_name": "Silvercrest Asset Management Group Inc."
-      },
-      "analysis": {
-        "score": 38,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 100.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
-        ],
-        "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/933897/0001013594-26-001082.txt#tx2",
-      "company": "Silvercrest Asset Management Group Inc.",
-      "symbol": "SAMG",
-      "cik": 1549966,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
       "officer_title": "",
@@ -3132,6 +941,7 @@
       },
       "analysis": {
         "score": 38,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -3145,145 +955,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt#tx1",
+      "id": "0001013594-26-001082#tx1",
       "company": "Silvercrest Asset Management Group Inc.",
       "symbol": "SAMG",
       "cik": 1549966,
-      "filed": "20261023",
-      "transaction_date": "2026-10-20",
-      "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": false,
-      "shares": 10368.0,
-      "unit_price": 10.24,
-      "amount": 106168.32,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Equinox Partners Investment Management LLC",
-        "EQUINOX PARTNERS LP"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2021,
-            "value": 131603000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 123217000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 117410000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 123651000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 125319000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2021,
-            "value": 1.52,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 1.92,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 0.96,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 1,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 0.56,
-            "filed": "2026-03-16"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2021,
-            "value": 44278000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 23383000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 20975000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 21590000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 18607000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "revenue_growing": false,
-        "eps_growing": false,
-        "cashflow_positive": true,
-        "company_name": "Silvercrest Asset Management Group Inc."
-      },
-      "analysis": {
-        "score": 38,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 100.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
-        ],
-        "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/933897/0001013594-26-001082.txt#tx1",
-      "company": "Silvercrest Asset Management Group Inc.",
-      "symbol": "SAMG",
-      "cik": 1549966,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-20",
       "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
       "officer_title": "",
@@ -3390,6 +1071,7 @@
       },
       "analysis": {
         "score": 38,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -3403,144 +1085,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/764065/0000764065-26-000117.txt#tx0",
+      "id": "0000764065-26-000117#tx0",
       "company": "CLEVELAND-CLIFFS INC.",
       "symbol": "CLF",
       "cik": 764065,
-      "filed": "20261023",
-      "transaction_date": "2026-10-22",
-      "insider": "Camara Edilson",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": false,
-      "shares": 7400.0,
-      "unit_price": 13.49,
-      "amount": 99826.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/764065/0000764065-26-000117.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Camara Edilson"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2021,
-            "value": 20444000000,
-            "filed": "2024-02-08"
-          },
-          {
-            "year": 2022,
-            "value": 22989000000,
-            "filed": "2025-02-25"
-          },
-          {
-            "year": 2023,
-            "value": 21996000000,
-            "filed": "2026-02-09"
-          },
-          {
-            "year": 2024,
-            "value": 19185000000,
-            "filed": "2026-02-09"
-          },
-          {
-            "year": 2025,
-            "value": 18610000000,
-            "filed": "2026-02-09"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2021,
-            "value": 5.36,
-            "filed": "2024-02-08"
-          },
-          {
-            "year": 2022,
-            "value": 2.55,
-            "filed": "2025-02-25"
-          },
-          {
-            "year": 2023,
-            "value": 0.75,
-            "filed": "2026-02-09"
-          },
-          {
-            "year": 2024,
-            "value": -1.58,
-            "filed": "2026-02-09"
-          },
-          {
-            "year": 2025,
-            "value": -2.91,
-            "filed": "2026-02-09"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2021,
-            "value": 2785000000,
-            "filed": "2024-02-08"
-          },
-          {
-            "year": 2022,
-            "value": 2423000000,
-            "filed": "2025-02-25"
-          },
-          {
-            "year": 2023,
-            "value": 2267000000,
-            "filed": "2026-02-09"
-          },
-          {
-            "year": 2024,
-            "value": 105000000,
-            "filed": "2026-02-09"
-          },
-          {
-            "year": 2025,
-            "value": -462000000,
-            "filed": "2026-02-09"
-          }
-        ],
-        "revenue_growing": false,
-        "eps_growing": false,
-        "cashflow_positive": false,
-        "company_name": "CLEVELAND-CLIFFS INC."
-      },
-      "analysis": {
-        "score": 20,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Acquisto di dirigente o amministratore"
-        ],
-        "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2093073/0000764065-26-000117.txt#tx0",
-      "company": "CLEVELAND-CLIFFS INC.",
-      "symbol": "CLF",
-      "cik": 764065,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-22",
       "insider": "Camara Edilson",
       "officer_title": "",
@@ -3646,6 +1200,7 @@
       },
       "analysis": {
         "score": 20,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -3659,16 +1214,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2012593/0001193125-26-430397.txt#tx0",
+      "id": "0001193125-26-430397#tx0",
       "company": "Rapport Therapeutics, Inc.",
       "symbol": "RAPP",
       "cik": 2012593,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-23",
       "insider": "Sanchez Ramiro",
       "officer_title": "",
@@ -3728,6 +1283,7 @@
       },
       "analysis": {
         "score": 30,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -3738,69 +1294,19 @@
           "Fatturato: dati annuali insufficienti",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/728612/0000070858-26-000508.txt#tx0",
+      "id": "0000070858-26-000508#tx0",
       "company": "PIMCO NEW YORK MUNICIPAL INCOME FUND II",
       "symbol": "PNI",
       "cik": 1170311,
-      "filed": "20261023",
-      "transaction_date": "2026-10-21",
-      "insider": "BANK OF AMERICA CORP /DE/, MERRILL LYNCH, PIERCE, FENNER & SMITH INC.",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": true,
-      "shares": 12170.0,
-      "unit_price": 6.334,
-      "amount": 77084.78,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/728612/0000070858-26-000508.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "BANK OF AMERICA CORP /DE/",
-        "MERRILL LYNCH, PIERCE, FENNER & SMITH INC."
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [],
-        "eps_years": [],
-        "cashflow_years": [],
-        "revenue_growing": null,
-        "eps_growing": null,
-        "cashflow_positive": null,
-        "company_name": "PIMCO New York Municipal Income Fund II"
-      },
-      "analysis": {
-        "score": 20,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
-        ],
-        "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/70858/0000070858-26-000508.txt#tx0",
-      "company": "PIMCO NEW YORK MUNICIPAL INCOME FUND II",
-      "symbol": "PNI",
-      "cik": 1170311,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "BANK OF AMERICA CORP /DE/, MERRILL LYNCH, PIERCE, FENNER & SMITH INC.",
       "officer_title": "",
@@ -3829,6 +1335,7 @@
       },
       "analysis": {
         "score": 20,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -3840,147 +1347,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt#tx0",
+      "id": "0001013594-26-001082#tx0",
       "company": "Silvercrest Asset Management Group Inc.",
       "symbol": "SAMG",
       "cik": 1549966,
-      "filed": "20261023",
-      "transaction_date": "2026-10-15",
-      "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": false,
-      "shares": 5692.0,
-      "unit_price": 10.47,
-      "amount": 59595.24,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Equinox Partners Investment Management LLC",
-        "EQUINOX PARTNERS LP"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2021,
-            "value": 131603000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 123217000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 117410000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 123651000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 125319000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2021,
-            "value": 1.52,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 1.92,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 0.96,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 1,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 0.56,
-            "filed": "2026-03-16"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2021,
-            "value": 44278000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 23383000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 20975000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 21590000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 18607000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "revenue_growing": false,
-        "eps_growing": false,
-        "cashflow_positive": true,
-        "company_name": "Silvercrest Asset Management Group Inc."
-      },
-      "analysis": {
-        "score": 30,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
-        ],
-        "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/933897/0001013594-26-001082.txt#tx0",
-      "company": "Silvercrest Asset Management Group Inc.",
-      "symbol": "SAMG",
-      "cik": 1549966,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-15",
       "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
       "officer_title": "",
@@ -4087,6 +1466,7 @@
       },
       "analysis": {
         "score": 30,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4100,16 +1480,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/863900/0001510281-26-000376.txt#tx0",
+      "id": "0001510281-26-000376#tx0",
       "company": "MEXICO EQUITY & INCOME FUND INC",
       "symbol": "MXF",
       "cik": 863900,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-22",
       "insider": "Saba Capital Management, L.P.",
       "officer_title": "",
@@ -4137,6 +1517,7 @@
       },
       "analysis": {
         "score": 10,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4147,147 +1528,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt#tx3",
+      "id": "0001013594-26-001082#tx3",
       "company": "Silvercrest Asset Management Group Inc.",
       "symbol": "SAMG",
       "cik": 1549966,
-      "filed": "20261023",
-      "transaction_date": "2026-10-22",
-      "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
-      "officer_title": "",
-      "officer": false,
-      "director": false,
-      "ten_pct": false,
-      "shares": 3322.0,
-      "unit_price": 10.42,
-      "amount": 34615.24,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/938552/0001013594-26-001082.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Equinox Partners Investment Management LLC",
-        "EQUINOX PARTNERS LP"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2021,
-            "value": 131603000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 123217000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 117410000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 123651000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 125319000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2021,
-            "value": 1.52,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 1.92,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 0.96,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 1,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 0.56,
-            "filed": "2026-03-16"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2021,
-            "value": 44278000,
-            "filed": "2024-03-07"
-          },
-          {
-            "year": 2022,
-            "value": 23383000,
-            "filed": "2025-03-06"
-          },
-          {
-            "year": 2023,
-            "value": 20975000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2024,
-            "value": 21590000,
-            "filed": "2026-03-16"
-          },
-          {
-            "year": 2025,
-            "value": 18607000,
-            "filed": "2026-03-16"
-          }
-        ],
-        "revenue_growing": false,
-        "eps_growing": false,
-        "cashflow_positive": true,
-        "company_name": "Silvercrest Asset Management Group Inc."
-      },
-      "analysis": {
-        "score": 30,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
-        ],
-        "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/933897/0001013594-26-001082.txt#tx3",
-      "company": "Silvercrest Asset Management Group Inc.",
-      "symbol": "SAMG",
-      "cik": 1549966,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-22",
       "insider": "Equinox Partners Investment Management LLC, EQUINOX PARTNERS LP",
       "officer_title": "",
@@ -4394,6 +1647,7 @@
       },
       "analysis": {
         "score": 30,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4407,16 +1661,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/726854/0000726854-26-000185.txt#tx0",
+      "id": "0000726854-26-000185#tx0",
       "company": "CITY HOLDING CO",
       "symbol": "CHCO",
       "cik": 726854,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-23",
       "insider": "FISHER ROBERT D",
       "officer_title": "",
@@ -4522,6 +1776,7 @@
       },
       "analysis": {
         "score": 74,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4535,16 +1790,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/1975717/0001104659-26-118281.txt#tx0",
+      "id": "0001104659-26-118281#tx0",
       "company": "Baozun Inc.",
       "symbol": "BZUN",
       "cik": 1625414,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Qiu Wenbin",
       "officer_title": "Chief Executive Officer",
@@ -4572,6 +1827,7 @@
       },
       "analysis": {
         "score": 19,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4582,18 +1838,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/1975717/0001104659-26-118281.txt#tx1",
+      "id": "0001104659-26-118281#tx1",
       "company": "Baozun Inc.",
       "symbol": "BZUN",
       "cik": 1625414,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-22",
       "insider": "Qiu Wenbin",
       "officer_title": "Chief Executive Officer",
@@ -4621,6 +1878,7 @@
       },
       "analysis": {
         "score": 19,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4631,18 +1889,19 @@
           "Utili per azione: dati annuali insufficienti",
           "Flusso di cassa: dati annuali insufficienti",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/726854/0000726854-26-000188.txt#tx0",
+      "id": "0000726854-26-000188#tx0",
       "company": "CITY HOLDING CO",
       "symbol": "CHCO",
       "cik": 726854,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-23",
       "insider": "STRONG-TREISTER DIANE W",
       "officer_title": "",
@@ -4748,6 +2007,7 @@
       },
       "analysis": {
         "score": 74,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -4761,144 +2021,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/726854/0000726854-26-000186.txt#tx0",
+      "id": "0000726854-26-000186#tx0",
       "company": "CITY HOLDING CO",
       "symbol": "CHCO",
       "cik": 726854,
-      "filed": "20261023",
-      "transaction_date": "2026-10-23",
-      "insider": "Hoyer James A",
-      "officer_title": "",
-      "officer": false,
-      "director": true,
-      "ten_pct": false,
-      "shares": 100.0,
-      "unit_price": 142.13,
-      "amount": 14213.0,
-      "form_url": "https://www.sec.gov/Archives/edgar/data/726854/0000726854-26-000186.txt",
-      "code": "P",
-      "source": "SEC Form 4",
-      "owners": [
-        "Hoyer James A"
-      ],
-      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": {
-        "revenue_years": [
-          {
-            "year": 2021,
-            "value": 64930000,
-            "filed": "2024-02-28"
-          },
-          {
-            "year": 2022,
-            "value": 68099000,
-            "filed": "2025-02-26"
-          },
-          {
-            "year": 2023,
-            "value": 69068000,
-            "filed": "2026-02-25"
-          },
-          {
-            "year": 2024,
-            "value": 71992000,
-            "filed": "2026-02-25"
-          },
-          {
-            "year": 2025,
-            "value": 74288000,
-            "filed": "2026-02-25"
-          }
-        ],
-        "eps_years": [
-          {
-            "year": 2021,
-            "value": 5.66,
-            "filed": "2024-02-28"
-          },
-          {
-            "year": 2022,
-            "value": 6.8,
-            "filed": "2025-02-26"
-          },
-          {
-            "year": 2023,
-            "value": 7.61,
-            "filed": "2026-02-25"
-          },
-          {
-            "year": 2024,
-            "value": 7.89,
-            "filed": "2026-02-25"
-          },
-          {
-            "year": 2025,
-            "value": 8.93,
-            "filed": "2026-02-25"
-          }
-        ],
-        "cashflow_years": [
-          {
-            "year": 2021,
-            "value": 102273000,
-            "filed": "2024-02-28"
-          },
-          {
-            "year": 2022,
-            "value": 115817000,
-            "filed": "2025-02-26"
-          },
-          {
-            "year": 2023,
-            "value": 137580000,
-            "filed": "2026-02-25"
-          },
-          {
-            "year": 2024,
-            "value": 131896000,
-            "filed": "2026-02-25"
-          },
-          {
-            "year": 2025,
-            "value": 131372000,
-            "filed": "2026-02-25"
-          }
-        ],
-        "revenue_growing": true,
-        "eps_growing": true,
-        "cashflow_positive": true,
-        "company_name": "CITY HOLDING COMPANY"
-      },
-      "analysis": {
-        "score": 74,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile",
-          "Flussi di cassa operativi positivi in tre esercizi"
-        ],
-        "warnings": [
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
-        ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
-        "buy_signal": false
-      }
-    },
-    {
-      "id": "https://www.sec.gov/Archives/edgar/data/2029548/0000726854-26-000186.txt#tx0",
-      "company": "CITY HOLDING CO",
-      "symbol": "CHCO",
-      "cik": 726854,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-23",
       "insider": "Hoyer James A",
       "officer_title": "",
@@ -5004,6 +2136,7 @@
       },
       "analysis": {
         "score": 74,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5017,16 +2150,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/726854/0000726854-26-000187.txt#tx0",
+      "id": "0000726854-26-000187#tx0",
       "company": "CITY HOLDING CO",
       "symbol": "CHCO",
       "cik": 726854,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-23",
       "insider": "Reyes Javier A",
       "officer_title": "",
@@ -5132,6 +2265,7 @@
       },
       "analysis": {
         "score": 74,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5145,16 +2279,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/1974775/0001062993-26-005533.txt#tx0",
+      "id": "0001062993-26-005533#tx0",
       "company": "Lion Copper Corp.",
       "symbol": "LCU",
       "cik": 1339688,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Alford Tony L, Alford Christine",
       "officer_title": "",
@@ -5235,6 +2369,7 @@
       },
       "analysis": {
         "score": 24,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5246,18 +2381,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/714562/0001836969-26-000004.txt#tx0",
+      "id": "0001836969-26-000004#tx0",
       "company": "FIRST FINANCIAL CORP /IN/",
       "symbol": "THFF",
       "cik": 714562,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-16",
       "insider": "McDonald James O",
       "officer_title": "",
@@ -5337,6 +2473,7 @@
       },
       "analysis": {
         "score": 14,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5346,18 +2483,19 @@
           "Fatturato: dati annuali insufficienti",
           "Utili per azione: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/946644/0001493152-26-048196.txt#tx0",
+      "id": "0001493152-26-048196#tx0",
       "company": "AIM ImmunoTech Inc.",
       "symbol": "AIM",
       "cik": 946644,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-22",
       "insider": "Equels Thomas K",
       "officer_title": "CEO & President",
@@ -5458,6 +2596,7 @@
       },
       "analysis": {
         "score": 19,
+        "financial_data_complete": true,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5470,16 +2609,16 @@
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
           "Modello ML NON ancora addestrato e validato"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/1974775/0001062993-26-005533.txt#tx2",
+      "id": "0001062993-26-005533#tx2",
       "company": "Lion Copper Corp.",
       "symbol": "LCU",
       "cik": 1339688,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-23",
       "insider": "Alford Tony L, Alford Christine",
       "officer_title": "",
@@ -5560,6 +2699,7 @@
       },
       "analysis": {
         "score": 20,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5571,18 +2711,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/1974775/0001062993-26-005533.txt#tx1",
+      "id": "0001062993-26-005533#tx1",
       "company": "Lion Copper Corp.",
       "symbol": "LCU",
       "cik": 1339688,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-21",
       "insider": "Alford Tony L, Alford Christine",
       "officer_title": "",
@@ -5663,6 +2804,7 @@
       },
       "analysis": {
         "score": 20,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5674,18 +2816,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2040866/0001683168-26-008055.txt#tx0",
+      "id": "0001683168-26-008055#tx0",
       "company": "ATHENA GOLD CORP",
       "symbol": "AHNRF",
       "cik": 1304409,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-29",
       "insider": "Kushner Koby Solomon",
       "officer_title": "CEO",
@@ -5760,6 +2903,7 @@
       },
       "analysis": {
         "score": 15,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [
@@ -5770,18 +2914,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx17",
+      "id": "0002160363-26-000003#tx17",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-09",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -5862,6 +3007,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -5870,18 +3016,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx18",
+      "id": "0002160363-26-000003#tx18",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-09",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -5962,6 +3109,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -5970,18 +3118,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx19",
+      "id": "0002160363-26-000003#tx19",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-09",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6062,6 +3211,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6070,18 +3220,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx23",
+      "id": "0002160363-26-000003#tx23",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-14",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6162,6 +3313,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6170,18 +3322,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx25",
+      "id": "0002160363-26-000003#tx25",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-15",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6262,6 +3415,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6270,18 +3424,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx26",
+      "id": "0002160363-26-000003#tx26",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-15",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6362,6 +3517,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6370,18 +3526,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx27",
+      "id": "0002160363-26-000003#tx27",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-18",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6462,6 +3619,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6470,18 +3628,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx12",
+      "id": "0002160363-26-000003#tx12",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6562,6 +3721,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6570,18 +3730,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx20",
+      "id": "0002160363-26-000003#tx20",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-10",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6662,6 +3823,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6670,18 +3832,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx13",
+      "id": "0002160363-26-000003#tx13",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6762,6 +3925,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6770,18 +3934,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx22",
+      "id": "0002160363-26-000003#tx22",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-11",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6862,6 +4027,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6870,18 +4036,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx0",
+      "id": "0002160363-26-000004#tx0",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -6962,6 +4129,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -6970,18 +4138,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx1",
+      "id": "0002160363-26-000004#tx1",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7062,6 +4231,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7070,18 +4240,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx2",
+      "id": "0002160363-26-000004#tx2",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7162,6 +4333,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7170,18 +4342,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx3",
+      "id": "0002160363-26-000004#tx3",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7262,6 +4435,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7270,18 +4444,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx4",
+      "id": "0002160363-26-000004#tx4",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7362,6 +4537,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7370,18 +4546,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx5",
+      "id": "0002160363-26-000004#tx5",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7462,6 +4639,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7470,18 +4648,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx12",
+      "id": "0002160363-26-000004#tx12",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-07",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7562,6 +4741,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7570,18 +4750,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx13",
+      "id": "0002160363-26-000004#tx13",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-07",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7662,6 +4843,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7670,18 +4852,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx14",
+      "id": "0002160363-26-000004#tx14",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-07",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7762,6 +4945,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7770,18 +4954,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx28",
+      "id": "0002160363-26-000003#tx28",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-05",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7862,6 +5047,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7870,18 +5056,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx6",
+      "id": "0002160363-26-000004#tx6",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -7962,6 +5149,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -7970,18 +5158,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx7",
+      "id": "0002160363-26-000004#tx7",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8062,6 +5251,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8070,18 +5260,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx0",
+      "id": "0002160363-26-000003#tx0",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-18",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8162,6 +5353,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8170,18 +5362,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx1",
+      "id": "0002160363-26-000003#tx1",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-19",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8262,6 +5455,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8270,18 +5464,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx10",
+      "id": "0002160363-26-000003#tx10",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-28",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8362,6 +5557,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8370,18 +5566,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx11",
+      "id": "0002160363-26-000003#tx11",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-28",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8462,6 +5659,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8470,18 +5668,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx9",
+      "id": "0002160363-26-000003#tx9",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-26",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8562,6 +5761,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8570,18 +5770,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx16",
+      "id": "0002160363-26-000004#tx16",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8662,6 +5863,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8670,18 +5872,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx7",
+      "id": "0002160363-26-000003#tx7",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-25",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8762,6 +5965,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8770,18 +5974,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx3",
+      "id": "0002160363-26-000003#tx3",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-21",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8862,6 +6067,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8870,18 +6076,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx4",
+      "id": "0002160363-26-000003#tx4",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-21",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -8962,6 +6169,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -8970,18 +6178,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx5",
+      "id": "0002160363-26-000003#tx5",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-21",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9062,6 +6271,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9070,18 +6280,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx17",
+      "id": "0002160363-26-000004#tx17",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9162,6 +6373,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9170,18 +6382,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx2",
+      "id": "0002160363-26-000003#tx2",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-20",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9262,6 +6475,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9270,18 +6484,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx24",
+      "id": "0002160363-26-000003#tx24",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-14",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9362,6 +6577,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9370,18 +6586,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx21",
+      "id": "0002160363-26-000003#tx21",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-10",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9462,6 +6679,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9470,18 +6688,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx8",
+      "id": "0002160363-26-000004#tx8",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9562,6 +6781,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9570,18 +6790,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx9",
+      "id": "0002160363-26-000004#tx9",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9662,6 +6883,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9670,18 +6892,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx14",
+      "id": "0002160363-26-000003#tx14",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9762,6 +6985,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9770,18 +6994,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx18",
+      "id": "0002160363-26-000004#tx18",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9862,6 +7087,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9870,18 +7096,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx15",
+      "id": "0002160363-26-000003#tx15",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -9962,6 +7189,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -9970,18 +7198,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx10",
+      "id": "0002160363-26-000004#tx10",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10062,6 +7291,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10070,18 +7300,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx11",
+      "id": "0002160363-26-000004#tx11",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-06",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10162,6 +7393,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10170,18 +7402,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx19",
+      "id": "0002160363-26-000004#tx19",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10262,6 +7495,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10270,18 +7504,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx6",
+      "id": "0002160363-26-000003#tx6",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-21",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10362,6 +7597,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10370,18 +7606,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx8",
+      "id": "0002160363-26-000003#tx8",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-08-25",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10462,6 +7699,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10470,18 +7708,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx16",
+      "id": "0002160363-26-000003#tx16",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-09-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10562,6 +7801,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10570,18 +7810,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx15",
+      "id": "0002160363-26-000004#tx15",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-07",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10662,6 +7903,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10670,18 +7912,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000003.txt#tx29",
+      "id": "0002160363-26-000003#tx29",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-05",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10762,6 +8005,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10770,18 +8014,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx20",
+      "id": "0002160363-26-000004#tx20",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10862,6 +8107,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10870,18 +8116,19 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     },
     {
-      "id": "https://www.sec.gov/Archives/edgar/data/2160363/0002160363-26-000004.txt#tx21",
+      "id": "0002160363-26-000004#tx21",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
       "cik": 1947861,
-      "filed": "20261023",
+      "filed": "2026-10-23",
       "transaction_date": "2026-10-08",
       "insider": "Adair Kathleen Theresa",
       "officer_title": "",
@@ -10962,6 +8209,7 @@
       },
       "analysis": {
         "score": 0,
+        "financial_data_complete": false,
         "priority": "Osservazione",
         "notify": false,
         "reasons": [],
@@ -10970,9 +8218,10 @@
           "Utili per azione: requisito non soddisfatto",
           "Flusso di cassa: requisito non soddisfatto",
           "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Modello ML NON ancora addestrato e validato",
+          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
         ],
-        "model": "Regole trasparenti v1 (NON machine learning)",
+        "model": "Regole trasparenti v2 (NON machine learning)",
         "buy_signal": false
       }
     }

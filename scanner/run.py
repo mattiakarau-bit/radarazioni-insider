@@ -14,6 +14,7 @@ from pathlib import Path
 from scanner.fundamentals import summarize_company_facts
 from scanner.notifications import send_telegram
 from scanner.parser import parse_form4
+from scanner.identity import filing_key, normalize_events
 from scanner.scoring import screen
 from scanner.sec import company_facts, get, recent_entries
 
@@ -45,7 +46,7 @@ def distinct_insiders_near(event: dict, events: list[dict]) -> int:
         if x.get('cik') != event.get('cik'):
             continue
         try:
-            if abs((date.fromisoformat(x['filed']) - d).days) <= 14:
+            if 0 <= (d - date.fromisoformat(x['filed'])).days <= 14:
                 names.update(x.get('owners') or [x.get('insider', '?')])
         except (ValueError, KeyError):
             continue
@@ -56,7 +57,8 @@ def main():
     now = datetime.now(timezone.utc).isoformat(timespec='seconds')
     old = load_json(RESULTS, {'filings': [], 'status': 'mai eseguito'})
     state = load_json(STATE, {'processed': [], 'notified': []})
-    seen, notified = set(state.get('processed', [])), set(state.get('notified', []))
+    seen = {filing_key(x) for x in state.get('processed', [])}
+    notified = {filing_key(x) + ('#' + x.rsplit('#', 1)[-1] if '#' in x else '') for x in state.get('notified', [])}
     limit = max(1, min(int(os.getenv('MAX_FORMS_PER_RUN', '180')), 400))
     days = max(2, min(int(os.getenv('LOOKBACK_DAYS', '7')), 14))
     entries, checked, errors = recent_entries(days=days)
@@ -66,7 +68,7 @@ def main():
         print('SEC index unavailable: ' + '; '.join(errors), file=sys.stderr)
         sys.exit(2)
 
-    pending = [x for x in entries if x['url'] not in seen]
+    pending = [x for x in entries if filing_key(x['url']) not in seen]
     pending.sort(key=lambda x: (x['filed'], x['url']), reverse=True)
     queue = pending[:limit]
     purchases, processed_success = [], 0
@@ -75,13 +77,13 @@ def main():
             txs = parse_form4(get(filing['url']), filing)
             # Source may include fund/private issuer; don't invent a US-listed ticker.
             purchases.extend(x for x in txs if x['cik'] and re.fullmatch(r'[A-Z][A-Z0-9.\-]{0,9}', x['symbol']))
-            seen.add(filing['url'])
+            seen.add(filing_key(filing['url']))
             processed_success += 1
         except Exception as exc:
             errors.append(f"Form 4 {filing['url']}: {type(exc).__name__}: {str(exc)[:85]}")
 
     historical = load_json(HISTORY, {'filings': []})
-    merged = {x['id']: x for x in historical.get('filings', []) if 'id' in x}
+    merged = {x['id']: x for x in normalize_events(historical.get('filings', []))}
     merged.update({x['id']: x for x in purchases})
     events = list(merged.values())
     facts_cache = {}
@@ -97,6 +99,9 @@ def main():
         p['fundamentals'] = facts_cache[key]
         p['analysis'] = screen(p, p['fundamentals'], distinct_insiders_near(p, events))
         merged[p['id']] = p
+
+    for event in merged.values():
+        event['analysis'] = screen(event, event.get('fundamentals'), distinct_insiders_near(event, list(merged.values())))
 
     ordered = sorted(merged.values(), key=lambda x: (x.get('filed', ''), x.get('amount', 0)), reverse=True)
     # Keep several years of actual source events for eventual historical research.
@@ -119,12 +124,12 @@ def main():
                     else 'NON addestrato/validato — punteggio basato su regole')
     data = {
         'version': 1, 'last_scan_utc': now,
-        'status': 'Parziale' if errors or any(x['url'] not in seen for x in entries) else 'Finestra processata',
+        'status': 'Parziale' if errors or any(filing_key(x['url']) not in seen for x in entries) else 'Finestra processata',
         'source': 'SEC EDGAR index + SEC Form 4 + SEC XBRL companyfacts',
         'model_status': model_status,
         'coverage': {'days_checked': checked, 'form4_listed_in_checked_days': len(entries),
                      'new_forms_this_run': processed_success,
-                     'unprocessed_listed_forms': sum(x['url'] not in seen for x in entries),
+                     'unprocessed_listed_forms': sum(filing_key(x['url']) not in seen for x in entries),
                      'lookback_days': days,
                      'transactions_stored': len(ordered),
                      'note': 'Non equivale a copertura totale o in tempo reale dei mercati USA'},
@@ -132,7 +137,7 @@ def main():
     }
     save_json(RESULTS, data)
     # Sort deterministic: most recent known forms kept for dedup (not random order).
-    known = {x['url'] for x in entries if x['url'] in seen}
+    known = {filing_key(x['url']) for x in entries if filing_key(x['url']) in seen}
     older = sorted(seen - known, reverse=True)
     save_json(STATE, {'processed': sorted(known, reverse=True) + older[:20_000],
                       'notified': sorted(notified)[-5_000:]})
