@@ -128,6 +128,16 @@
         "company_name": "Corebridge Financial, Inc."
       },
       "analysis": {
+        "radar_score": 29.0,
+        "radar_uncapped": 29.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 50,
         "opportunity_score": 20,
         "score": 20,
@@ -268,6 +278,17 @@
         "company_name": "Rent the Runway, Inc."
       },
       "analysis": {
+        "radar_score": 29,
+        "radar_uncapped": 48.3,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 70,
         "opportunity_score": 39,
         "score": 39,
@@ -416,6 +437,17 @@
         "company_name": "Rent the Runway, Inc."
       },
       "analysis": {
+        "radar_score": 29,
+        "radar_uncapped": 48.3,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 70,
         "opportunity_score": 39,
         "score": 39,
@@ -483,6 +515,17 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
+        "radar_score": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 50,
         "opportunity_score": 0,
         "score": 0,
@@ -550,6 +593,17 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
+        "radar_score": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 50,
         "opportunity_score": 0,
         "score": 0,
@@ -691,6 +745,17 @@
         "company_name": "Rent the Runway, Inc."
       },
       "analysis": {
+        "radar_score": 29,
+        "radar_uncapped": 42.3,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 50,
         "opportunity_score": 39,
         "score": 39,
@@ -757,6 +822,17 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
+        "radar_score": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 50,
         "opportunity_score": 0,
         "score": 0,
@@ -824,6 +900,17 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
+        "radar_score": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 50,
         "opportunity_score": 0,
         "score": 0,
@@ -875,6 +962,17 @@
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
       "fundamentals": null,
       "analysis": {
+        "radar_score": 16.5,
+        "radar_uncapped": 16.5,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 55,
         "opportunity_score": 0,
         "score": 0,
@@ -1014,6 +1112,16 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
+        "radar_score": 24.5,
+        "radar_uncapped": 24.5,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 35,
         "opportunity_score": 20,
         "score": 20,
@@ -1152,6 +1260,16 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
+        "radar_score": 24.5,
+        "radar_uncapped": 24.5,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 35,
         "opportunity_score": 20,
         "score": 20,
@@ -1289,6 +1407,17 @@
         "company_name": "CLEVELAND-CLIFFS INC."
       },
       "analysis": {
+        "radar_score": 12.0,
+        "radar_uncapped": 12.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 40,
         "opportunity_score": 0,
         "score": 0,
@@ -1381,6 +1510,18 @@
         "company_name": "Rapport Therapeutics, Inc."
       },
       "analysis": {
+        "radar_score": 23.5,
+        "radar_uncapped": 23.5,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 25,
         "score": 25,
@@ -1442,6 +1583,17 @@
         "company_name": "PIMCO New York Municipal Income Fund II"
       },
       "analysis": {
+        "radar_score": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 0,
         "score": 0,
@@ -1580,6 +1732,16 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
+        "radar_score": 20.0,
+        "radar_uncapped": 20.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 20,
         "score": 20,
@@ -1639,6 +1801,17 @@
         "company_name": ""
       },
       "analysis": {
+        "radar_score": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 0,
         "score": 0,
@@ -1777,6 +1950,16 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
+        "radar_score": 20.0,
+        "radar_uncapped": 20.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 20,
         "score": 20,
@@ -1914,6 +2097,15 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
+        "radar_score": 42.7,
+        "radar_uncapped": 42.7,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 28,
         "opportunity_score": 49,
         "score": 49,
@@ -1974,6 +2166,17 @@
         "company_name": "Baozun Inc."
       },
       "analysis": {
+        "radar_score": 11.4,
+        "radar_uncapped": 11.4,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 38,
         "opportunity_score": 0,
         "score": 0,
@@ -2034,6 +2237,17 @@
         "company_name": "Baozun Inc."
       },
       "analysis": {
+        "radar_score": 11.4,
+        "radar_uncapped": 11.4,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 38,
         "opportunity_score": 0,
         "score": 0,
@@ -2172,6 +2386,15 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
+        "radar_score": 42.7,
+        "radar_uncapped": 42.7,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 28,
         "opportunity_score": 49,
         "score": 49,
@@ -2310,6 +2533,15 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
+        "radar_score": 42.7,
+        "radar_uncapped": 42.7,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 28,
         "opportunity_score": 49,
         "score": 49,
@@ -2448,6 +2680,15 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
+        "radar_score": 42.7,
+        "radar_uncapped": 42.7,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 28,
         "opportunity_score": 49,
         "score": 49,
@@ -2561,6 +2802,18 @@
         "company_name": "Lion Copper Corp."
       },
       "analysis": {
+        "radar_score": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 28,
         "opportunity_score": 0,
         "score": 0,
@@ -2673,6 +2926,17 @@
         "company_name": "FIRST FINANCIAL CORPORATION"
       },
       "analysis": {
+        "radar_score": 16.4,
+        "radar_uncapped": 16.4,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 8,
         "opportunity_score": 20,
         "score": 20,
@@ -2805,6 +3069,17 @@
         "company_name": "AIM ImmunoTech Inc."
       },
       "analysis": {
+        "radar_score": 11.4,
+        "radar_uncapped": 11.4,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 38,
         "opportunity_score": 0,
         "score": 0,
@@ -2918,6 +3193,18 @@
         "company_name": "Lion Copper Corp."
       },
       "analysis": {
+        "radar_score": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 0,
         "score": 0,
@@ -3031,6 +3318,18 @@
         "company_name": "Lion Copper Corp."
       },
       "analysis": {
+        "radar_score": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 20,
         "opportunity_score": 0,
         "score": 0,
@@ -3138,6 +3437,18 @@
         "company_name": "ATHENA GOLD CORPORATION"
       },
       "analysis": {
+        "radar_score": 9.0,
+        "radar_uncapped": 9.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 30,
         "opportunity_score": 0,
         "score": 0,
@@ -3251,6 +3562,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -3363,6 +3686,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -3475,6 +3810,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -3587,6 +3934,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -3699,6 +4058,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -3811,6 +4182,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -3923,6 +4306,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4035,6 +4430,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4147,6 +4554,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4259,6 +4678,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4371,6 +4802,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4483,6 +4926,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4595,6 +5050,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4707,6 +5174,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4819,6 +5298,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -4931,6 +5422,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5043,6 +5546,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5155,6 +5670,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5267,6 +5794,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5379,6 +5918,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5491,6 +6042,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5603,6 +6166,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5715,6 +6290,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5827,6 +6414,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -5939,6 +6538,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6051,6 +6662,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6163,6 +6786,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6275,6 +6910,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6387,6 +7034,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6499,6 +7158,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6611,6 +7282,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6723,6 +7406,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6835,6 +7530,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -6947,6 +7654,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7059,6 +7778,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7171,6 +7902,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7283,6 +8026,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7395,6 +8150,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7507,6 +8274,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7619,6 +8398,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7731,6 +8522,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7843,6 +8646,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -7955,6 +8770,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8067,6 +8894,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8179,6 +9018,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8291,6 +9142,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8403,6 +9266,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8515,6 +9390,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8627,6 +9514,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8739,6 +9638,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8851,6 +9762,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,
@@ -8963,6 +9886,18 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "radar_score": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione non verificata: Radar Score massimo 49",
+          "Dati finanziari incompleti: Radar Score massimo 29",
+          "Cassa insufficiente/non verificata: Radar Score massimo 39",
+          "Problemi di cassa/EPS: Radar Score massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
         "insider_strength_score": 0,
         "opportunity_score": 0,
         "score": 0,

@@ -30,3 +30,24 @@ Memorizzare esplicitamente dati assenti, obsoleti e rettificati; evitare look-ah
 Decisione: mantenere SEC come primaria per i bilanci; validare Stooq su un campione
 prima di collegare prezzi al punteggio. Non esiste ancora una fonte integrata che renda
 la valutazione verificata: i limiti 49/39 e l’assenza di notifiche restano applicati.
+
+## Verifica diritti per release 0.5.0
+
+[Termini Stooq](https://stooq.com/terms.html): i risultati della ricerca ufficiale
+indicano che la redistribuzione richiede consenso; la [pagina download](https://stooq.com/db/h/)
+indica uso personale. La pagina termini completa richiede verifica JavaScript al lettore
+automatico: non si assume alcuna autorizzazione per pubblicare serie o derivati nel sito.
+Stooq non viene integrato e non viene scaricato alcun dataset.
+
+[Termini Alpha Vantage](https://www.alphavantage.co/terms_of_service/), letti il 24/10/2026:
+licenza ordinaria personale/non commerciale; accordo scritto per altri usi. Il sito pubblico
+non riceve prezzi o capitalizzazioni da questo provider. Nessuna chiave o licenza attivata.
+
+SEC fornisce fatti finanziari, non un feed giornaliero di prezzi. Il public float riportato
+nei bilanci non viene usato come sostituto della capitalizzazione corrente. Yahoo Finance
+o wrapper non ufficiali non vengono considerati un’autorizzazione alla redistribuzione.
+
+Esito concreto: nessun provider gratuito di prezzi/capitalizzazioni è stato validato per la
+redistribuzione in RadarAzioni. Filtri e storico espongono `non_verificabile`, non risultati
+calcolati da prezzi ipotetici. Comparatore matematico ±5% testato, gate reale chiuso fino
+alla verifica di fonte/licenza, split, classe azionaria, eventi e fondamentali aggiornati.

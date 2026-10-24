@@ -1,76 +1,77 @@
-# RadarAzioni – Insider Intelligence
+# RadarAzioni – Insider Intelligence · 0.5.0
 
-Scanner SEC EDGAR e interfaccia statica. Solo screening: nessun trading automatico.
+App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
+trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
+Preferiti locali, nessuna sincronizzazione tra dispositivi.
 
-## Verifica locale
+## Funzioni pubblicate
+
+- Radar Score = 70% opportunità + 30% forza insider; componenti visibili nella spiegazione.
+  Limite 49 senza valutazione, 39 con cassa insufficiente/non verificata, 29 con dati
+  incompleti o cassa/EPS problematici. Vale il limite più basso. Non è probabilità di rendimento.
+- Radar per società, finestra `[data analisi − 6 giorni, data analisi]` secondo data operazione.
+- Filtri modificabili: cap minima 500M USD, totale 7 giorni 100k USD, percentuale 0,002%,
+  tetto proporzionale 2M USD. Importo richiesto `max(100k, min(2M, cap * 0.002 / 100))`.
+  Sono ipotesi da validare storicamente. Senza cap i filtri restano non verificabili;
+  la vista iniziale include i non verificabili sopra il minimo assoluto, senza indicarli conformi.
+- Stelle e Preferiti con migrazione di `radarazioni-watchlist-v2`. Vecchia chiave conservata,
+  nuova `radarazioni-favorites-v1`. Operazioni salvate fuse per ID e non eliminate quando
+  la società esce dal radar o dai filtri. Errori/quota storage segnalati; backup precedente
+  non cancellato. Svuotare i dati del browser può comunque cancellare i Preferiti.
+- Versione PWA e avviso aggiornamento: “Aggiorna e ricarica”, senza reinstallazione.
+
+## Deduplicazione e aggregazione prudente
+
+Accession + indice transazione deduplica gli alias URL. Righe distinte nel medesimo Form 4
+restano distinte. Per termini economici uguali (data, titolo/classe dichiarata, quantità,
+prezzo, natura della proprietà) in depositi distinti, l’aggregatore conta il massimo numero
+di righe riportato in un singolo deposito, anziché sommare tutte le co-dichiarazioni.
+Questo può sottostimare acquisti indipendenti con gli stessi termini: la scheda indica
+**stima prudenziale**, non un totale verificato. Tutte le righe e somme originali rimangono
+nel dettaglio/storico. Classi dichiarate diverse non vengono fuse. Prezzo ponderato assente
+quando classe o deduplicazione non sono verificabili. Nessun numero di insider indipendenti
+è pubblicato senza verifica; nomi differenti o fondi collegati non assegnano punti cluster.
+
+## Storico: cosa è predisposto e cosa manca
+
+`scanner.radar.historical_windows` genera finestre mobili osservate negli ultimi 12 mesi;
+l’interfaccia seleziona 6 o 12. Finestre sovrapposte non rappresentano capitale addizionale.
+La disponibilità effettiva dipende dalla copertura SEC, oggi molto più breve di sei mesi.
+Il comparatore matematico `price_band` testa ±5% su due prezzi già sulla medesima base split.
+Il gate di revisione reale resta **chiuso**, anche se riceve flag arbitrari: nessun provider
+redistribuibile è validato, né sono integrati eventi/motivi del ribasso o analisi aggiornata.
+I prezzi SEC non vengono spacciati per prezzi correnti o rettificati. Nessuna opportunità
+storica o avviso reale viene attivato. Vedi [fonti e diritti](research/free-data-sources.md).
+
+## Scanner e pubblicazione
+
+Coda persistente accession con 2/3 posti ai recenti e 1/3 ai più vecchi, prestito posti liberi,
+ritentativi 1–7 giorni, recupero indici persi durante interruzioni, pausa del backfill se
+la coda supera due lotti. Conteggi per giorno con fonti e timestamp. Form 4/A esclusi;
+nessuna copertura totale/in tempo reale garantita. Storico SEC non troncato.
+
+Le chiamate companyfacts sono ordinate per importo settimanale prudenziale, con massimo
+30 emittenti nuovi per esecuzione (`MAX_FACTS_PER_RUN`, limite 100) e budget 18 minuti.
+Dati differiti/mancanti non producono bonus. La capitalizzazione mancante non viene stimata.
+`radar.json` contiene finestre correnti e riepiloghi storici; lo storico completo conserva
+le transazioni. Il workflow salva tutti i JSON e pubblica Pages solo dopo test riusciti.
+Nessuna modifica alle credenziali esistenti.
 
 ```sh
 python -m unittest discover -s tests -v
-node --check docs/app.js
-```
-
-Nessuna dipendenza Python esterna. Il workflow esegue i test prima della pubblicazione.
-Le credenziali esistenti restano nei GitHub Actions secrets.
-
-## Correzioni dati v2
-
-Identità evento: accession SEC + indice transazione, indipendente dal CIK nella URL.
-Transazioni diverse nello stesso deposito restano separate. Depositi distinti con importi
-uguali non vengono automaticamente cancellati: potrebbero rappresentare operazioni reali.
-Date di deposito e operazione in ISO; prezzi dichiarati visualizzati fino a sei decimali,
-separatamente dall'importo complessivo. Il prezzo dichiarato può essere una media ponderata.
-
-Migrazione offline ripetibile (senza notifiche o chiamate SEC):
-
-```sh
+node --test tests/*.test.cjs
 python -m scanner.migrate
 ```
 
-Lo scoring viene ricalcolato sullo storico. Con indicatori finanziari mancanti è limitato
-a 49/100 e non attiva notifiche. Il conteggio insider esclude depositi successivi alla data
-valutata. Nessun punteggio è una probabilità di rendimento o un segnale di acquisto.
+La migrazione ricalcola dati locali, non chiama SEC o Telegram. Per i test browser:
 
-## Sviluppo ML successivo
+```sh
+npm install --ignore-scripts --no-package-lock
+npx playwright install --with-deps chromium webkit
+npm run test:ui
+```
 
-Prima dell'addestramento servono prezzi storici reali rettificati, titoli delistati,
-identificativi stabili e fondamentali disponibili alla data del deposito. Definire rendimenti
-futuri a 30/90/180 giorni rispetto a un benchmark e costi di negoziazione. Separare train,
-validazione e test cronologicamente, con intervalli di esclusione per target sovrapposti;
-confrontare con regole e benchmark. Non usare lo storico attuale come prova di efficacia:
-è troppo breve. Verificare copertura e licenze delle fonti gratuite prima di scegliere il
-fornitore. Nessun servizio a pagamento o esecuzione automatica di ordini.
-
-## Due punteggi v3
-
-Forza insider: importo 0–50, ruolo 0–30; 20 punti cluster riservati e non
-assegnati finché non esiste una verifica documentata dell’indipendenza. Nomi distinti,
-fondi collegati e comproprietari non dimostrano decisioni indipendenti.
-Opportunità: fatturato 25, EPS 25, cassa operativa 20; valutazione ancora assente,
-quindi massimo 49. Cassa negativa o dati insufficienti: massimo 39. Cassa operativa
-positiva non dimostra adeguatezza del free cashflow o convenienza del prezzo.
-I due punteggi non si sommano. Tutte le notifiche sono disabilitate nello scoring v3;
-nessun BUY validato. Lo storico viene ricalcolato con la migrazione offline.
-
-## Release 0.4.0: coda e aggiornamenti
-
-Coda persistente per accession: 2/3 della capacità ai depositi recenti, 1/3 ai più vecchi,
-con prestito dei posti inutilizzati. Errori ritentati con attesa crescente (1–7 giorni),
-mai cancellati per scadenza della finestra. Ogni esecuzione aggiorna gli indici recenti,
-recupera un giorno precedente solo se la coda non supera due lotti di elaborazione e ritenta fino a tre indici falliti. Budget di elaborazione
-18 minuti; con arrivi superiori alla capacità l’arretrato può crescere: nessuna garanzia
-di copertura totale o latenza. Form 4/A ancora esclusi e dichiarati come tali.
-
-`state.json` conserva coda, accession processate, indici verificati e cursore storico.
-`results.json.coverage.by_day` permette di riconciliare indicizzati = processati + in coda
-per ogni giorno e riporta URL originale e ora della verifica. I conteggi preesistenti non
-vengono inventati: si popolano con le scansioni effettive. Storico transazioni non troncato.
-La scrittura JSON è atomica per file; dati storici salvati prima delle accession processate.
-
-Versione visibile anche su mobile, manifest `docs/version.json`, controllo ogni 5 minuti,
-al ritorno in primo piano e al ripristino della rete. “Aggiorna e ricarica” applica il nuovo
-service worker e ricarica l’app, senza reinstallazione. Offline il controllo non dichiara
-aggiornamenti riusciti. Per la prossima release aggiornare insieme update.js, version.json,
-index.html e nome cache sw.js; i test verificano la coerenza.
-
-Test: `python -m unittest discover -s tests -v` e `node --test tests/update.test.cjs`.
-Ricognizione fonti e requisiti finanziari: [research/free-data-sources.md](research/free-data-sources.md).
+Test UI su WebKit/Chromium a 390×844, 768×1024 e 320×568: overflow, dettagli score,
+migrazione, stelle, filtri, Preferiti persistenti e storico. Sono simulazioni browser,
+non certificazione su hardware iPhone/iPad. Il workflow qualità viene eseguito sulla PR
+prima dell’unione e nuovamente prima della pubblicazione su main.

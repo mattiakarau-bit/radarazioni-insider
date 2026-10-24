@@ -17,6 +17,7 @@ from scanner.notifications import send_telegram
 from scanner.parser import parse_form4
 from scanner.identity import filing_key, normalize_events
 from scanner.scoring import screen
+from scanner.radar import publish, aggregate
 from scanner.coverage import merge_pending, select_queue, record_failure, coverage_report
 from scanner.sec import company_facts, get, discover
 
@@ -83,7 +84,16 @@ def main():
     events = list(merged.values())
     facts_cache = {}
     raw_facts = {}
+    # Free companyfacts calls are prioritized by the known weekly purchase filter.
+    # Capitalization is absent, so no issuer is claimed to pass the full filter.
+    totals = {}
     for p in purchases:
+        start = (date.fromisoformat(p['transaction_date']) - timedelta(days=6)).isoformat()
+        group = aggregate(events, start, p['transaction_date'])
+        totals[p['id']] = next((g['amount'] for g in group if g['cik']==p['cik']), 0)
+    prioritized = sorted(purchases, key=lambda p: totals[p['id']], reverse=True)
+    facts_limit = max(1, min(int(os.getenv('MAX_FACTS_PER_RUN', '30')), 100))
+    for p in prioritized:
         cik = p['cik']
         key = (cik, p['filed'])
         if key not in facts_cache:
@@ -91,6 +101,8 @@ def main():
                 if time.monotonic() >= deadline:
                     raise TimeoutError('Budget esecuzione esaurito; fondamentali non verificati')
                 if cik not in raw_facts:
+                    if len(raw_facts) >= facts_limit:
+                        raise RuntimeError('Budget fondamentali: analisi differita, non verificata')
                     raw_facts[cik] = company_facts(cik)
                 facts_cache[key] = summarize_company_facts(raw_facts[cik], p['filed'])
             except Exception as exc:
@@ -124,6 +136,7 @@ def main():
         'coverage': coverage,
         'errors': errors[:25], 'filings': recent,
     }
+    save_json(RESULTS.parent / 'radar.json', publish(ordered, now[:10]))
     save_json(RESULTS, data)
     state.update(processed=sorted(seen), notified=sorted(notified), pending=pending)
     save_json(STATE, state)
