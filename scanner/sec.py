@@ -6,7 +6,8 @@ import os
 import time
 import urllib.error
 import urllib.request
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 SEC_ROOT = "https://www.sec.gov"
 FACTS_ROOT = "https://data.sec.gov"
@@ -43,10 +44,16 @@ def get(url: str, *, decode: bool = True):
         time.sleep(2 ** attempt * 4)
 
 
-def read_master_index(day: date) -> list[dict]:
+def index_url(day: date) -> str:
     qtr = (day.month - 1) // 3 + 1
     url = f"{SEC_ROOT}/Archives/edgar/daily-index/{day.year}/QTR{qtr}/master.{day:%Y%m%d}.idx"
-    data = get(url)
+    return url
+
+
+def read_master_index(day: date) -> list[dict]:
+    data = get(index_url(day))
+    if "CIK|Company Name|Form Type|Date Filed|Filename" not in data:
+        raise ValueError("Indice SEC incompleto o non valido")
     output = []
     for line in data.splitlines():
         parts = line.split("|")
@@ -81,3 +88,42 @@ def recent_entries(days: int = 5) -> tuple[list[dict], list[str], list[str]]:
 
 def company_facts(cik: int) -> dict:
     return json.loads(get(f"{FACTS_ROOT}/api/xbrl/companyfacts/CIK{cik:010d}.json"))
+
+
+def discover(state, days, now):
+    """Refresh recent indexes, retry failed older days, backfill one day each run."""
+    today = datetime.fromisoformat(now).astimezone(ZoneInfo('America/New_York')).date()
+    targets = {today - timedelta(days=i) for i in range(days)}
+    cursor = date.fromisoformat(state.get('backfill_cursor', (today-timedelta(days=days)).isoformat()))
+    while cursor.weekday() >= 5:
+        cursor -= timedelta(days=1)
+    targets.add(cursor)
+    retries = set(state.get('index_retries', []))
+    # Record gaps after downtime; otherwise a moving lookback can skip unseen days.
+    previous = date.fromisoformat(state.get('last_discovery_day', today.isoformat()))
+    for i in range(max(0, (today-previous).days)):
+        missed = previous + timedelta(days=i)
+        if missed.weekday() < 5:
+            retries.add(missed.isoformat())
+    attempts = state.setdefault('index_attempts', {})
+    targets.update(date.fromisoformat(d) for d in sorted(retries, key=lambda d: (attempts.get(d, ''), d))[:3])
+    entries, checked, errors = [], [], []
+    indexes = state.setdefault('indexes', {})
+    for day in sorted(targets, reverse=True):
+        if day.weekday() >= 5:
+            continue
+        attempts[day.isoformat()] = now
+        try:
+            rows = read_master_index(day)
+            entries.extend(rows)
+            checked.append(day.isoformat())
+            indexes[day.isoformat()] = dict(url=index_url(day), checked_utc=now,
+                                           accessions=sorted({filing_key(x['url']) for x in rows}))
+            retries.discard(day.isoformat())
+        except Exception as exc:
+            retries.add(day.isoformat())
+            errors.append(f'{day}: {type(exc).__name__}: {str(exc)[:120]}')
+    state['last_discovery_day'] = today.isoformat()
+    state['index_retries'] = sorted(retries)
+    state['backfill_cursor'] = (cursor-timedelta(days=1)).isoformat()
+    return list({filing_key(x['url']): x for x in entries}.values()), checked, errors

@@ -19,11 +19,11 @@ def parse_form4(submission: str, filing: dict) -> list[dict]:
     # Full SEC submission contains wrapper headers and one or more XML documents.
     match = re.search(r"<ownershipDocument(?:\s[^>]*)?>.*?</ownershipDocument>", submission, re.S | re.I)
     if not match:
-        return []
+        raise ValueError('Documento ownership XML assente: deposito da ritentare')
     try:
         root = ET.fromstring(match.group(0))
-    except ET.ParseError:
-        return []
+    except ET.ParseError as exc:
+        raise ValueError('XML Form 4 non valido') from exc
     for el in root.iter():
         el.tag = el.tag.rsplit('}', 1)[-1]
     issuer = root.find('issuer')

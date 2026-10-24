@@ -27,6 +27,11 @@ jobs:
           python-version: '3.12'
       - name: Verifica regressioni
         run: python -m unittest discover -s tests -v
+      - name: Verifica JavaScript e versione
+        run: |
+          node --check docs/app.js
+          node --check docs/sw.js
+          node --test tests/update.test.cjs
       - name: Analizza i nuovi Form 4 SEC
         if: github.event_name != 'push'
         env:
