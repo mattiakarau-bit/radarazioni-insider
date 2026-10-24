@@ -71,11 +71,11 @@ def aggregate(events, start, end):
                            independent_insiders=None, independence_verified=False,
                            weighted_price=amount/shares if homogeneous and shares else None,
                            price_basis='raw_SEC_not_split_adjusted', security_title=latest.get('security_title'),
-                           market_cap=None, market_status='Fonte redistribuibile non integrata',
+                           market_cap=None, market_cap_verified=False, market_status='Fonte redistribuibile non integrata',
                            filters=filter_result(amount), analysis=analysis,
                            fundamentals=fin, fundamentals_as_of=latest['filed'],
                            transactions=sorted(rows, key=lambda x: (x['transaction_date'],x['id']), reverse=True)))
-    return sorted(groups, key=lambda x: (x['analysis']['radar_score'], x['amount']), reverse=True)
+    return sorted(groups, key=lambda x: (x['analysis'].get('radar_score') or -1, x['amount']), reverse=True)
 
 
 def months_before(day, months):
@@ -91,7 +91,7 @@ def historical_windows(events, as_of, months=6):
     anchors = sorted({x['transaction_date'] for x in events if start <= x.get('transaction_date','') <= as_of})
     result = []
     for end in anchors:
-        begin = max(start, (date.fromisoformat(end)-timedelta(days=6)).isoformat())
+        begin = (date.fromisoformat(end)-timedelta(days=6)).isoformat()
         for g in aggregate(events, begin, end):
             # One window per issuer per actual transaction-date anchor; windows overlap.
             if not any(x['transaction_date']==end for x in g['transactions']):
@@ -128,7 +128,7 @@ def price_band(current, adjusted_insider_average):
 def publish(events, as_of):
     events = [x for x in events if x.get('filed', '') <= as_of]
     start = (date.fromisoformat(as_of)-timedelta(days=6)).isoformat()
-    return dict(version=1, app_version='0.5.0', as_of=as_of, window_start=start,
+    return dict(version=1, app_version='0.6.0', as_of=as_of, window_start=start,
                 filters=DEFAULT_FILTERS, groups=aggregate(events,start,as_of),
                 history_months_available=12,
                 history_status='Prezzi, split, fondamentali aggiornati ed eventi non verificati; nessuna segnalazione reale',

@@ -12,7 +12,7 @@ import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-from scanner.fundamentals import summarize_company_facts
+from scanner.fundamentals import summarize_company_facts, review_legacy
 from scanner.notifications import send_telegram
 from scanner.parser import parse_form4
 from scanner.identity import filing_key, normalize_events
@@ -82,16 +82,28 @@ def main():
     merged = {x['id']: x for x in normalize_events(historical.get('filings', []))}
     merged.update({x['id']: x for x in purchases})
     events = list(merged.values())
+    for event in events:
+        event['fundamentals'] = review_legacy(event.get('fundamentals'))
     facts_cache = {}
     raw_facts = {}
     # Free companyfacts calls are prioritized by the known weekly purchase filter.
     # Capitalization is absent, so no issuer is claimed to pass the full filter.
     totals = {}
-    for p in purchases:
+    refresh = []
+    facts_checked = state.setdefault('facts_checked', {})
+    active = aggregate(events, (date.fromisoformat(now[:10])-timedelta(days=6)).isoformat(), now[:10])
+    candidates = {g['cik'] for g in active if g['amount']>=100000}
+    purchase_ids = {p['id'] for p in purchases}
+    for event in events:
+        fin=event.get('fundamentals') or {}
+        if event['id'] not in purchase_ids and event['cik'] in candidates and not fin.get('evidence_valid') and facts_checked.get(str(event['cik']), '')<now[:10]:
+            refresh.append(event)
+    analysis_queue = purchases + refresh
+    for p in analysis_queue:
         start = (date.fromisoformat(p['transaction_date']) - timedelta(days=6)).isoformat()
         group = aggregate(events, start, p['transaction_date'])
         totals[p['id']] = next((g['amount'] for g in group if g['cik']==p['cik']), 0)
-    prioritized = sorted(purchases, key=lambda p: totals[p['id']], reverse=True)
+    prioritized = sorted(analysis_queue, key=lambda p: totals[p['id']], reverse=True)
     facts_limit = max(1, min(int(os.getenv('MAX_FACTS_PER_RUN', '30')), 100))
     for p in prioritized:
         cik = p['cik']
@@ -103,12 +115,22 @@ def main():
                 if cik not in raw_facts:
                     if len(raw_facts) >= facts_limit:
                         raise RuntimeError('Budget fondamentali: analisi differita, non verificata')
+                    facts_checked[str(cik)] = now[:10]
+                    raw_facts[cik] = None  # Cache failures too; never repeat a failing CIK per run.
                     raw_facts[cik] = company_facts(cik)
+                if raw_facts[cik] is None:
+                    raise RuntimeError('Companyfacts non accessibile in questa esecuzione')
                 facts_cache[key] = summarize_company_facts(raw_facts[cik], p['filed'])
             except Exception as exc:
                 facts_cache[key] = None
                 errors.append(f"Companyfacts CIK {cik}: {type(exc).__name__}: {str(exc)[:75]}")
-        p['fundamentals'] = facts_cache[key]
+        if facts_cache[key] is not None:
+            p['fundamentals'] = facts_cache[key]
+        elif p.get('fundamentals'):
+            p['fundamentals'] = dict(p['fundamentals'])
+            p['fundamentals']['data_warnings'] = list(p['fundamentals'].get('data_warnings', [])) + ['Aggiornamento SEC non riuscito/differito: conservato snapshot precedente']
+        else:
+            p['fundamentals'] = None
         p['analysis'] = screen(p, p['fundamentals'], distinct_insiders_near(p, events))
         merged[p['id']] = p
 

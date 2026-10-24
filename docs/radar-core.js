@@ -25,6 +25,19 @@ const RadarCore = (()=>{
   return {...f,cik:latest.cik,key:key(latest),company:latest.company,symbol:latest.symbol,
     transactions:mergeTransactions(f.transactions||[],rows),group:groups.find(g=>g.cik===latest.cik)||f.group};
  });}
- return {defaults,evaluate,key,loadFavorites,mergeTransactions,hydrate};
+ function homeDecision(g){
+  const f=evaluate(g.amount,g.market_cap,defaults), a=g.analysis||{};
+  if(g.aggregation_verified&&g.amount<defaults.min_weekly_amount)return 'excluded';
+  if(f.status==='escluso'&&g.market_cap_verified===true&&g.aggregation_verified)return 'excluded';
+  if(f.status!=='supera'||g.market_cap_verified!==true||!g.aggregation_verified||a.score_status!=='verificato'||a.fundamentals_verified!==true||a.valuation_verified!==true)return 'pending';
+  return a.quality_pass===true&&Number.isFinite(a.radar_score)?'selected':'excluded';
+ }
+ function searchWindows(groups,asOf,days){
+  if(![7,30,90,180,365].includes(days))throw Error('Periodo non valido');
+  const end=new Date(asOf+'T00:00:00Z'),start=new Date(end);start.setUTCDate(end.getUTCDate()-days+1);
+  const first=start.toISOString().slice(0,10);
+  return groups.filter(g=>g.window_end>=first&&g.window_end<=asOf);
+ }
+ return {defaults,evaluate,key,loadFavorites,mergeTransactions,hydrate,homeDecision,searchWindows};
 })();
 if(typeof module!=='undefined')module.exports=RadarCore;

@@ -51,7 +51,9 @@ class DualScoreTests(unittest.TestCase):
         x=dict(amount=1000000,officer_title='CEO',valuation_verified=True)
         for cf,cap in [(None,39),(False,39),(True,49)]:
             a=screen(x,dict(revenue_growing=True,eps_growing=True,cashflow_positive=cf))
-            self.assertEqual(a['opportunity_score'],cap)
+            self.assertIsNone(a['radar_score'])
+            self.assertEqual(a['score_status'],'non_verificabile')
+            self.assertLessEqual(a['radar_provisional'],29)
             self.assertFalse(a['valuation_verified'])
             self.assertFalse(a['notify'])
             self.assertFalse(a['buy_signal'])

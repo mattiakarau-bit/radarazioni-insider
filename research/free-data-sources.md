@@ -51,3 +51,13 @@ Esito concreto: nessun provider gratuito di prezzi/capitalizzazioni è stato val
 redistribuzione in RadarAzioni. Filtri e storico espongono `non_verificabile`, non risultati
 calcolati da prezzi ipotetici. Comparatore matematico ±5% testato, gate reale chiuso fino
 alla verifica di fonte/licenza, split, classe azionaria, eventi e fondamentali aggiornati.
+
+## Riesame 0.6.0
+
+Verificate nuovamente le condizioni pubbliche di Stooq e Alpha Vantage: nessuna nuova
+fonte autorizzata alla redistribuzione integrata. Anche [FMP](https://site.financialmodelingprep.com/pricing-plans)
+richiede uno specifico accordo per visualizzazione/redistribuzione: un endpoint gratuito
+non basta per pubblicarne i dati. Nessuna registrazione, abbonamento o chiave attivata.
+SEC resta attiva per dati finanziari; public float e prezzi Form 4 non diventano
+capitalizzazione corrente. Il campo capitalizzazione resta assente finché non c’è una
+fonte utilizzabile e riconciliata. Vedi diagnosi dei rating per problemi dei tag ricavi.

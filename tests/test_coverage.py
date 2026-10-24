@@ -72,3 +72,19 @@ class CoverageTests(unittest.TestCase):
             discover(state,2,'2026-10-24T12:00:00+00:00')
         self.assertEqual(state['backfill_cursor'],'2026-09-01')
         self.assertNotIn('2026-09-01',state['indexes'])
+    def test_failed_financial_refresh_preserves_previous_snapshot(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);paths={k:root/(k+'.json') for k in ('STATE','RESULTS','HISTORY','MODEL')}
+            today=run.datetime.now(run.timezone.utc).date().isoformat();f=filing(1,today)
+            event=dict(id=f['url']+'#tx0',form_url=f['url'],cik=1,symbol='TEST',company='Test',filed=today,transaction_date=today,shares=2000,unit_price=100,amount=200000,owners=['A'],insider='A',fundamentals=dict(revenue_years=[dict(year=2024,value=123,filed='2025-01-01')],eps_years=[],cashflow_years=[],revenue_growing=None,eps_growing=None,cashflow_positive=None))
+            paths['HISTORY'].write_text(json.dumps(dict(filings=[event])))
+            paths['STATE'].write_text(json.dumps(dict(processed=[filing_key(f['url'])])))
+            def discovery(state,days,now):
+                state.update(indexes={},index_retries=[],backfill_cursor=today)
+                return [],[],[]
+            with patch.multiple(run,**paths),patch.object(run,'discover',side_effect=discovery),patch.object(run,'company_facts',side_effect=OSError('offline')) as facts:
+                run.main()
+                saved=json.loads(paths['HISTORY'].read_text())['filings'][0]
+                self.assertEqual(saved['fundamentals']['revenue_years'][0]['value'],123)
+                self.assertTrue(any('snapshot precedente' in x for x in saved['fundamentals']['data_warnings']))
+                facts.assert_called_once()

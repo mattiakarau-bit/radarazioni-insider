@@ -1,4 +1,4 @@
-# RadarAzioni – Insider Intelligence · 0.5.0
+# RadarAzioni – Insider Intelligence · 0.6.0
 
 App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
 trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
@@ -7,13 +7,13 @@ Preferiti locali, nessuna sincronizzazione tra dispositivi.
 ## Funzioni pubblicate
 
 - Radar Score = 70% opportunità + 30% forza insider; componenti visibili nella spiegazione.
-  Limite 49 senza valutazione, 39 con cassa insufficiente/non verificata, 29 con dati
-  incompleti o cassa/EPS problematici. Vale il limite più basso. Non è probabilità di rendimento.
+  Limiti sul risultato: 49 senza valutazione, 39 con storico cassa non soddisfatto,
+  29 con dati non verificati o perdite/cassa negativa effettive. Vale il limite più basso. Non è probabilità di rendimento.
 - Radar per società, finestra `[data analisi − 6 giorni, data analisi]` secondo data operazione.
 - Filtri modificabili: cap minima 500M USD, totale 7 giorni 100k USD, percentuale 0,002%,
   tetto proporzionale 2M USD. Importo richiesto `max(100k, min(2M, cap * 0.002 / 100))`.
   Sono ipotesi da validare storicamente. Senza cap i filtri restano non verificabili;
-  la vista iniziale include i non verificabili sopra il minimo assoluto, senza indicarli conformi.
+  la Ricerca può includere non verificabili; il Radar pubblica solo casi con evidenze complete.
 - Stelle e Preferiti con migrazione di `radarazioni-watchlist-v2`. Vecchia chiave conservata,
   nuova `radarazioni-favorites-v1`. Operazioni salvate fuse per ID e non eliminate quando
   la società esce dal radar o dai filtri. Errori/quota storage segnalati; backup precedente
@@ -75,3 +75,30 @@ Test UI su WebKit/Chromium a 390×844, 768×1024 e 320×568: overflow, dettagli 
 migrazione, stelle, filtri, Preferiti persistenti e storico. Sono simulazioni browser,
 non certificazione su hardware iPhone/iPad. Il workflow qualità viene eseguito sulla PR
 prima dell’unione e nuovamente prima della pubblicazione su main.
+
+## Aggiornamento 0.6.0
+
+Radar automatico selettivo, senza form o ricerca avanzata. Parametri fissi 500M/100k/
+0,002%/tetto 2M; aggregazione certa, capitalizzazione e valutazione verificate, fondamentali
+riconciliati e criteri positivi, score attendibile. Le società prive di evidenze non sono
+selezionate: contatore attese e stato vuoto corretto. Le fonti/criteri sono nell’icona ⓘ.
+
+Ricerca personalizzata separata: cap, importo, percentuale, tetto, score minimo, testo,
+periodo 7/30/90/180/365 giorni, ordinamento ed esito verifica. I parametri locali precedenti
+migrano semanticamente nella ricerca, non alterano il Radar. Il periodo è la selezione
+delle date finali delle finestre; ogni finestra di aggregazione resta sempre sette giorni.
+
+Un solo pulsante globale sul punteggio; fattori favorevoli/rischi specifici nei Dettagli.
+Stato SEC discreto nel pannello; errore dati/indici inaccessibili o scan oltre 48 ore sono
+segnalati chiaramente. Preferiti e chiavi di salvataggio 0.5.0 conservati.
+
+Scoring: rimosso il doppio limite prima/dopo la media; mancata crescita distinta da perdite
+attuali. Nessun voto numerico quando i dati sono non verificabili. Gli snapshot finanziari
+senza tag/perimetro restano conservati ma vengono sospesi dal rating attendibile e
+riesaminati prioritariamente con SEC. Nessuna capitalizzazione integrata da fonti con
+redistribuzione non autorizzata. Contratto di valutazione completa solo interno/preparatorio,
+non attivato da un flag client; fixture solide testate a 94 e perdite/cassa negativa <=29.
+
+[Diagnosi, distribuzione e conteggi effettivi](research/rating-diagnosis-0.6.0.md).
+I test UI coprono anche home vuota, isolamento della ricerca, dettagli senza pulsanti
+ripetuti, fixture selezionabile verificata e avviso critico SEC, oltre a Preferiti persistenti.

@@ -3,7 +3,7 @@ from scanner.run import HISTORY, RESULTS, load_json, save_json, distinct_insider
 from scanner.identity import normalize_events
 from scanner.scoring import screen
 from scanner.radar import publish
-from scanner.fundamentals import _trend
+from scanner.fundamentals import _trend, review_legacy
 
 
 def main():
@@ -15,10 +15,12 @@ def main():
             # Earlier compact dates could admit same-day/later financial filings.
             for key in ('revenue_years', 'eps_years', 'cashflow_years'):
                 fin[key] = [p for p in fin.get(key, []) if p['filed'] < event['filed']]
-            fin['revenue_growing'] = _trend(fin['revenue_years'])
+            fin['revenue_growing'] = _trend(fin['revenue_years']) if fin.get('schema_version')!=2 or fin.get('revenue_scope_verified') else None
             fin['eps_growing'] = _trend(fin['eps_years'])
             cf = fin['cashflow_years'][-3:]
             fin['cashflow_positive'] = all(p['value'] > 0 for p in cf) if len(cf) == 3 and all(cf[i]['year'] - cf[i-1]['year'] == 1 for i in (1,2)) else None
+        event['fundamentals'] = review_legacy(fin)
+        fin = event['fundamentals']
         event['analysis'] = screen(event, fin, distinct_insiders_near(event, events))
     events.sort(key=lambda x: (x['filed'], x['amount']), reverse=True)
     history.update(version=2, filings=events)
