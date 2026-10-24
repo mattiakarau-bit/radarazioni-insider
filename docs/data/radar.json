@@ -38,19 +38,18 @@
         "base_amount_pass": true
       },
       "analysis": {
-        "radar_score": null,
+        "radar_score": 29.0,
         "radar_provisional": 29.0,
         "radar_uncapped": 29.0,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
-          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
           "Ultimo EPS o flusso di cassa negativo: massimo 29"
         ],
         "radar_weights": {
           "opportunity": 0.7,
           "insider": 0.3
         },
-        "score_status": "non_verificabile",
+        "score_status": "provvisorio",
         "insider_strength_score": 50,
         "opportunity_score": 20,
         "score": 29.0,
@@ -63,117 +62,167 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
-        "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
         "financial_problem": true,
         "quality_pass": false,
-        "priority": "Non verificabile",
+        "priority": "Provvisorio",
         "notify": false,
         "buy_signal": false,
         "model": "Radar Score v0.6.0 — regole non validate storicamente"
       },
       "fundamentals": {
+        "schema_version": 2,
         "revenue_years": [
           {
             "year": 2021,
             "value": 23257000000,
-            "filed": "2024-02-15"
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2022,
             "value": 24697000000,
-            "filed": "2025-02-13"
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2023,
             "value": 18800000000,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2024,
             "value": 18707000000,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2025,
             "value": 18481000000,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           }
         ],
         "eps_years": [
           {
             "year": 2022,
             "value": 12.6,
-            "filed": "2025-02-13"
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2023,
             "value": 1.71,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2024,
             "value": 3.72,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2025,
             "value": -0.68,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           }
         ],
         "cashflow_years": [
           {
             "year": 2021,
             "value": 2405000000,
-            "filed": "2024-02-15"
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2022,
             "value": 2621000000,
-            "filed": "2025-02-13"
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2023,
             "value": 3357000000,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2024,
             "value": 2151000000,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2025,
             "value": 2021000000,
-            "filed": "2026-02-11"
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           }
         ],
-        "revenue_growing": null,
+        "revenue_scope_verified": true,
+        "revenue_growing": false,
         "eps_growing": false,
         "cashflow_positive": true,
-        "company_name": "Corebridge Financial, Inc.",
-        "legacy_indicators": {
-          "revenue_growing": false,
-          "eps_growing": false,
-          "cashflow_positive": true
-        },
-        "schema_version": 1,
-        "evidence_valid": false,
-        "fresh": null,
-        "revenue_scope_verified": false,
         "eps_latest_positive": false,
         "cashflow_latest_positive": true,
-        "data_warnings": [
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-        ]
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "Corebridge Financial, Inc."
       },
       "fundamentals_as_of": "2026-10-23",
       "transactions": [
@@ -200,115 +249,165 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
                 "year": 2021,
                 "value": 23257000000,
-                "filed": "2024-02-15"
+                "filed": "2024-02-15",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2022,
                 "value": 24697000000,
-                "filed": "2025-02-13"
+                "filed": "2025-02-13",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": 18800000000,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": 18707000000,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 18481000000,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2022,
                 "value": 12.6,
-                "filed": "2025-02-13"
+                "filed": "2025-02-13",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": 1.71,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": 3.72,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": -0.68,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2021,
                 "value": 2405000000,
-                "filed": "2024-02-15"
+                "filed": "2024-02-15",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2022,
                 "value": 2621000000,
-                "filed": "2025-02-13"
+                "filed": "2025-02-13",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": 3357000000,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": 2151000000,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 2021000000,
-                "filed": "2026-02-11"
+                "filed": "2026-02-11",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
-            "revenue_growing": null,
+            "revenue_scope_verified": true,
+            "revenue_growing": false,
             "eps_growing": false,
             "cashflow_positive": true,
-            "company_name": "Corebridge Financial, Inc.",
-            "legacy_indicators": {
-              "revenue_growing": false,
-              "eps_growing": false,
-              "cashflow_positive": true
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": false,
             "cashflow_latest_positive": true,
-            "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+            "fresh": true,
+            "evidence_valid": true,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+            "data_warnings": [],
+            "company_name": "Corebridge Financial, Inc."
           },
           "analysis": {
-            "radar_score": null,
+            "radar_score": 29.0,
             "radar_provisional": 29.0,
             "radar_uncapped": 29.0,
             "radar_caps": [
               "Valutazione assente/non verificata: massimo provvisorio 49",
-              "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
               "Ultimo EPS o flusso di cassa negativo: massimo 29"
             ],
             "radar_weights": {
               "opportunity": 0.7,
               "insider": 0.3
             },
-            "score_status": "non_verificabile",
+            "score_status": "provvisorio",
             "insider_strength_score": 50,
             "opportunity_score": 20,
             "score": 29.0,
@@ -321,18 +420,17 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-              "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+              "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
               "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
             "independence_verified": false,
             "verified_independent_insiders": null,
             "valuation_verified": false,
-            "fundamentals_verified": false,
-            "financial_data_complete": false,
+            "fundamentals_verified": true,
+            "financial_data_complete": true,
             "financial_problem": true,
             "quality_pass": false,
-            "priority": "Non verificabile",
+            "priority": "Provvisorio",
             "notify": false,
             "buy_signal": false,
             "model": "Radar Score v0.6.0 — regole non validate storicamente"
@@ -397,7 +495,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: criterio non soddisfatto (non equivale da solo a dissesto)",
           "Possibili co-dichiarazioni: importo e conteggio sono stime prudenziali, non totale verificato"
@@ -415,105 +513,162 @@
         "model": "Radar Score v0.6.0 — regole non validate storicamente"
       },
       "fundamentals": {
+        "schema_version": 2,
         "revenue_years": [
           {
             "year": 2022,
-            "value": 17500000,
-            "filed": "2024-04-11"
+            "value": 203300000,
+            "filed": "2024-04-11",
+            "start": "2021-02-01",
+            "end": "2022-01-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2023,
-            "value": 27800000,
-            "filed": "2025-04-15"
+            "value": 296400000,
+            "filed": "2025-04-15",
+            "start": "2022-02-01",
+            "end": "2023-01-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2024,
-            "value": 33300000,
-            "filed": "2026-04-14"
+            "value": 298200000,
+            "filed": "2026-04-14",
+            "start": "2023-02-01",
+            "end": "2024-01-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2025,
-            "value": 40700000,
-            "filed": "2026-04-14"
+            "value": 306200000,
+            "filed": "2026-04-14",
+            "start": "2024-02-01",
+            "end": "2025-01-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
             "year": 2026,
-            "value": 43800000,
-            "filed": "2026-04-14"
+            "value": 329800000,
+            "filed": "2026-04-14",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "tag": "Revenues",
+            "unit": "USD"
           }
         ],
         "eps_years": [
           {
             "year": 2022,
             "value": -170.3,
-            "filed": "2024-04-11"
+            "filed": "2024-04-11",
+            "start": "2021-02-01",
+            "end": "2022-01-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2023,
             "value": -43.17,
-            "filed": "2025-04-15"
+            "filed": "2025-04-15",
+            "start": "2022-02-01",
+            "end": "2023-01-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2024,
             "value": -31.52,
-            "filed": "2026-04-14"
+            "filed": "2026-04-14",
+            "start": "2023-02-01",
+            "end": "2024-01-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2025,
             "value": -17.62,
-            "filed": "2026-04-14"
+            "filed": "2026-04-14",
+            "start": "2024-02-01",
+            "end": "2025-01-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2026,
             "value": 1.88,
-            "filed": "2026-04-14"
+            "filed": "2026-04-14",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           }
         ],
         "cashflow_years": [
           {
             "year": 2022,
             "value": -42300000,
-            "filed": "2024-04-11"
+            "filed": "2024-04-11",
+            "start": "2021-02-01",
+            "end": "2022-01-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2023,
             "value": -47700000,
-            "filed": "2025-04-15"
+            "filed": "2025-04-15",
+            "start": "2022-02-01",
+            "end": "2023-01-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2024,
             "value": -15700000,
-            "filed": "2026-04-14"
+            "filed": "2026-04-14",
+            "start": "2023-02-01",
+            "end": "2024-01-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2025,
             "value": 12900000,
-            "filed": "2026-04-14"
+            "filed": "2026-04-14",
+            "start": "2024-02-01",
+            "end": "2025-01-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2026,
             "value": 3500000,
-            "filed": "2026-04-14"
+            "filed": "2026-04-14",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           }
         ],
+        "revenue_scope_verified": false,
         "revenue_growing": null,
         "eps_growing": true,
         "cashflow_positive": false,
-        "company_name": "Rent the Runway, Inc.",
-        "legacy_indicators": {
-          "revenue_growing": true,
-          "eps_growing": true,
-          "cashflow_positive": false
-        },
-        "schema_version": 1,
-        "evidence_valid": false,
-        "fresh": null,
-        "revenue_scope_verified": false,
         "eps_latest_positive": true,
         "cashflow_latest_positive": true,
+        "fresh": true,
+        "evidence_valid": false,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
         "data_warnings": [
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-        ]
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "Rent the Runway, Inc."
       },
       "fundamentals_as_of": "2026-10-23",
       "transactions": [
@@ -543,105 +698,162 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
                 "year": 2022,
-                "value": 17500000,
-                "filed": "2024-04-11"
+                "value": 203300000,
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2023,
-                "value": 27800000,
-                "filed": "2025-04-15"
+                "value": 296400000,
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2024,
-                "value": 33300000,
-                "filed": "2026-04-14"
+                "value": 298200000,
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2025,
-                "value": 40700000,
-                "filed": "2026-04-14"
+                "value": 306200000,
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2026,
-                "value": 43800000,
-                "filed": "2026-04-14"
+                "value": 329800000,
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2022,
                 "value": -170.3,
-                "filed": "2024-04-11"
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": -43.17,
-                "filed": "2025-04-15"
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": -31.52,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": -17.62,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2026,
                 "value": 1.88,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2022,
                 "value": -42300000,
-                "filed": "2024-04-11"
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": -47700000,
-                "filed": "2025-04-15"
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": -15700000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 12900000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2026,
                 "value": 3500000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": true,
             "cashflow_positive": false,
-            "company_name": "Rent the Runway, Inc.",
-            "legacy_indicators": {
-              "revenue_growing": true,
-              "eps_growing": true,
-              "cashflow_positive": false
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": true,
             "cashflow_latest_positive": true,
+            "fresh": true,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Rent the Runway, Inc."
           },
           "analysis": {
             "radar_score": null,
@@ -670,7 +882,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
@@ -719,105 +931,162 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
                 "year": 2022,
-                "value": 17500000,
-                "filed": "2024-04-11"
+                "value": 203300000,
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2023,
-                "value": 27800000,
-                "filed": "2025-04-15"
+                "value": 296400000,
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2024,
-                "value": 33300000,
-                "filed": "2026-04-14"
+                "value": 298200000,
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2025,
-                "value": 40700000,
-                "filed": "2026-04-14"
+                "value": 306200000,
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2026,
-                "value": 43800000,
-                "filed": "2026-04-14"
+                "value": 329800000,
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2022,
                 "value": -170.3,
-                "filed": "2024-04-11"
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": -43.17,
-                "filed": "2025-04-15"
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": -31.52,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": -17.62,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2026,
                 "value": 1.88,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2022,
                 "value": -42300000,
-                "filed": "2024-04-11"
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": -47700000,
-                "filed": "2025-04-15"
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": -15700000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 12900000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2026,
                 "value": 3500000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": true,
             "cashflow_positive": false,
-            "company_name": "Rent the Runway, Inc.",
-            "legacy_indicators": {
-              "revenue_growing": true,
-              "eps_growing": true,
-              "cashflow_positive": false
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": true,
             "cashflow_latest_positive": true,
+            "fresh": true,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Rent the Runway, Inc."
           },
           "analysis": {
             "radar_score": null,
@@ -846,7 +1115,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
@@ -890,105 +1159,162 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
                 "year": 2022,
-                "value": 17500000,
-                "filed": "2024-04-11"
+                "value": 203300000,
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2023,
-                "value": 27800000,
-                "filed": "2025-04-15"
+                "value": 296400000,
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2024,
-                "value": 33300000,
-                "filed": "2026-04-14"
+                "value": 298200000,
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2025,
-                "value": 40700000,
-                "filed": "2026-04-14"
+                "value": 306200000,
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
                 "year": 2026,
-                "value": 43800000,
-                "filed": "2026-04-14"
+                "value": 329800000,
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2022,
                 "value": -170.3,
-                "filed": "2024-04-11"
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": -43.17,
-                "filed": "2025-04-15"
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": -31.52,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": -17.62,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2026,
                 "value": 1.88,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2022,
                 "value": -42300000,
-                "filed": "2024-04-11"
+                "filed": "2024-04-11",
+                "start": "2021-02-01",
+                "end": "2022-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": -47700000,
-                "filed": "2025-04-15"
+                "filed": "2025-04-15",
+                "start": "2022-02-01",
+                "end": "2023-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": -15700000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2023-02-01",
+                "end": "2024-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 12900000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2024-02-01",
+                "end": "2025-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2026,
                 "value": 3500000,
-                "filed": "2026-04-14"
+                "filed": "2026-04-14",
+                "start": "2025-02-01",
+                "end": "2026-01-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": true,
             "cashflow_positive": false,
-            "company_name": "Rent the Runway, Inc.",
-            "legacy_indicators": {
-              "revenue_growing": true,
-              "eps_growing": true,
-              "cashflow_positive": false
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": true,
             "cashflow_latest_positive": true,
+            "fresh": true,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Rent the Runway, Inc."
           },
           "analysis": {
             "radar_score": null,
@@ -1016,7 +1342,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
@@ -1091,7 +1417,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente",
@@ -1110,27 +1436,24 @@
         "model": "Radar Score v0.6.0 — regole non validate storicamente"
       },
       "fundamentals": {
+        "schema_version": 2,
         "revenue_years": [],
         "eps_years": [],
         "cashflow_years": [],
+        "revenue_scope_verified": false,
         "revenue_growing": null,
         "eps_growing": null,
         "cashflow_positive": null,
-        "company_name": "Blackstone Private Real Estate Credit and Income Fund",
-        "legacy_indicators": {
-          "revenue_growing": null,
-          "eps_growing": null,
-          "cashflow_positive": null
-        },
-        "schema_version": 1,
-        "evidence_valid": false,
-        "fresh": null,
-        "revenue_scope_verified": false,
         "eps_latest_positive": null,
         "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
         "data_warnings": [
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-        ]
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "fundamentals_as_of": "2026-10-23",
       "transactions": [
@@ -1163,27 +1486,24 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [],
             "eps_years": [],
             "cashflow_years": [],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": null,
             "cashflow_positive": null,
-            "company_name": "Blackstone Private Real Estate Credit and Income Fund",
-            "legacy_indicators": {
-              "revenue_growing": null,
-              "eps_growing": null,
-              "cashflow_positive": null
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": null,
             "cashflow_latest_positive": null,
+            "fresh": false,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Blackstone Private Real Estate Credit and Income Fund"
           },
           "analysis": {
             "radar_score": null,
@@ -1209,7 +1529,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -1256,27 +1576,24 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [],
             "eps_years": [],
             "cashflow_years": [],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": null,
             "cashflow_positive": null,
-            "company_name": "Blackstone Private Real Estate Credit and Income Fund",
-            "legacy_indicators": {
-              "revenue_growing": null,
-              "eps_growing": null,
-              "cashflow_positive": null
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": null,
             "cashflow_latest_positive": null,
+            "fresh": false,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Blackstone Private Real Estate Credit and Income Fund"
           },
           "analysis": {
             "radar_score": null,
@@ -1302,7 +1619,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -1351,27 +1668,24 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [],
             "eps_years": [],
             "cashflow_years": [],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": null,
             "cashflow_positive": null,
-            "company_name": "Blackstone Private Real Estate Credit and Income Fund",
-            "legacy_indicators": {
-              "revenue_growing": null,
-              "eps_growing": null,
-              "cashflow_positive": null
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": null,
             "cashflow_latest_positive": null,
+            "fresh": false,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Blackstone Private Real Estate Credit and Income Fund"
           },
           "analysis": {
             "radar_score": null,
@@ -1397,7 +1711,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -1446,27 +1760,24 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [],
             "eps_years": [],
             "cashflow_years": [],
+            "revenue_scope_verified": false,
             "revenue_growing": null,
             "eps_growing": null,
             "cashflow_positive": null,
-            "company_name": "Blackstone Private Real Estate Credit and Income Fund",
-            "legacy_indicators": {
-              "revenue_growing": null,
-              "eps_growing": null,
-              "cashflow_positive": null
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": null,
             "cashflow_latest_positive": null,
+            "fresh": false,
+            "evidence_valid": false,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
             "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+            ],
+            "company_name": "Blackstone Private Real Estate Credit and Income Fund"
           },
           "analysis": {
             "radar_score": null,
@@ -1492,7 +1803,7 @@
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+              "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
               "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
               "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -1679,8 +1990,8 @@
       },
       "analysis": {
         "radar_score": null,
-        "radar_provisional": 24.5,
-        "radar_uncapped": 24.5,
+        "radar_provisional": 29,
+        "radar_uncapped": 42.0,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
           "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -1691,26 +2002,25 @@
         },
         "score_status": "non_verificabile",
         "insider_strength_score": 35,
-        "opportunity_score": 20,
-        "score": 24.5,
+        "opportunity_score": 45,
+        "score": 29,
         "insider_reasons": [
           "Importo dichiarato: 293,089.08 USD"
         ],
         "reasons": [
+          "Ricavi totali annuali in crescita",
           "Cassa operativa positiva in tre esercizi"
         ],
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
         "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "financial_data_complete": true,
         "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
@@ -1719,105 +2029,160 @@
         "model": "Radar Score v0.6.0 — regole non validate storicamente"
       },
       "fundamentals": {
+        "schema_version": 2,
         "revenue_years": [
           {
-            "year": 2021,
-            "value": 131603000,
-            "filed": "2024-03-07"
+            "year": 2013,
+            "value": 60051000,
+            "filed": "2016-03-10",
+            "start": "2013-01-01",
+            "end": "2013-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
-            "year": 2022,
-            "value": 123217000,
-            "filed": "2025-03-06"
+            "year": 2014,
+            "value": 69472000,
+            "filed": "2017-03-09",
+            "start": "2014-01-01",
+            "end": "2014-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
-            "year": 2023,
-            "value": 117410000,
-            "filed": "2026-03-16"
+            "year": 2015,
+            "value": 75138000,
+            "filed": "2018-03-09",
+            "start": "2015-01-01",
+            "end": "2015-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
-            "year": 2024,
-            "value": 123651000,
-            "filed": "2026-03-16"
+            "year": 2016,
+            "value": 80262000,
+            "filed": "2018-03-09",
+            "start": "2016-01-01",
+            "end": "2016-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           },
           {
-            "year": 2025,
-            "value": 125319000,
-            "filed": "2026-03-16"
+            "year": 2017,
+            "value": 91358000,
+            "filed": "2018-03-09",
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
           }
         ],
         "eps_years": [
           {
             "year": 2021,
             "value": 1.52,
-            "filed": "2024-03-07"
+            "filed": "2024-03-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2022,
             "value": 1.92,
-            "filed": "2025-03-06"
+            "filed": "2025-03-06",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2023,
             "value": 0.96,
-            "filed": "2026-03-16"
+            "filed": "2026-03-16",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2024,
             "value": 1,
-            "filed": "2026-03-16"
+            "filed": "2026-03-16",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           },
           {
             "year": 2025,
             "value": 0.56,
-            "filed": "2026-03-16"
+            "filed": "2026-03-16",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
           }
         ],
         "cashflow_years": [
           {
             "year": 2021,
             "value": 44278000,
-            "filed": "2024-03-07"
+            "filed": "2024-03-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2022,
             "value": 23383000,
-            "filed": "2025-03-06"
+            "filed": "2025-03-06",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2023,
             "value": 20975000,
-            "filed": "2026-03-16"
+            "filed": "2026-03-16",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2024,
             "value": 21590000,
-            "filed": "2026-03-16"
+            "filed": "2026-03-16",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           },
           {
             "year": 2025,
             "value": 18607000,
-            "filed": "2026-03-16"
+            "filed": "2026-03-16",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
           }
         ],
-        "revenue_growing": null,
+        "revenue_scope_verified": true,
+        "revenue_growing": true,
         "eps_growing": false,
         "cashflow_positive": true,
-        "company_name": "Silvercrest Asset Management Group Inc.",
-        "legacy_indicators": {
-          "revenue_growing": false,
-          "eps_growing": false,
-          "cashflow_positive": true
-        },
-        "schema_version": 1,
-        "evidence_valid": false,
-        "fresh": null,
-        "revenue_scope_verified": false,
         "eps_latest_positive": true,
         "cashflow_latest_positive": true,
-        "data_warnings": [
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-        ]
+        "fresh": false,
+        "evidence_valid": true,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "Silvercrest Asset Management Group Inc."
       },
       "fundamentals_as_of": "2026-10-23",
       "transactions": [
@@ -1845,110 +2210,165 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
-                "year": 2021,
-                "value": 131603000,
-                "filed": "2024-03-07"
+                "year": 2013,
+                "value": 60051000,
+                "filed": "2016-03-10",
+                "start": "2013-01-01",
+                "end": "2013-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2022,
-                "value": 123217000,
-                "filed": "2025-03-06"
+                "year": 2014,
+                "value": 69472000,
+                "filed": "2017-03-09",
+                "start": "2014-01-01",
+                "end": "2014-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2023,
-                "value": 117410000,
-                "filed": "2026-03-16"
+                "year": 2015,
+                "value": 75138000,
+                "filed": "2018-03-09",
+                "start": "2015-01-01",
+                "end": "2015-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2024,
-                "value": 123651000,
-                "filed": "2026-03-16"
+                "year": 2016,
+                "value": 80262000,
+                "filed": "2018-03-09",
+                "start": "2016-01-01",
+                "end": "2016-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2025,
-                "value": 125319000,
-                "filed": "2026-03-16"
+                "year": 2017,
+                "value": 91358000,
+                "filed": "2018-03-09",
+                "start": "2017-01-01",
+                "end": "2017-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2021,
                 "value": 1.52,
-                "filed": "2024-03-07"
+                "filed": "2024-03-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2022,
                 "value": 1.92,
-                "filed": "2025-03-06"
+                "filed": "2025-03-06",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": 0.96,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": 1,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": 0.56,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2021,
                 "value": 44278000,
-                "filed": "2024-03-07"
+                "filed": "2024-03-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2022,
                 "value": 23383000,
-                "filed": "2025-03-06"
+                "filed": "2025-03-06",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": 20975000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": 21590000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 18607000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
-            "revenue_growing": null,
+            "revenue_scope_verified": true,
+            "revenue_growing": true,
             "eps_growing": false,
             "cashflow_positive": true,
-            "company_name": "Silvercrest Asset Management Group Inc.",
-            "legacy_indicators": {
-              "revenue_growing": false,
-              "eps_growing": false,
-              "cashflow_positive": true
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": true,
             "cashflow_latest_positive": true,
-            "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+            "fresh": false,
+            "evidence_valid": true,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+            "data_warnings": [],
+            "company_name": "Silvercrest Asset Management Group Inc."
           },
           "analysis": {
             "radar_score": null,
-            "radar_provisional": 20.0,
-            "radar_uncapped": 20.0,
+            "radar_provisional": 29,
+            "radar_uncapped": 37.5,
             "radar_caps": [
               "Valutazione assente/non verificata: massimo provvisorio 49",
               "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -1959,26 +2379,25 @@
             },
             "score_status": "non_verificabile",
             "insider_strength_score": 20,
-            "opportunity_score": 20,
-            "score": 20.0,
+            "opportunity_score": 45,
+            "score": 29,
             "insider_reasons": [
               "Importo dichiarato: 34,615.24 USD"
             ],
             "reasons": [
+              "Ricavi totali annuali in crescita",
               "Cassa operativa positiva in tre esercizi"
             ],
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-              "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
             "independence_verified": false,
             "verified_independent_insiders": null,
             "valuation_verified": false,
             "fundamentals_verified": false,
-            "financial_data_complete": false,
+            "financial_data_complete": true,
             "financial_problem": false,
             "quality_pass": false,
             "priority": "Non verificabile",
@@ -2011,110 +2430,165 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
-                "year": 2021,
-                "value": 131603000,
-                "filed": "2024-03-07"
+                "year": 2013,
+                "value": 60051000,
+                "filed": "2016-03-10",
+                "start": "2013-01-01",
+                "end": "2013-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2022,
-                "value": 123217000,
-                "filed": "2025-03-06"
+                "year": 2014,
+                "value": 69472000,
+                "filed": "2017-03-09",
+                "start": "2014-01-01",
+                "end": "2014-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2023,
-                "value": 117410000,
-                "filed": "2026-03-16"
+                "year": 2015,
+                "value": 75138000,
+                "filed": "2018-03-09",
+                "start": "2015-01-01",
+                "end": "2015-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2024,
-                "value": 123651000,
-                "filed": "2026-03-16"
+                "year": 2016,
+                "value": 80262000,
+                "filed": "2018-03-09",
+                "start": "2016-01-01",
+                "end": "2016-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2025,
-                "value": 125319000,
-                "filed": "2026-03-16"
+                "year": 2017,
+                "value": 91358000,
+                "filed": "2018-03-09",
+                "start": "2017-01-01",
+                "end": "2017-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2021,
                 "value": 1.52,
-                "filed": "2024-03-07"
+                "filed": "2024-03-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2022,
                 "value": 1.92,
-                "filed": "2025-03-06"
+                "filed": "2025-03-06",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": 0.96,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": 1,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": 0.56,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2021,
                 "value": 44278000,
-                "filed": "2024-03-07"
+                "filed": "2024-03-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2022,
                 "value": 23383000,
-                "filed": "2025-03-06"
+                "filed": "2025-03-06",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": 20975000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": 21590000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 18607000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
-            "revenue_growing": null,
+            "revenue_scope_verified": true,
+            "revenue_growing": true,
             "eps_growing": false,
             "cashflow_positive": true,
-            "company_name": "Silvercrest Asset Management Group Inc.",
-            "legacy_indicators": {
-              "revenue_growing": false,
-              "eps_growing": false,
-              "cashflow_positive": true
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": true,
             "cashflow_latest_positive": true,
-            "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+            "fresh": false,
+            "evidence_valid": true,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+            "data_warnings": [],
+            "company_name": "Silvercrest Asset Management Group Inc."
           },
           "analysis": {
             "radar_score": null,
-            "radar_provisional": 24.5,
-            "radar_uncapped": 24.5,
+            "radar_provisional": 29,
+            "radar_uncapped": 42.0,
             "radar_caps": [
               "Valutazione assente/non verificata: massimo provvisorio 49",
               "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -2125,26 +2599,25 @@
             },
             "score_status": "non_verificabile",
             "insider_strength_score": 35,
-            "opportunity_score": 20,
-            "score": 24.5,
+            "opportunity_score": 45,
+            "score": 29,
             "insider_reasons": [
               "Importo dichiarato: 152,305.52 USD"
             ],
             "reasons": [
+              "Ricavi totali annuali in crescita",
               "Cassa operativa positiva in tre esercizi"
             ],
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-              "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
             "independence_verified": false,
             "verified_independent_insiders": null,
             "valuation_verified": false,
             "fundamentals_verified": false,
-            "financial_data_complete": false,
+            "financial_data_complete": true,
             "financial_problem": false,
             "quality_pass": false,
             "priority": "Non verificabile",
@@ -2177,110 +2650,165 @@
           ],
           "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
           "fundamentals": {
+            "schema_version": 2,
             "revenue_years": [
               {
-                "year": 2021,
-                "value": 131603000,
-                "filed": "2024-03-07"
+                "year": 2013,
+                "value": 60051000,
+                "filed": "2016-03-10",
+                "start": "2013-01-01",
+                "end": "2013-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2022,
-                "value": 123217000,
-                "filed": "2025-03-06"
+                "year": 2014,
+                "value": 69472000,
+                "filed": "2017-03-09",
+                "start": "2014-01-01",
+                "end": "2014-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2023,
-                "value": 117410000,
-                "filed": "2026-03-16"
+                "year": 2015,
+                "value": 75138000,
+                "filed": "2018-03-09",
+                "start": "2015-01-01",
+                "end": "2015-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2024,
-                "value": 123651000,
-                "filed": "2026-03-16"
+                "year": 2016,
+                "value": 80262000,
+                "filed": "2018-03-09",
+                "start": "2016-01-01",
+                "end": "2016-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               },
               {
-                "year": 2025,
-                "value": 125319000,
-                "filed": "2026-03-16"
+                "year": 2017,
+                "value": 91358000,
+                "filed": "2018-03-09",
+                "start": "2017-01-01",
+                "end": "2017-12-31",
+                "tag": "Revenues",
+                "unit": "USD"
               }
             ],
             "eps_years": [
               {
                 "year": 2021,
                 "value": 1.52,
-                "filed": "2024-03-07"
+                "filed": "2024-03-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2022,
                 "value": 1.92,
-                "filed": "2025-03-06"
+                "filed": "2025-03-06",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2023,
                 "value": 0.96,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2024,
                 "value": 1,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               },
               {
                 "year": 2025,
                 "value": 0.56,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "EarningsPerShareDiluted",
+                "unit": "USD/shares"
               }
             ],
             "cashflow_years": [
               {
                 "year": 2021,
                 "value": 44278000,
-                "filed": "2024-03-07"
+                "filed": "2024-03-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2022,
                 "value": 23383000,
-                "filed": "2025-03-06"
+                "filed": "2025-03-06",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2023,
                 "value": 20975000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2024,
                 "value": 21590000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               },
               {
                 "year": 2025,
                 "value": 18607000,
-                "filed": "2026-03-16"
+                "filed": "2026-03-16",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
               }
             ],
-            "revenue_growing": null,
+            "revenue_scope_verified": true,
+            "revenue_growing": true,
             "eps_growing": false,
             "cashflow_positive": true,
-            "company_name": "Silvercrest Asset Management Group Inc.",
-            "legacy_indicators": {
-              "revenue_growing": false,
-              "eps_growing": false,
-              "cashflow_positive": true
-            },
-            "schema_version": 1,
-            "evidence_valid": false,
-            "fresh": null,
-            "revenue_scope_verified": false,
             "eps_latest_positive": true,
             "cashflow_latest_positive": true,
-            "data_warnings": [
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo"
-            ]
+            "fresh": false,
+            "evidence_valid": true,
+            "as_of": "2026-10-23",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+            "data_warnings": [],
+            "company_name": "Silvercrest Asset Management Group Inc."
           },
           "analysis": {
             "radar_score": null,
-            "radar_provisional": 24.5,
-            "radar_uncapped": 24.5,
+            "radar_provisional": 29,
+            "radar_uncapped": 42.0,
             "radar_caps": [
               "Valutazione assente/non verificata: massimo provvisorio 49",
               "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -2291,26 +2819,25 @@
             },
             "score_status": "non_verificabile",
             "insider_strength_score": 35,
-            "opportunity_score": 20,
-            "score": 24.5,
+            "opportunity_score": 45,
+            "score": 29,
             "insider_reasons": [
               "Importo dichiarato: 106,168.32 USD"
             ],
             "reasons": [
+              "Ricavi totali annuali in crescita",
               "Cassa operativa positiva in tre esercizi"
             ],
             "warnings": [
               "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
               "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-              "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-              "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
               "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
             ],
             "independence_verified": false,
             "verified_independent_insiders": null,
             "valuation_verified": false,
             "fundamentals_verified": false,
-            "financial_data_complete": false,
+            "financial_data_complete": true,
             "financial_problem": false,
             "quality_pass": false,
             "priority": "Non verificabile",
@@ -7097,8 +7624,8 @@
       },
       "analysis": {
         "radar_score": null,
-        "radar_provisional": 20.0,
-        "radar_uncapped": 20.0,
+        "radar_provisional": 29,
+        "radar_uncapped": 37.5,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
           "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -7109,26 +7636,25 @@
         },
         "score_status": "non_verificabile",
         "insider_strength_score": 20,
-        "opportunity_score": 20,
-        "score": 20.0,
+        "opportunity_score": 45,
+        "score": 29,
         "insider_reasons": [
           "Importo dichiarato: 59,595.24 USD"
         ],
         "reasons": [
+          "Ricavi totali annuali in crescita",
           "Cassa operativa positiva in tre esercizi"
         ],
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
         "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "financial_data_complete": true,
         "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
@@ -7267,8 +7793,8 @@
       },
       "analysis": {
         "radar_score": null,
-        "radar_provisional": 24.5,
-        "radar_uncapped": 24.5,
+        "radar_provisional": 29,
+        "radar_uncapped": 42.0,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
           "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -7279,26 +7805,25 @@
         },
         "score_status": "non_verificabile",
         "insider_strength_score": 35,
-        "opportunity_score": 20,
-        "score": 24.5,
+        "opportunity_score": 45,
+        "score": 29,
         "insider_reasons": [
           "Importo dichiarato: 165,763.56 USD"
         ],
         "reasons": [
+          "Ricavi totali annuali in crescita",
           "Cassa operativa positiva in tre esercizi"
         ],
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
         "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "financial_data_complete": true,
         "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
@@ -7352,19 +7877,18 @@
         "base_amount_pass": true
       },
       "analysis": {
-        "radar_score": null,
+        "radar_score": 29.0,
         "radar_provisional": 29.0,
         "radar_uncapped": 29.0,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
-          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
           "Ultimo EPS o flusso di cassa negativo: massimo 29"
         ],
         "radar_weights": {
           "opportunity": 0.7,
           "insider": 0.3
         },
-        "score_status": "non_verificabile",
+        "score_status": "provvisorio",
         "insider_strength_score": 50,
         "opportunity_score": 20,
         "score": 29.0,
@@ -7377,18 +7901,17 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
-        "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
         "financial_problem": true,
         "quality_pass": false,
-        "priority": "Non verificabile",
+        "priority": "Provvisorio",
         "notify": false,
         "buy_signal": false,
         "model": "Radar Score v0.6.0 — regole non validate storicamente"
@@ -7467,7 +7990,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: criterio non soddisfatto (non equivale da solo a dissesto)",
           "Possibili co-dichiarazioni: importo e conteggio sono stime prudenziali, non totale verificato"
@@ -7559,7 +8082,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente",
@@ -7711,8 +8234,8 @@
       },
       "analysis": {
         "radar_score": null,
-        "radar_provisional": 24.5,
-        "radar_uncapped": 24.5,
+        "radar_provisional": 29,
+        "radar_uncapped": 42.0,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
           "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -7723,26 +8246,25 @@
         },
         "score_status": "non_verificabile",
         "insider_strength_score": 35,
-        "opportunity_score": 20,
-        "score": 24.5,
+        "opportunity_score": 45,
+        "score": 29,
         "insider_reasons": [
           "Importo dichiarato: 318,069.08 USD"
         ],
         "reasons": [
+          "Ricavi totali annuali in crescita",
           "Cassa operativa positiva in tre esercizi"
         ],
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
         "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "financial_data_complete": true,
         "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
@@ -8057,8 +8579,8 @@
       },
       "analysis": {
         "radar_score": null,
-        "radar_provisional": 24.5,
-        "radar_uncapped": 24.5,
+        "radar_provisional": 29,
+        "radar_uncapped": 42.0,
         "radar_caps": [
           "Valutazione assente/non verificata: massimo provvisorio 49",
           "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
@@ -8069,26 +8591,25 @@
         },
         "score_status": "non_verificabile",
         "insider_strength_score": 35,
-        "opportunity_score": 20,
-        "score": 24.5,
+        "opportunity_score": 45,
+        "score": 29,
         "insider_reasons": [
           "Importo dichiarato: 293,089.08 USD"
         ],
         "reasons": [
+          "Ricavi totali annuali in crescita",
           "Cassa operativa positiva in tre esercizi"
         ],
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
-          "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
-          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
         "valuation_verified": false,
         "fundamentals_verified": false,
-        "financial_data_complete": false,
+        "financial_data_complete": true,
         "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
