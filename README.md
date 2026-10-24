@@ -50,3 +50,27 @@ quindi massimo 49. Cassa negativa o dati insufficienti: massimo 39. Cassa operat
 positiva non dimostra adeguatezza del free cashflow o convenienza del prezzo.
 I due punteggi non si sommano. Tutte le notifiche sono disabilitate nello scoring v3;
 nessun BUY validato. Lo storico viene ricalcolato con la migrazione offline.
+
+## Release 0.4.0: coda e aggiornamenti
+
+Coda persistente per accession: 2/3 della capacità ai depositi recenti, 1/3 ai più vecchi,
+con prestito dei posti inutilizzati. Errori ritentati con attesa crescente (1–7 giorni),
+mai cancellati per scadenza della finestra. Ogni esecuzione aggiorna gli indici recenti,
+recupera un giorno precedente e ritenta fino a tre indici falliti. Budget di elaborazione
+18 minuti; con arrivi superiori alla capacità l’arretrato può crescere: nessuna garanzia
+di copertura totale o latenza. Form 4/A ancora esclusi e dichiarati come tali.
+
+`state.json` conserva coda, accession processate, indici verificati e cursore storico.
+`results.json.coverage.by_day` permette di riconciliare indicizzati = processati + in coda
+per ogni giorno e riporta URL originale e ora della verifica. I conteggi preesistenti non
+vengono inventati: si popolano con le scansioni effettive. Storico transazioni non troncato.
+La scrittura JSON è atomica per file; dati storici salvati prima delle accession processate.
+
+Versione visibile anche su mobile, manifest `docs/version.json`, controllo ogni 5 minuti,
+al ritorno in primo piano e al ripristino della rete. “Aggiorna e ricarica” applica il nuovo
+service worker e ricarica l’app, senza reinstallazione. Offline il controllo non dichiara
+aggiornamenti riusciti. Per la prossima release aggiornare insieme update.js, version.json,
+index.html e nome cache sw.js; i test verificano la coerenza.
+
+Test: `python -m unittest discover -s tests -v` e `node --test tests/update.test.cjs`.
+Ricognizione fonti e requisiti finanziari: [research/free-data-sources.md](research/free-data-sources.md).
