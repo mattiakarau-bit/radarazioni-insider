@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "last_scan_utc": null,
+  "status": "non configurato",
+  "model_status": "NON addestrato — screening basato su regole",
+  "coverage": {"days_checked": [], "form4_listed_in_checked_days": 0, "new_forms_this_run": 0, "unprocessed_listed_forms": 0},
+  "errors": [],
+  "filings": []
+}

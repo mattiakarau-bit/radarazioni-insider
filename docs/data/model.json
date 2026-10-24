@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "trained_utc": null,
+  "validated": false,
+  "status": "NON addestrato: servono SEC storici, CSV prezzi reali e validazione cronologica",
+  "note": "Nessun modello predittivo disponibile né probabilità di BUY"
+}
