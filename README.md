@@ -56,7 +56,7 @@ nessun BUY validato. Lo storico viene ricalcolato con la migrazione offline.
 Coda persistente per accession: 2/3 della capacità ai depositi recenti, 1/3 ai più vecchi,
 con prestito dei posti inutilizzati. Errori ritentati con attesa crescente (1–7 giorni),
 mai cancellati per scadenza della finestra. Ogni esecuzione aggiorna gli indici recenti,
-recupera un giorno precedente e ritenta fino a tre indici falliti. Budget di elaborazione
+recupera un giorno precedente solo se la coda non supera due lotti di elaborazione e ritenta fino a tre indici falliti. Budget di elaborazione
 18 minuti; con arrivi superiori alla capacità l’arretrato può crescere: nessuna garanzia
 di copertura totale o latenza. Form 4/A ancora esclusi e dichiarati come tali.
 

@@ -97,7 +97,9 @@ def discover(state, days, now):
     cursor = date.fromisoformat(state.get('backfill_cursor', (today-timedelta(days=days)).isoformat()))
     while cursor.weekday() >= 5:
         cursor -= timedelta(days=1)
-    targets.add(cursor)
+    backfill = len(state.get('pending', [])) <= 2 * max(1, min(int(os.getenv('MAX_FORMS_PER_RUN', '180')), 400))
+    if backfill:
+        targets.add(cursor)
     retries = set(state.get('index_retries', []))
     # Record gaps after downtime; otherwise a moving lookback can skip unseen days.
     previous = date.fromisoformat(state.get('last_discovery_day', today.isoformat()))
@@ -125,5 +127,5 @@ def discover(state, days, now):
             errors.append(f'{day}: {type(exc).__name__}: {str(exc)[:120]}')
     state['last_discovery_day'] = today.isoformat()
     state['index_retries'] = sorted(retries)
-    state['backfill_cursor'] = (cursor-timedelta(days=1)).isoformat()
+    state['backfill_cursor'] = (cursor-timedelta(days=1) if backfill else cursor).isoformat()
     return list({filing_key(x['url']): x for x in entries}.values()), checked, errors
