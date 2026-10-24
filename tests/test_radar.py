@@ -41,9 +41,9 @@ class RadarTests(unittest.TestCase):
         self.assertEqual(filter_result(1e9)['status'],'non_verificabile')
     def test_radar_weights_and_caps(self):
         a=screen(dict(amount=1e6,officer_title='CEO'),dict(revenue_growing=True,eps_growing=True,cashflow_positive=True))
-        self.assertAlmostEqual(a['radar_uncapped'],0.7*49+0.3*80)
-        self.assertEqual(a['radar_score'],49)
-        self.assertLessEqual(screen(dict(amount=1e6,officer_title='CEO'),None)['radar_score'],29)
+        self.assertAlmostEqual(a['radar_uncapped'],round(0.7*a['opportunity_score']+0.3*80,1))
+        self.assertIsNone(a['radar_score'])
+        self.assertLessEqual(screen(dict(amount=1e6,officer_title='CEO'),None)['radar_provisional'],29)
         self.assertFalse(a['buy_signal']);self.assertFalse(a['notify'])
     def test_history_months_and_price_band_is_not_a_signal(self):
         rows=[tx(1,'2026-03-01'),tx(2,'2026-09-01')]

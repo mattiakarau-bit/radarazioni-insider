@@ -21,3 +21,19 @@ test('filters match monetary and percentage units',()=>{
  assert.equal(C.evaluate(1e6,null).status,'non_verificabile');
  assert.throws(()=>C.evaluate(1,null,{...C.defaults,min_weekly_amount:NaN}));
 });
+test('automatic homepage ignores custom filters and never approves missing evidence',()=>{
+ const g={amount:200000,market_cap:null,market_cap_verified:false,aggregation_verified:true,analysis:{radar_score:99,score_status:'verificato',quality_pass:true}};
+ assert.equal(C.homeDecision(g),'pending');
+ assert.equal(C.homeDecision({...g,amount:20000}),'excluded');
+ const valid={...g,market_cap:1e9,market_cap_verified:true,analysis:{...g.analysis,fundamentals_verified:true,valuation_verified:true}};
+ assert.equal(C.homeDecision(valid),'selected');
+ assert.equal(C.evaluate(20000,null,{...C.defaults,min_weekly_amount:0}).base_amount_pass,true);
+ assert.equal(C.homeDecision({...valid,amount:20000}),'excluded');
+});
+test('custom period selects anchor dates without changing seven-day aggregation',()=>{
+ const g={window_start:'2026-09-28',window_end:'2026-10-04'};
+ assert.equal(C.searchWindows([g],'2026-10-10',7).length,1);
+ assert.equal(C.searchWindows([g],'2026-10-11',7).length,0);
+ assert.equal(C.searchWindows([g],'2026-10-11',30)[0].window_start,'2026-09-28');
+ assert.throws(()=>C.searchWindows([g],'2026-10-11',12));
+});
