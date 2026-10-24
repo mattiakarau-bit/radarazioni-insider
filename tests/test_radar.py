@@ -56,3 +56,8 @@ class RadarTests(unittest.TestCase):
         self.assertEqual(historical_review({},dict(current_price=100,split_adjusted=True),'2026-10-24')['status'],'non_verificabile')
     def test_future_filings_not_in_published_observations(self):
         self.assertEqual(publish([dict(tx(1),filed='2026-11-01')],'2026-10-24')['groups'],[])
+    def test_direct_and_indirect_co_reports_stay_conservative(self):
+        rows=[dict(tx(1,file=1),ownership_type='D'),dict(tx(1,file=2),ownership_type='I')]
+        g=aggregate(rows,'2026-10-18','2026-10-24')[0]
+        self.assertEqual(g['amount'],100000)
+        self.assertFalse(g['aggregation_verified'])

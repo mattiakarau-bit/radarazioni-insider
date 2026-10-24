@@ -24,7 +24,7 @@ Preferiti locali, nessuna sincronizzazione tra dispositivi.
 
 Accession + indice transazione deduplica gli alias URL. Righe distinte nel medesimo Form 4
 restano distinte. Per termini economici uguali (data, titolo/classe dichiarata, quantità,
-prezzo, natura della proprietà) in depositi distinti, l’aggregatore conta il massimo numero
+prezzo; proprietà diretta/indiretta non prova indipendenza) in depositi distinti, l’aggregatore conta il massimo numero
 di righe riportato in un singolo deposito, anziché sommare tutte le co-dichiarazioni.
 Questo può sottostimare acquisti indipendenti con gli stessi termini: la scheda indica
 **stima prudenziale**, non un totale verificato. Tutte le righe e somme originali rimangono

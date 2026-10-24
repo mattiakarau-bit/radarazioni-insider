@@ -24,7 +24,7 @@ def filter_result(amount, market_cap=None, params=None):
 
 def _economic_key(x):
     return (x.get('transaction_date'), x.get('security_title', '').strip().casefold(),
-            x.get('shares'), x.get('unit_price'), x.get('ownership_type', ''))
+            x.get('shares'), x.get('unit_price'))
 
 
 def aggregate(events, start, end):
