@@ -37,20 +37,9 @@ def save_json(path, value):
 
 
 def distinct_insiders_near(event: dict, events: list[dict]) -> int:
-    try:
-        d = date.fromisoformat(event['filed'])
-    except (ValueError, KeyError):
-        return 1
-    names = set()
-    for x in events:
-        if x.get('cik') != event.get('cik'):
-            continue
-        try:
-            if 0 <= (d - date.fromisoformat(x['filed'])).days <= 14:
-                names.update(x.get('owners') or [x.get('insider', '?')])
-        except (ValueError, KeyError):
-            continue
-    return max(1, len(names))
+    # Multiple reporting names can be related funds, joint filers or nominees.
+    # No verified affiliation dataset is available: never claim independence.
+    return 1
 
 
 def main():

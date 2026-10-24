@@ -128,22 +128,31 @@
         "company_name": "Corebridge Financial, Inc."
       },
       "analysis": {
-        "score": 35,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 50,
+        "opportunity_score": 20,
+        "score": 20,
+        "insider_reasons": [
+          "Importo dichiarato: 7,684,333.52 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -259,24 +268,33 @@
         "company_name": "Rent the Runway, Inc."
       },
       "analysis": {
-        "score": 85,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 70,
+        "opportunity_score": 39,
+        "score": 39,
+        "insider_reasons": [
+          "Importo dichiarato: 2,246,873.10 USD",
+          "Ruolo dichiarato dirigente/amministratore"
+        ],
         "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita"
         ],
         "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -398,24 +416,33 @@
         "company_name": "Rent the Runway, Inc."
       },
       "analysis": {
-        "score": 85,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 70,
+        "opportunity_score": 39,
+        "score": 39,
+        "insider_reasons": [
+          "Importo dichiarato: 2,246,873.10 USD",
+          "Ruolo dichiarato dirigente/amministratore"
+        ],
         "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita"
         ],
         "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -456,24 +483,31 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
-        "score": 35,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 2,000,000.00 USD"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -516,24 +550,31 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
-        "score": 35,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 2,000,000.00 USD"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -650,23 +691,32 @@
         "company_name": "Rent the Runway, Inc."
       },
       "analysis": {
-        "score": 75,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 50,
+        "opportunity_score": 39,
+        "score": 39,
+        "insider_reasons": [
+          "Importo dichiarato: 1,626,769.75 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita"
         ],
         "warnings": [
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -707,24 +757,31 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
-        "score": 35,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 726,226.56 USD"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -767,24 +824,31 @@
         "company_name": "Blackstone Private Real Estate Credit and Income Fund"
       },
       "analysis": {
-        "score": 35,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 500.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 726,226.56 USD"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -811,22 +875,32 @@
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
       "fundamentals": null,
       "analysis": {
-        "score": 28,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 100.000 USD",
-          "Acquisto di dirigente o amministratore"
+        "insider_strength_score": 55,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 431,249.07 USD",
+          "Ruolo dichiarato dirigente/amministratore"
         ],
+        "reasons": [],
         "warnings": [
-          "Dati finanziari non disponibili",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -940,23 +1014,31 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
-        "score": 38,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 35,
+        "opportunity_score": 20,
+        "score": 20,
+        "insider_reasons": [
+          "Importo dichiarato: 152,305.52 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 100.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1070,23 +1152,31 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
-        "score": 38,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 35,
+        "opportunity_score": 20,
+        "score": 20,
+        "insider_reasons": [
+          "Importo dichiarato: 106,168.32 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 100.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1199,23 +1289,32 @@
         "company_name": "CLEVELAND-CLIFFS INC."
       },
       "analysis": {
-        "score": 20,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Acquisto di dirigente o amministratore"
+        "insider_strength_score": 40,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 99,826.00 USD",
+          "Ruolo dichiarato dirigente/amministratore"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1282,23 +1381,32 @@
         "company_name": "Rapport Therapeutics, Inc."
       },
       "analysis": {
-        "score": 30,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 20,
+        "opportunity_score": 25,
+        "score": 25,
+        "insider_reasons": [
+          "Importo dichiarato: 98,477.64 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Utili per azione in crescita nel periodo verificabile"
+          "EPS annuale in crescita"
         ],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1334,24 +1442,31 @@
         "company_name": "PIMCO New York Municipal Income Fund II"
       },
       "analysis": {
-        "score": 20,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 77,084.78 USD"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1465,23 +1580,31 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
-        "score": 30,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 20,
+        "opportunity_score": 20,
+        "score": 20,
+        "insider_reasons": [
+          "Importo dichiarato: 59,595.24 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1516,23 +1639,31 @@
         "company_name": ""
       },
       "analysis": {
-        "score": 10,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di almeno 25.000 USD"
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 40,280.00 USD"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1646,23 +1777,31 @@
         "company_name": "Silvercrest Asset Management Group Inc."
       },
       "analysis": {
-        "score": 30,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 20,
+        "opportunity_score": 20,
+        "score": 20,
+        "insider_reasons": [
+          "Importo dichiarato: 34,615.24 USD"
+        ],
         "reasons": [
-          "Acquisto di almeno 25.000 USD",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1775,23 +1914,32 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
-        "score": 74,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 28,
+        "opportunity_score": 49,
+        "score": 49,
+        "insider_reasons": [
+          "Importo dichiarato: 23,451.45 USD",
+          "Ruolo dichiarato dirigente/amministratore"
+        ],
         "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita",
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1826,23 +1974,32 @@
         "company_name": "Baozun Inc."
       },
       "analysis": {
-        "score": 19,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di CEO/CFO"
+        "insider_strength_score": 38,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 19,950.00 USD",
+          "Ruolo dichiarato CEO/CFO"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -1877,23 +2034,32 @@
         "company_name": "Baozun Inc."
       },
       "analysis": {
-        "score": 19,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di CEO/CFO"
+        "insider_strength_score": 38,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 19,950.00 USD",
+          "Ruolo dichiarato CEO/CFO"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: dati annuali insufficienti",
-          "Flusso di cassa: dati annuali insufficienti",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: dati insufficienti",
+          "Cassa operativa positiva per tre esercizi consecutivi: dati insufficienti",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2006,23 +2172,32 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
-        "score": 74,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 28,
+        "opportunity_score": 49,
+        "score": 49,
+        "insider_reasons": [
+          "Importo dichiarato: 17,055.60 USD",
+          "Ruolo dichiarato dirigente/amministratore"
+        ],
         "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita",
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2135,23 +2310,32 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
-        "score": 74,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 28,
+        "opportunity_score": 49,
+        "score": 49,
+        "insider_reasons": [
+          "Importo dichiarato: 14,213.00 USD",
+          "Ruolo dichiarato dirigente/amministratore"
+        ],
         "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita",
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2264,23 +2448,32 @@
         "company_name": "CITY HOLDING COMPANY"
       },
       "analysis": {
-        "score": 74,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 28,
+        "opportunity_score": 49,
+        "score": 49,
+        "insider_reasons": [
+          "Importo dichiarato: 13,502.35 USD",
+          "Ruolo dichiarato dirigente/amministratore"
+        ],
         "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni",
-          "Fatturato annuale in crescita nel periodo verificabile",
-          "Utili per azione in crescita nel periodo verificabile",
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Fatturato annuale in crescita",
+          "EPS annuale in crescita",
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2368,24 +2561,32 @@
         "company_name": "Lion Copper Corp."
       },
       "analysis": {
-        "score": 24,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 8,400.00 USD",
+          "Ruolo dichiarato dirigente/amministratore"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2472,22 +2673,31 @@
         "company_name": "FIRST FINANCIAL CORPORATION"
       },
       "analysis": {
-        "score": 14,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_strength_score": 8,
+        "opportunity_score": 20,
+        "score": 20,
+        "insider_reasons": [
+          "Importo dichiarato: 6,372.42 USD"
+        ],
         "reasons": [
-          "Flussi di cassa operativi positivi in tre esercizi"
+          "Cassa operativa positiva per tre esercizi consecutivi"
         ],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2595,22 +2805,32 @@
         "company_name": "AIM ImmunoTech Inc."
       },
       "analysis": {
-        "score": 19,
-        "financial_data_complete": true,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di CEO/CFO"
+        "insider_strength_score": 38,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 5,093.75 USD",
+          "Ruolo dichiarato CEO/CFO"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: requisito non soddisfatto",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: requisito non soddisfatto",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": true,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2698,24 +2918,32 @@
         "company_name": "Lion Copper Corp."
       },
       "analysis": {
-        "score": 20,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 4,200.00 USD",
+          "Ruolo dichiarato dirigente/amministratore"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2803,24 +3031,32 @@
         "company_name": "Lion Copper Corp."
       },
       "analysis": {
-        "score": 20,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di dirigente o amministratore",
-          "Più insider distinti nello stesso intervallo di 14 giorni"
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 4,100.00 USD",
+          "Ruolo dichiarato dirigente/amministratore"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -2902,23 +3138,32 @@
         "company_name": "ATHENA GOLD CORPORATION"
       },
       "analysis": {
-        "score": 15,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
-        "reasons": [
-          "Acquisto di CEO/CFO"
+        "insider_strength_score": 30,
+        "opportunity_score": 0,
+        "score": 0,
+        "insider_reasons": [
+          "Importo dichiarato: 3,534.30 USD",
+          "Ruolo dichiarato CEO/CFO"
         ],
+        "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3006,21 +3251,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3108,21 +3363,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3210,21 +3475,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3312,21 +3587,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3414,21 +3699,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3516,21 +3811,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3618,21 +3923,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 700.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3720,21 +4035,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 698.25 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3822,21 +4147,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 687.05 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -3924,21 +4259,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 682.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4026,21 +4371,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 680.40 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4128,21 +4483,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4230,21 +4595,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4332,21 +4707,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4434,21 +4819,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4536,21 +4931,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4638,21 +5043,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4740,21 +5155,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4842,21 +5267,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 600.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -4944,21 +5379,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 598.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5046,21 +5491,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 598.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5148,21 +5603,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 585.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5250,21 +5715,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 585.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5352,21 +5827,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 500.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5454,21 +5939,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 500.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5556,21 +6051,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 350.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5658,21 +6163,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 350.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5760,21 +6275,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 330.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5862,21 +6387,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 292.20 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -5964,21 +6499,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 268.20 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6066,21 +6611,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 241.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6168,21 +6723,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 150.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6270,21 +6835,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 147.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6372,21 +6947,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 54.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6474,21 +7059,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 48.75 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6576,21 +7171,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 19.60 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6678,21 +7283,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 12.95 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6780,21 +7395,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 12.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6882,21 +7507,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 12.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -6984,21 +7619,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 12.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7086,21 +7731,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 6.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7188,21 +7843,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 3.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7290,21 +7955,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 3.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7392,21 +8067,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 3.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7494,21 +8179,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 3.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7596,21 +8291,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 3.00 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7698,21 +8403,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 1.80 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7800,21 +8515,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 1.75 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -7902,21 +8627,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 1.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -8004,21 +8739,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 1.50 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -8106,21 +8851,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 1.25 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     },
     {
@@ -8208,21 +8963,31 @@
         "company_name": "NATURE’S MIRACLE HOLDING INC."
       },
       "analysis": {
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
         "score": 0,
-        "financial_data_complete": false,
-        "priority": "Osservazione",
-        "notify": false,
+        "insider_reasons": [
+          "Importo dichiarato: 1.25 USD"
+        ],
         "reasons": [],
         "warnings": [
-          "Fatturato: dati annuali insufficienti",
-          "Utili per azione: requisito non soddisfatto",
-          "Flusso di cassa: requisito non soddisfatto",
-          "Prezzo corrente, ribasso dai massimi e valutazione NON verificati",
-          "Modello ML NON ancora addestrato e validato",
-          "Analisi finanziaria incompleta: punteggio limitato a 49/100"
+          "Indipendenza e collegamenti tra dichiaranti non verificati: nessun bonus cluster",
+          "La forza misura importo e ruolo, non il rendimento atteso",
+          "Valutazione e prezzo corrente non verificati: opportunità limitata a 49/100",
+          "Modello ML NON addestrato/validato; nessuna notifica BUY",
+          "Fatturato annuale in crescita: dati insufficienti",
+          "EPS annuale in crescita: requisito non soddisfatto",
+          "Cassa operativa positiva per tre esercizi consecutivi: requisito non soddisfatto",
+          "Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100"
         ],
-        "model": "Regole trasparenti v2 (NON machine learning)",
-        "buy_signal": false
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "financial_data_complete": false,
+        "priority": "Opportunità non verificata",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Due punteggi a regole v3 (NON machine learning)"
       }
     }
   ]

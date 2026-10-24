@@ -39,3 +39,14 @@ validazione e test cronologicamente, con intervalli di esclusione per target sov
 confrontare con regole e benchmark. Non usare lo storico attuale come prova di efficacia:
 è troppo breve. Verificare copertura e licenze delle fonti gratuite prima di scegliere il
 fornitore. Nessun servizio a pagamento o esecuzione automatica di ordini.
+
+## Due punteggi v3
+
+Forza insider: importo 0–50, ruolo 0–30; 20 punti cluster riservati e non
+assegnati finché non esiste una verifica documentata dell’indipendenza. Nomi distinti,
+fondi collegati e comproprietari non dimostrano decisioni indipendenti.
+Opportunità: fatturato 25, EPS 25, cassa operativa 20; valutazione ancora assente,
+quindi massimo 49. Cassa negativa o dati insufficienti: massimo 39. Cassa operativa
+positiva non dimostra adeguatezza del free cashflow o convenienza del prezzo.
+I due punteggi non si sommano. Tutte le notifiche sono disabilitate nello scoring v3;
+nessun BUY validato. Lo storico viene ricalcolato con la migrazione offline.
