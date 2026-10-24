@@ -28,7 +28,7 @@ const fits=async page=>{const x=await page.evaluate(()=>({width:innerWidth,scrol
    assert.equal(await page.locator('.score-explain').count(),0);
    await fits(page);
    const first=page.locator('#customResults .card').filter({has:page.locator('.star[aria-pressed="false"]')}).first();const symbol=await first.locator('.ticker').textContent();
-   await first.locator('.open-detail').click();assert.ok((await page.locator('#detailContent').textContent()).includes('Fattori favorevoli'));assert.ok((await page.locator('#detailContent').textContent()).includes('Rischi'));await page.locator('#closeDetail').click();
+   await first.locator('.open-detail').click();await page.getByRole('heading',{name:'Fattori favorevoli',exact:true}).waitFor();assert.ok((await page.locator('#detailContent').textContent()).includes('Fattori favorevoli'));assert.ok((await page.locator('#detailContent').textContent()).includes('Rischi'));await page.locator('#closeDetail').click();
    await first.locator('.star').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===3);
    for(const days of ['7','30','90','180','365'])await page.locator('#searchPeriod').selectOption(days);
    await page.locator('#minAmount').fill('1000000000');await page.locator('#visibility').selectOption('candidates');await page.locator('#filtersForm button[type=submit]').click();await page.waitForFunction(()=>document.querySelectorAll('#customResults .card').length===0);
