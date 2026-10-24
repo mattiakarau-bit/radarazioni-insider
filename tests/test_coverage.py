@@ -66,3 +66,9 @@ class CoverageTests(unittest.TestCase):
         self.assertIn('2026-10-15',state['index_retries'])
         self.assertIn('2020-01-01',state['index_retries'])
         self.assertIn('2026-10-01',state['indexes'])
+    def test_backfill_pauses_when_queue_is_loaded(self):
+        state={'pending':[filing(i) for i in range(400)],'backfill_cursor':'2026-09-01'}
+        with patch('scanner.sec.read_master_index',return_value=[]) as read:
+            discover(state,2,'2026-10-24T12:00:00+00:00')
+        self.assertEqual(state['backfill_cursor'],'2026-09-01')
+        self.assertNotIn('2026-09-01',state['indexes'])
