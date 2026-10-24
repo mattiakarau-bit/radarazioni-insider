@@ -6,6 +6,7 @@ multiple owners appear on the same filing (the owners are labelled as joint).
 """
 from __future__ import annotations
 import re
+from scanner.identity import filing_key, iso_date
 import xml.etree.ElementTree as ET
 
 
@@ -56,10 +57,10 @@ def parse_form4(submission: str, filing: dict) -> list[dict]:
             continue
         primary = owners[0]
         result.append({
-            'id': f"{filing['url']}#tx{idx}",
+            'id': f"{filing_key(filing['url'])}#tx{idx}",
             'company': company, 'symbol': symbol or 'N/D',
             'cik': int(issuer_cik) if issuer_cik.isdigit() else 0,
-            'filed': filing['filed'], 'transaction_date': _get(tx, 'transactionDate/value'),
+            'filed': iso_date(filing['filed']), 'transaction_date': iso_date(_get(tx, 'transactionDate/value')),
             'insider': ', '.join(o['name'] for o in owners),
             'officer_title': primary['officer_title'],
             'officer': any(o['officer'] for o in owners),

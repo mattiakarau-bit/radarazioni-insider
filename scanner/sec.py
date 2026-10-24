@@ -1,6 +1,7 @@
 """SEC public EDGAR client with conservative request throttling and explicit identity."""
 from __future__ import annotations
 import json
+from scanner.identity import filing_key, iso_date
 import os
 import time
 import urllib.error
@@ -54,7 +55,7 @@ def read_master_index(day: date) -> list[dict]:
         cik, company, form, filed, filename = [p.strip() for p in parts]
         if not cik.isdigit() or not filename.startswith("edgar/data/"):
             continue
-        output.append({"cik": int(cik), "company": company, "form": form, "filed": filed,
+        output.append({"cik": int(cik), "company": company, "form": form, "filed": iso_date(filed),
                        "url": f"{SEC_ROOT}/Archives/{filename}"})
     return output
 
@@ -75,7 +76,7 @@ def recent_entries(days: int = 5) -> tuple[list[dict], list[str], list[str]]:
             errors.append(f"{day.isoformat()}: HTTP {e.code}")
         except Exception as e:
             errors.append(f"{day.isoformat()}: {type(e).__name__}: {str(e)[:150]}")
-    return all_entries, checked, errors
+    return list({filing_key(x["url"]): x for x in all_entries}.values()), checked, errors
 
 
 def company_facts(cik: int) -> dict:
