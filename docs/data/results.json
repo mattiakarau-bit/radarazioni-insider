@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_scan_utc": "2026-10-24T16:41:39+00:00",
+  "last_scan_utc": "2026-10-24T20:38:11+00:00",
   "status": "Parziale",
   "source": "SEC EDGAR index + SEC Form 4 + SEC XBRL companyfacts",
   "model_status": "NON addestrato/validato — punteggio basato su regole",
@@ -20,6 +20,7 @@
     "lookback_days": 7,
     "transactions_stored": 81,
     "index_retry_days": [
+      "2026-10-15",
       "2026-10-16",
       "2026-10-19",
       "2026-10-20",
@@ -27,7 +28,7 @@
       "2026-10-22",
       "2026-10-23"
     ],
-    "backfill_next_date": "2026-10-15"
+    "backfill_next_date": "2026-10-14"
   },
   "errors": [
     "2026-10-23: ValueError: Indice SEC incompleto o non valido",
@@ -36,7 +37,7 @@
     "2026-10-20: ValueError: Indice SEC incompleto o non valido",
     "2026-10-19: ValueError: Indice SEC incompleto o non valido",
     "2026-10-16: ValueError: Indice SEC incompleto o non valido",
-    "Companyfacts CIK 2114459: HTTPError: HTTP Error 404: Not Found"
+    "2026-10-15: ValueError: Indice SEC incompleto o non valido"
   ],
   "filings": [
     {
