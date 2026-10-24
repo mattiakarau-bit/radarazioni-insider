@@ -10,7 +10,7 @@ test('version manifest, interface and worker agree',()=>{
 });
 test('version detection ignores malformed and unchanged manifests',()=>{
  assert.equal(isNewVersion(APP_VERSION,APP_VERSION),false);
- assert.equal(isNewVersion('0.5.0',APP_VERSION),true);
+ assert.equal(isNewVersion('0.6.0',APP_VERSION),true);
  for(const v of [null,undefined,{},'bad'])assert.equal(isNewVersion(v,APP_VERSION),false);
 });
 test('worker excludes live data and version, activates only on request',()=>{
@@ -29,7 +29,7 @@ test('client displays update and button reloads without reinstalling',async()=>{
   document:{querySelectorAll:()=>[],querySelector:s=>s==='#updateApp'?button:{classList:{remove:()=>offered=true}}},
   navigator:{},location:{protocol:'https:',reload:()=>reloads++},
   window:{addEventListener:()=>{}},setInterval:()=>{},Date,
-  fetch:async()=>({ok:true,json:async()=>({version:'0.5.0'})})
+  fetch:async()=>({ok:true,json:async()=>({version:'0.6.0'})})
  });
  await new Promise(r=>setImmediate(r));
  assert.equal(offered,true);await events.click();assert.equal(reloads,1);
@@ -37,7 +37,7 @@ test('client displays update and button reloads without reinstalling',async()=>{
 });
 test('release assets bypass stale browser HTTP caches',()=>{
  const html=fs.readFileSync('docs/index.html','utf8'),sw=fs.readFileSync('docs/sw.js','utf8');
- for(const asset of ['app.js','update.js','style.css']){
+ for(const asset of ['app.js','update.js','radar-core.js','style.css']){
   assert.ok(html.includes(`./${asset}?v=${APP_VERSION}`));
   assert.ok(sw.includes(`./${asset}?v=${APP_VERSION}`));
  }

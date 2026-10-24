@@ -36,7 +36,21 @@ def screen(item: dict, fin: dict | None, insider_count: int = 1) -> dict:
     if fin.get('cashflow_positive') is not True:
         opportunity = min(opportunity, 39)
         warnings.append('Flussi di cassa insufficienti/non verificati: opportunità limitata a 39/100')
-    return {'insider_strength_score': strength, 'opportunity_score': opportunity,
+    raw_radar = round(0.7*opportunity + 0.3*strength, 1)
+    radar = min(raw_radar, 49)  # Valuation is not verified by any integrated provider.
+    caps = ['Valutazione non verificata: Radar Score massimo 49']
+    if not all(fin.get(k) is not None for k in ('revenue_growing','eps_growing','cashflow_positive')):
+        radar = min(radar, 29)
+        caps.append('Dati finanziari incompleti: Radar Score massimo 29')
+    if fin.get('cashflow_positive') is not True:
+        radar = min(radar, 39)
+        caps.append('Cassa insufficiente/non verificata: Radar Score massimo 39')
+    if fin.get('cashflow_positive') is False or fin.get('eps_growing') is False:
+        radar = min(radar, 29)
+        caps.append('Problemi di cassa/EPS: Radar Score massimo 29')
+    return {'radar_score': radar, 'radar_uncapped': raw_radar, 'radar_caps': caps,
+            'radar_weights': {'opportunity': 0.7, 'insider': 0.3},
+            'insider_strength_score': strength, 'opportunity_score': opportunity,
             'score': opportunity,  # Compatibility for old clients: never expose strength as opportunity.
             'insider_reasons': insider_reasons, 'reasons': reasons, 'warnings': warnings,
             'independence_verified': False, 'verified_independent_insiders': None,

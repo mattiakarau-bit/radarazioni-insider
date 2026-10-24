@@ -2,6 +2,7 @@
 from scanner.run import HISTORY, RESULTS, load_json, save_json, distinct_insiders_near
 from scanner.identity import normalize_events
 from scanner.scoring import screen
+from scanner.radar import publish
 from scanner.fundamentals import _trend
 
 
@@ -26,6 +27,7 @@ def main():
     results.update(version=2, filings=events[:800])
     results.setdefault('coverage', {})['transactions_stored'] = len(events)
     save_json(RESULTS, results)
+    save_json(RESULTS.parent / 'radar.json', publish(events, results.get('last_scan_utc', '')[:10]))
     print(f'Migrated {len(events)} unique transactions')
 
 if __name__ == '__main__':

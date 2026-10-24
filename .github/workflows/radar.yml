@@ -13,7 +13,10 @@ concurrency:
   group: radarazioni-pages
   cancel-in-progress: false
 jobs:
+  quality:
+    uses: ./.github/workflows/quality.yml
   scan_and_package:
+    needs: quality
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -31,7 +34,7 @@ jobs:
         run: |
           node --check docs/app.js
           node --check docs/sw.js
-          node --test tests/update.test.cjs
+          node --test tests/*.test.cjs
       - name: Analizza i nuovi Form 4 SEC
         if: github.event_name != 'push'
         env:
@@ -46,7 +49,7 @@ jobs:
         run: |
           git config user.name 'RadarAzioni Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/results.json docs/data/state.json docs/data/events_history.json
+          git add docs/data/results.json docs/data/state.json docs/data/events_history.json docs/data/radar.json
           if ! git diff --cached --quiet; then
             git commit -m 'Aggiorna gli eventi SEC'
             git pull --rebase origin main
