@@ -35,3 +35,10 @@ test('client displays update and button reloads without reinstalling',async()=>{
  assert.equal(offered,true);await events.click();assert.equal(reloads,1);
  assert.equal(isNewVersion('0.3.0',APP_VERSION),false);
 });
+test('release assets bypass stale browser HTTP caches',()=>{
+ const html=fs.readFileSync('docs/index.html','utf8'),sw=fs.readFileSync('docs/sw.js','utf8');
+ for(const asset of ['app.js','update.js','style.css']){
+  assert.ok(html.includes(`./${asset}?v=${APP_VERSION}`));
+  assert.ok(sw.includes(`./${asset}?v=${APP_VERSION}`));
+ }
+});
