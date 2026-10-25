@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-10-25T08:32:48+00:00",
+  "updated_utc": "2026-10-25T09:49:29+00:00",
   "target_start": 2021,
   "target_end": 2026,
   "calendar_quarters_requested": 24,
@@ -73,7 +73,7 @@
   },
   "unique_candidate_events": 148348,
   "source_reconciliation": {
-    "realtime_only_rows": 81
+    "realtime_only_rows": 93
   },
   "unique_issuers_all": 9727,
   "unique_issuers_purchase_candidates": 6093,
@@ -84,7 +84,7 @@
   "financial_verified_issuers": 0,
   "market_cap_verified_issuers": 0,
   "return_labels_verified": 0,
-  "listing_observed_at": "2026-10-25T08:32:48+00:00",
+  "listing_observed_at": "2026-10-25T09:49:29+00:00",
   "listing_not_historical": true,
   "us_domicile_verified": false,
   "period_filed_start": "2021-01-04",
