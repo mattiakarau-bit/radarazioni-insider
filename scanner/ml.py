@@ -178,9 +178,9 @@ def populate_targets(db,benchmark_id='BENCHMARK_TOTAL_RETURN',cost_bps=20):
 
 
 def training_rows(db,horizon):
-    rows=db.execute("SELECT e.issuer_cik,f.*,t.exit_day,t.label,t.source_digest FROM features f JOIN events e USING(event_id) JOIN targets t USING(event_id) WHERE t.horizon=? AND t.status='verified' AND t.label IS NOT NULL",(horizon,)).fetchall()
+    rows=db.execute("SELECT e.issuer_cik,e.raw_json,f.*,t.exit_day,t.label,t.source_digest FROM features f JOIN events e USING(event_id) JOIN targets t USING(event_id) WHERE t.horizon=? AND t.status='verified' AND t.label IS NOT NULL",(horizon,)).fetchall()
     return [dict(event_id=r['event_id'],issuer_cik=r['issuer_cik'],as_of=r['as_of'],exit_day=r['exit_day'],label=r['label'],
-                 source_kind='SEC_real_verified_target' if r['source_kind']=='SEC_real' and r['source_digest'] else 'unverified',
+                 source_kind='SEC_real_verified_target' if r['source_kind']=='SEC_real' and r['source_digest'] and json.loads(r['raw_json']).get('currency_verified') is True else 'unverified',
                  max_source_public_at=r['max_source_public_at'],features=json.loads(r['values_json']),rule_score=r['rule_score']) for r in rows]
 
 
@@ -205,7 +205,7 @@ def research_status(root,db_path):
                 point_in_time_feature_rows=feature_count,verified_targets=verified,trained=trained,status='research_only' if trained else 'blocked',
                 models_prepared=['logistic_regression','gradient_boosting'],horizons=horizon_models,
                 metrics={h:r.get('metrics') for h,r in horizon_models.items()} if trained else None,benchmark_returns=None,
-                missing=['licensed_verified_total_return_prices','historical_security_identity','splits_dividends_delisting_proceeds','point_in_time_rule_baseline'] if not trained else [],
+                missing=['licensed_verified_total_return_prices','historical_security_identity','splits_dividends_delisting_proceeds','point_in_time_rule_baseline','verified_transaction_currency'] if not trained else [],
                 min_verified_targets=500,min_issuers=100,min_years=3,buy_signal=False,notify=False,
                 note='Nessuna performance o etichetta inventata; database ricostruibile dagli shard SEC. Adapter prezzi/identità non ancora approvati.')
     status['verified_source_events_in_current_import']=count

@@ -110,8 +110,9 @@ def normalize(row,sub,owners,quarter):
     if trans>filed:okay=False;reasons.append('transaction_after_filing')
     shares=number(row.get('TRANS_SHARES'));price=number(row.get('TRANS_PRICEPERSHARE'))
     owner_rows=owners.get(acc,[])
+    if not owner_rows or any(not o.get('RPTOWNERCIK','').isdigit() for o in owner_rows):okay=False;reasons.append('reporting_owner_identity_missing')
     return dict(id=f'{acc}#nd:{row["NONDERIV_TRANS_SK"]}',accession=acc,source_row_id=row['NONDERIV_TRANS_SK'],
-                source='SEC quarterly insider dataset',quarter=quarter,cik=cik,company=sub['ISSUERNAME'],symbol=sub.get('ISSUERTRADINGSYMBOL',''),
+                source='SEC quarterly insider dataset',currency='unknown',currency_verified=False,quarter=quarter,cik=cik,company=sub['ISSUERNAME'],symbol=sub.get('ISSUERTRADINGSYMBOL',''),
                 filed=filed,transaction_date=trans,available_from=(date.fromisoformat(filed)+timedelta(days=1)).isoformat(),
                 availability_precision='filing_date_only_conservative_next_calendar_day',form=sub['DOCUMENT_TYPE'],
                 original_filing_date=sec_date(sub['DATE_OF_ORIG_SUB']) if sub.get('DATE_OF_ORIG_SUB') else None,
@@ -120,11 +121,11 @@ def normalize(row,sub,owners,quarter):
                 amount=round(shares*price,2) if shares is not None and price is not None else None,
                 ownership_type=row.get('DIRECT_INDIRECT_OWNERSHIP'),code=row.get('TRANS_CODE'),
                 owner_ciks=sorted({o['RPTOWNERCIK'] for o in owner_rows}),
-                owners=[dict(cik=o['RPTOWNERCIK'],name=o['RPTOWNERNAME'],relationship=o.get('RPTOWNER_RELATIONSHIP',''),title=o.get('RPTOWNER_TITLE','')) for o in owner_rows],
+                owners=[dict(cik=o['RPTOWNERCIK'],name=o['RPTOWNERNAME'],relationship=o.get('RPTOWNER_RELATIONSHIP','').upper(),title=o.get('RPTOWNER_TITLE','')) for o in owner_rows],
                 insider=', '.join(o['RPTOWNERNAME'] for o in owner_rows),independence_verified=False,
-                officer=any('OFFICER' in o.get('RPTOWNER_RELATIONSHIP','') for o in owner_rows),
-                director=any('DIRECTOR' in o.get('RPTOWNER_RELATIONSHIP','') for o in owner_rows),
-                ten_pct=any('TENPERCENTOWNER' in o.get('RPTOWNER_RELATIONSHIP','') for o in owner_rows),
+                officer=any('OFFICER' in o.get('RPTOWNER_RELATIONSHIP','').upper() for o in owner_rows),
+                director=any('DIRECTOR' in o.get('RPTOWNER_RELATIONSHIP','').upper() for o in owner_rows),
+                ten_pct=any('TENPERCENTOWNER' in o.get('RPTOWNER_RELATIONSHIP','').upper() for o in owner_rows),
                 purchase_eligible=okay,exclusion_reasons=reasons,venue='not_verified_open_market',
                 original_url_status='issuer_accession_index_not_individually_fetched',
                 form_url=f'https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace("-","")}/{acc}-index.html',
@@ -183,8 +184,11 @@ def import_zip(path,quarter,raw_path,event_path):
     with gzip_writer(event_tmp) as output:
         for e in sorted(events,key=lambda e:e['id']):output.write(json.dumps(e,ensure_ascii=False,separators=(',',':'))+'\n')
     if raw_tmp.stat().st_size>40*1024*1024:raise ValueError('Quarter audit shard exceeds storage guard')
-    raw_tmp.replace(raw_path);event_tmp.replace(event_path)
-    return dict(counts=counts,issuer_ciks=sorted(issuers),candidate_issuer_ciks=sorted(candidate_issuers),owner_categories=dict(roles),
+    index_path=raw_path.with_name(quarter+'.accessions.json.gz');index_tmp=index_path.with_suffix('.tmp')
+    with gzip_writer(index_tmp) as idx:
+        json.dump(sorted(acc for acc,sub in submissions.items() if sub.get('DOCUMENT_TYPE') in ('4','4/A')),idx)
+    raw_tmp.replace(raw_path);event_tmp.replace(event_path);index_tmp.replace(index_path)
+    return dict(accessions_sha256=hashlib.sha256(index_path.read_bytes()).hexdigest(),counts=counts,issuer_ciks=sorted(issuers),candidate_issuer_ciks=sorted(candidate_issuers),owner_categories=dict(roles),
                 event_sha256=hashlib.sha256(event_path.read_bytes()).hexdigest(),audit_sha256=hashlib.sha256(raw_path.read_bytes()).hexdigest())
 
 
@@ -203,6 +207,23 @@ def iter_events(root):
                     canonical[key]['purchase_eligible']=False
                     canonical[key]['exclusion_reasons']=sorted(set(canonical[key]['exclusion_reasons']+['cross_archive_key_conflict']))
     yield from canonical.values()
+
+
+def known_bulk_accessions(root):
+    manifest=load_json(root/'data/insider/manifest.json',{'quarters':{}});known=set()
+    for q,r in manifest['quarters'].items():
+        if r.get('status')!='complete':continue
+        p=root/f'data/insider/{q}.accessions.json.gz'
+        if not p.is_file():continue
+        try:
+            if hashlib.sha256(p.read_bytes()).hexdigest()!=r.get('accessions_sha256'):continue
+            with gzip.open(p,'rt',encoding='utf-8') as f:known.update(json.load(f))
+        except (OSError,ValueError):continue
+    return known
+
+
+def listed_in_us(row):
+    return re.sub('[^A-Z]','',str(row.get('exchange','')).upper()) in {'NASDAQ','NYSE','NYSEAMERICAN','NYSEAMER','NYSEARCA','CBOE','CBOEBZX'}
 
 
 def reconcile(events,as_of):
@@ -266,7 +287,7 @@ def summarize(root,manifest,listing,now):
     for e in current:
         if e['current_eligible']:
             equity_issuers.add(e['cik'])
-            if e['cik'] in current_listing and current_listing[e['cik']].get('exchange') in ('Nasdaq','NYSE','NYSE American','Cboe BZX'):
+            if e['cik'] in current_listing and listed_in_us(current_listing[e['cik']]):
                 eligible.append(e)
     start_year=manifest.get('target_start',2021);end_year=manifest.get('target_end',2026);calendar_count=(end_year-start_year+1)*4
     completed=[q for q,r in manifest['quarters'].items() if r.get('status')=='complete' and start_year<=int(q[:4])<=end_year];published=manifest.get('published_quarters',[])
@@ -296,13 +317,14 @@ def summarize(root,manifest,listing,now):
     # Compact public per-quarter candidates, retained out of the main startup payload.
     for q in completed:
         qrows=[e for e in current if e['quarter']==q]
-        fields=('id','accession','cik','company','symbol','filed','transaction_date','available_from','security_title','shares','unit_price','amount','form','amendment','purchase_eligible','current_eligible','review_reasons','owner_ciks','officer','director','ten_pct','form_url','original_url_status')
+        fields=('id','currency','cik','company','symbol','filed','transaction_date','security_title','shares','unit_price','amount','form','amendment','current_eligible','review_reasons','officer','director','ten_pct','form_url')
         public=[]
         for e in qrows:
             item={k:e.get(k) for k in fields}
             item['insider']=', '.join(o['name'] for o in e['owners'][:2])+(f" + {len(e['owners'])-2} dichiaranti" if len(e['owners'])>2 else '')
+            item['owner_count']=len(e['owner_ciks'])
             item['owner_categories']=sorted({o['relationship'] for o in e['owners']})
-            item['us_listing_current']=e['cik'] in current_listing and current_listing[e['cik']].get('exchange') in ('Nasdaq','NYSE','NYSE American','Cboe BZX')
+            item['us_listing_current']=e['cik'] in current_listing and listed_in_us(current_listing[e['cik']])
             public.append(item)
         destination=root/f'docs/data/bulk/{q}.json';destination.parent.mkdir(parents=True,exist_ok=True)
         tmp=destination.with_suffix('.tmp');tmp.write_text(json.dumps(dict(quarter=q,events=public),ensure_ascii=False,separators=(',',':')),encoding='utf-8');tmp.replace(destination)
@@ -322,8 +344,8 @@ def main():
     manifest['published_quarters']=list(catalogue);manifest.pop('catalogue_error',None)
     for q,record in manifest['quarters'].items():
         if record.get('status')!='complete':continue
-        for suffix,key in (('audit','audit_sha256'),('events','event_sha256')):
-            shard=root/f'data/insider/{q}.{suffix}.jsonl.gz'
+        for suffix,key in (('audit','audit_sha256'),('events','event_sha256'),('accessions','accessions_sha256')):
+            shard=root/f'data/insider/{q}.{suffix}.jsonl.gz' if suffix!='accessions' else root/f'data/insider/{q}.accessions.json.gz'
             if not shard.is_file() or hashlib.sha256(shard.read_bytes()).hexdigest()!=record.get(key):
                 record.update(status='failed',error='Shard integrity failure; quarter queued for repair')
                 break

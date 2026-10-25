@@ -56,7 +56,9 @@ def main():
     limit = max(1, min(int(os.getenv('MAX_FORMS_PER_RUN', '180')), 400))
     days = max(2, min(int(os.getenv('LOOKBACK_DAYS', '7')), 14))
     entries, checked, errors = discover(state, days, now)
-    pending = merge_pending(state.get('pending', []), entries, seen)
+    from scanner.bulk import known_bulk_accessions  # Lazy import avoids module initialization cycles.
+    bulk_known=known_bulk_accessions(ROOT)
+    pending = merge_pending(state.get('pending', []), entries, seen | bulk_known)
     state['pending'] = pending
     # Persist discovery before downloads: backlog survives window expiry or interrupted runs.
     save_json(STATE, state)
@@ -156,8 +158,9 @@ def main():
     model_status = (f"Sperimentale — validazione cronologica su {model.get('test_count')} esempi; "
                     f"NON è un segnale BUY" if model.get('validated')
                     else 'NON addestrato/validato — punteggio basato su regole')
-    pending = merge_pending(pending, [], seen)
-    coverage = coverage_report(state['indexes'], seen, pending, checked, processed_success, failed)
+    pending = merge_pending(pending, [], seen | bulk_known)
+    coverage = coverage_report(state['indexes'], seen | bulk_known, pending, checked, processed_success, failed)
+    coverage['forms_already_in_structured_archives']=sum(filing_key(x['url']) in bulk_known for x in entries)
     coverage.update(lookback_days=days, transactions_stored=len(ordered),
                     index_retry_days=state['index_retries'], backfill_next_date=state['backfill_cursor'])
     data = {

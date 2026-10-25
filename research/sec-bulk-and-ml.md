@@ -95,3 +95,15 @@ point-in-time; prezzi Form 4 e public float non vengono spacciati per capitalizz
 
 I numeri effettivi aggiornati sono in `docs/data/history_coverage.json`,
 `docs/data/ml_status.json` e `data/insider/manifest.json`; non vengono fissati in questo documento.
+
+Gli accession già presenti in shard trimestrali integri vengono riconosciuti anche dallo
+scanner recente/backfill: non riscarica il documento originale. Il report giornaliero distingue
+quelli coperti dagli archivi da quelli appena scaricati; non copia milioni di accession nello
+stato pubblico. La UI usa proiezioni compatte; i record completi per ricerca restano negli
+shard compressi, non vengono eliminati per ridurre il sito.
+
+Il bulk non fornisce una colonna valuta: gli importi calcolati quantità×prezzo sono valori
+dichiarati, non conversioni USD. La UI li marca come valuta non verificata. Le caratteristiche
+as-filed possono conservarli come dichiarati, ma il gate di training richiede anche la valuta
+transazione verificata prima di classificare una riga come addestrabile. Nessuna conversione
+FX o base valutaria viene inventata.

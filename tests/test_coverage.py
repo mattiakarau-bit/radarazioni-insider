@@ -48,7 +48,7 @@ class CoverageTests(unittest.TestCase):
             def discovery(state,days,now):
                 state.update(indexes={'2026-10-23':dict(url='https://www.sec.gov/index',checked_utc=now,accessions=[filing_key(good['url']),filing_key(bad['url'])])},index_retries=[],backfill_cursor='2026-10-16')
                 return [good,bad],['2026-10-23'],[]
-            with patch.multiple(run,**paths),patch.object(run,'discover',side_effect=discovery),patch.object(run,'get',side_effect=['valid','broken']),patch.object(run,'parse_form4',side_effect=[[],ValueError('XML invalid')]),patch.object(run,'send_telegram') as notify:
+            with patch.multiple(run,ROOT=root,**paths),patch.object(run,'discover',side_effect=discovery),patch.object(run,'get',side_effect=['valid','broken']),patch.object(run,'parse_form4',side_effect=[[],ValueError('XML invalid')]),patch.object(run,'send_telegram') as notify:
                 run.main()
                 state=json.loads(paths['STATE'].read_text()); result=json.loads(paths['RESULTS'].read_text())
                 self.assertEqual(len(state['pending']),1)
@@ -82,7 +82,7 @@ class CoverageTests(unittest.TestCase):
             def discovery(state,days,now):
                 state.update(indexes={},index_retries=[],backfill_cursor=today)
                 return [],[],[]
-            with patch.multiple(run,**paths),patch.object(run,'discover',side_effect=discovery),patch.object(run,'company_facts',side_effect=OSError('offline')) as facts:
+            with patch.multiple(run,ROOT=root,**paths),patch.object(run,'discover',side_effect=discovery),patch.object(run,'company_facts',side_effect=OSError('offline')) as facts:
                 run.main()
                 saved=json.loads(paths['HISTORY'].read_text())['filings'][0]
                 self.assertEqual(saved['fundamentals']['revenue_years'][0]['value'],123)
@@ -94,3 +94,13 @@ class CoverageTests(unittest.TestCase):
         with patch('scanner.sec.get',return_value=data):
             rows=read_master_index(date(2026,10,23))
         self.assertEqual(rows[0]['form'],'4/A')
+    def test_structured_filings_are_not_downloaded_again(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);paths={k:root/(k+'.json') for k in ('STATE','RESULTS','HISTORY','MODEL')};f=filing(1)
+            def discovery(state,days,now):
+                state.update(indexes={'2026-10-23':dict(url='https://www.sec.gov/index',checked_utc=now,accessions=[filing_key(f['url'])])},index_retries=[],backfill_cursor='2026-10-16')
+                return [f],['2026-10-23'],[]
+            with patch.multiple(run,ROOT=root,**paths),patch.object(run,'discover',side_effect=discovery),patch('scanner.bulk.known_bulk_accessions',return_value={filing_key(f['url'])}),patch.object(run,'get') as get:
+                run.main();get.assert_not_called()
+            result=json.loads(paths['RESULTS'].read_text());self.assertEqual(result['coverage']['forms_already_in_structured_archives'],1)
+            self.assertEqual(json.loads(paths['STATE'].read_text())['processed'],[])

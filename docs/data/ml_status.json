@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-10-25T08:02:51+00:00",
+  "updated_utc": "2026-10-25T08:18:18+00:00",
   "events_stored": 0,
   "point_in_time_feature_rows": 0,
   "verified_targets": {
@@ -40,12 +40,14 @@
     "licensed_verified_total_return_prices",
     "historical_security_identity",
     "splits_dividends_delisting_proceeds",
-    "point_in_time_rule_baseline"
+    "point_in_time_rule_baseline",
+    "verified_transaction_currency"
   ],
   "min_verified_targets": 500,
   "min_issuers": 100,
   "min_years": 3,
   "buy_signal": false,
   "notify": false,
-  "note": "Nessuna performance o etichetta inventata; database ricostruibile dagli shard SEC. Adapter prezzi/identità non ancora approvati."
+  "note": "Nessuna performance o etichetta inventata; database ricostruibile dagli shard SEC. Adapter prezzi/identità non ancora approvati.",
+  "verified_source_events_in_current_import": 0
 }
