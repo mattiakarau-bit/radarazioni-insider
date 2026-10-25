@@ -178,3 +178,11 @@ clippate lato Python, senza riprendere importi da una finestra annuale che inizi
 prima del limite. Test specifico: un acquisto il 22 aprile non incrementa la
 settimana del 27 aprile nel semestre che inizia il 25 aprile. L’indice annuale resta
 separato per la ricerca personalizzata sugli altri periodi.
+
+### 0.8.2 — serie finanziarie SEC non obsolete
+
+L’estrattore sceglie il concetto annuale con fine periodo più recente, usando la
+priorità dei tag solo a parità di data. Un vecchio tag `Revenues` fermo al 2017 non
+nasconde più una serie 2023–2025. Non mescola concetti tra anni e mantiene i blocchi
+per ricavi parziali o discordanti. Le estrazioni precedenti vengono declassate e
+messe in coda di ricalcolo con priorità, senza attribuire loro validità corrente.

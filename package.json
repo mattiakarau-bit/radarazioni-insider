@@ -1,1 +1,1 @@
-{"name":"radarazioni-insider","private":true,"version":"0.8.1","scripts":{"test:ui":"node tests/mobile-ui.cjs"},"devDependencies":{"playwright":"1.58.2"}}
+{"name":"radarazioni-insider","private":true,"version":"0.8.2","scripts":{"test:ui":"node tests/mobile-ui.cjs"},"devDependencies":{"playwright":"1.58.2"}}

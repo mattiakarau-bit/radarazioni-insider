@@ -54,3 +54,22 @@ class FinancialEvidenceTests(unittest.TestCase):
     def test_legacy_scope_not_verified_without_source_metadata(self):
         f=review_legacy(dict(revenue_growing=True,revenue_years=[dict(year=2025,value=43.8)],eps_years=[],cashflow_years=[]))
         self.assertIsNone(f['revenue_growing']);self.assertTrue(f['legacy_indicators']['revenue_growing']);self.assertFalse(f['evidence_valid'])
+
+class RetiredConceptTests(unittest.TestCase):
+    def test_retired_revenues_do_not_hide_recent_series(self):
+        raw=facts();gaap=raw['facts']['us-gaap']
+        recent=gaap['Revenues']['units']['USD']
+        old=[dict(x,start=x['start'].replace(str(x['start'][:4]),str(int(x['start'][:4])-8)),end=x['end'].replace(str(x['end'][:4]),str(int(x['end'][:4])-8)),filed=x['filed'].replace(str(x['filed'][:4]),str(int(x['filed'][:4])-8))) for x in recent]
+        gaap['Revenues']['units']['USD']=old
+        gaap['RevenueFromContractWithCustomerExcludingAssessedTax']=dict(units={'USD':recent})
+        fin=summarize_company_facts(raw,'2026-10-25')
+        self.assertEqual(fin['revenue_years'][-1]['year'],2025)
+        self.assertEqual(fin['revenue_years'][-1]['tag'],'RevenueFromContractWithCustomerExcludingAssessedTax')
+        self.assertTrue(fin['fresh'])
+    def test_recent_partial_revenue_still_requires_scope_reconciliation(self):
+        raw=facts();g=raw['facts']['us-gaap']
+        g['RevenueFromContractWithCustomerExcludingAssessedTax']=g.pop('Revenues')
+        g['OperatingLeaseLeaseIncome']=dict(units={'USD':[]})
+        fin=summarize_company_facts(raw,'2026-10-25')
+        self.assertEqual(fin['revenue_years'][-1]['year'],2025)
+        self.assertFalse(fin['revenue_scope_verified']);self.assertFalse(fin['evidence_valid'])
