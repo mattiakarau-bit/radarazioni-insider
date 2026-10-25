@@ -80,7 +80,7 @@ def current_checks(e,as_of,first):
     changes=bool(e.review_reference and e.changes_review_start and e.changes_review_start<=first and recent(e.changes_review_as_of,as_of))
     return dict(annual_fundamentals_verified=annual,current_financials_verified=annual and balance,
                 balance_sheet_debt_verified=balance,current_price_verified=price,
-                current_valuation_verified=valuation_valid(e.valuation,as_of),post_purchase_changes_verified=changes)
+                current_valuation_verified=bool(valuation_valid(e.valuation,as_of) and price and e.valuation.as_of==e.price_as_of),post_purchase_changes_verified=changes)
 
 
 def build(events,as_of,evidence=None,months=6):
@@ -123,7 +123,8 @@ def build(events,as_of,evidence=None,months=6):
             w['distance_from_insider_pct']=round((e.current_price/adjusted-1)*100,4) if w['split_comparison_verified'] else None
         economic=[w for w in base if w['weekly_economic_verified']]
         eligible=[w for w in economic if w['split_comparison_verified']]
-        current_cap=e.valuation.market_cap if checks['current_valuation_verified'] else None
+        cap_verified=valuation_valid(e.valuation,as_of)
+        current_cap=e.valuation.market_cap if cap_verified else None
         current_cap_pass=current_cap is not None and current_cap>=DEFAULT_FILTERS['min_market_cap']
         for key,value in checks.items():
             metric={'annual_fundamentals_verified':'companies_annual_fundamentals_verified','current_financials_verified':'companies_current_financials_verified','current_price_verified':'companies_current_prices_verified','current_valuation_verified':'companies_valuation_verified','post_purchase_changes_verified':'companies_post_purchase_review_verified'}.get(key)
@@ -163,10 +164,10 @@ def build(events,as_of,evidence=None,months=6):
         # Compact company record: never ship raw transactions in homepage ranking.
         public={k:v for k,v in best.items() if k not in ('transactions','fundamentals','analysis','possible_duplicate_ids')}
         public.update(id=f'issuer:{cik}',analysis=analysis,selection_status=status,selection_reasons=reasons,
-                      market_cap=current_cap,market_cap_verified=checks['current_valuation_verified'],
+                      market_cap=current_cap,market_cap_verified=cap_verified,
                       current_price=e.current_price if checks['current_price_verified'] else None,
                       current_price_as_of=e.price_as_of if checks['current_price_verified'] else None,
-                      current_valuation_as_of=e.valuation.as_of if checks['current_valuation_verified'] else None,
+                      current_valuation_as_of=e.valuation.as_of if cap_verified else None,
                       current_checks=checks,significant_window_count=len(base),search_start=first,
                       detail_url=f'./data/companies/{cik}.json',transaction_ids=[x['id'] for x in best['transactions']])
         companies.append(public)

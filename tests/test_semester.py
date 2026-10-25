@@ -116,3 +116,17 @@ class NonPurchaseAmendmentTests(unittest.TestCase):
                 result=refresh_financials(root,[dict(cik=1,selection_status='pending',amount=100000)],ASOF,1)
             self.assertEqual(result['failed'],1)
             self.assertEqual(read(p,{})['financials']['as_of'],'2026-10-01')
+
+class DatedMarketEvidenceTests(unittest.TestCase):
+    def test_current_price_and_valuation_must_use_same_date(self):
+        e=verified(['2026-05-12'])
+        e=replace(e,price_as_of='2026-10-23')
+        r,_,_=build([purchase(1,'2026-05-12')],ASOF,{1:e})
+        self.assertEqual(r['groups'],[])
+        self.assertEqual(r['stats']['companies_current_cap_pass'],1)
+        self.assertEqual(r['stats']['companies_valuation_verified'],0)
+    def test_future_capitalization_never_validates_past_week(self):
+        e=verified(['2026-05-12'])
+        cap=replace(e.historical_caps['2026-05-12'],as_of=ASOF)
+        e=replace(e,historical_caps={'2026-05-12':cap})
+        self.assertEqual(build([purchase(1,'2026-05-12')],ASOF,{1:e})[0]['groups'],[])
