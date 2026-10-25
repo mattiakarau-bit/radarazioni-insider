@@ -178,6 +178,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
         if first_year<=x['transaction_date']<=as_of:yearly_sources.setdefault(x['cik'],[]).append(x)
     for cik,d in details.items():
         if not d['transactions']:d['transactions']=yearly_sources.get(cik,[])
+        d['financial_snapshot']=read(root/f'data/analysis/{cik}.json',None)
         fields=('id','form_url','cik','company','symbol','filed','transaction_date','amount','shares','unit_price','security_title','insider','currency','currency_basis','amendment','purchase_eligible','review_reasons')
         d['transactions']=[{k:x.get(k) for k in fields} for x in d['transactions']]
         write(root/f'docs/data/companies/{cik}.json',d)
