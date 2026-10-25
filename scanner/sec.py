@@ -1,6 +1,7 @@
 """SEC public EDGAR client with conservative request throttling and explicit identity."""
 from __future__ import annotations
 import json
+import re
 from scanner.identity import filing_key, iso_date
 import os
 import time
@@ -52,7 +53,7 @@ def index_url(day: date) -> str:
 
 def read_master_index(day: date) -> list[dict]:
     data = get(index_url(day))
-    if "CIK|Company Name|Form Type|Date Filed|Filename" not in data:
+    if "cik|companyname|formtype|datefiled|filename" not in re.sub(r"\s+", "", data).casefold():
         raise ValueError("Indice SEC incompleto o non valido")
     output = []
     for line in data.splitlines():

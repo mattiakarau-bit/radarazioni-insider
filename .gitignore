@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 node_modules/
 ui-artifacts/
+
+data/cache/
+*.part
+*.tmp
