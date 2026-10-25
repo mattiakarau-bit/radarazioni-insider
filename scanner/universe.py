@@ -10,7 +10,7 @@ from datetime import date,datetime,timezone
 from scanner.identity import filing_key,event_key,suspend_security_aliases
 from scanner.semester import build,issuer_windows,CurrentEvidence
 from scanner.radar import months_before
-from scanner.fundamentals import summarize_company_facts
+from scanner.fundamentals import summarize_company_facts,EXTRACTOR_VERSION
 
 ROOT=Path(__file__).resolve().parents[1]
 ENGINE_VERSION='semester-v1.4'
@@ -99,12 +99,16 @@ def refresh_financials(root,companies,as_of,budget):
     # Missing first, then oldest fetched first. Persistent queue advances each run.
     candidates=[c for c in companies if c['selection_status']=='pending']
     listed={x['cik'] for x in read(root/'docs/data/bulk_issuers.json',{'issuers':[]})['issuers']}
-    candidates.sort(key=lambda c:(c['cik'] not in listed,read(cache/f'{c["cik"]}.json',{}).get('attempted_on',''),-c['amount']))
+    def priority(c):
+        old=read(cache/f'{c["cik"]}.json',{})
+        outdated=bool(old.get('financials')) and old['financials'].get('extractor_version')!=EXTRACTOR_VERSION
+        return (not outdated,c['cik'] not in listed,old.get('attempted_on',''),-c['amount'])
+    candidates.sort(key=priority)
     refreshed=0;failed=0
     for company in candidates:
         path=cache/f'{company["cik"]}.json';old=read(path,{})
         attempted=old.get('attempted_on')
-        if attempted and 0<=(date.fromisoformat(as_of)-date.fromisoformat(attempted)).days<7:continue
+        if attempted and old.get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION and 0<=(date.fromisoformat(as_of)-date.fromisoformat(attempted)).days<7:continue
         if refreshed+failed>=budget:break
         source=f'https://data.sec.gov/api/xbrl/companyfacts/CIK{company["cik"]:010d}.json'
         try:
@@ -126,7 +130,10 @@ def financial_evidence(root,as_of):
     for path in (root/'data/analysis').glob('*.json'):
         x=read(path,{})
         # Past summaries stay dated; current_checks rejects old cache instead of relabeling it.
-        result[x['cik']]=CurrentEvidence(financials=x.get('financials',{}))
+        fin=dict(x.get('financials',{}))
+        if fin and fin.get('extractor_version')!=EXTRACTOR_VERSION:
+            fin.update(evidence_valid=False,fresh=False,data_warnings=fin.get('data_warnings',[])+['Estrazione precedente in coda di ricalcolo: non certifica i fondamentali correnti'])
+        result[x['cik']]=CurrentEvidence(financials=fin)
     return result
 
 
@@ -143,6 +150,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
         digest.update(hashlib.sha256(path.read_bytes()).digest())
     digest.update(Path(__file__).read_bytes())
     digest.update((Path(__file__).parent/'identity.py').read_bytes())
+    digest.update((Path(__file__).parent/'fundamentals.py').read_bytes())
     digest.update((Path(__file__).parent/'semester.py').read_bytes())
     digest.update((Path(__file__).parent/'amendments.py').read_bytes())
     for path in inputs:
@@ -184,6 +192,8 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
         d['transaction_period_end']=as_of
         d.pop('semester_windows',None)
         d['financial_snapshot']=read(root/f'data/analysis/{cik}.json',None)
+        if d['financial_snapshot']:
+            d['financial_snapshot']['extractor_current']=d['financial_snapshot'].get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION
         fields=('id','form_url','cik','company','symbol','filed','transaction_date','amount','shares','unit_price','security_title','insider','currency','currency_basis','amendment','purchase_eligible','review_reasons')
         d['transactions']=[{k:x.get(k) for k in fields} for x in d['transactions']]
         write(root/f'docs/data/companies/{cik}.json',d)
@@ -206,6 +216,8 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     radar['stats']['companies_observed_current_us_listing']=len(in_period & listing)
     radar['stats']['weekly_base_companies_observed_current_us_listing']=sum(c['cik'] in listing for c in companies if c['selection_status'] in ('pending','selected'))
     radar['financial_cache_count']=len(list((root/'data/analysis').glob('*.json')))
+    radar['financial_extractor_version']=EXTRACTOR_VERSION
+    radar['financial_cache_current_count']=sum(read(p,{}).get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION for p in (root/'data/analysis').glob('*.json'))
     radar['source_policy_url']='./data/source_policy.json'
     status=read(root/'docs/data/results.json',{})
     write(root/'docs/data/scan_status.json',{k:status.get(k) for k in ('last_scan_utc','status','coverage','errors','model_status')})

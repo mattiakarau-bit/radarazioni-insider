@@ -3,12 +3,15 @@ from __future__ import annotations
 from datetime import date
 import math
 
+EXTRACTOR_VERSION = 3
+
 REVENUE_TAGS = ["Revenues", "SalesRevenueNet", "RevenueFromContractWithCustomerExcludingAssessedTax", "RevenueFromContractWithCustomerIncludingAssessedTax", "SalesRevenueGoodsNet"]
 
 
 def _annual(facts: dict, tags: list[str], unit: str, as_of: str) -> list[dict]:
     gaap = facts.get("facts", {}).get("us-gaap", {})
-    for tag in tags:
+    candidates = []
+    for priority, tag in enumerate(tags):
         obs = gaap.get(tag, {}).get("units", {}).get(unit, [])
         values = {}
         for entry in obs:
@@ -33,8 +36,11 @@ def _annual(facts: dict, tags: list[str], unit: str, as_of: str) -> list[dict]:
             if year not in values or entry["filed"] > values[year]["filed"]:
                 values[year] = {"year": year, "value": entry["val"], "filed": entry["filed"], "start": entry["start"], "end": entry["end"], "tag": tag, "unit": unit}
         if len(values) >= 2:
-            return sorted(values.values(), key=lambda x: x["year"])[-5:]
-    return []
+            series = sorted(values.values(), key=lambda x: x["year"])[-5:]
+            candidates.append((series[-1]["end"], -priority, series))
+    # A retired concept must not hide a newer annual series. Keep each series
+    # concept-pure; tie-break by explicit tag priority and retain scope checks.
+    return max(candidates, key=lambda x:(x[0],x[1]))[2] if candidates else []
 
 
 def _trend(records: list[dict]):
@@ -66,7 +72,7 @@ def summarize_company_facts(facts: dict, as_of: str) -> dict:
     def fresh(series):
         return bool(series) and 0 <= (date.fromisoformat(as_of)-date.fromisoformat(series[-1]['end'])).days <= 550
     return {
-        "schema_version": 2, "revenue_years": revenues, "eps_years": eps, "cashflow_years": cashflow,
+        "schema_version": 2, "extractor_version": EXTRACTOR_VERSION, "revenue_years": revenues, "eps_years": eps, "cashflow_years": cashflow,
         "revenue_scope_verified": scope_ok,
         "revenue_growing": _trend(revenues) if scope_ok else None,
         "eps_growing": _trend(eps),

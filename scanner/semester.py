@@ -179,7 +179,7 @@ def build(events,as_of,evidence=None,months=6):
                           transactions=source,overlap_warning='Finestre sovrapposte: non sommare importi o conteggi tra finestre.',
                           currency_basis='Prezzi USD dichiarati secondo Form 4, istruzione 5; non verifica individuale del deposito',currency_source=FORM4_CURRENCY_SOURCE)
     companies.sort(key=lambda c:((c['analysis'].get('radar_score') if c['analysis'].get('radar_score') is not None else -1),c['amount']),reverse=True)
-    return dict(version=2,app_version='0.8.1',as_of=as_of,search_months=months,search_start=first,window_start=first,
+    return dict(version=2,app_version='0.8.2',as_of=as_of,search_months=months,search_start=first,window_start=first,
                 aggregation_days=7,filters=DEFAULT_FILTERS,groups=[c for c in companies if c['selection_status']=='selected'],
                 stats=dict(stats),funnel=dict(funnel),history_months_available=12,historical_windows=[],
                 search_index_url='./data/search_index.json',pending_index_url='./data/pending_index.json',

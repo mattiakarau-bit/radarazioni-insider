@@ -152,3 +152,19 @@ class CalendarBoundaryTests(unittest.TestCase):
         self.assertEqual(companies[0]['amount'],900000)
         self.assertEqual(details[1]['semester_windows'][0]['window_start'],'2026-04-25')
         self.assertEqual(details[1]['semester_windows'][0]['amount'],900000)
+
+class ExtractorCacheTests(unittest.TestCase):
+    def test_same_day_obsolete_extractor_is_refreshed_then_current_cache_is_reused(self):
+        from scanner.universe import refresh_financials,read
+        from scanner.fundamentals import EXTRACTOR_VERSION
+        from tests.test_financial_evidence import facts
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);p=root/'data/analysis/1.json';p.parent.mkdir(parents=True)
+            p.write_text(json.dumps(dict(cik=1,attempted_on=ASOF,fetched_on=ASOF,financials={'as_of':ASOF,'extractor_version':EXTRACTOR_VERSION-1})))
+            raw=dict(facts(),cik=1,entityName='Synthetic test company')
+            candidates=[dict(cik=1,selection_status='pending',amount=100000)]
+            with patch('scanner.sec.get',return_value=json.dumps(raw)) as get:
+                r=refresh_financials(root,candidates,ASOF,1);self.assertEqual(r['refreshed'],1);get.assert_called_once()
+            self.assertEqual(read(p,{})['financials']['extractor_version'],EXTRACTOR_VERSION)
+            with patch('scanner.sec.get',side_effect=AssertionError('Do not refetch current same-day cache')):
+                self.assertEqual(refresh_financials(root,candidates,ASOF,1)['refreshed'],0)
