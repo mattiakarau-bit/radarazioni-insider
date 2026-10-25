@@ -167,4 +167,4 @@ def report(companies, reviews, radar):
     counts['homepage_preliminary_initial']=len(radar.get('preliminary_groups',[]))
     return dict(version=VERSION, as_of=radar['as_of'], counts=counts,
                 note='Analisi delle cache SEC aggiornate progressivamente; disponibilità distinta da verifica completa. Candidate insider distinte da società che superano prezzi/cap. Dettagli e mancanze nei JSON per CIK.',
-                homepage_ciks=[c['cik'] for c in selected], buy_signal=False, notify=False)
+                progress=radar.get('financial_progress',{}), homepage_ciks=[c['cik'] for c in selected], buy_signal=False, notify=False)

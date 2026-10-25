@@ -241,6 +241,17 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     radar['financial_cache_count']=len(list((root/'data/analysis').glob('*.json')))
     radar['financial_extractor_version']=EXTRACTOR_VERSION
     radar['financial_cache_current_count']=sum(read(p,{}).get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION for p in (root/'data/analysis').glob('*.json'))
+    candidate_snapshots=[details[c['cik']].get('financial_snapshot') or {} for c in companies if c['selection_status'] in ('pending','selected')]
+    radar['financial_progress']=dict(
+        candidates=len(candidate_snapshots),
+        cached=sum(bool(s.get('financials')) for s in candidate_snapshots),
+        outstanding_share_observations=sum(bool(s.get('shares_observations')) for s in candidate_snapshots),
+        corporate_indices=sum(isinstance(s.get('corporate_filings'),dict) for s in candidate_snapshots),
+        latest_attempt_errors=sum(bool(s.get('error')) for s in candidate_snapshots),
+        complete_financial_checks=radar['stats']['companies_current_financials_verified'],
+        prices_verified=radar['stats']['companies_current_prices_verified'],
+        historical_caps_pass=radar['stats']['companies_historical_cap_threshold_pass'],
+        current_caps_pass=radar['stats']['companies_current_cap_pass'])
     radar['source_policy_url']='./data/source_policy.json'
     status=read(root/'docs/data/results.json',{})
     write(root/'docs/data/scan_status.json',{k:status.get(k) for k in ('last_scan_utc','status','coverage','errors','model_status')})
