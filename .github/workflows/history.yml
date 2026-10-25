@@ -1,0 +1,91 @@
+name: SEC storico strutturato e ricerca ML
+on:
+  pull_request:
+    paths: ['scanner/bulk.py', 'scanner/ml.py', 'tests/test_bulk.py', 'tests/test_ml.py', '.github/workflows/history.yml']
+  push:
+    branches: [main]
+    paths: ['scanner/bulk.py', 'scanner/ml.py', '.github/workflows/history.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: '47 4 * * 0'
+permissions:
+  contents: read
+concurrency:
+  group: radarazioni-pages
+  cancel-in-progress: false
+jobs:
+  quality:
+    uses: ./.github/workflows/quality.yml
+  live_probe:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verifica un archivio ufficiale con identità SEC esistente
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python -m scanner.bulk --root "$RUNNER_TEMP/sec-probe" --max-quarters 1
+          python -m scanner.ml --root "$RUNNER_TEMP/sec-probe"
+          python - <<'PYINDEX'
+          from datetime import date, timedelta
+          from scanner.sec import read_master_index
+          day=date.today()
+          while day.weekday()>=5: day-=timedelta(days=1)
+          print('SEC recent index smoke:', day, len(read_master_index(day)), 'Form 4/4A')
+          PYINDEX
+          python -c 'import json,os; from pathlib import Path; s=json.loads((Path(os.environ["RUNNER_TEMP"])/"sec-probe/docs/data/history_coverage.json").read_text()); assert s["completed_count"] == 1, s'
+  import_and_publish:
+    environment: github-pages
+    if: github.event_name != 'pull_request'
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Importa e salva un trimestre per checkpoint
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          git config user.name 'RadarAzioni Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          if [ "$EVENT_NAME" = push ]; then budget=23; else budget=2; fi
+          for iteration in $(seq 1 "$budget"); do
+            before=$(python -c 'import json; from pathlib import Path; p=Path("data/insider/manifest.json"); print(sum(r.get("status")=="complete" for r in json.loads(p.read_text())["quarters"].values()) if p.exists() else 0)')
+            python -m scanner.bulk --max-quarters 1
+            python -m scanner.ml
+            git add data/insider docs/data/history_coverage.json docs/data/bulk_issuers.json docs/data/bulk docs/data/ml_status.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Checkpoint importazione trimestrale SEC"
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+            after=$(python -c 'import json; print(sum(r.get("status")=="complete" for r in json.load(open("data/insider/manifest.json"))["quarters"].values()))')
+            if [ "$after" -le "$before" ]; then break; fi
+          done
+      - name: Verifica dati generati e dimensioni prima della pubblicazione
+        run: |
+          python -m unittest discover -s tests -q
+          node --test tests/*.test.cjs
+          python -c 'import json; from pathlib import Path; s=json.loads(Path("docs/data/history_coverage.json").read_text()); m=json.loads(Path("docs/data/ml_status.json").read_text()); assert s["completed_count"] > 0; assert m["trained"] is False if not any(m["verified_targets"].values()) else True'
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - uses: actions/deploy-pages@v4

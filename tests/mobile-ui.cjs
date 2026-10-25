@@ -48,6 +48,19 @@ const fits=async page=>{const x=await page.evaluate(()=>({width:innerWidth,scrol
   await page.goto(base);await page.locator('#results .card').waitFor();assert.ok((await page.locator('#results').textContent()).includes('FIXTURE'));await page.locator('#criticalStatus:not(.hidden)').waitFor();
   await page.locator('nav [data-page=custom]').click();await page.locator('#minAmount').fill('1000000000');await page.locator('#filtersForm button[type=submit]').click();await page.locator('nav [data-page=radar]').click();assert.equal(await page.locator('#results .card').count(),1);
   await context.close();console.log(engine.name()+': verified fixture, independent defaults and critical SEC status passed');
+  const archiveContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});const archivePage=await archiveContext.newPage();
+  const historyFixture={completed_count:1,published_count:23,published_archive_coverage_pct:4.35,counts:{retained_purchase_candidates:1},unique_issuers_purchase_candidates:1,unique_issuers_us_listing_current:1,completed_quarters:['2021q1'],period_filed_start:'2021-01-04',period_filed_end:'2021-01-04'};
+  const eventFixture={id:'fixture-archive-row',cik:999999,symbol:'FIXTURE',company:'Emittente archivio fittizio',filed:'2021-01-04',transaction_date:'2021-01-01',amount:1000,shares:10,unit_price:100,current_eligible:true,us_listing_current:true,owner_categories:['OFFICER'],review_reasons:[],form_url:'https://www.sec.gov/Archives/edgar/data/1/fixture-index.html'};
+  await archivePage.route('**/data/history_coverage.json*',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(historyFixture)}));
+  await archivePage.route('**/data/ml_status.json*',r=>r.fulfill({contentType:'application/json',body:JSON.stringify({trained:false,events_stored:1,point_in_time_feature_rows:1,verified_targets:{30:0,90:0,180:0}})}));
+  await archivePage.route('**/data/bulk/2021q1.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify({events:[eventFixture]})}));
+  await archivePage.goto(base);await archivePage.locator('nav [data-page=history]').click();await archivePage.waitForFunction(()=>document.querySelector('#bulkQuarter').options.length===1);
+  await archivePage.locator('#loadBulk').click();await archivePage.locator('#bulkItems .card').waitFor();assert.ok((await archivePage.locator('#mlStatus').textContent()).includes('NON addestrato'));
+  await archivePage.locator('#bulkItems .star').click();await archivePage.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===1);
+  await archivePage.locator('#bulkMode').selectOption('returned');assert.equal(await archivePage.locator('#bulkItems .card').count(),0);assert.ok((await archivePage.locator('#bulkCount').textContent()).includes('0 ritorni'));
+  await archivePage.locator('nav [data-page=favorites]').click();await archivePage.locator('.saved-detail').click();assert.ok((await archivePage.locator('#detailContent').textContent()).includes('2021-01-01'));
+  await archivePage.locator('#closeDetail').click();await fits(archivePage);await archiveContext.close();console.log(engine.name()+': structured archive, blocked ML, returned-price gate and archive favorites passed');
+
   }finally{await browser.close();}
  }
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(()=>server.close());

@@ -72,6 +72,9 @@ def parse_form4(submission: str, filing: dict) -> list[dict]:
             'owner_ciks': [_get(o.find('reportingOwnerId'), 'rptOwnerCik') for o in root.findall('reportingOwner')],
             'amount': round(shares * unit_price, 2), 'form_url': filing['url'],
             'code': 'P', 'source': 'SEC Form 4',
+            'amendment': _get(root, 'documentType', filing.get('form','4')) == '4/A',
+            'original_filing_date': _get(root, 'dateOfOriginalSubmission'),
+            'purchase_eligible': (_get(root, 'documentType', filing.get('form','4')) == '4' and _get(tx, 'transactionCoding/equitySwapInvolved').lower() in ('0','false') and bool(re.search(r'common|ordinary', _get(tx, 'securityTitle/value'), re.I)) and not re.search(r'preferred|warrant|option|convertible|note|unit', _get(tx, 'securityTitle/value'), re.I)),
             'owners': [o['name'] for o in owners],
             'transaction_footnote': 'Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato',
         })

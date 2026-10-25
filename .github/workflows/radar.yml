@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          ref: main
       - name: Prepara Python
         uses: actions/setup-python@v5
         with:

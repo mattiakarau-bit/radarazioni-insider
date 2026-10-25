@@ -61,3 +61,8 @@ class RadarTests(unittest.TestCase):
         g=aggregate(rows,'2026-10-18','2026-10-24')[0]
         self.assertEqual(g['amount'],100000)
         self.assertFalse(g['aggregation_verified'])
+    def test_amendment_annotation_only_applies_when_public(self):
+        row=dict(tx(1),amendment_known_from='2026-10-24')
+        self.assertEqual(len(aggregate([row],'2026-10-18','2026-10-23')),1)
+        self.assertEqual(len(aggregate([row],'2026-10-18','2026-10-24')),0)
+        self.assertEqual(aggregate([dict(tx(2),amendment=True)],'2026-10-18','2026-10-24'),[])

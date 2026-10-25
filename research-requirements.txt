@@ -1,0 +1,2 @@
+# Optional local research training; importer and public app use no paid service.
+scikit-learn==1.6.1
