@@ -27,6 +27,7 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     const home=await page.locator('#pendingStatus').textContent();
     await page.locator('#showPending').click();await page.locator('#customResults .card').first().waitFor();
     assert.equal(await page.locator('#visibility').inputValue(),'pending');assert.ok(await page.locator('#customResults .card').count()<=80);
+    const expected=JSON.parse(fs.readFileSync('docs/data/radar.json')).stats.pending_base_candidates;assert.ok((await page.locator('#customStatus').textContent()).startsWith(expected+' società'),'Visible pending company count must match Python semester funnel');
     const first=page.locator('#customResults .card').filter({has:page.locator('.star[aria-pressed="false"]')}).first();
     const ticker=await first.locator('.ticker').textContent();
     await first.locator('.open-detail').click();await page.locator('#detailDialog[open]').waitFor();assert.ok((await page.locator('#detailContent').textContent()).includes('Tutte le settimane significative'));await fits(page);await page.locator('#closeDetail').click();

@@ -44,6 +44,13 @@ for c in pending+radar['groups']:
         assert all(c['current_checks'].values()) and c['weekly_economic_verified'] and c['split_comparison_verified']
         assert c['analysis']['score_status']=='verificato' and c['analysis']['quality_pass']
 if first<='2026-05-01' and as_of>='2026-05-31':assert may_windows>0,'Imported May purchases must reach company details'
+index=json.loads((root/'docs/data/search_index.json').read_text())
+for record in index['issuers']:
+    d=json.loads((root/f'docs/data/companies/{record["company"]["cik"]}.json').read_text())
+    for window in record.get('semester_windows',[]):
+        assert first<=window['window_start']<=window['window_end']<=as_of,'Annual window leaked into semester index'
+        total=sum(x['amount'] for x in d['transactions'] if x['purchase_eligible'] and not x['amendment'] and window['window_start']<=x['transaction_date']<=window['window_end'])
+        if window['aggregation_verified']:assert abs(total-window['amount'])<.02
 size=(root/'docs/data/radar.json').stat().st_size
 assert size<2*1024*1024,'Homepage should be compact; move large lists to lazy pages'
 assert sum(p.stat().st_size for p in (root/'docs').rglob('*') if p.is_file())<150*1024*1024,'Pages internal 150 MiB guard'
