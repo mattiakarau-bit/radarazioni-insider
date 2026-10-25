@@ -30,6 +30,8 @@ def _economic_key(x):
 def aggregate(events, start, end):
     unique = {}
     for x in events:
+        if x.get('amendment') or x.get('purchase_eligible') is False or x.get('amendment_known_from','9999')<=end:
+            continue
         if start <= x.get('transaction_date', '') <= end and x.get('cik'):
             unique[event_key(x)] = x
     issuers = defaultdict(list)
@@ -128,7 +130,7 @@ def price_band(current, adjusted_insider_average):
 def publish(events, as_of):
     events = [x for x in events if x.get('filed', '') <= as_of]
     start = (date.fromisoformat(as_of)-timedelta(days=6)).isoformat()
-    return dict(version=1, app_version='0.6.0', as_of=as_of, window_start=start,
+    return dict(version=1, app_version='0.7.0', as_of=as_of, window_start=start,
                 filters=DEFAULT_FILTERS, groups=aggregate(events,start,as_of),
                 history_months_available=12,
                 history_status='Prezzi, split, fondamentali aggiornati ed eventi non verificati; nessuna segnalazione reale',

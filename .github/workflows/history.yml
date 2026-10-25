@@ -32,6 +32,13 @@ jobs:
         run: |
           python -m scanner.bulk --root "$RUNNER_TEMP/sec-probe" --max-quarters 1
           python -m scanner.ml --root "$RUNNER_TEMP/sec-probe"
+          python - <<'PYINDEX'
+          from datetime import date, timedelta
+          from scanner.sec import read_master_index
+          day=date.today()
+          while day.weekday()>=5: day-=timedelta(days=1)
+          print('SEC recent index smoke:', day, len(read_master_index(day)), 'Form 4/4A')
+          PYINDEX
           python -c 'import json,os; from pathlib import Path; s=json.loads((Path(os.environ["RUNNER_TEMP"])/"sec-probe/docs/data/history_coverage.json").read_text()); assert s["completed_count"] == 1, s'
   import_and_publish:
     environment: github-pages

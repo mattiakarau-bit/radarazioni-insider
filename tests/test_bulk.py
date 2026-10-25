@@ -35,9 +35,20 @@ class BulkTests(unittest.TestCase):
             self.assertTrue(all(not x['current_eligible'] for x in reconcile(events,'2021-01-05')))
             again=import_zip(root/'q.zip','2021q1',root/'raw.gz',root/'events.gz')
             self.assertEqual(again['counts'],stats['counts'])
+            self.assertEqual(again['audit_sha256'],stats['audit_sha256'])
+            self.assertEqual(again['event_sha256'],stats['event_sha256'])
             with gzip.open(root/'raw.gz','rt') as f:self.assertNotIn('not-needed',f.read())
     def test_corrupt_zip_cannot_complete(self):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp);(p/'bad.zip').write_text('error page')
             with self.assertRaises(zipfile.BadZipFile):import_zip(p/'bad.zip','2021q1',p/'r.gz',p/'e.gz')
             self.assertFalse((p/'e.gz').exists())
+    def test_existing_realtime_alias_cannot_double_count(self):
+        from scanner.bulk import reconcile_sources
+        b=dict(accession='0000000001-21-000001',cik=1,transaction_date='2021-01-01',shares=100,unit_price=20,current_eligible=True,review_reasons=[])
+        live=dict(b,form_url='https://www.sec.gov/Archives/edgar/data/999/0000000001-21-000001.txt')
+        rows,report=reconcile_sources([b],[live]);self.assertEqual(len(rows),1);self.assertEqual(report['source_alias_rows_suppressed'],1)
+        rows,_=reconcile_sources([b],[dict(live,cik=2)]);self.assertFalse(rows[0]['current_eligible'])
+    def test_numeric_overflow_not_a_price(self):
+        from scanner.bulk import number
+        self.assertIsNone(number('1e9999'));self.assertIsNone(number('NaN'))

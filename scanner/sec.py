@@ -58,7 +58,7 @@ def read_master_index(day: date) -> list[dict]:
     output = []
     for line in data.splitlines():
         parts = line.split("|")
-        if len(parts) != 5 or parts[2].strip() != "4":
+        if len(parts) != 5 or parts[2].strip() not in ("4","4/A"):
             continue
         cik, company, form, filed, filename = [p.strip() for p in parts]
         if not cik.isdigit() or not filename.startswith("edgar/data/"):

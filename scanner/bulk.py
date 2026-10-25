@@ -3,13 +3,15 @@
 No original filing is downloaded; amendments are preserved, never blindly added/replaced.
 """
 from __future__ import annotations
-import argparse, csv, gzip, hashlib, io, json, os, re, sqlite3, tempfile, time, urllib.request, zipfile
+import argparse, csv, gzip, hashlib, io, json, math, os, re, sqlite3, tempfile, time, urllib.request, zipfile
 from collections import Counter, defaultdict
+from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from scanner.sec import get
+from scanner.identity import filing_key
 from scanner.run import load_json, save_json
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -29,7 +31,7 @@ def sec_date(value):
 def number(v):
     try:
         n=Decimal(str(v).strip())
-        return float(n) if n.is_finite() else None
+        return float(n) if n.is_finite() and math.isfinite(float(n)) else None
     except (InvalidOperation,ValueError):return None
 
 
@@ -104,7 +106,9 @@ def normalize(row,sub,owners,quarter):
     acc=accession(row['ACCESSION_NUMBER']);cik=int(sub['ISSUERCIK'])
     if not 0<cik<10**10:raise ValueError('Invalid issuer CIK')
     filed=sec_date(sub['FILING_DATE']);trans=sec_date(row['TRANS_DATE'])
-    okay,reasons=eligibility(row,sub);shares=number(row.get('TRANS_SHARES'));price=number(row.get('TRANS_PRICEPERSHARE'))
+    okay,reasons=eligibility(row,sub)
+    if trans>filed:okay=False;reasons.append('transaction_after_filing')
+    shares=number(row.get('TRANS_SHARES'));price=number(row.get('TRANS_PRICEPERSHARE'))
     owner_rows=owners.get(acc,[])
     return dict(id=f'{acc}#nd:{row["NONDERIV_TRANS_SK"]}',accession=acc,source_row_id=row['NONDERIV_TRANS_SK'],
                 source='SEC quarterly insider dataset',quarter=quarter,cik=cik,company=sub['ISSUERNAME'],symbol=sub.get('ISSUERTRADINGSYMBOL',''),
@@ -127,12 +131,20 @@ def normalize(row,sub,owners,quarter):
                 price_footnote=row.get('TRANS_PRICEPERSHARE_FN',''),shares_footnote=row.get('TRANS_SHARES_FN',''))
 
 
+@contextmanager
+def gzip_writer(path):
+    with path.open('wb') as raw:
+        with gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=0) as compressed:
+            with io.TextIOWrapper(compressed,encoding='utf-8',newline='') as text:
+                yield text
+
+
 def import_zip(path,quarter,raw_path,event_path):
     """Atomic per quarter. All rows retained in compressed audit shards, no addresses."""
     raw_tmp=raw_path.with_suffix('.tmp');event_tmp=event_path.with_suffix('.tmp')
     raw_path.parent.mkdir(parents=True,exist_ok=True);event_path.parent.mkdir(parents=True,exist_ok=True)
     counts=Counter();issuers=set();candidate_issuers=set();roles=Counter();events=[]
-    with zipfile.ZipFile(path) as z,gzip.open(raw_tmp,'wt',encoding='utf-8') as audit:
+    with zipfile.ZipFile(path) as z,gzip_writer(raw_tmp) as audit:
         submissions={};owners=defaultdict(list)
         def keep(kind,row):audit.write(json.dumps({'table':kind,'row':row},ensure_ascii=False,separators=(',',':'))+'\n')
         for row in table(z,'SUBMISSION'):
@@ -168,7 +180,7 @@ def import_zip(path,quarter,raw_path,event_path):
                 keep('QUARANTINE',dict(key=key,error=str(exc)[:150]))
         for row in table(z,'FOOTNOTES'):counts['footnotes']+=1;keep('FOOTNOTES',row)
     if counts['P_acquisition_rows'] and not counts['retained_purchase_candidates']:raise ValueError('All purchase rows invalid; quarter not accepted')
-    with gzip.open(event_tmp,'wt',encoding='utf-8') as output:
+    with gzip_writer(event_tmp) as output:
         for e in sorted(events,key=lambda e:e['id']):output.write(json.dumps(e,ensure_ascii=False,separators=(',',':'))+'\n')
     if raw_tmp.stat().st_size>40*1024*1024:raise ValueError('Quarter audit shard exceeds storage guard')
     raw_tmp.replace(raw_path);event_tmp.replace(event_path)
@@ -177,9 +189,20 @@ def import_zip(path,quarter,raw_path,event_path):
 
 
 def iter_events(root):
+    canonical={}
+    manifest=load_json(root/'data/insider/manifest.json',{'quarters':{}})
+    allowed={q for q,r in manifest['quarters'].items() if r.get('status')=='complete'}
+    fields=('cik','filed','transaction_date','shares','unit_price','form')
     for path in sorted((root/'data/insider').glob('*.events.jsonl.gz')):
+        if path.name.split('.')[0] not in allowed:continue
         with gzip.open(path,'rt',encoding='utf-8') as f:
-            for line in f:yield json.loads(line)
+            for line in f:
+                event=json.loads(line);key=event['id']
+                if key not in canonical:canonical[key]=event
+                elif any(canonical[key].get(k)!=event.get(k) for k in fields):
+                    canonical[key]['purchase_eligible']=False
+                    canonical[key]['exclusion_reasons']=sorted(set(canonical[key]['exclusion_reasons']+['cross_archive_key_conflict']))
+    yield from canonical.values()
 
 
 def reconcile(events,as_of):
@@ -210,8 +233,31 @@ def reconcile(events,as_of):
     return rows
 
 
+def reconcile_sources(bulk_events,realtime_events):
+    """Keep both raw sources; suppress duplicate source views only within an accession.
+    Dataset numeric precision can differ from XML, so compare only documented 2dp
+    extraction and quarantine unmatched filings instead of inventing exact row links.
+    """
+    rows=[dict(e) for e in bulk_events];by_acc=defaultdict(list)
+    for e in rows:by_acc[e['accession']].append(e)
+    remaining={acc:Counter((e['transaction_date'],round(e['shares'] or 0,2),round(e['unit_price'] or 0,2)) for e in es) for acc,es in by_acc.items()}
+    report=Counter();conflicts=set()
+    for e in realtime_events:
+        acc=filing_key(e.get('form_url',''))
+        if acc not in by_acc:report['realtime_only_rows']+=1;continue
+        fingerprint=(e.get('transaction_date'),round(e.get('shares',0),2),round(e.get('unit_price',0),2))
+        if any(x['cik']!=e.get('cik') for x in by_acc[acc]) or remaining[acc][fingerprint]<=0:
+            conflicts.add(acc);report['unresolved_cross_source_rows']+=1
+        else:
+            remaining[acc][fingerprint]-=1;report['source_alias_rows_suppressed']+=1
+    for e in rows:
+        if e['accession'] in conflicts:
+            e['current_eligible']=False;e['review_reasons']=sorted(set(e.get('review_reasons',[])+['cross_source_conflict']))
+    return rows,dict(report)
+
+
 def summarize(root,manifest,listing,now):
-    events=list(iter_events(root));current=reconcile(events,now[:10]);counts=Counter();all_issuers=set();candidate_issuers=set();equity_issuers=set()
+    events=list(iter_events(root));current=reconcile(events,now[:10]);current,source_bridge=reconcile_sources(current,load_json(root/'docs/data/events_history.json',{'filings':[]}).get('filings',[]));counts=Counter();all_issuers=set();candidate_issuers=set();equity_issuers=set()
     for record in manifest['quarters'].values():
         if record.get('status')!='complete':continue
         counts.update(record['counts']);all_issuers.update(record['issuer_ciks']);candidate_issuers.update(record['candidate_issuer_ciks'])
@@ -222,12 +268,13 @@ def summarize(root,manifest,listing,now):
             equity_issuers.add(e['cik'])
             if e['cik'] in current_listing and current_listing[e['cik']].get('exchange') in ('Nasdaq','NYSE','NYSE American','Cboe BZX'):
                 eligible.append(e)
-    completed=[q for q,r in manifest['quarters'].items() if r.get('status')=='complete'];published=manifest.get('published_quarters',[])
-    summary=dict(version=1,updated_utc=now,target_start=2021,target_end=2026,calendar_quarters_requested=24,
+    start_year=manifest.get('target_start',2021);end_year=manifest.get('target_end',2026);calendar_count=(end_year-start_year+1)*4
+    completed=[q for q,r in manifest['quarters'].items() if r.get('status')=='complete' and start_year<=int(q[:4])<=end_year];published=manifest.get('published_quarters',[])
+    summary=dict(version=1,updated_utc=now,target_start=start_year,target_end=end_year,calendar_quarters_requested=calendar_count,
                  published_quarters=published,completed_quarters=completed,completed_count=len(completed),published_count=len(published),
                  published_archive_coverage_pct=round(100*len(set(completed)&set(published))/len(published),2) if published else None,
-                 calendar_target_coverage_pct=round(100*len(completed)/24,2),
-                 counts=dict(counts),unique_issuers_all=len(all_issuers),unique_issuers_purchase_candidates=len(candidate_issuers),
+                 calendar_target_coverage_pct=round(100*len(completed)/calendar_count,2),
+                 counts=dict(counts),unique_candidate_events=len(events),source_reconciliation=source_bridge,unique_issuers_all=len(all_issuers),unique_issuers_purchase_candidates=len(candidate_issuers),
                  unique_issuers_common_equity=len(equity_issuers),unique_issuers_us_listing_current=len({e['cik'] for e in eligible}),
                  reconciled_current_events=len(eligible),ambiguous_current_events=sum(bool(e['review_reasons']) for e in current),
                  financial_verified_issuers=0,market_cap_verified_issuers=0,return_labels_verified=0,
@@ -249,7 +296,16 @@ def summarize(root,manifest,listing,now):
     # Compact public per-quarter candidates, retained out of the main startup payload.
     for q in completed:
         qrows=[e for e in current if e['quarter']==q]
-        save_json(root/f'docs/data/bulk/{q}.json',dict(quarter=q,events=qrows))
+        fields=('id','accession','cik','company','symbol','filed','transaction_date','available_from','security_title','shares','unit_price','amount','form','amendment','purchase_eligible','current_eligible','review_reasons','owner_ciks','officer','director','ten_pct','form_url','original_url_status')
+        public=[]
+        for e in qrows:
+            item={k:e.get(k) for k in fields}
+            item['insider']=', '.join(o['name'] for o in e['owners'][:2])+(f" + {len(e['owners'])-2} dichiaranti" if len(e['owners'])>2 else '')
+            item['owner_categories']=sorted({o['relationship'] for o in e['owners']})
+            item['us_listing_current']=e['cik'] in current_listing and current_listing[e['cik']].get('exchange') in ('Nasdaq','NYSE','NYSE American','Cboe BZX')
+            public.append(item)
+        destination=root/f'docs/data/bulk/{q}.json';destination.parent.mkdir(parents=True,exist_ok=True)
+        tmp=destination.with_suffix('.tmp');tmp.write_text(json.dumps(dict(quarter=q,events=public),ensure_ascii=False,separators=(',',':')),encoding='utf-8');tmp.replace(destination)
     return summary
 
 
@@ -262,7 +318,15 @@ def main():
     except Exception as exc:
         manifest.update(last_attempt_utc=now,catalogue_error=f'{type(exc).__name__}: {str(exc)[:180]}');save_json(manifest_path,manifest)
         save_json(root/'docs/data/history_coverage.json',dict(status='import_blocked',updated_utc=now,error=manifest['catalogue_error'],completed_count=sum(r.get('status')=='complete' for r in manifest['quarters'].values()),source=CATALOG));raise
+    manifest.update(target_start=args.start,target_end=args.end)
     manifest['published_quarters']=list(catalogue);manifest.pop('catalogue_error',None)
+    for q,record in manifest['quarters'].items():
+        if record.get('status')!='complete':continue
+        for suffix,key in (('audit','audit_sha256'),('events','event_sha256')):
+            shard=root/f'data/insider/{q}.{suffix}.jsonl.gz'
+            if not shard.is_file() or hashlib.sha256(shard.read_bytes()).hexdigest()!=record.get(key):
+                record.update(status='failed',error='Shard integrity failure; quarter queued for repair')
+                break
     selected=[q for q in sorted(catalogue,reverse=True) if manifest['quarters'].get(q,{}).get('status')!='complete'][:max(0,min(args.max_quarters,24))]
     for q in selected:
         url=catalogue[q];path=cache/(q+'.zip')

@@ -88,3 +88,9 @@ class CoverageTests(unittest.TestCase):
                 self.assertEqual(saved['fundamentals']['revenue_years'][0]['value'],123)
                 self.assertTrue(any('snapshot precedente' in x for x in saved['fundamentals']['data_warnings']))
                 facts.assert_called_once()
+    def test_real_index_header_case_spacing_and_amendments(self):
+        from datetime import date
+        data='CIK | Company Name | Form Type | Date Filed | FileName\n1|Fixture|4/A|2026-10-23|edgar/data/1/0000000001-26-000001.txt\n'
+        with patch('scanner.sec.get',return_value=data):
+            rows=read_master_index(date(2026,10,23))
+        self.assertEqual(rows[0]['form'],'4/A')

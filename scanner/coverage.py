@@ -45,4 +45,4 @@ def coverage_report(indexes, seen, pending, checked, success, failed):
                 known_processed_forms=done, known_completion_pct=round(100*done/total, 2) if total else None,
                 oldest_pending_date=min((x['filed'] for x in pending), default=None),
                 retry_pending_forms=sum(x.get('attempts', 0)>0 for x in pending), by_day=by_day,
-                note='Copertura dei soli indici registrati; non totale SEC. Form 4/A esclusi; latenza degli indici notturni.')
+                note='Copertura dei soli indici registrati; non totale SEC. Form 4/A conservati in revisione, esclusi dai segnali; latenza degli indici notturni.')

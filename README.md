@@ -1,4 +1,4 @@
-# RadarAzioni – Insider Intelligence · 0.6.0
+# RadarAzioni – Insider Intelligence · 0.7.0
 
 App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
 trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
@@ -102,3 +102,28 @@ non attivato da un flag client; fixture solide testate a 94 e perdite/cassa nega
 [Diagnosi, distribuzione e conteggi effettivi](research/rating-diagnosis-0.6.0.md).
 I test UI coprono anche home vuota, isolamento della ricerca, dettagli senza pulsanti
 ripetuti, fixture selezionabile verificata e avviso critico SEC, oltre a Preferiti persistenti.
+
+## Release 0.7.0 · Archivi strutturati e ricerca ML
+
+Importatore ufficiale trimestrale 2021–2026, estendibile al 2006, separato dalla scansione
+recente. Shard atomici e deterministici, manifest SHA256 e checkpoint per trimestre.
+Form 4/A, alias/co-dichiarazioni, classi non ordinarie e conflitti vengono conservati in
+revisione anziché produrre doppi acquisti o segnali. Corretto anche il controllo troppo
+rigido dell’intestazione giornaliera SEC (case/spazi) che bloccava le scansioni.
+
+La pagina Storico mostra copertura e candidati, carica un solo trimestre a richiesta e
+separa gli archivi in verifica dai ritorni al prezzo insider (ancora non verificabili).
+Preferiti compatibili anche per emittenti presenti solo negli archivi. Nessun rating aumentato.
+
+Pipeline reale di ricerca SQLite, target 30/90/180, regressione logistica e gradient boosting
+implementati ma bloccati senza prezzi/target verificati e campioni sufficienti. Nessuna
+performance o modello fittizio. [Specifiche e limiti](research/sec-bulk-and-ml.md).
+
+```sh
+python -m scanner.bulk --max-quarters 1
+python -m scanner.ml
+```
+
+Usano l’identità SEC già configurata nei Secrets. Non impostare credenziali nel codice.
+Dipendenze opzionali per training: `pip install -r research-requirements.txt` (solo librerie,
+nessuna API o sottoscrizione). La PWA 0.7.0 si aggiorna senza cancellare i Preferiti locali.

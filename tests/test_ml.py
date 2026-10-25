@@ -25,3 +25,25 @@ class MLTests(unittest.TestCase):
         self.assertLess(train[-1]['exit_day'],val[0]['as_of']);self.assertLess(val[-1]['exit_day'],test[0]['as_of'])
     def test_no_fabricated_training_results(self):
         r=train_models([]);self.assertFalse(r['trained']);self.assertIsNone(r['metrics'])
+    def test_price_flag_alone_cannot_approve_provider(self):
+        import tempfile
+        from pathlib import Path
+        from scanner.ml import connect,populate_targets
+        with tempfile.TemporaryDirectory() as tmp:
+            db=connect(Path(tmp)/'test.sqlite')
+            db.execute("INSERT INTO events VALUES('e',1,'security','2021-01-01','2021-01-02','2021-01-01','{}')")
+            db.execute("INSERT INTO features VALUES('e','2021-01-02','v1','{}',NULL,'2021-01-01','SEC_real')")
+            db.execute("INSERT INTO prices VALUES('security','2021-01-04',100,1,1,'https://unapproved.example','2021-01-04',1)")
+            populate_targets(db)
+            self.assertEqual(db.execute("SELECT COUNT(*) FROM targets WHERE status='verified'").fetchone()[0],0)
+            db.close()
+    def test_malformed_class_balance_cannot_train_on_one_class(self):
+        rows=[dict(as_of=(date(2010,1,1)+timedelta(days=i*4)).isoformat(),exit_day=(date(2010,1,1)+timedelta(days=i*4+180)).isoformat(),issuer_cik=i%150,label=1) for i in range(1000)]
+        self.assertFalse(train_models(rows)['trained'])
+    def test_co_report_dedup_is_point_in_time_not_future_selection(self):
+        from scanner.ml import eligible_feature_ids
+        base=dict(id='a',accession='a',cik=1,security_title='Common Stock',shares=100,unit_price=10,amount=1000,transaction_date='2021-01-01',filed='2021-01-04',purchase_eligible=True,amendment=False,owner_ciks=['1'],period_of_report='2021-01-01',officer=False,director=False,ten_pct=True)
+        later=dict(base,id='b',accession='b',filed='2021-01-05')
+        self.assertIn('a',eligible_feature_ids([base,later]));self.assertNotIn('b',eligible_feature_ids([base,later]))
+        same_day=dict(later,filed='2021-01-04')
+        self.assertEqual(eligible_feature_ids([base,same_day]),set())

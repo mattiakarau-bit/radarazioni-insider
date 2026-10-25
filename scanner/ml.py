@@ -9,6 +9,7 @@ from scanner.bulk import iter_events
 
 FEATURES=('log_purchase_amount','log_shares','officer','director','ten_pct','filing_delay_days')
 SCHEMA='''
+CREATE TABLE IF NOT EXISTS providers(provider_id TEXT PRIMARY KEY,url_prefix TEXT,license_url TEXT,redistribution_approved INTEGER,reviewed_at TEXT);
 CREATE TABLE IF NOT EXISTS events(event_id TEXT PRIMARY KEY, issuer_cik INTEGER NOT NULL,security_id TEXT,
  filed TEXT NOT NULL,available_from TEXT NOT NULL,transaction_date TEXT NOT NULL,raw_json TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS identities(security_id TEXT,ticker TEXT,valid_from TEXT,valid_to TEXT,source_url TEXT,observed_at TEXT,
@@ -42,6 +43,23 @@ def point_in_time_features(event):
     except (ValueError,TypeError,KeyError):return None
 
 
+def eligible_feature_ids(events):
+    # De-duplicate decisions using ONLY co-reports/amendments already filed by the
+    # event's filing day. Later annotations never erase earlier information sets.
+    economic=defaultdict(dict);amendments=defaultdict(list)
+    def key(e):return (e['cik'],e['transaction_date'],e['security_title'].casefold(),e['shares'],e['unit_price'])
+    for e in events:
+        economic[key(e)][e['accession']]=e['filed']
+        if e['amendment']:
+            for owner in e['owner_ciks']:amendments[(e['cik'],owner,e['period_of_report'])].append(e['filed'])
+    result=set()
+    for e in events:
+        if sum(d<=e['filed'] for d in economic[key(e)].values())>1:continue
+        if any(d<=e['filed'] for owner in e['owner_ciks'] for d in amendments[(e['cik'],owner,e['period_of_report'])]):continue
+        if point_in_time_features(e) is not None:result.add(e['id'])
+    return result
+
+
 def select_public_facts(rows,as_of):
     return [r for r in rows if r['public_at']<=as_of and r['period_end']<=as_of]
 
@@ -53,12 +71,14 @@ def make_target(prices,benchmark,available_from,horizon,cost_bps=20):
     No forward fill, zero-return substitution or ticker-based identity inference.
     """
     if horizon not in (30,90,180):raise ValueError('Unsupported horizon')
+    if not isinstance(cost_bps,(int,float)) or not math.isfinite(cost_bps) or cost_bps<0:raise ValueError('Invalid cost assumption')
+    observed_through=date.today().isoformat()
     missing=dict(status='missing_verified_prices',label=None,excess_return=None)
     def usable(rows):
-        return {r['day']:r for r in rows if r.get('adjustments_verified') and r.get('license_approved') and r.get('source_url') and
+        return {r['day']:r for r in rows if r['day']<=observed_through and r.get('adjustments_verified') and r.get('license_approved') and r.get('source_url') and
                 isinstance(r.get('total_return_index'),(int,float)) and math.isfinite(r['total_return_index']) and r['total_return_index']>0}
     p,b=usable(prices),usable(benchmark);common=sorted(set(p)&set(b));entry=next((d for d in common if d>=available_from),None)
-    if not entry:return missing
+    if not entry or (date.fromisoformat(entry)-date.fromisoformat(available_from)).days>7:return missing
     due=(date.fromisoformat(entry)+timedelta(days=horizon)).isoformat();exit_day=next((d for d in common if d>=due),None)
     # Refuse silently jumping over a long data gap, suspension or unresolved delisting.
     if not exit_day or (date.fromisoformat(exit_day)-date.fromisoformat(due)).days>7:return missing
@@ -141,25 +161,55 @@ def train_models(rows):
                 buy_signal=False,notify=False)
 
 
+def populate_targets(db,benchmark_id='BENCHMARK_TOTAL_RETURN',cost_bps=20):
+    approved=[dict(r) for r in db.execute('SELECT * FROM providers WHERE redistribution_approved=1')]
+    def series(security_id):
+        rows=[dict(r) for r in db.execute('SELECT * FROM prices WHERE security_id=? ORDER BY day',(security_id,))]
+        return [r for r in rows if any(p['url_prefix'].startswith('https://') and p['license_url'] and p['reviewed_at'] and r['source_url'].startswith(p['url_prefix']) for p in approved)]
+    benchmark=series(benchmark_id)
+    rows=db.execute('SELECT e.*,f.as_of FROM events e JOIN features f USING(event_id)').fetchall()
+    for row in rows:
+        prices=series(row['security_id']) if row['security_id'] else []
+        for h in (30,90,180):
+            target=make_target(prices,benchmark,row['available_from'],h,cost_bps)
+            db.execute('INSERT OR REPLACE INTO targets VALUES(?,?,?,?,?,?,?,?,?,?)',
+                       (row['event_id'],h,target.get('entry_day'),target.get('exit_day'),target.get('excess_return'),target.get('label'),target['status'],benchmark_id,cost_bps,target.get('source_digest')))
+    db.commit()
+
+
+def training_rows(db,horizon):
+    rows=db.execute("SELECT e.issuer_cik,f.*,t.exit_day,t.label,t.source_digest FROM features f JOIN events e USING(event_id) JOIN targets t USING(event_id) WHERE t.horizon=? AND t.status='verified' AND t.label IS NOT NULL",(horizon,)).fetchall()
+    return [dict(event_id=r['event_id'],issuer_cik=r['issuer_cik'],as_of=r['as_of'],exit_day=r['exit_day'],label=r['label'],
+                 source_kind='SEC_real_verified_target' if r['source_kind']=='SEC_real' and r['source_digest'] else 'unverified',
+                 max_source_public_at=r['max_source_public_at'],features=json.loads(r['values_json']),rule_score=r['rule_score']) for r in rows]
+
+
 def research_status(root,db_path):
     db=connect(db_path);count=0;feature_count=0
-    for e in iter_events(root):
+    events=list(iter_events(root));feature_ids=eligible_feature_ids(events)
+    db.execute('DELETE FROM features');db.execute('DELETE FROM targets')
+    for e in events:
         count+=1
-        # Stable security identity is deliberately unset until class/ticker changes are resolved.
-        db.execute('INSERT OR REPLACE INTO events VALUES(?,?,?,?,?,?,?)',(e['id'],e['cik'],None,e['filed'],e['available_from'],e['transaction_date'],json.dumps(e)))
+        previous=db.execute('SELECT security_id FROM events WHERE event_id=?',(e['id'],)).fetchone()
+        security_id=previous['security_id'] if previous else None
+        db.execute('INSERT OR REPLACE INTO events VALUES(?,?,?,?,?,?,?)',(e['id'],e['cik'],security_id,e['filed'],e['available_from'],e['transaction_date'],json.dumps(e)))
         values=point_in_time_features(e)
-        if values:
+        if values and e['id'] in feature_ids:
             feature_count+=1
             db.execute('INSERT OR REPLACE INTO features VALUES(?,?,?,?,?,?,?)',(e['id'],e['available_from'],'as_filed_v1',json.dumps(values),None,e['filed'],'SEC_real'))
-    db.commit()
-    # No source registry approves price redistribution yet: even externally added prices
-    # cannot silently switch on training. A reviewed provider adapter must create targets.
+    db.commit();populate_targets(db)
+    horizon_models={str(h):train_models(training_rows(db,h)) for h in (30,90,180)}
+    verified={str(h):len(training_rows(db,h)) for h in (30,90,180)}
+    trained=any(r['trained'] for r in horizon_models.values())
     status=dict(version=1,updated_utc=datetime.now(timezone.utc).isoformat(timespec='seconds'),events_stored=count,
-                point_in_time_feature_rows=feature_count,verified_targets={'30':0,'90':0,'180':0},trained=False,status='blocked',
-                models_prepared=['logistic_regression','gradient_boosting'],metrics=None,benchmark_returns=None,
-                missing=['licensed_verified_total_return_prices','historical_security_identity','splits_dividends_delisting_proceeds','point_in_time_rule_baseline'],
+                point_in_time_feature_rows=feature_count,verified_targets=verified,trained=trained,status='research_only' if trained else 'blocked',
+                models_prepared=['logistic_regression','gradient_boosting'],horizons=horizon_models,
+                metrics={h:r.get('metrics') for h,r in horizon_models.items()} if trained else None,benchmark_returns=None,
+                missing=['licensed_verified_total_return_prices','historical_security_identity','splits_dividends_delisting_proceeds','point_in_time_rule_baseline'] if not trained else [],
                 min_verified_targets=500,min_issuers=100,min_years=3,buy_signal=False,notify=False,
-                note='Modelli non addestrati; nessuna performance o etichetta inventata. Database locale ricostruibile dagli shard SEC.')
+                note='Nessuna performance o etichetta inventata; database ricostruibile dagli shard SEC. Adapter prezzi/identità non ancora approvati.')
+    status['verified_source_events_in_current_import']=count
+    status['events_stored']=db.execute('SELECT COUNT(*) FROM events').fetchone()[0]
     db.close();save_json(root/'docs/data/ml_status.json',status);return status
 
 

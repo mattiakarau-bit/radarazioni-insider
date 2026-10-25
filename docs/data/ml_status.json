@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "updated_utc": "2026-10-25T08:02:51+00:00",
+  "events_stored": 0,
+  "point_in_time_feature_rows": 0,
+  "verified_targets": {
+    "30": 0,
+    "90": 0,
+    "180": 0
+  },
+  "trained": false,
+  "status": "blocked",
+  "models_prepared": [
+    "logistic_regression",
+    "gradient_boosting"
+  ],
+  "horizons": {
+    "30": {
+      "trained": false,
+      "status": "blocked",
+      "reason": "Fewer than 500 verified event targets",
+      "metrics": null
+    },
+    "90": {
+      "trained": false,
+      "status": "blocked",
+      "reason": "Fewer than 500 verified event targets",
+      "metrics": null
+    },
+    "180": {
+      "trained": false,
+      "status": "blocked",
+      "reason": "Fewer than 500 verified event targets",
+      "metrics": null
+    }
+  },
+  "metrics": null,
+  "benchmark_returns": null,
+  "missing": [
+    "licensed_verified_total_return_prices",
+    "historical_security_identity",
+    "splits_dividends_delisting_proceeds",
+    "point_in_time_rule_baseline"
+  ],
+  "min_verified_targets": 500,
+  "min_issuers": 100,
+  "min_years": 3,
+  "buy_signal": false,
+  "notify": false,
+  "note": "Nessuna performance o etichetta inventata; database ricostruibile dagli shard SEC. Adapter prezzi/identità non ancora approvati."
+}

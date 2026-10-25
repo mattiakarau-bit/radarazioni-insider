@@ -82,6 +82,16 @@ def main():
     merged = {x['id']: x for x in normalize_events(historical.get('filings', []))}
     merged.update({x['id']: x for x in purchases})
     events = list(merged.values())
+    # Current annotations carry their first public date; never retroactively change
+    # historical eligibility before an amendment was public.
+    for amended in events:
+        if not amended.get('amendment'):continue
+        for original in events:
+            if original.get('amendment') or original['cik']!=amended['cik']:continue
+            shared=set(original.get('owner_ciks',[])) & set(amended.get('owner_ciks',[]))
+            if shared and (original['filed']==amended.get('original_filing_date') or original['transaction_date']==amended['transaction_date']):
+                original['amendment_known_from']=min(original.get('amendment_known_from','9999'),amended['filed'])
+
     for event in events:
         event['fundamentals'] = review_legacy(event.get('fundamentals'))
     facts_cache = {}
