@@ -153,6 +153,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     digest.update((Path(__file__).parent/'fundamentals.py').read_bytes())
     digest.update((Path(__file__).parent/'semester.py').read_bytes())
     digest.update((Path(__file__).parent/'amendments.py').read_bytes())
+    digest.update((Path(__file__).parent/'financial_review.py').read_bytes())
     for path in inputs:
         digest.update(str(path.relative_to(root)).encode());digest.update(path.read_bytes() if path.exists() else b'absent')
     marker=root/'data/cache/semester_checkpoint.json';old=read(marker,{})
@@ -186,6 +187,8 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     yearly_sources={}
     for x in events:
         if first_year<=x['transaction_date']<=as_of:yearly_sources.setdefault(x['cik'],[]).append(x)
+    from scanner.financial_review import review, report as financial_report
+    reviews={}
     for cik,d in details.items():
         d['transactions']=yearly_sources.get(cik,[])
         d['transaction_period_start']=first_year
@@ -194,6 +197,8 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
         d['financial_snapshot']=read(root/f'data/analysis/{cik}.json',None)
         if d['financial_snapshot']:
             d['financial_snapshot']['extractor_current']=d['financial_snapshot'].get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION
+        d['financial_review']=review(d['financial_snapshot'],as_of)
+        reviews[cik]=d['financial_review']
         fields=('id','form_url','cik','company','symbol','filed','transaction_date','amount','shares','unit_price','security_title','insider','currency','currency_basis','amendment','purchase_eligible','review_reasons')
         d['transactions']=[{k:x.get(k) for k in fields} for x in d['transactions']]
         write(root/f'docs/data/companies/{cik}.json',d)
@@ -223,6 +228,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     write(root/'docs/data/scan_status.json',{k:status.get(k) for k in ('last_scan_utc','status','coverage','errors','model_status')})
     write(root/'docs/data/radar.json',radar)
     write(root/'docs/data/semester_report.json',radar)
+    write(root/'docs/data/companies/financial/report.json',financial_report(companies,reviews,radar))
     write(marker,dict(digest=digest.hexdigest(),as_of=as_of))
     print(json.dumps(dict(as_of=as_of,search_start=radar['search_start'],stats=radar['stats'],funnel=radar['funnel'],source_coverage=radar['source_coverage']),ensure_ascii=False))
     return radar
