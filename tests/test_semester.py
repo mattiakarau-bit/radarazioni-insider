@@ -130,3 +130,16 @@ class DatedMarketEvidenceTests(unittest.TestCase):
         cap=replace(e.historical_caps['2026-05-12'],as_of=ASOF)
         e=replace(e,historical_caps={'2026-05-12':cap})
         self.assertEqual(build([purchase(1,'2026-05-12')],ASOF,{1:e})[0]['groups'],[])
+
+class SecurityAliasTests(unittest.TestCase):
+    def test_same_economic_purchase_with_par_value_title_variant_cannot_reach_threshold_twice(self):
+        a=purchase(1,'2026-05-12',60000)
+        b=dict(a,id='0000000001-26-000002#tx0',form_url='https://www.sec.gov/Archives/edgar/data/1/0000000001-26-000002.txt',security_title='Common Stock Par Value $0.001')
+        r,_,_=build([a,b],ASOF)
+        self.assertEqual(r['stats']['companies_weekly_base_pass'],0)
+    def test_explicit_different_share_classes_not_treated_as_spelling_alias(self):
+        from scanner.identity import suspend_security_aliases
+        a=dict(purchase(1,'2026-05-12',60000),security_title='Class A Common Stock')
+        b=dict(a,id='0000000001-26-000002#tx0',form_url='https://www.sec.gov/Archives/edgar/data/1/0000000001-26-000002.txt',security_title='Class B Common Stock')
+        self.assertEqual(suspend_security_aliases([a,b]),0)
+        self.assertTrue(a['purchase_eligible']);self.assertTrue(b['purchase_eligible'])

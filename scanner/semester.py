@@ -9,6 +9,7 @@ from datetime import date, timedelta
 from math import isfinite
 from scanner.radar import aggregate, months_before, filter_result, DEFAULT_FILTERS
 from scanner.scoring import screen, ValuationEvidence, valuation_valid
+from scanner.identity import suspend_security_aliases
 
 FORM4_CURRENCY_SOURCE='https://www.sec.gov/files/form4.pdf'
 
@@ -90,7 +91,8 @@ def build(events,as_of,evidence=None,months=6):
     provider is yet approved. Therefore missing market evidence cannot pass selection.
     """
     evidence=evidence or {};first=months_before(date.fromisoformat(as_of),months).isoformat()
-    rows=[x for x in events if first<=x.get('transaction_date','')<=as_of and x.get('filed','9999')<=as_of]
+    rows=[dict(x) for x in events if first<=x.get('transaction_date','')<=as_of and x.get('filed','9999')<=as_of]
+    suspend_security_aliases(rows)
     by_cik=defaultdict(list)
     for x in rows:by_cik[x['cik']].append(x)
     grouped=defaultdict(list)

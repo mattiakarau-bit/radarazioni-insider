@@ -7,7 +7,7 @@ from __future__ import annotations
 import argparse, hashlib, json
 from pathlib import Path
 from datetime import date,datetime,timezone
-from scanner.identity import filing_key,event_key
+from scanner.identity import filing_key,event_key,suspend_security_aliases
 from scanner.semester import build,issuer_windows,CurrentEvidence
 from scanner.radar import months_before
 from scanner.fundamentals import summarize_company_facts
@@ -56,6 +56,7 @@ def load_sources(root,as_of):
     amendment_rows=registry(root,manifest)+list(read(root/'docs/data/state.json',{}).get('amendment_filings',{}).values())
     bridge['amendment_filings_including_without_P']=len({x['accession'] for x in amendment_rows if x['filed']<=as_of})
     bridge['additional_purchases_suspended_by_amendments']=apply(combined,amendment_rows,as_of)
+    bridge['additional_cross_title_alias_rows_suspended']=suspend_security_aliases(combined)
     unique={event_key(x):x for x in combined}
     return list(unique.values()),dict(bulk_rows=len(raw),realtime_rows=len(live),merged_rows=len(unique),**bridge)
 
@@ -141,6 +142,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     for path in sorted((root/'data/insider').glob('*.events.jsonl.gz')):
         digest.update(hashlib.sha256(path.read_bytes()).digest())
     digest.update(Path(__file__).read_bytes())
+    digest.update((Path(__file__).parent/'identity.py').read_bytes())
     digest.update((Path(__file__).parent/'semester.py').read_bytes())
     digest.update((Path(__file__).parent/'amendments.py').read_bytes())
     for path in inputs:
