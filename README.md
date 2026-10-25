@@ -127,3 +127,46 @@ python -m scanner.ml
 Usano l’identità SEC già configurata nei Secrets. Non impostare credenziali nel codice.
 Dipendenze opzionali per training: `pip install -r research-requirements.txt` (solo librerie,
 nessuna API o sottoscrizione). La PWA 0.7.0 si aggiorna senza cancellare i Preferiti locali.
+
+## 0.8.0 — il Radar cerca nel semestre, non nell’ultima settimana
+
+`python -m scanner.universe` riutilizza gli shard SEC già importati e li riconcilia
+con `events_history.json`. L’universo si basa sulla **data dell’operazione negli ultimi
+sei mesi di calendario**, con deposito già pubblico alla data del calcolo. Le finestre
+mobili restano di sette giorni: una società entra nella classifica solo se almeno una
+finestra supera i criteri economici e tutti i controlli attuali. Una scheda per CIK;
+tutte le settimane significative restano nel dettaglio azienda caricato su richiesta.
+
+`docs/data/semester_report.json` riporta universo, righe, conteggi indipendenti per
+ogni evidenza e funnel cumulativo. Non usare il totale emittenti 2021–2026 come
+universo semestrale. La copertura di ottobre dipende dalla coda giornaliera, resta
+parziale e viene mostrata separatamente. Le vecchie righe senza classe/swap verificati
+restano conservate ma non certificano il superamento delle soglie.
+
+La soglia proporzionale usa la capitalizzazione storica della settimana; quella
+corrente è un controllo diverso. Mancanze non sono sostituite con l’altra data.
+SEC Form 4, istruzione 5, prescrive prezzi dichiarati in USD: questo chiarisce la
+base degli importi SEC, senza rendere verificati i prezzi di mercato. Gli shard 0.7
+sono immutati; il nuovo adapter documenta la base valutaria senza inventare conversioni.
+
+La produzione non ha un provider prezzi/capitalizzazioni approvato. Il registro
+`docs/data/source_policy.json` contiene fonti, condizioni verificate, fonti escluse
+e passaggi concreti ancora richiesti. Nessuna raccomandazione è confermata senza
+prezzi, split, valutazione, debito/cassa attuali e revisione dei cambiamenti dopo gli
+acquisti. Il cache SEC `data/analysis` contiene estrazioni e osservazioni finanziarie
+con provenienza; osservazioni del debito non riconciliate non sono una verifica del
+perimetro. Refresh fino a 25 emittenti per scansione, TTL sette giorni, priorità agli
+acquisti sopra soglia e rotazione dei mancanti. Errori conservano snapshot datati.
+
+La homepage scarica una classifica JSON compatta e uno stato scansione senza righe
+transazione; indice Ricerca e dettagli sono scaricati solo su richiesta. Parametri
+personali e periodo 7/30/90/180/365 non cambiano il semestre della homepage.
+Preferiti e chiavi locali non vengono cancellati, nessuna sincronizzazione dichiarata.
+
+Verifiche: test di accettazione maggio/giugno/settembre → ottobre con evidenze
+fittizie complete; una sola scheda con più settimane; soglie, correzioni, co-report,
+separazione capitalizzazioni storiche/correnti, prezzi mancanti e cassa negativa.
+`python tests/verify_semester.py` controlla la pipeline sui veri archivi checkout,
+riconta gli emittenti indipendentemente e riconcilia gli importi dei dettagli.
+Actions esegue questa verifica e i test mobile Chromium/WebKit prima di Pages.
+ML e segnali BUY restano disabilitati senza target/validazione reali.

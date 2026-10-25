@@ -37,20 +37,23 @@ jobs:
           node --check docs/sw.js
           node --test tests/*.test.cjs
       - name: Analizza i nuovi Form 4 SEC
-        if: github.event_name != 'push'
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MAX_FORMS_PER_RUN: '180'
           LOOKBACK_DAYS: '7'
+          MAX_FACTS_PER_RUN: '5'
         run: python -m scanner.run
+      - name: Calcola il Radar semestrale da archivi locali e nuovi depositi
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python -m scanner.universe --refresh-financials 25
+          python tests/verify_semester.py
       - name: Salva le ultime operazioni nel repository
-        if: github.event_name != 'push'
         run: |
           git config user.name 'RadarAzioni Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add docs/data/results.json docs/data/state.json docs/data/events_history.json docs/data/radar.json
+          git add docs/data/results.json docs/data/state.json docs/data/events_history.json docs/data/radar.json docs/data/scan_status.json docs/data/semester_report.json docs/data/search_index.json docs/data/pending_index.json docs/data/companies data/analysis data/insider/amendments.v1.json
           if ! git diff --cached --quiet; then
             git commit -m 'Aggiorna gli eventi SEC'
             git pull --rebase origin main

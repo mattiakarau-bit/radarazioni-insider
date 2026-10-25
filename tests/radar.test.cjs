@@ -37,3 +37,11 @@ test('custom period selects anchor dates without changing seven-day aggregation'
  assert.equal(C.searchWindows([g],'2026-10-11',30)[0].window_start,'2026-09-28');
  assert.throws(()=>C.searchWindows([g],'2026-10-11',12));
 });
+
+test('semester selection needs backend verification; a selected label alone cannot promote a company',()=>{
+ const c={selection_status:'selected',analysis:{score_status:'verificato',quality_pass:true}};
+ assert.equal(C.homeDecision(c),'pending');
+ assert.equal(C.homeDecision({...c,current_checks:{current_price_verified:true},weekly_economic_verified:true,split_comparison_verified:true}),'pending');
+ const checks=Object.fromEntries(['annual_fundamentals_verified','current_financials_verified','balance_sheet_debt_verified','current_price_verified','current_valuation_verified','post_purchase_changes_verified'].map(k=>[k,true]));
+ assert.equal(C.homeDecision({...c,current_checks:checks,weekly_economic_verified:true,split_comparison_verified:true}),'selected');
+});

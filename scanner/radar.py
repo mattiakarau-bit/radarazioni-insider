@@ -127,11 +127,7 @@ def price_band(current, adjusted_insider_average):
     return dict(within_band=abs(distance) <= 5+1e-9, distance_pct=round(distance,4))
 
 
-def publish(events, as_of):
-    events = [x for x in events if x.get('filed', '') <= as_of]
-    start = (date.fromisoformat(as_of)-timedelta(days=6)).isoformat()
-    return dict(version=1, app_version='0.7.0', as_of=as_of, window_start=start,
-                filters=DEFAULT_FILTERS, groups=aggregate(events,start,as_of),
-                history_months_available=12,
-                history_status='Prezzi, split, fondamentali aggiornati ed eventi non verificati; nessuna segnalazione reale',
-                historical_windows=[dict({k:v for k,v in g.items() if k not in ('transactions','fundamentals')}, transaction_ids=[x['id'] for x in g['transactions']]) for g in historical_windows(events,as_of,12)])
+def publish(events, as_of, *, evidence=None):
+    """Six-month engine; production uses universe.publish_from_archive to merge sources."""
+    from scanner.semester import build
+    return build(events,as_of,evidence)[0]

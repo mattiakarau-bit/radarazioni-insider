@@ -79,6 +79,18 @@ jobs:
             after=$(python -c 'import json; print(sum(r.get("status")=="complete" for r in json.load(open("data/insider/manifest.json"))["quarters"].values()))')
             if [ "$after" -le "$before" ]; then break; fi
           done
+      - name: Aggiorna il motore semestrale dopo i checkpoint storici
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python -m scanner.universe --refresh-financials 10
+          python tests/verify_semester.py
+          git add docs/data/radar.json docs/data/scan_status.json docs/data/semester_report.json docs/data/search_index.json docs/data/pending_index.json docs/data/companies data/analysis data/insider/amendments.v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Aggiorna Radar semestrale dagli archivi SEC'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - name: Verifica dati generati e dimensioni prima della pubblicazione
         run: |
           python -m unittest discover -s tests -q
