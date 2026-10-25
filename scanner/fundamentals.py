@@ -53,6 +53,7 @@ def _trend(records: list[dict]):
 
 
 def summarize_company_facts(facts: dict, as_of: str) -> dict:
+    from scanner.financial_review import additional_annual_facts
     revenues = _annual(facts, REVENUE_TAGS, "USD", as_of)
     # EPS can have distinct diluted vs basic series, choose diluted if available.
     eps = _annual(facts, ["EarningsPerShareDiluted", "EarningsPerShareBasic"], "USD/shares", as_of)
@@ -83,6 +84,7 @@ def summarize_company_facts(facts: dict, as_of: str) -> dict:
         "evidence_valid": bool(scope_ok and all(x for x in (revenues,eps,cashflow))),
         "as_of": as_of, "source_url": "https://data.sec.gov/api/xbrl/companyfacts/", "data_warnings": warnings,
         "company_name": facts.get("entityName"),
+        **additional_annual_facts(facts, as_of),
     }
 
 

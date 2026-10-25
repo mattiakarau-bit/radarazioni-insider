@@ -30,7 +30,7 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     const expected=JSON.parse(fs.readFileSync('docs/data/radar.json')).stats.pending_base_candidates;assert.ok((await page.locator('#customStatus').textContent()).startsWith(expected+' società'),'Visible pending company count must match Python semester funnel');
     const first=page.locator('#customResults .card').filter({has:page.locator('.star[aria-pressed="false"]')}).first();
     const ticker=await first.locator('.ticker').textContent();
-    await first.locator('.open-detail').click();await page.locator('#detailDialog[open]').waitFor();assert.ok((await page.locator('#detailContent').textContent()).includes('Tutte le settimane significative'));await fits(page);await page.locator('#closeDetail').click();
+    await first.locator('.open-detail').click();await page.locator('#detailDialog[open]').waitFor();assert.ok((await page.locator('#detailContent').textContent()).includes('Tutte le settimane significative'));assert.ok((await page.locator('.financial-review').textContent()).includes('P/FCF'));assert.ok((await page.locator('.financial-review').textContent()).includes('Non verificabile'));await fits(page);await page.locator('#closeDetail').click();
     await first.locator('.star').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===3);
     for(const days of ['7','30','90','180','365'])await page.locator('#searchPeriod').selectOption(days);
     await page.locator('#visibility').selectOption('candidates');await page.locator('#minAmount').fill('1000000000000');await page.locator('#filtersForm button[type=submit]').click();assert.equal(await page.locator('#customResults .card').count(),0);

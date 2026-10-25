@@ -1,4 +1,4 @@
-# RadarAzioni – Insider Intelligence · 0.7.0
+# RadarAzioni – Insider Intelligence · 0.8.3
 
 App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
 trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
@@ -186,3 +186,15 @@ priorità dei tag solo a parità di data. Un vecchio tag `Revenues` fermo al 201
 nasconde più una serie 2023–2025. Non mescola concetti tra anni e mantiene i blocchi
 per ricavi parziali o discordanti. Le estrazioni precedenti vengono declassate e
 messe in coda di ricalcolo con priorità, senza attribuire loro validità corrente.
+
+## 0.8.3 — analisi finanziaria senza inventare dati mancanti
+
+Analisi offline delle cache SEC esistenti: utili periodici, liquidità e debito
+osservato datati; FCF soltanto con CFO/capex coerenti, multipli soltanto con
+evidenze di mercato verificate. I nuovi campi annuali vengono estratti dal
+medesimo refresh ordinario, senza invalidare/riscaricare cache per completarli.
+Nello snapshot 25 ottobre: 881 candidate insider, 60 cache esaminate, zero
+società prequalificate su prezzi/cap, zero società verificate in homepage.
+Dettagli finanziari estesi nel layout esistente; Preferiti e scoring conservati.
+La pubblicazione su push è offline, gli aggiornamenti programmati restano attivi.
+[Metodi, risultati e limiti](research/financial-review-0.8.3.md).
