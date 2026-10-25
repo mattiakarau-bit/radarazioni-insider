@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-25",
+  "snapshot_as_of": "2026-10-25",
+  "semester_report_sha256": "12efd35a866b5bb63016f14df690b77d62474bf4bc3f9f3cf798f8840883cbbd",
+  "pending_index_sha256": "23cdb24ff183ff01b2a6480b2c7113cd71a3abe51139b54d6359a3cd5f11d4a7",
+  "candidate_details_digest": "d03176c2297caaa129f55f1282f0f7a6b8f927f0c91e6e40df2d277cf69b22b6",
+  "scope": "Availability audit only; no production evidence or filter change",
+  "counts": {
+    "weekly_base_candidates": 878,
+    "historical_cap_values_present": 0,
+    "current_cap_values_present": 0,
+    "historical_cap_and_weekly_threshold_verified": 0,
+    "current_cap_verified": 0,
+    "sample_companies": 3,
+    "sample_with_any_reported_share_observation": 2,
+    "sample_with_verified_historical_cap": 0,
+    "sample_with_verified_current_cap": 0,
+    "newly_verified_capitalizations": 0,
+    "combined_cap_filters_verified": 0,
+    "candidates_without_both_cap_values": 878
+  },
+  "count_note": "Value availability is counted separately from verified filter passes, using every candidate detail. Reported shares can be stale or class-incomplete and are not current capitalization. No cap observations added by this audit.",
+  "sample": [
+    {
+      "cik": 1800,
+      "symbol": "ABT",
+      "company": "ABBOTT LABORATORIES",
+      "in_candidate_snapshot": true,
+      "current_tickers": [
+        "ABT"
+      ],
+      "ticker_list_does_not_verify_historical_classes": true,
+      "shares_source_url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000001800/dei/EntityCommonStockSharesOutstanding.json",
+      "shares_response_sha256": "f46534652ee1fba46341dc315142810aac2869e4b7a9b80aa545ac669cd9f059",
+      "latest_periodic_filing": {
+        "form": "10-Q",
+        "filingDate": "2026-07-28",
+        "reportDate": "2026-06-30",
+        "accessionNumber": "0001628280-26-050134",
+        "primaryDocument": "abt-20260630.htm"
+      },
+      "latest_available_reported_shares": {
+        "status": "no_public_observation",
+        "observation": null
+      },
+      "purchase_week_reported_shares": {
+        "2026-04-27": {
+          "status": "no_public_observation",
+          "observation": null
+        },
+        "2026-05-07": {
+          "status": "no_public_observation",
+          "observation": null
+        }
+      },
+      "historical_capitalization": null,
+      "current_capitalization": null,
+      "capitalization_status": "blocked_no_approved_price_source"
+    },
+    {
+      "cik": 1031203,
+      "symbol": "GPI",
+      "company": "GROUP 1 AUTOMOTIVE INC",
+      "in_candidate_snapshot": true,
+      "current_tickers": [
+        "GPI"
+      ],
+      "ticker_list_does_not_verify_historical_classes": true,
+      "shares_source_url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001031203/dei/EntityCommonStockSharesOutstanding.json",
+      "shares_response_sha256": "6274ebbe402f1a5145d5d611dc11fd71fb184412572b02022dea35f95db163ae",
+      "latest_periodic_filing": {
+        "form": "10-Q",
+        "filingDate": "2026-07-30",
+        "reportDate": "2026-06-30",
+        "accessionNumber": "0001031203-26-000123",
+        "primaryDocument": "gpi-20260630.htm"
+      },
+      "latest_available_reported_shares": {
+        "status": "reported_only",
+        "observation": {
+          "shares": 11922225,
+          "share_date": "2026-07-24",
+          "public_on": "2026-07-30",
+          "accession": "0001031203-26-000123",
+          "form": "10-Q",
+          "unit": "shares",
+          "age_days": 93,
+          "same_date_as_target": false,
+          "class_scope_verified": false,
+          "split_basis_verified": false
+        }
+      },
+      "purchase_week_reported_shares": {
+        "2026-09-01": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 39,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-02": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 40,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-03": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 41,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-04": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 42,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-09": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 47,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-10": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 48,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-17": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 55,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-18": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 56,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-24": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 62,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-25": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 63,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-28": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 66,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-29": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 67,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-09-30": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 11922225,
+            "share_date": "2026-07-24",
+            "public_on": "2026-07-30",
+            "accession": "0001031203-26-000123",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 68,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        }
+      },
+      "historical_capitalization": null,
+      "current_capitalization": null,
+      "capitalization_status": "blocked_no_approved_price_source"
+    },
+    {
+      "cik": 1067983,
+      "symbol": "BRK.B",
+      "company": "BERKSHIRE HATHAWAY INC",
+      "in_candidate_snapshot": true,
+      "current_tickers": [
+        "BRK-B",
+        "BRK-A"
+      ],
+      "ticker_list_does_not_verify_historical_classes": true,
+      "shares_source_url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001067983/dei/EntityCommonStockSharesOutstanding.json",
+      "shares_response_sha256": "ee0185815e2f34c1e36c63221104651e7cc3a480dbec1001f560555f57217033",
+      "latest_periodic_filing": {
+        "form": "10-Q",
+        "filingDate": "2026-08-10",
+        "reportDate": "2026-06-30",
+        "accessionNumber": "0001193125-26-341032",
+        "primaryDocument": "brka-20260630.htm"
+      },
+      "latest_available_reported_shares": {
+        "status": "reported_only",
+        "observation": {
+          "shares": 941481,
+          "share_date": "2011-04-29",
+          "public_on": "2011-05-06",
+          "accession": "0001157523-11-002891",
+          "form": "10-Q",
+          "unit": "shares",
+          "age_days": 5658,
+          "same_date_as_target": false,
+          "class_scope_verified": false,
+          "split_basis_verified": false
+        }
+      },
+      "purchase_week_reported_shares": {
+        "2026-05-06": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 941481,
+            "share_date": "2011-04-29",
+            "public_on": "2011-05-06",
+            "accession": "0001157523-11-002891",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 5486,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        },
+        "2026-08-12": {
+          "status": "reported_only",
+          "observation": {
+            "shares": 941481,
+            "share_date": "2011-04-29",
+            "public_on": "2011-05-06",
+            "accession": "0001157523-11-002891",
+            "form": "10-Q",
+            "unit": "shares",
+            "age_days": 5584,
+            "same_date_as_target": false,
+            "class_scope_verified": false,
+            "split_basis_verified": false
+          }
+        }
+      },
+      "historical_capitalization": null,
+      "current_capitalization": null,
+      "capitalization_status": "blocked_no_approved_price_source"
+    }
+  ],
+  "market_provider_enabled": null,
+  "production_integration_enabled": false,
+  "buy_signal": false,
+  "notify": false
+}

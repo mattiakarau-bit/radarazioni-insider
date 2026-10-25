@@ -3,7 +3,11 @@
   "active_market_provider": null,
   "sec": {
     "enabled": true,
-    "data": ["quarterly Form 4 structured data", "recent Form 4", "XBRL companyfacts"],
+    "data": [
+      "quarterly Form 4 structured data",
+      "recent Form 4",
+      "XBRL companyfacts"
+    ],
     "access": "Existing SEC_USER_AGENT; throttled; no additional subscription",
     "reuse": "SEC public filings and Government-created content free to access and reuse",
     "terms_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
@@ -11,15 +15,84 @@
     "currency_note": "Instruction 5 requires USD per-share reported prices. This is not individual audit of filing correctness, nor a current market price. Immutable v0.7 shards retain their original unknown-currency metadata."
   },
   "evaluated": [
-    {"provider":"Stooq", "enabled":false,"terms_url":"https://stooq.com/terms.html","reason":"Section 5.3 prohibits redistribution without consent. No consent obtained."},
-    {"provider":"Alpha Vantage", "enabled":false,"terms_url":"https://www.alphavantage.co/terms_of_service/","reason":"Ordinary personal/non-commercial licence does not establish public app redistribution rights."},
-    {"provider":"Financial Modeling Prep", "enabled":false,"terms_url":"https://site.financialmodelingprep.com/terms-of-service","reason":"Specific display/redistribution agreement required, including complimentary multiuser apps."},
-    {"provider":"Tiingo", "enabled":false,"terms_url":"https://www.tiingo.com/products/end-of-day-stock-price-data","reason":"Free plan is internal use only; redistribution is a paid plan. Not activated."},
-    {"provider":"SimFin", "enabled":false,"terms_url":"https://www.simfin.com/en/commercial-license/","reason":"Free/BASIC licence forbids sharing with other parties; general legal-advice page differs. Explicit no-redistribution licence prevents approval without written clarification. No account created."},
-    {"provider":"HF Data Library", "enabled":false,"terms_url":"https://hfdatalibrary.com/pages/terms","reason":"Academic/educational research only; must not support investment decisions. Incompatible with current opportunity screening."},
-    {"provider":"Finazon US Equities Basic", "enabled":false,"terms_url":"https://finazon.io/dataset/us_stocks_essential","reason":"Licence-free redistribution claim is distinct from access price, which starts at $19/month. Paid access excluded."}
+    {
+      "provider": "Stooq",
+      "enabled": false,
+      "terms_url": "https://stooq.com/terms.html",
+      "reason": "Section 5.3 prohibits redistribution without consent. No consent obtained.",
+      "current_access_check": "2026-10-25: JavaScript verification wall; earlier restriction retained, not independently recertified today. No permission obtained."
+    },
+    {
+      "provider": "Alpha Vantage",
+      "enabled": false,
+      "terms_url": "https://www.alphavantage.co/terms_of_service/",
+      "reason": "Ordinary personal/non-commercial licence does not establish public app redistribution rights."
+    },
+    {
+      "provider": "Financial Modeling Prep",
+      "enabled": false,
+      "terms_url": "https://site.financialmodelingprep.com/terms-of-service",
+      "reason": "Specific display/redistribution agreement required, including complimentary multiuser apps."
+    },
+    {
+      "provider": "Tiingo",
+      "enabled": false,
+      "terms_url": "https://www.tiingo.com/products/end-of-day-stock-price-data",
+      "reason": "Product pricing labels Free internal use only; public display redistribution is a distinct paid plan. Not activated."
+    },
+    {
+      "provider": "SimFin",
+      "enabled": false,
+      "terms_url": "https://www.simfin.com/en/commercial-license/",
+      "reason": "Explicit FREE/BASIC section 1: own personal research, no third-party sharing. Redistribution section 3 is a separate licence; it does not apply to FREE/BASIC."
+    },
+    {
+      "provider": "HF Data Library",
+      "enabled": false,
+      "terms_url": "https://hfdatalibrary.com/pages/terms",
+      "reason": "Academic/educational research only; must not support investment decisions. Incompatible with current opportunity screening."
+    },
+    {
+      "provider": "Finazon US Equities Basic",
+      "enabled": false,
+      "terms_url": "https://finazon.io/dataset/us_stocks_essential",
+      "reason": "Licence-free redistribution claim is distinct from access price, which starts at $19/month. Paid access excluded."
+    },
+    {
+      "provider": "Twelve Data",
+      "enabled": false,
+      "terms_url": "https://twelvedata.com/terms",
+      "pricing_url": "https://twelvedata.com/pricing-business",
+      "reason": "Basic free tier: internal non-display. External display and redistribution have separate plans/agreements; no free public JSON rights established."
+    },
+    {
+      "provider": "Yahoo Finance / yfinance",
+      "enabled": false,
+      "terms_url": "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html",
+      "documentation_url": "https://github.com/ranaroussi/yfinance",
+      "reason": "Library licence is not a data licence. Maintainer states personal-use intent; Yahoo terms endpoint returned 999 during this review. No public redistribution permission established; unofficial price endpoints not integrated."
+    },
+    {
+      "provider": "Financial Datasets",
+      "enabled": false,
+      "terms_url": "https://www.financial-datasets.ai/terms-of-use",
+      "pricing_url": "https://www.financial-datasets.ai/pricing",
+      "reason": "Personal terms do not allow redistribution. Plans with display rights are paid; raw/bulk redistribution is restricted. No compatible no-cost public JSON route established."
+    },
+    {
+      "provider": "Community/open-labelled snapshots",
+      "enabled": false,
+      "terms_url": "https://www.kaggle.com/borismarjanovic/price-volume-data-for-all-us-stocks-etfs",
+      "additional_url": "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data",
+      "reason": "Kaggle CC0 example ends in 2017, outside the required 2026 coverage; Yahoo/Nasdaq-derived community copy does not establish upstream public redistribution rights. A code/dataset label alone is insufficient."
+    }
   ],
-  "unresolved": ["Verified current and historical EOD prices for equity classes", "Splits and class/ticker continuity", "Historical and current capitalization", "Current valuation and review of corporate changes"],
+  "unresolved": [
+    "Verified current and historical EOD prices for equity classes",
+    "Splits and class/ticker continuity",
+    "Historical and current capitalization",
+    "Current valuation and review of corporate changes"
+  ],
   "implementation_required": [
     "Obtain explicit no-cost permission covering public display, derived scores and downloadable JSON for a broad EOD source; no such permission has been established. Alternatively use a documented compatible open-data source after validation. No messages requesting permission have been sent.",
     "Implement and test a source adapter keyed by CIK plus stable share class, dated price/capitalization observations and source/reuse references. A last closing price is labelled by its trading date, never called real-time.",
@@ -27,5 +100,13 @@
     "Reconcile SEC cash/debt observations including leases and sector scope, then review subsequent 8-K/10-Q/10-K events. CurrentEvidence remains closed for these missing checks."
   ],
   "buy_signal": false,
-  "notify": false
+  "notify": false,
+  "market_data_audit": {
+    "reviewed_on": "2026-10-25",
+    "report_url": "./data/market_availability_report.json",
+    "technical_report": "https://github.com/mattiakarau-bit/radarazioni-insider/blob/main/research/market-data-availability-2026-10-25.md",
+    "status": "blocked_no_approved_free_public_price_source",
+    "production_adapter_enabled": false,
+    "sec_shares_alone_sufficient": false
+  }
 }
