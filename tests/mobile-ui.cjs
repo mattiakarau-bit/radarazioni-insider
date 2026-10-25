@@ -27,6 +27,7 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     const home=await page.locator('#pendingStatus').textContent();
     await page.locator('#showPending').click();await page.locator('#customResults .card').first().waitFor();
     assert.equal(await page.locator('#visibility').inputValue(),'pending');assert.ok(await page.locator('#customResults .card').count()<=80);
+    const expected=JSON.parse(fs.readFileSync('docs/data/radar.json')).stats.pending_base_candidates;assert.ok((await page.locator('#customStatus').textContent()).startsWith(expected+' società'),'Visible pending company count must match Python semester funnel');
     const first=page.locator('#customResults .card').filter({has:page.locator('.star[aria-pressed="false"]')}).first();
     const ticker=await first.locator('.ticker').textContent();
     await first.locator('.open-detail').click();await page.locator('#detailDialog[open]').waitFor();assert.ok((await page.locator('#detailContent').textContent()).includes('Tutte le settimane significative'));await fits(page);await page.locator('#closeDetail').click();
@@ -41,15 +42,15 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
    }
    const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),page=await context.newPage();
    const companies=[fixture(1,'2026-05-12'),fixture(2,'2026-06-19'),fixture(3,'2026-09-08')],may=companies[0],windows=[may,{...may,window_start:'2026-05-22',window_end:'2026-05-22',amount:400000}];
-   const r={version:2,app_version:'0.8.0',as_of:'2026-10-25',search_start:'2026-04-25',search_months:6,aggregation_days:7,groups:companies,stats:{companies_with_purchase_rows:4,companies_weekly_base_pass:3,selected_companies:3,pending_base_candidates:0}};
+   const r={version:2,app_version:'0.8.1',as_of:'2026-10-25',search_start:'2026-04-25',search_months:6,aggregation_days:7,groups:companies,stats:{companies_with_purchase_rows:4,companies_weekly_base_pass:3,selected_companies:3,pending_base_candidates:0}};
    await page.route('**/data/radar.json*',x=>x.fulfill({contentType:'application/json',body:JSON.stringify(r)}));
-   await page.route('**/data/search_index.json*',x=>x.fulfill({contentType:'application/json',body:JSON.stringify({issuers:companies.map(c=>({company:c,windows:c.cik===1?windows:[c]}))})}));
+   await page.route('**/data/search_index.json*',x=>x.fulfill({contentType:'application/json',body:JSON.stringify({issuers:companies.map(c=>({company:c,windows:c.cik===1?[{...may,window_start:'2026-04-21',window_end:'2026-04-27',amount:9999999},...windows]:[c],semester_windows:c.cik===1?windows:[c]}))})}));
    await page.route('**/data/companies/1.json',x=>x.fulfill({contentType:'application/json',body:JSON.stringify({as_of:r.as_of,company:may,significant_windows:windows,transactions:[{id:'fixture-only',cik:1,symbol:'TEST1',transaction_date:'2026-05-12',filed:'2026-05-13',amount:300000,shares:3000,unit_price:100,insider:'Synthetic fixture',security_title:'Common Stock',currency:'USD',form_url:'https://www.sec.gov/Archives/fixture-only'}]})}));
    await page.goto(base);await page.locator('#results .card').nth(2).waitFor();assert.equal(await page.locator('#results .card').count(),3);
    const text=await page.locator('#results').textContent();for(const d of ['2026-05-12','2026-06-19','2026-09-08'])assert.ok(text.includes(d));
    assert.equal(await page.locator('#results [data-cik="1"]').count(),1);
    await page.locator('#results .open-detail').first().click();await page.locator('#detailDialog[open]').waitFor();assert.ok((await page.locator('#detailContent').textContent()).includes('2026-05-22'));await page.locator('#closeDetail').click();
-   await page.locator('nav [data-page=custom]').click();await page.locator('#searchPeriod').selectOption('365');await page.locator('#customResults .card').nth(2).waitFor();assert.equal(await page.locator('#customResults .card').count(),3);
+   await page.locator('nav [data-page=custom]').click();await page.locator('#searchPeriod').selectOption('semester');await page.locator('#customResults .card').nth(2).waitFor();assert.equal(await page.locator('#customResults .card').count(),3);assert.ok(!(await page.locator('#customResults').textContent()).includes('2026-04-21'),'Annual window must not leak outside calendar semester');await page.locator('#searchPeriod').selectOption('365');
    await page.locator('#minAmount').fill('1000000000');await page.locator('#filtersForm button[type=submit]').click();await page.locator('nav [data-page=radar]').click();assert.equal(await page.locator('#results .card').count(),3);
    await fits(page);await context.close();console.log(engine.name()+': May/June/September appear in October homepage, multiple weeks one card, lazy detail and custom isolation passed');
    const archiveContext=await browser.newContext({viewport:{width:768,height:1024},isMobile:true,hasTouch:true}),archive=await archiveContext.newPage();

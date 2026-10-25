@@ -167,7 +167,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
                 # Outside semester stays available in personalized 365-day search only.
                 company={k:v for k,v in w.items() if k not in ('transactions','fundamentals','possible_duplicate_ids')}
                 company.update(detail_url=f'./data/companies/{cik}.json',selection_status='outside_semester',current_price=None)
-            search[cik]=dict(company=company,windows=[])
+            search[cik]=dict(company=company,windows=[],semester_windows=details.get(cik,{}).get('semester_windows',[]))
         if cik in details:
             match=next((x for x in details[cik]['significant_windows'] if x['window_end']==w['window_end']),None)
             if match:w.update({k:match[k] for k in ('historical_market_cap','historical_market_cap_as_of','weekly_economic_verified','split_comparison_verified','adjusted_insider_price','distance_from_insider_pct')})
@@ -179,7 +179,10 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     for x in events:
         if first_year<=x['transaction_date']<=as_of:yearly_sources.setdefault(x['cik'],[]).append(x)
     for cik,d in details.items():
-        if not d['transactions']:d['transactions']=yearly_sources.get(cik,[])
+        d['transactions']=yearly_sources.get(cik,[])
+        d['transaction_period_start']=first_year
+        d['transaction_period_end']=as_of
+        d.pop('semester_windows',None)
         d['financial_snapshot']=read(root/f'data/analysis/{cik}.json',None)
         fields=('id','form_url','cik','company','symbol','filed','transaction_date','amount','shares','unit_price','security_title','insider','currency','currency_basis','amendment','purchase_eligible','review_reasons')
         d['transactions']=[{k:x.get(k) for k in fields} for x in d['transactions']]

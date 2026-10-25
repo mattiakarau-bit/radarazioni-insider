@@ -143,3 +143,12 @@ class SecurityAliasTests(unittest.TestCase):
         b=dict(a,id='0000000001-26-000002#tx0',form_url='https://www.sec.gov/Archives/edgar/data/1/0000000001-26-000002.txt',security_title='Class B Common Stock')
         self.assertEqual(suspend_security_aliases([a,b]),0)
         self.assertTrue(a['purchase_eligible']);self.assertTrue(b['purchase_eligible'])
+
+class CalendarBoundaryTests(unittest.TestCase):
+    def test_server_semester_windows_do_not_include_purchase_just_before_boundary(self):
+        before=purchase(1,'2026-04-22',200000)
+        inside=purchase(1,'2026-04-27',900000,2)
+        r,companies,details=build([before,inside],ASOF)
+        self.assertEqual(companies[0]['amount'],900000)
+        self.assertEqual(details[1]['semester_windows'][0]['window_start'],'2026-04-25')
+        self.assertEqual(details[1]['semester_windows'][0]['amount'],900000)

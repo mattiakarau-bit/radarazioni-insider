@@ -174,11 +174,12 @@ def build(events,as_of,evidence=None,months=6):
                       detail_url=f'./data/companies/{cik}.json',transaction_ids=[x['id'] for x in best['transactions']])
         companies.append(public)
         details[cik]=dict(company=public,as_of=as_of,search_start=first,
+                          semester_windows=[{k:w.get(k) for k in ('window_start','window_end','amount','reported_amount','transaction_count','reported_transaction_count','aggregation_verified','weighted_price','historical_market_cap','historical_market_cap_as_of','weekly_economic_verified','split_comparison_verified','adjusted_insider_price','distance_from_insider_pct')} for w in windows],
                           significant_windows=[{k:v for k,v in w.items() if k not in ('transactions','fundamentals','analysis')} for w in base],
                           transactions=source,overlap_warning='Finestre sovrapposte: non sommare importi o conteggi tra finestre.',
                           currency_basis='Prezzi USD dichiarati secondo Form 4, istruzione 5; non verifica individuale del deposito',currency_source=FORM4_CURRENCY_SOURCE)
     companies.sort(key=lambda c:((c['analysis'].get('radar_score') if c['analysis'].get('radar_score') is not None else -1),c['amount']),reverse=True)
-    return dict(version=2,app_version='0.8.0',as_of=as_of,search_months=months,search_start=first,window_start=first,
+    return dict(version=2,app_version='0.8.1',as_of=as_of,search_months=months,search_start=first,window_start=first,
                 aggregation_days=7,filters=DEFAULT_FILTERS,groups=[c for c in companies if c['selection_status']=='selected'],
                 stats=dict(stats),funnel=dict(funnel),history_months_available=12,historical_windows=[],
                 search_index_url='./data/search_index.json',pending_index_url='./data/pending_index.json',

@@ -170,3 +170,11 @@ separazione capitalizzazioni storiche/correnti, prezzi mancanti e cassa negativa
 riconta gli emittenti indipendentemente e riconcilia gli importi dei dettagli.
 Actions esegue questa verifica e i test mobile Chromium/WebKit prima di Pages.
 ML e segnali BUY restano disabilitati senza target/validazione reali.
+
+### 0.8.1 — confine del semestre nelle schede
+
+La Ricerca in modalità “6 mesi · semestre Radar” usa ora le finestre semestrali
+clippate lato Python, senza riprendere importi da una finestra annuale che inizi
+prima del limite. Test specifico: un acquisto il 22 aprile non incrementa la
+settimana del 27 aprile nel semestre che inizia il 25 aprile. L’indice annuale resta
+separato per la ricerca personalizzata sugli altri periodi.
