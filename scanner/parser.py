@@ -15,7 +15,7 @@ def _get(el, path, default=""):
     return (node.text or "").strip() if node is not None and node.text else default
 
 
-def parse_form4(submission: str, filing: dict) -> list[dict]:
+def ownership_root(submission):
     # Full SEC submission contains wrapper headers and one or more XML documents.
     match = re.search(r"<ownershipDocument(?:\s[^>]*)?>.*?</ownershipDocument>", submission, re.S | re.I)
     if not match:
@@ -26,6 +26,23 @@ def parse_form4(submission: str, filing: dict) -> list[dict]:
         raise ValueError('XML Form 4 non valido') from exc
     for el in root.iter():
         el.tag = el.tag.rsplit('}', 1)[-1]
+    return root
+
+
+def amendment_metadata(submission,filing):
+    root=ownership_root(submission)
+    if _get(root,'documentType',filing.get('form','4'))!='4/A':return None
+    cik=_get(root.find('issuer'),'issuerCik')
+    if not cik.isdigit():raise ValueError('Amendment issuer CIK missing')
+    original=_get(root,'dateOfOriginalSubmission')
+    return dict(accession=filing_key(filing['url']),cik=int(cik),filed=iso_date(filing['filed']),
+                original_filing_date=iso_date(original) if original else None,
+                period_of_report=iso_date(_get(root,'periodOfReport')),
+                owner_ciks=[_get(o.find('reportingOwnerId'),'rptOwnerCik') for o in root.findall('reportingOwner')])
+
+
+def parse_form4(submission: str, filing: dict) -> list[dict]:
+    root=ownership_root(submission)
     issuer = root.find('issuer')
     symbol = _get(issuer, 'issuerTradingSymbol').upper()
     issuer_cik = _get(issuer, 'issuerCik')

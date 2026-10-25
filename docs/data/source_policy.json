@@ -1,0 +1,31 @@
+{
+  "reviewed_on": "2026-10-25",
+  "active_market_provider": null,
+  "sec": {
+    "enabled": true,
+    "data": ["quarterly Form 4 structured data", "recent Form 4", "XBRL companyfacts"],
+    "access": "Existing SEC_USER_AGENT; throttled; no additional subscription",
+    "reuse": "SEC public filings and Government-created content free to access and reuse",
+    "terms_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+    "currency_basis_url": "https://www.sec.gov/files/form4.pdf",
+    "currency_note": "Instruction 5 requires USD per-share reported prices. This is not individual audit of filing correctness, nor a current market price. Immutable v0.7 shards retain their original unknown-currency metadata."
+  },
+  "evaluated": [
+    {"provider":"Stooq", "enabled":false,"terms_url":"https://stooq.com/terms.html","reason":"Section 5.3 prohibits redistribution without consent. No consent obtained."},
+    {"provider":"Alpha Vantage", "enabled":false,"terms_url":"https://www.alphavantage.co/terms_of_service/","reason":"Ordinary personal/non-commercial licence does not establish public app redistribution rights."},
+    {"provider":"Financial Modeling Prep", "enabled":false,"terms_url":"https://site.financialmodelingprep.com/terms-of-service","reason":"Specific display/redistribution agreement required, including complimentary multiuser apps."},
+    {"provider":"Tiingo", "enabled":false,"terms_url":"https://www.tiingo.com/products/end-of-day-stock-price-data","reason":"Free plan is internal use only; redistribution is a paid plan. Not activated."},
+    {"provider":"SimFin", "enabled":false,"terms_url":"https://www.simfin.com/en/commercial-license/","reason":"Free/BASIC licence forbids sharing with other parties; general legal-advice page differs. Explicit no-redistribution licence prevents approval without written clarification. No account created."},
+    {"provider":"HF Data Library", "enabled":false,"terms_url":"https://hfdatalibrary.com/pages/terms","reason":"Academic/educational research only; must not support investment decisions. Incompatible with current opportunity screening."},
+    {"provider":"Finazon US Equities Basic", "enabled":false,"terms_url":"https://finazon.io/dataset/us_stocks_essential","reason":"Licence-free redistribution claim is distinct from access price, which starts at $19/month. Paid access excluded."}
+  ],
+  "unresolved": ["Verified current and historical EOD prices for equity classes", "Splits and class/ticker continuity", "Historical and current capitalization", "Current valuation and review of corporate changes"],
+  "implementation_required": [
+    "Obtain explicit no-cost permission covering public display, derived scores and downloadable JSON for a broad EOD source; no such permission has been established. Alternatively use a documented compatible open-data source after validation. No messages requesting permission have been sent.",
+    "Implement and test a source adapter keyed by CIK plus stable share class, dated price/capitalization observations and source/reuse references. A last closing price is labelled by its trading date, never called real-time.",
+    "Calculate capitalization only after reconciling price currency, outstanding shares, share classes and splits; use a dated historical cap for each purchase week and a separate current cap. SEC public float is not substituted for market cap.",
+    "Reconcile SEC cash/debt observations including leases and sector scope, then review subsequent 8-K/10-Q/10-K events. CurrentEvidence remains closed for these missing checks."
+  ],
+  "buy_signal": false,
+  "notify": false
+}

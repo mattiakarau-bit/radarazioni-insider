@@ -26,12 +26,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verifica un archivio ufficiale con identità SEC esistente
+      - name: Verifica indice SEC corrente senza riscaricare archivi locali
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: |
-          python -m scanner.bulk --root "$RUNNER_TEMP/sec-probe" --max-quarters 1
-          python -m scanner.ml --root "$RUNNER_TEMP/sec-probe"
           python - <<'PYINDEX'
           from datetime import date, timedelta
           from scanner.sec import read_master_index
@@ -39,7 +37,6 @@ jobs:
           while day.weekday()>=5: day-=timedelta(days=1)
           print('SEC recent index smoke:', day, len(read_master_index(day)), 'Form 4/4A')
           PYINDEX
-          python -c 'import json,os; from pathlib import Path; s=json.loads((Path(os.environ["RUNNER_TEMP"])/"sec-probe/docs/data/history_coverage.json").read_text()); assert s["completed_count"] == 1, s'
   import_and_publish:
     environment: github-pages
     if: github.event_name != 'pull_request'
@@ -79,6 +76,18 @@ jobs:
             after=$(python -c 'import json; print(sum(r.get("status")=="complete" for r in json.load(open("data/insider/manifest.json"))["quarters"].values()))')
             if [ "$after" -le "$before" ]; then break; fi
           done
+      - name: Aggiorna il motore semestrale dopo i checkpoint storici
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python -m scanner.universe --refresh-financials 10
+          python tests/verify_semester.py
+          git add docs/data/radar.json docs/data/scan_status.json docs/data/semester_report.json docs/data/search_index.json docs/data/pending_index.json docs/data/companies data/analysis data/insider/amendments.v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Aggiorna Radar semestrale dagli archivi SEC'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - name: Verifica dati generati e dimensioni prima della pubblicazione
         run: |
           python -m unittest discover -s tests -q

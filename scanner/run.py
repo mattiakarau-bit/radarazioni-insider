@@ -14,7 +14,7 @@ from pathlib import Path
 
 from scanner.fundamentals import summarize_company_facts, review_legacy
 from scanner.notifications import send_telegram
-from scanner.parser import parse_form4
+from scanner.parser import parse_form4, amendment_metadata
 from scanner.identity import filing_key, normalize_events
 from scanner.scoring import screen
 from scanner.radar import publish, aggregate
@@ -70,7 +70,11 @@ def main():
         if time.monotonic() >= deadline:
             break
         try:
-            txs = parse_form4(get(filing['url']), filing)
+            submission = get(filing['url'])
+            txs = parse_form4(submission, filing)
+            if filing.get('form')=='4/A':
+                meta=amendment_metadata(submission,filing)
+                if meta:state.setdefault('amendment_filings',{})[meta['accession']]=meta
             # Source may include fund/private issuer; don't invent a US-listed ticker.
             purchases.extend(x for x in txs if x['cik'] and re.fullmatch(r'[A-Z][A-Z0-9.\-]{0,9}', x['symbol']))
             seen.add(filing_key(filing['url']))
@@ -171,10 +175,11 @@ def main():
         'coverage': coverage,
         'errors': errors[:25], 'filings': recent,
     }
-    save_json(RESULTS.parent / 'radar.json', publish(ordered, now[:10]))
     save_json(RESULTS, data)
     state.update(processed=sorted(seen), notified=sorted(notified), pending=pending)
     save_json(STATE, state)
+    from scanner.universe import publish_from_archive
+    publish_from_archive(ROOT, now[:10])
     print(f'SEC: {len(entries)} indexed Form 4; {processed_success} processed; {len(purchases)} purchases; '
           f'{len(ordered)} history; {len(errors)} errors; {data["coverage"]["unprocessed_listed_forms"]} pending')
 

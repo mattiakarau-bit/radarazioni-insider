@@ -26,6 +26,10 @@ const RadarCore = (()=>{
     transactions:mergeTransactions(f.transactions||[],rows),group:groups.find(g=>g.cik===latest.cik)||f.group};
  });}
  function homeDecision(g){
+  if(g.selection_status){
+   if(g.selection_status==='selected'&&g.analysis?.score_status==='verificato'&&g.analysis?.quality_pass===true&&['annual_fundamentals_verified','current_financials_verified','balance_sheet_debt_verified','current_price_verified','current_valuation_verified','post_purchase_changes_verified'].every(k=>g.current_checks?.[k]===true)&&g.weekly_economic_verified&&g.split_comparison_verified)return 'selected';
+   return g.selection_status==='excluded'?'excluded':'pending';
+  }
   const f=evaluate(g.amount,g.market_cap,defaults), a=g.analysis||{};
   if(g.aggregation_verified&&g.amount<defaults.min_weekly_amount)return 'excluded';
   if(f.status==='escluso'&&g.market_cap_verified===true&&g.aggregation_verified)return 'excluded';
