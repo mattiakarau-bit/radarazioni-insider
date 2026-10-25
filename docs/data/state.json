@@ -1,15 +1,24 @@
 {
   "processed": [
+    "0000006955-26-000091",
     "0000007536-26-000148",
+    "0000070858-26-000495",
+    "0000070858-26-000496",
+    "0000070858-26-000497",
+    "0000070858-26-000498",
+    "0000070858-26-000499",
     "0000070858-26-000500",
     "0000070858-26-000505",
     "0000070858-26-000506",
     "0000070858-26-000508",
+    "0000086312-26-000183",
+    "0000086312-26-000184",
     "0000086312-26-000186",
     "0000086312-26-000187",
     "0000086312-26-000189",
     "0000086312-26-000190",
     "0000093751-26-000594",
+    "0000310354-26-000100",
     "0000311094-26-000060",
     "0000318300-26-000233",
     "0000711377-26-000034",
@@ -18,14 +27,37 @@
     "0000726854-26-000187",
     "0000726854-26-000188",
     "0000764065-26-000117",
+    "0000821002-26-000045",
+    "0000821002-26-000046",
+    "0000829224-26-000149",
+    "0000875320-26-000283",
+    "0000876167-26-000131",
     "0000885639-26-000186",
+    "0000891103-26-000143",
+    "0000891103-26-000144",
+    "0000891103-26-000145",
+    "0000891103-26-000146",
+    "0000891103-26-000147",
+    "0000891103-26-000148",
+    "0000891103-26-000149",
+    "0000891103-26-000150",
+    "0000891103-26-000151",
+    "0000891103-26-000152",
+    "0000891103-26-000153",
+    "0000891103-26-000154",
+    "0000891103-26-000155",
+    "0000891103-26-000156",
+    "0000899140-26-001124",
     "0000904454-26-000526",
     "0000904454-26-000531",
     "0000904454-26-000534",
     "0000904454-26-000535",
     "0000904454-26-000537",
     "0000904454-26-000539",
+    "0000905148-26-004467",
+    "0000905148-26-004542",
     "0000912282-26-001376",
+    "0000921895-26-002845",
     "0000923120-26-000023",
     "0000923120-26-000024",
     "0000923120-26-000025",
@@ -46,6 +78,7 @@
     "0000950142-26-002763",
     "0000950142-26-002764",
     "0000950142-26-002765",
+    "0000950142-26-002769",
     "0001003078-26-000112",
     "0001012975-26-000980",
     "0001012975-26-000981",
@@ -60,6 +93,9 @@
     "0001022079-26-000115",
     "0001022079-26-000116",
     "0001060529-26-000002",
+    "0001062993-26-005320",
+    "0001062993-26-005478",
+    "0001062993-26-005480",
     "0001062993-26-005522",
     "0001062993-26-005533",
     "0001090355-26-000008",
@@ -75,26 +111,61 @@
     "0001106578-26-000163",
     "0001106578-26-000170",
     "0001108524-26-000227",
+    "0001140361-26-039594",
     "0001140361-26-039603",
+    "0001140361-26-040540",
+    "0001164644-26-000006",
+    "0001164774-26-000002",
     "0001177394-26-000138",
     "0001179684-26-000017",
     "0001185185-26-004959",
     "0001190249-26-000001",
     "0001190699-26-000005",
     "0001193125-26-421397",
+    "0001193125-26-421402",
     "0001193125-26-421415",
     "0001193125-26-421423",
+    "0001193125-26-421432",
+    "0001193125-26-421441",
     "0001193125-26-421444",
+    "0001193125-26-421447",
+    "0001193125-26-421451",
+    "0001193125-26-421529",
+    "0001193125-26-421659",
+    "0001193125-26-421722",
     "0001193125-26-421726",
     "0001193125-26-421730",
+    "0001193125-26-421731",
+    "0001193125-26-421734",
+    "0001193125-26-421747",
+    "0001193125-26-421763",
     "0001193125-26-421801",
     "0001193125-26-421805",
     "0001193125-26-421811",
     "0001193125-26-421812",
+    "0001193125-26-421813",
     "0001193125-26-421834",
     "0001193125-26-421836",
     "0001193125-26-421839",
+    "0001193125-26-421896",
     "0001193125-26-421903",
+    "0001193125-26-421965",
+    "0001193125-26-421979",
+    "0001193125-26-421982",
+    "0001193125-26-421987",
+    "0001193125-26-421996",
+    "0001193125-26-421998",
+    "0001193125-26-428279",
+    "0001193125-26-428702",
+    "0001193125-26-428933",
+    "0001193125-26-428940",
+    "0001193125-26-428985",
+    "0001193125-26-429089",
+    "0001193125-26-429124",
+    "0001193125-26-429125",
+    "0001193125-26-429133",
+    "0001193125-26-429152",
+    "0001193125-26-429202",
     "0001193125-26-429381",
     "0001193125-26-429389",
     "0001193125-26-429392",
@@ -136,6 +207,20 @@
     "0001203302-26-000014",
     "0001204816-26-000053",
     "0001205945-26-000004",
+    "0001213900-26-109486",
+    "0001213900-26-109520",
+    "0001213900-26-109521",
+    "0001213900-26-111560",
+    "0001213900-26-111561",
+    "0001213900-26-111693",
+    "0001213900-26-111695",
+    "0001213900-26-111696",
+    "0001213900-26-111697",
+    "0001213900-26-111698",
+    "0001213900-26-111699",
+    "0001213900-26-111700",
+    "0001213900-26-111771",
+    "0001213900-26-111795",
     "0001213900-26-111971",
     "0001213900-26-112119",
     "0001213900-26-112120",
@@ -148,22 +233,42 @@
     "0001215315-26-000046",
     "0001218802-26-000006",
     "0001225208-26-008407",
+    "0001225208-26-008484",
     "0001226675-26-000006",
     "0001230604-26-000007",
     "0001231919-26-001497",
+    "0001242648-26-000047",
+    "0001251987-26-000012",
     "0001261778-26-000009",
+    "0001266824-26-000217",
     "0001267655-26-000019",
     "0001275238-26-000009",
+    "0001284309-26-000030",
     "0001291899-26-000004",
     "0001299077-26-000004",
     "0001348490-26-000008",
     "0001349334-26-000012",
     "0001350921-26-000006",
     "0001354719-26-000001",
+    "0001368800-26-000005",
     "0001369304-26-000003",
     "0001398344-26-018199",
+    "0001398344-26-018630",
+    "0001398344-26-018631",
+    "0001398344-26-018632",
+    "0001398344-26-018633",
     "0001398344-26-018733",
+    "0001411282-26-000024",
     "0001411765-26-000011",
+    "0001437749-26-033214",
+    "0001437749-26-033215",
+    "0001437749-26-033216",
+    "0001437749-26-033217",
+    "0001437749-26-033219",
+    "0001437749-26-033220",
+    "0001437749-26-033222",
+    "0001437749-26-033223",
+    "0001437749-26-033265",
     "0001437749-26-033367",
     "0001437749-26-033369",
     "0001437749-26-033371",
@@ -180,12 +285,23 @@
     "0001468233-26-000011",
     "0001474432-26-000100",
     "0001474432-26-000101",
+    "0001477932-26-006213",
     "0001477932-26-006439",
+    "0001482541-26-000062",
     "0001488168-26-000010",
     "0001491874-26-000005",
     "0001493152-26-046991",
     "0001493152-26-047015",
+    "0001493152-26-047016",
     "0001493152-26-047051",
+    "0001493152-26-048057",
+    "0001493152-26-048061",
+    "0001493152-26-048062",
+    "0001493152-26-048099",
+    "0001493152-26-048109",
+    "0001493152-26-048144",
+    "0001493152-26-048149",
+    "0001493152-26-048153",
     "0001493152-26-048181",
     "0001493152-26-048187",
     "0001493152-26-048196",
@@ -203,11 +319,20 @@
     "0001493152-26-048317",
     "0001493152-26-048319",
     "0001493152-26-048321",
+    "0001510281-26-000342",
+    "0001510281-26-000343",
     "0001510281-26-000346",
+    "0001510281-26-000370",
+    "0001510281-26-000371",
+    "0001510281-26-000372",
+    "0001510281-26-000373",
+    "0001510281-26-000374",
     "0001510281-26-000375",
     "0001510281-26-000376",
+    "0001517413-26-000304",
     "0001560849-26-000013",
     "0001565687-26-000116",
+    "0001565687-26-000117",
     "0001577526-26-000138",
     "0001578926-26-000050",
     "0001579629-26-000012",
@@ -217,10 +342,22 @@
     "0001588894-26-000024",
     "0001597870-26-000021",
     "0001602315-26-000020",
+    "0001609253-26-000140",
+    "0001610717-26-000436",
     "0001610717-26-000438",
+    "0001610717-26-000439",
     "0001616707-26-000172",
     "0001616707-26-000174",
+    "0001628280-26-065849",
+    "0001628280-26-065868",
+    "0001628280-26-065870",
+    "0001628280-26-065874",
+    "0001628280-26-065882",
+    "0001628280-26-065884",
+    "0001628280-26-065885",
+    "0001628280-26-065887",
     "0001628280-26-065922",
+    "0001628280-26-065924",
     "0001628280-26-065927",
     "0001628280-26-065929",
     "0001628280-26-066800",
@@ -254,6 +391,9 @@
     "0001633414-26-000011",
     "0001646649-26-000035",
     "0001670723-26-000005",
+    "0001672688-26-000141",
+    "0001672688-26-000143",
+    "0001672688-26-000144",
     "0001673356-26-000010",
     "0001677418-26-000014",
     "0001677418-26-000016",
@@ -262,7 +402,10 @@
     "0001683168-26-008055",
     "0001699997-26-000003",
     "0001709352-26-000010",
+    "0001712360-26-000004",
+    "0001725092-26-000019",
     "0001728451-26-000005",
+    "0001738255-26-000006",
     "0001739445-26-000162",
     "0001739445-26-000163",
     "0001739445-26-000164",
@@ -277,6 +420,7 @@
     "0001739445-26-000173",
     "0001739445-26-000174",
     "0001739445-26-000175",
+    "0001746129-26-000065",
     "0001748691-26-000008",
     "0001750052-26-000052",
     "0001754045-26-000010",
@@ -284,19 +428,35 @@
     "0001761880-26-000007",
     "0001763161-26-000013",
     "0001764013-26-000114",
+    "0001769683-26-000013",
+    "0001773914-26-000035",
+    "0001777298-26-000005",
     "0001778564-26-000191",
+    "0001783201-26-000006",
     "0001783879-26-000157",
     "0001801661-26-000126",
+    "0001809523-26-000016",
+    "0001818383-26-000251",
+    "0001819848-26-000521",
     "0001821737-26-000017",
     "0001824992-26-000010",
+    "0001825022-26-000006",
+    "0001832316-26-000008",
     "0001833511-26-000042",
     "0001834046-26-000012",
     "0001836969-26-000004",
+    "0001846069-26-000191",
+    "0001849050-26-000007",
+    "0001849709-26-000022",
     "0001851564-26-000045",
+    "0001869626-26-000028",
     "0001870914-26-000029",
+    "0001870974-26-000018",
     "0001876042-26-000291",
     "0001889687-26-000008",
+    "0001895188-26-000005",
     "0001899813-26-000003",
+    "0001914220-26-000009",
     "0001934887-26-000005",
     "0001950027-26-000053",
     "0001959910-26-000008",
@@ -304,23 +464,43 @@
     "0001979522-26-000015",
     "0001980265-26-000011",
     "0001981372-26-000019",
+    "0001983992-26-000009",
     "0001993529-26-000005",
+    "0002003376-26-000006",
+    "0002045848-26-000009",
+    "0002047749-26-000006",
+    "0002050724-26-000004",
+    "0002050784-26-000005",
     "0002060000-26-000005",
+    "0002060697-26-000018",
+    "0002060697-26-000020",
+    "0002061219-26-000023",
+    "0002066491-26-000013",
     "0002075006-26-000010",
     "0002076243-26-000005",
+    "0002080406-26-000019",
+    "0002083595-26-000010",
+    "0002093121-26-000008",
+    "0002100241-26-000005",
+    "0002103972-26-000007",
     "0002111103-26-000043",
+    "0002128771-26-000004",
     "0002144584-26-000006",
     "0002144890-26-000008",
+    "0002146790-26-000023",
+    "0002152531-26-000006",
+    "0002157445-26-000002",
     "0002160363-26-000003",
-    "0002160363-26-000004"
+    "0002160363-26-000004",
+    "0002161365-26-000008"
   ],
   "notified": [],
   "index_attempts": {
-    "2026-10-23": "2026-10-25T09:44:16+00:00",
-    "2026-10-22": "2026-10-25T09:44:16+00:00",
-    "2026-10-21": "2026-10-25T09:44:16+00:00",
-    "2026-10-20": "2026-10-25T09:44:16+00:00",
-    "2026-10-19": "2026-10-25T09:44:16+00:00",
+    "2026-10-23": "2026-10-25T10:02:11+00:00",
+    "2026-10-22": "2026-10-25T10:02:11+00:00",
+    "2026-10-21": "2026-10-25T10:02:11+00:00",
+    "2026-10-20": "2026-10-25T10:02:11+00:00",
+    "2026-10-19": "2026-10-25T10:02:11+00:00",
     "2026-10-16": "2026-10-25T09:44:16+00:00",
     "2026-10-15": "2026-10-25T09:44:16+00:00",
     "2026-10-14": "2026-10-25T09:44:16+00:00"
@@ -328,7 +508,7 @@
   "indexes": {
     "2026-10-23": {
       "url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261023.idx",
-      "checked_utc": "2026-10-25T09:44:16+00:00",
+      "checked_utc": "2026-10-25T10:02:11+00:00",
       "accessions": [
         "0000007536-26-000148",
         "0000070858-26-000505",
@@ -572,7 +752,7 @@
     },
     "2026-10-22": {
       "url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261022.idx",
-      "checked_utc": "2026-10-25T09:44:16+00:00",
+      "checked_utc": "2026-10-25T10:02:11+00:00",
       "accessions": [
         "0000001750-26-000104",
         "0000006955-26-000091",
@@ -824,7 +1004,7 @@
     },
     "2026-10-21": {
       "url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261021.idx",
-      "checked_utc": "2026-10-25T09:44:16+00:00",
+      "checked_utc": "2026-10-25T10:02:11+00:00",
       "accessions": [
         "0000006281-26-000081",
         "0000006955-26-000085",
@@ -1040,7 +1220,7 @@
     },
     "2026-10-20": {
       "url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261020.idx",
-      "checked_utc": "2026-10-25T09:44:16+00:00",
+      "checked_utc": "2026-10-25T10:02:11+00:00",
       "accessions": [
         "0000006955-26-000073",
         "0000006955-26-000075",
@@ -1338,7 +1518,7 @@
     },
     "2026-10-19": {
       "url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261019.idx",
-      "checked_utc": "2026-10-25T09:44:16+00:00",
+      "checked_utc": "2026-10-25T10:02:11+00:00",
       "accessions": [
         "0000002488-26-000184",
         "0000038777-26-000268",
@@ -2918,14 +3098,6 @@
       "attempts": 0
     },
     {
-      "cik": 821002,
-      "company": "G III APPAREL GROUP LTD /DE/",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/821002/0000821002-26-000045.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1769628,
       "company": "CoreWeave, Inc.",
       "form": "4",
@@ -2963,22 +3135,6 @@
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1875332/0001053507-26-000151.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 82473,
-      "company": "INNSUITES HOSPITALITY TRUST",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/82473/0001493152-26-048149.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2057088,
-      "company": "Tregillis Cynthia L",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2057088/0001266824-26-000217.txt",
       "attempts": 0
     },
     {
@@ -3030,22 +3186,6 @@
       "attempts": 0
     },
     {
-      "cik": 2088794,
-      "company": "Melissa A. Neugebauer 2020 Trust",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2088794/0000905148-26-004542.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 908724,
-      "company": "DELL MICHAEL S",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/908724/0001193125-26-429152.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1736565,
       "company": "SKULE JEREMY",
       "form": "4",
@@ -3070,30 +3210,6 @@
       "attempts": 0
     },
     {
-      "cik": 2133719,
-      "company": "NorthStrive Acquisition Corp I.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2133719/0001213900-26-111697.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000152.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 898174,
-      "company": "REINSURANCE GROUP OF AMERICA INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/898174/0001164774-26-000002.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1806347,
       "company": "Westrock Coffee Co",
       "form": "4",
@@ -3110,14 +3226,6 @@
       "attempts": 0
     },
     {
-      "cik": 728612,
-      "company": "MERRILL LYNCH, PIERCE, FENNER & SMITH INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/728612/0000070858-26-000497.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2012593,
       "company": "Rapport Therapeutics, Inc.",
       "form": "4",
@@ -3126,35 +3234,11 @@
       "attempts": 0
     },
     {
-      "cik": 850429,
-      "company": "TREDEGAR CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/850429/0001193125-26-429133.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 850429,
-      "company": "TREDEGAR CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/850429/0001193125-26-429125.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1942852,
       "company": "Greenbrier Holdings, LLC /AR/",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1942852/0001187377-26-000004.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 715446,
-      "company": "Anixa Biosciences Inc",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/715446/0001493152-26-048144.txt",
       "attempts": 0
     },
     {
@@ -3190,27 +3274,11 @@
       "attempts": 0
     },
     {
-      "cik": 2098,
-      "company": "ACME UNITED CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2098/0001193125-26-428985.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1993147,
       "company": "EVRAN SEDAT",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1993147/0001993147-26-000004.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 86312,
-      "company": "TRAVELERS COMPANIES, INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/86312/0000086312-26-000184.txt",
       "attempts": 0
     },
     {
@@ -3230,22 +3298,6 @@
       "attempts": 0
     },
     {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000153.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 67887,
-      "company": "MOOG INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/67887/0001251987-26-000012.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1576280,
       "company": "Guardant Health, Inc.",
       "form": "4",
@@ -3262,27 +3314,11 @@
       "attempts": 0
     },
     {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000154.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1715018,
       "company": "Boswell Peyton",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1715018/0001437749-26-033305.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 880406,
-      "company": "Herzfeld Credit Income Fund, Inc",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/880406/0001398344-26-018632.txt",
       "attempts": 0
     },
     {
@@ -3310,14 +3346,6 @@
       "attempts": 0
     },
     {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001368800-26-000005.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1872195,
       "company": "Bullish",
       "form": "4",
@@ -3331,46 +3359,6 @@
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1753539/0001400954-26-000013.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 785786,
-      "company": "PLEXUS CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/785786/0001411282-26-000024.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 880406,
-      "company": "Herzfeld Credit Income Fund, Inc",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/880406/0001398344-26-018633.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2119342,
-      "company": "de Souza Monteiro Ivan",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2119342/0001213900-26-111560.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2118635,
-      "company": "Falconi Campos Vicente",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2118635/0001213900-26-111561.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2118802,
-      "company": "de Bittencourt Marinho Gisomar Francisco",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2118802/0001213900-26-111771.txt",
       "attempts": 0
     },
     {
@@ -3411,14 +3399,6 @@
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1467373/0001455134-26-000023.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 821002,
-      "company": "G III APPAREL GROUP LTD /DE/",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/821002/0000821002-26-000046.txt",
       "attempts": 0
     },
     {
@@ -3494,67 +3474,11 @@
       "attempts": 0
     },
     {
-      "cik": 2080406,
-      "company": "Hogan Catherine Kiernan",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2080406/0002080406-26-000019.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1869115,
       "company": "CHANG FRED FACHING",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1869115/0001477932-26-006407.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2156410,
-      "company": "Rosenfeld Margaret Natalie",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2156410/0001482541-26-000062.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 793040,
-      "company": "ELLSWORTH GROWTH & INCOME FUND LTD",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/793040/0001510281-26-000370.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 858706,
-      "company": "NEW GERMANY FUND INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/858706/0001510281-26-000371.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 855887,
-      "company": "BNY MELLON STRATEGIC MUNICIPAL BOND FUND, INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/855887/0001510281-26-000372.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 863900,
-      "company": "MEXICO EQUITY & INCOME FUND INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/863900/0001510281-26-000373.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 818972,
-      "company": "BNY MELLON STRATEGIC MUNICIPALS, INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/818972/0001510281-26-000374.txt",
       "attempts": 0
     },
     {
@@ -3574,22 +3498,6 @@
       "attempts": 0
     },
     {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000150.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 880406,
-      "company": "Herzfeld Credit Income Fund, Inc",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/880406/0001398344-26-018630.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1926933,
       "company": "Kneppers Chris J",
       "form": "4",
@@ -3603,14 +3511,6 @@
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/2028388/0001565687-26-000121.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 754811,
-      "company": "U S GLOBAL INVESTORS INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/754811/0001062993-26-005480.txt",
       "attempts": 0
     },
     {
@@ -3654,22 +3554,6 @@
       "attempts": 0
     },
     {
-      "cik": 310354,
-      "company": "STANDEX INTERNATIONAL CORP/DE/",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/310354/0000310354-26-000100.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 875320,
-      "company": "VERTEX PHARMACEUTICALS INC / MA",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/875320/0000875320-26-000283.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1605808,
       "company": "Duda Kenneth",
       "form": "4",
@@ -3702,14 +3586,6 @@
       "attempts": 0
     },
     {
-      "cik": 728612,
-      "company": "MERRILL LYNCH, PIERCE, FENNER & SMITH INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/728612/0000070858-26-000499.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1824893,
       "company": "Surrozen, Inc./DE",
       "form": "4",
@@ -3731,14 +3607,6 @@
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1944970/0001944970-26-000029.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2083595,
-      "company": "Frey Anthony George",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2083595/0002083595-26-000010.txt",
       "attempts": 0
     },
     {
@@ -3774,30 +3642,6 @@
       "attempts": 0
     },
     {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000149.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2060697,
-      "company": "Malik Astha",
-      "form": "4/A",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2060697/0002060697-26-000018.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2060697,
-      "company": "Malik Astha",
-      "form": "4/A",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2060697/0002060697-26-000020.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1888935,
       "company": "Hyman Jonathan",
       "form": "4",
@@ -3814,35 +3658,11 @@
       "attempts": 0
     },
     {
-      "cik": 86312,
-      "company": "TRAVELERS COMPANIES, INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/86312/0000086312-26-000183.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2161365,
-      "company": "Arntzen Steven W.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2161365/0002161365-26-000008.txt",
-      "attempts": 0
-    },
-    {
       "cik": 19584,
       "company": "CHEMED CORP",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/19584/0001193125-26-428684.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2160176,
-      "company": "Delatorre Edward JR",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2160176/0001493152-26-048099.txt",
       "attempts": 0
     },
     {
@@ -3854,35 +3674,11 @@
       "attempts": 0
     },
     {
-      "cik": 2127365,
-      "company": "Dothan Sponsor, LLC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2127365/0001193125-26-429202.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2044249,
       "company": "Bentley Sheldon Richard",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/2044249/0001683168-26-008022.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 6955,
-      "company": "ENERPAC TOOL GROUP CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/6955/0000006955-26-000091.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000143.txt",
       "attempts": 0
     },
     {
@@ -3894,35 +3690,11 @@
       "attempts": 0
     },
     {
-      "cik": 40729,
-      "company": "Ally Financial Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/40729/0001738255-26-000006.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1872195,
       "company": "Bullish",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1872195/0000929638-26-003986.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2124542,
-      "company": "Mathews Darrell Lee Jr.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2124542/0001746129-26-000065.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 876167,
-      "company": "PROGRESS SOFTWARE CORP /MA",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/876167/0000876167-26-000131.txt",
       "attempts": 0
     },
     {
@@ -3950,14 +3722,6 @@
       "attempts": 0
     },
     {
-      "cik": 2157445,
-      "company": "Brous Michael Zachary",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2157445/0002157445-26-000002.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2000944,
       "company": "Caulfield James T.",
       "form": "4",
@@ -3974,43 +3738,11 @@
       "attempts": 0
     },
     {
-      "cik": 880406,
-      "company": "Herzfeld Credit Income Fund, Inc",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/880406/0001398344-26-018631.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000155.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 728612,
-      "company": "MERRILL LYNCH, PIERCE, FENNER & SMITH INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/728612/0000070858-26-000498.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2019505,
       "company": "Health In Tech, Inc.",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/2019505/0001213900-26-111813.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001777298-26-000005.txt",
       "attempts": 0
     },
     {
@@ -4030,22 +3762,6 @@
       "attempts": 0
     },
     {
-      "cik": 320193,
-      "company": "Apple Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/0001140361-26-040540.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 866706,
-      "company": "ESCO TECHNOLOGIES INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/866706/0001783201-26-000006.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1837336,
       "company": "Neagle Matthew",
       "form": "4",
@@ -4062,27 +3778,11 @@
       "attempts": 0
     },
     {
-      "cik": 903419,
-      "company": "ALERUS FINANCIAL CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/903419/0001437749-26-033265.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1989440,
       "company": "Itzhaik Asaf",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1989440/0001493152-26-048094.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2061219,
-      "company": "King Ryan A",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2061219/0002061219-26-000023.txt",
       "attempts": 0
     },
     {
@@ -4118,35 +3818,11 @@
       "attempts": 0
     },
     {
-      "cik": 2113852,
-      "company": "Shan Yigang",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2113852/0001193125-26-428279.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1818794,
       "company": "Dyne Therapeutics, Inc.",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1818794/0001814189-26-000007.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000148.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000146.txt",
       "attempts": 0
     },
     {
@@ -4166,30 +3842,6 @@
       "attempts": 0
     },
     {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001825022-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001832316-26-000008.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 797721,
-      "company": "VIASAT INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/797721/0001193125-26-428940.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1967680,
       "company": "Veralto Corp",
       "form": "4",
@@ -4198,75 +3850,11 @@
       "attempts": 0
     },
     {
-      "cik": 2151692,
-      "company": "NorthStrive Sponsor I LLC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2151692/0001213900-26-111693.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1968984,
       "company": "Eyal Aviad",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1968984/0001178913-26-004821.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2059765,
-      "company": "Kiernan Michael",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2059765/0001846069-26-000191.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000145.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001849050-26-000007.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2146790,
-      "company": "Narayanadas Vivek",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2146790/0002146790-26-000023.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2128855,
-      "company": "Jewett Sarah Allison",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2128855/0001493152-26-048153.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2055254,
-      "company": "Pale Fire Capital investicni spolecnost a.s.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2055254/0000921895-26-002845.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2093121,
-      "company": "Denier Anthony Michael",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2093121/0002093121-26-000008.txt",
       "attempts": 0
     },
     {
@@ -4318,30 +3906,6 @@
       "attempts": 0
     },
     {
-      "cik": 2052004,
-      "company": "WHITE KELLY MICHELLE",
-      "form": "4/A",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2052004/0001493152-26-048057.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2052004,
-      "company": "WHITE KELLY MICHELLE",
-      "form": "4/A",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2052004/0001493152-26-048061.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2052004,
-      "company": "WHITE KELLY MICHELLE",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2052004/0001493152-26-048062.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1891037,
       "company": "Krawiec Peter",
       "form": "4",
@@ -4355,22 +3919,6 @@
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1891751/0001891751-26-000010.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2066491,
-      "company": "Gomez Aidan N.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2066491/0002066491-26-000013.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2152531,
-      "company": "Whitworth Frank Dixon III",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2152531/0002152531-26-000006.txt",
       "attempts": 0
     },
     {
@@ -4398,83 +3946,11 @@
       "attempts": 0
     },
     {
-      "cik": 2114934,
-      "company": "LARSON MATTHEW PAUL",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2114934/0001193125-26-428933.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 905591,
-      "company": "NIPPON LIFE INSURANCE CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/905591/0001193125-26-429089.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001895188-26-000005.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000156.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 820318,
-      "company": "COHERENT CORP.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/820318/0000899140-26-001124.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0001914220-26-000009.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 850429,
-      "company": "TREDEGAR CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/850429/0001193125-26-429124.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1940075,
       "company": "Xu Ruilin",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/1940075/0001213900-26-111684.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2083070,
-      "company": "Wherley Joel L",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2083070/0001193125-26-428702.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2131872,
-      "company": "Sheffield Matthew A",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2131872/0001493152-26-048109.txt",
       "attempts": 0
     },
     {
@@ -4486,267 +3962,11 @@
       "attempts": 0
     },
     {
-      "cik": 40729,
-      "company": "Ally Financial Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/40729/0001983992-26-000009.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2156365,
-      "company": "Keller Eric L.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2156365/0001213900-26-111795.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0002003376-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2133719,
-      "company": "NorthStrive Acquisition Corp I.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2133719/0001213900-26-111700.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 898293,
-      "company": "JABIL INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/898293/0001225208-26-008484.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2042847,
       "company": "Young Wendy B.",
       "form": "4",
       "filed": "2026-10-22",
       "url": "https://www.sec.gov/Archives/edgar/data/2042847/0001193125-26-429074.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000147.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 829224,
-      "company": "STARBUCKS CORP",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/829224/0000829224-26-000149.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2060144,
-      "company": "Shek Bernard",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2060144/0001242648-26-000047.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2079733,
-      "company": "Day Kenton",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2079733/0001437749-26-033214.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2078018,
-      "company": "Hillestad James R",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2078018/0001437749-26-033215.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2079743,
-      "company": "Johnson Marcus E",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2079743/0001437749-26-033216.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2079759,
-      "company": "Kopecky Frank J IV",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2079759/0001437749-26-033217.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2079757,
-      "company": "Marriott William R II",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2079757/0001437749-26-033219.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2077893,
-      "company": "McClernon James P",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2077893/0001437749-26-033220.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2077016,
-      "company": "Myers Stephen D",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2077016/0001437749-26-033222.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2079760,
-      "company": "Stone Erin M",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2079760/0001437749-26-033223.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000144.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 40729,
-      "company": "Ally Financial Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/40729/0002045848-26-000009.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 40729,
-      "company": "Ally Financial Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/40729/0002047749-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0002050724-26-000004.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0002050784-26-000005.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 891103,
-      "company": "Match Group, Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/891103/0000891103-26-000151.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 40729,
-      "company": "Ally Financial Inc.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/40729/0002100241-26-000005.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 89800,
-      "company": "SHERWIN WILLIAMS CO",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/89800/0002103972-26-000007.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2133719,
-      "company": "NorthStrive Acquisition Corp I.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2133719/0001213900-26-111698.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 885245,
-      "company": "BUCKLE INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/885245/0002128771-26-000004.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2151138,
-      "company": "Tamer Michel S",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2151138/0001213900-26-111695.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2151170,
-      "company": "Dawson James Stuart",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2151170/0001213900-26-111696.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 2151125,
-      "company": "May Dane Austin",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/2151125/0001213900-26-111699.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 754811,
-      "company": "U S GLOBAL INVESTORS INC",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/754811/0001062993-26-005478.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 855887,
-      "company": "BNY MELLON STRATEGIC MUNICIPAL BOND FUND, INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/855887/0000070858-26-000495.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 818972,
-      "company": "BNY MELLON STRATEGIC MUNICIPALS, INC.",
-      "form": "4",
-      "filed": "2026-10-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/818972/0000070858-26-000496.txt",
       "attempts": 0
     },
     {
@@ -18694,51 +17914,11 @@
       "attempts": 0
     },
     {
-      "cik": 1815866,
-      "company": "Nolan Alexandra K",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1815866/0001193125-26-421402.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2089071,
       "company": "Nacinovich Marissa S",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2089071/0001193125-26-421410.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1709329,
-      "company": "Hungerford Meg L",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1709329/0001193125-26-421432.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1815945,
-      "company": "Gifford Jeffrey S",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1815945/0001193125-26-421441.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1871118,
-      "company": "Carroll Joseph W",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1871118/0001193125-26-421447.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1871119,
-      "company": "Andress Spencer J",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1871119/0001193125-26-421451.txt",
       "attempts": 0
     },
     {
@@ -18758,14 +17938,6 @@
       "attempts": 0
     },
     {
-      "cik": 1713334,
-      "company": "STUDIO CITY INTERNATIONAL HOLDINGS Ltd",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1713334/0001193125-26-421896.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1940919,
       "company": "Cupp Debra S.",
       "form": "4",
@@ -18782,27 +17954,11 @@
       "attempts": 0
     },
     {
-      "cik": 1812168,
-      "company": "Mazanderani Ali",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1812168/0001062993-26-005320.txt",
-      "attempts": 0
-    },
-    {
       "cik": 49754,
       "company": "Dine Brands Global, Inc.",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/49754/0001193125-26-421683.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1870652,
-      "company": "BX Buzz ML-7 GP LLC",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1870652/0001193125-26-421998.txt",
       "attempts": 0
     },
     {
@@ -18814,51 +17970,11 @@
       "attempts": 0
     },
     {
-      "cik": 1705784,
-      "company": "Zitterow David",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1705784/0001213900-26-109520.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1722279,
-      "company": "Harper Troy",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1722279/0001213900-26-109521.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1736565,
-      "company": "SKULE JEREMY",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1736565/0001193125-26-421659.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2118034,
       "company": "Uang Du-Tsuen",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2118034/0000950103-26-015546.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1807794,
-      "company": "Credo Technology Group Holding Ltd",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1807794/0001628280-26-065882.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 17843,
-      "company": "CARPENTER TECHNOLOGY CORP",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/17843/0001164644-26-000006.txt",
       "attempts": 0
     },
     {
@@ -18910,51 +18026,11 @@
       "attempts": 0
     },
     {
-      "cik": 1754937,
-      "company": "MOORE ALISON",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1754937/0001610717-26-000436.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2160027,
       "company": "AMC Fund, L.P.",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2160027/0001225028-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1807794,
-      "company": "Credo Technology Group Holding Ltd",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1807794/0001628280-26-065885.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1807794,
-      "company": "Credo Technology Group Holding Ltd",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1807794/0001628280-26-065884.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1839341,
-      "company": "Core Scientific, Inc./tx",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1839341/0000905148-26-004467.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1828791,
-      "company": "Viant Technology Inc.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1828791/0001284309-26-000030.txt",
       "attempts": 0
     },
     {
@@ -19062,22 +18138,6 @@
       "attempts": 0
     },
     {
-      "cik": 1844875,
-      "company": "BCP Buzz Holdings L.P.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1844875/0001193125-26-421982.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1769683,
-      "company": "Wiechmann Andrew C.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1769683/0001769683-26-000013.txt",
-      "attempts": 0
-    },
-    {
       "cik": 813298,
       "company": "DESTINATION XL GROUP, INC.",
       "form": "4",
@@ -19086,43 +18146,11 @@
       "attempts": 0
     },
     {
-      "cik": 1767116,
-      "company": "SLTA SPV-2 (GP), L.L.C.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1767116/0001193125-26-421731.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1737659,
-      "company": "Silver Lake Partners V DE (AIV), L.P.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1737659/0001193125-26-421734.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1737657,
-      "company": "Silver Lake Technology Associates V, L.P.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1737657/0001193125-26-421763.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2009676,
       "company": "Azaria Eynav",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2009676/0001628280-26-065847.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1856542,
-      "company": "Juvenal Tobin W",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1856542/0001628280-26-065870.txt",
       "attempts": 0
     },
     {
@@ -19158,51 +18186,11 @@
       "attempts": 0
     },
     {
-      "cik": 1844882,
-      "company": "Blackstone Family Investment Partnership - Growth ESC L.P.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1844882/0001193125-26-421987.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1869115,
-      "company": "CHANG FRED FACHING",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1869115/0001477932-26-006213.txt",
-      "attempts": 0
-    },
-    {
       "cik": 63276,
       "company": "MATTEL INC /DE/",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/63276/0001476295-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1844987,
-      "company": "BSOF Buzz Aggregator L.L.C.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1844987/0001193125-26-421996.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1703029,
-      "company": "Crestview Victory, L.P.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1703029/0000950142-26-002769.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1773914,
-      "company": "Silbermann Benjamin",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1773914/0001773914-26-000035.txt",
       "attempts": 0
     },
     {
@@ -19219,22 +18207,6 @@
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2092596/0002092596-26-000004.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1864843,
-      "company": "BlackRock ESG Capital Allocation Term Trust",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1864843/0001510281-26-000342.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1756908,
-      "company": "PIMCO Dynamic Income Strategy Fund",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1756908/0001510281-26-000343.txt",
       "attempts": 0
     },
     {
@@ -19278,35 +18250,11 @@
       "attempts": 0
     },
     {
-      "cik": 1814809,
-      "company": "Mendis Roshan",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1814809/0001493152-26-047016.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2102599,
       "company": "SCHIFRIN STEPHEN SIMON",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2102599/0001493152-26-047017.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1769490,
-      "company": "Bergman Artur",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1769490/0001517413-26-000304.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1710737,
-      "company": "Garchik Stephen Jeffrey",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1710737/0001213900-26-109486.txt",
       "attempts": 0
     },
     {
@@ -19323,38 +18271,6 @@
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/80424/0000080424-26-000219.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1739410,
-      "company": "Rallybio Corp",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1739410/0001193125-26-421747.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1834147,
-      "company": "Blecharczyk Nathan",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1834147/0001193125-26-421722.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1869575,
-      "company": "Jampol Thad",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1869575/0001565687-26-000117.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1856953,
-      "company": "Jackson Mary M.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1856953/0001193125-26-421813.txt",
       "attempts": 0
     },
     {
@@ -19406,35 +18322,11 @@
       "attempts": 0
     },
     {
-      "cik": 1797370,
-      "company": "Franks Joshua Allen",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1797370/0001610717-26-000439.txt",
-      "attempts": 0
-    },
-    {
       "cik": 866787,
       "company": "AUTOZONE INC",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/866787/0001225208-26-008422.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1712360,
-      "company": "DISBROW LISA S",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1712360/0001712360-26-000004.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1809523,
-      "company": "Gordon Susan M.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1809523/0001809523-26-000016.txt",
       "attempts": 0
     },
     {
@@ -19454,35 +18346,11 @@
       "attempts": 0
     },
     {
-      "cik": 1860787,
-      "company": "Bys Jay A.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1860787/0001609253-26-000140.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1805735,
-      "company": "Courtemanche Craig F. Jr.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805735/0001628280-26-065924.txt",
-      "attempts": 0
-    },
-    {
       "cik": 49754,
       "company": "Dine Brands Global, Inc.",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/49754/0001193125-26-421687.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1702012,
-      "company": "Walrath Michael",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1702012/0001628280-26-065874.txt",
       "attempts": 0
     },
     {
@@ -19526,14 +18394,6 @@
       "attempts": 0
     },
     {
-      "cik": 1820953,
-      "company": "Affirm Holdings, Inc.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1820953/0001628280-26-065868.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2102150,
       "company": "Pearson Michael Justin",
       "form": "4",
@@ -19542,27 +18402,11 @@
       "attempts": 0
     },
     {
-      "cik": 1848565,
-      "company": "Soderstrom Gustav",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1848565/0001140361-26-039594.txt",
-      "attempts": 0
-    },
-    {
       "cik": 2144385,
       "company": "Lin Yi-Chien",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2144385/0002144385-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1725092,
-      "company": "Lin Shao-Lee",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1725092/0001725092-26-000019.txt",
       "attempts": 0
     },
     {
@@ -19638,30 +18482,6 @@
       "attempts": 0
     },
     {
-      "cik": 1872568,
-      "company": "Jonasson Zachariah",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1872568/0001672688-26-000141.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1872389,
-      "company": "Bedrick Todd",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1872389/0001672688-26-000143.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1873003,
-      "company": "McClain Sean",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1873003/0001672688-26-000144.txt",
-      "attempts": 0
-    },
-    {
       "cik": 810332,
       "company": "REPUBLIC AIRWAYS HOLDINGS INC.",
       "form": "4",
@@ -19702,27 +18522,11 @@
       "attempts": 0
     },
     {
-      "cik": 1715497,
-      "company": "Borr Drilling Ltd",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1715497/0001628280-26-065849.txt",
-      "attempts": 0
-    },
-    {
       "cik": 740664,
       "company": "R F INDUSTRIES LTD",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/740664/0001437749-26-032616.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1840229,
-      "company": "MiNK Therapeutics, Inc.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1840229/0001193125-26-421529.txt",
       "attempts": 0
     },
     {
@@ -19878,14 +18682,6 @@
       "attempts": 0
     },
     {
-      "cik": 1849709,
-      "company": "Inukonda Ravi",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1849709/0001849709-26-000022.txt",
-      "attempts": 0
-    },
-    {
       "cik": 1968909,
       "company": "Gomide de Faria Mariano",
       "form": "4",
@@ -19974,14 +18770,6 @@
       "attempts": 0
     },
     {
-      "cik": 1829225,
-      "company": "ACEVEDO SYLVIA",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1829225/0001628280-26-065887.txt",
-      "attempts": 0
-    },
-    {
       "cik": 22444,
       "company": "COMMERCIAL METALS Co",
       "form": "4",
@@ -20014,14 +18802,6 @@
       "attempts": 0
     },
     {
-      "cik": 1830016,
-      "company": "Nonko Eugene",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1830016/0001818383-26-000251.txt",
-      "attempts": 0
-    },
-    {
       "cik": 740664,
       "company": "R F INDUSTRIES LTD",
       "form": "4",
@@ -20038,43 +18818,11 @@
       "attempts": 0
     },
     {
-      "cik": 1877282,
-      "company": "DeHoff Kate",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1877282/0001819848-26-000521.txt",
-      "attempts": 0
-    },
-    {
       "cik": 866787,
       "company": "AUTOZONE INC",
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/866787/0001225208-26-008423.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1869626,
-      "company": "Klamkin Jonathan",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1869626/0001869626-26-000028.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1845549,
-      "company": "Beehive Holdings III, LP",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1845549/0001193125-26-421965.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1870651,
-      "company": "BX Buzz ML-6 Holdco L.P.",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1870651/0001193125-26-421979.txt",
       "attempts": 0
     },
     {
@@ -20131,14 +18879,6 @@
       "form": "4",
       "filed": "2026-10-14",
       "url": "https://www.sec.gov/Archives/edgar/data/22444/0001853514-26-000006.txt",
-      "attempts": 0
-    },
-    {
-      "cik": 1870974,
-      "company": "Ghamsari Nima",
-      "form": "4",
-      "filed": "2026-10-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/1870974/0001870974-26-000018.txt",
       "attempts": 0
     },
     {
@@ -20575,14 +19315,17 @@
     }
   ],
   "facts_checked": {
-    "1889539": "2026-10-24",
+    "1889539": "2026-10-25",
     "1468327": "2026-10-25",
     "2049733": "2026-10-25",
-    "2114459": "2026-10-24",
+    "2114459": "2026-10-25",
     "1549966": "2026-10-24",
     "1254699": "2026-10-25",
     "1551047": "2026-10-25",
-    "1506488": "2026-10-25"
+    "1506488": "2026-10-25",
+    "1998387": "2026-10-25",
+    "1857475": "2026-10-25",
+    "1715497": "2026-10-25"
   },
   "amendment_filings": {
     "0001761880-26-000007": {
@@ -20623,6 +19366,46 @@
       "period_of_report": "2026-10-09",
       "owner_ciks": [
         "0002144890"
+      ]
+    },
+    "0002060697-26-000020": {
+      "accession": "0002060697-26-000020",
+      "cik": 1676238,
+      "filed": "2026-10-22",
+      "original_filing_date": "2026-08-21",
+      "period_of_report": "2026-08-19",
+      "owner_ciks": [
+        "0002060697"
+      ]
+    },
+    "0002060697-26-000018": {
+      "accession": "0002060697-26-000018",
+      "cik": 1676238,
+      "filed": "2026-10-22",
+      "original_filing_date": "2026-08-19",
+      "period_of_report": "2026-08-17",
+      "owner_ciks": [
+        "0002060697"
+      ]
+    },
+    "0001493152-26-048061": {
+      "accession": "0001493152-26-048061",
+      "cik": 1872292,
+      "filed": "2026-10-22",
+      "original_filing_date": "2025-08-11",
+      "period_of_report": "2025-07-17",
+      "owner_ciks": [
+        "0002052004"
+      ]
+    },
+    "0001493152-26-048057": {
+      "accession": "0001493152-26-048057",
+      "cik": 1872292,
+      "filed": "2026-10-22",
+      "original_filing_date": "2026-01-27",
+      "period_of_report": "2026-01-12",
+      "owner_ciks": [
+        "0002052004"
       ]
     }
   }
