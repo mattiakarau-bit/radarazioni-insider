@@ -29,6 +29,14 @@ assert not radar['buy_signal'] and not radar['notify']
 pending=json.loads((root/'docs/data/pending_index.json').read_text())['companies']
 assert len(pending)==radar['stats']['pending_base_candidates']
 assert len({c['cik'] for c in pending})==len(pending)
+assert len(radar['preliminary_groups'])==min(20,len(pending))
+assert radar['preliminary_groups']==pending[:20]
+assert radar['preliminary_total']==len(pending)
+for flag in (False,True):
+    amounts=[c['amount'] for c in pending if c['amount_review_required']==flag]
+    assert amounts==sorted(amounts,reverse=True)
+assert not ({c['cik'] for c in pending}&{c['cik'] for c in radar['groups']})
+assert all(c['analysis']['radar_score'] is None and c['preliminary'] for c in pending)
 may_windows=0
 for c in pending+radar['groups']:
     d=json.loads((root/f'docs/data/companies/{c["cik"]}.json').read_text())

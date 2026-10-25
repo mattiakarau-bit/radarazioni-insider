@@ -6,7 +6,9 @@
     "data": [
       "quarterly Form 4 structured data",
       "recent Form 4",
-      "XBRL companyfacts"
+      "XBRL companyfacts",
+      "dated outstanding-share observations (class scope unverified)",
+      "recent submissions index (substantive review pending)"
     ],
     "access": "Existing SEC_USER_AGENT; throttled; no additional subscription",
     "reuse": "SEC public filings and Government-created content free to access and reuse",
@@ -108,5 +110,6 @@
     "status": "blocked_no_approved_free_public_price_source",
     "production_adapter_enabled": false,
     "sec_shares_alone_sufficient": false
-  }
+  },
+  "latest_review": "0.8.4: SEC companyfacts/submissions active; Twelve Data, Tiingo, SimFin and Market Data external redistribution not approved at no cost. See research/preliminary-radar-0.8.4.md"
 }

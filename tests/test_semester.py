@@ -162,9 +162,9 @@ class ExtractorCacheTests(unittest.TestCase):
             root=Path(tmp);p=root/'data/analysis/1.json';p.parent.mkdir(parents=True)
             p.write_text(json.dumps(dict(cik=1,attempted_on=ASOF,fetched_on=ASOF,financials={'as_of':ASOF,'extractor_version':EXTRACTOR_VERSION-1})))
             raw=dict(facts(),cik=1,entityName='Synthetic test company')
-            candidates=[dict(cik=1,selection_status='pending',amount=100000)]
+            candidates=[dict(cik=1,selection_status='pending',amount=100000,window_start='2026-05-01')]
             with patch('scanner.sec.get',return_value=json.dumps(raw)) as get:
-                r=refresh_financials(root,candidates,ASOF,1);self.assertEqual(r['refreshed'],1);get.assert_called_once()
+                r=refresh_financials(root,candidates,ASOF,1);self.assertEqual(r['refreshed'],1);self.assertEqual(get.call_count,2)
             self.assertEqual(read(p,{})['financials']['extractor_version'],EXTRACTOR_VERSION)
             with patch('scanner.sec.get',side_effect=AssertionError('Do not refetch current same-day cache')):
                 self.assertEqual(refresh_financials(root,candidates,ASOF,1)['refreshed'],0)

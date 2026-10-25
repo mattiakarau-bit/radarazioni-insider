@@ -37,7 +37,6 @@ jobs:
           node --check docs/sw.js
           node --test tests/*.test.cjs
       - name: Analizza i nuovi Form 4 SEC
-        if: github.event_name != 'push'
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           MAX_FORMS_PER_RUN: '180'
@@ -49,13 +48,8 @@ jobs:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
-          # Code publication reuses local SEC data. Scheduled/manual runs keep
-          # collecting recent forms and refreshing expired financial snapshots.
-          if [ "$EVENT_NAME" = push ]; then
-            python -m scanner.universe --force
-          else
-            python -m scanner.universe --refresh-financials 25
-          fi
+          # Bounded incremental review; existing archives and caches are reused.
+          python -m scanner.universe --refresh-financials 25
           python tests/verify_semester.py
       - name: Salva le ultime operazioni nel repository
         run: |

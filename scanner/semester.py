@@ -165,7 +165,7 @@ def build(events,as_of,evidence=None,months=6):
         elif status=='pending':stats['pending_base_candidates']+=1
         # Compact company record: never ship raw transactions in homepage ranking.
         public={k:v for k,v in best.items() if k not in ('transactions','fundamentals','analysis','possible_duplicate_ids')}
-        public.update(id=f'issuer:{cik}',analysis=analysis,selection_status=status,selection_reasons=reasons,
+        public.update(insider_roles=list(dict.fromkeys(('Dirigente' if x.get('officer') else 'Amministratore' if x.get('director') else 'Azionista/altro dichiarante') + (': '+x.get('officer_title','') if x.get('officer_title') else '') for x in best['transactions'])),id=f'issuer:{cik}',analysis=analysis,selection_status=status,selection_reasons=reasons,
                       market_cap=current_cap,market_cap_verified=cap_verified,
                       current_price=e.current_price if checks['current_price_verified'] else None,
                       current_price_as_of=e.price_as_of if checks['current_price_verified'] else None,
@@ -179,7 +179,7 @@ def build(events,as_of,evidence=None,months=6):
                           transactions=source,overlap_warning='Finestre sovrapposte: non sommare importi o conteggi tra finestre.',
                           currency_basis='Prezzi USD dichiarati secondo Form 4, istruzione 5; non verifica individuale del deposito',currency_source=FORM4_CURRENCY_SOURCE)
     companies.sort(key=lambda c:((c['analysis'].get('radar_score') if c['analysis'].get('radar_score') is not None else -1),c['amount']),reverse=True)
-    return dict(version=2,app_version='0.8.3',as_of=as_of,search_months=months,search_start=first,window_start=first,
+    return dict(version=2,app_version='0.8.4',as_of=as_of,search_months=months,search_start=first,window_start=first,
                 aggregation_days=7,filters=DEFAULT_FILTERS,groups=[c for c in companies if c['selection_status']=='selected'],
                 stats=dict(stats),funnel=dict(funnel),history_months_available=12,historical_windows=[],
                 search_index_url='./data/search_index.json',pending_index_url='./data/pending_index.json',
