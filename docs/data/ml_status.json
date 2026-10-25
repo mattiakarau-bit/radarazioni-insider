@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updated_utc": "2026-10-25T08:25:24+00:00",
-  "events_stored": 15365,
-  "point_in_time_feature_rows": 12685,
+  "updated_utc": "2026-10-25T08:25:35+00:00",
+  "events_stored": 20762,
+  "point_in_time_feature_rows": 17247,
   "verified_targets": {
     "30": 0,
     "90": 0,
@@ -49,5 +49,5 @@
   "buy_signal": false,
   "notify": false,
   "note": "Nessuna performance o etichetta inventata; database ricostruibile dagli shard SEC. Adapter prezzi/identità non ancora approvati.",
-  "verified_source_events_in_current_import": 15365
+  "verified_source_events_in_current_import": 20762
 }
