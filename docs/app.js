@@ -63,8 +63,8 @@ function renderRadar(){
 function renderCustom(){
  if(!radar)return;
  if(!searchIndex){$('#customStatus').textContent='Caricamento indice compatto calcolato in Python; nessun archivio transazioni viene scaricato…';return;}
- const days=Number($('#searchPeriod').value),minScore=Number($('#minScore').value),q=$('#search').value.trim().toLowerCase(),visibility=$('#visibility').value;
- const end=new Date(radar.as_of+'T00:00:00Z'),start=new Date(end);start.setUTCDate(end.getUTCDate()-days+1);const first=start.toISOString().slice(0,10);
+ const period=$('#searchPeriod').value,days=Number(period),minScore=Number($('#minScore').value),q=$('#search').value.trim().toLowerCase(),visibility=$('#visibility').value;
+ const end=new Date(radar.as_of+'T00:00:00Z'),start=new Date(end);if(period!=='semester')start.setUTCDate(end.getUTCDate()-days+1);const first=period==='semester'?radar.search_start:start.toISOString().slice(0,10);
  let list=[];
  for(const record of searchIndex.issuers||[]){const c=record.company,a=c.analysis||{};
   if(![c.company,c.symbol].some(v=>String(v).toLowerCase().includes(q)))continue;
@@ -81,7 +81,7 @@ function renderCustom(){
   const w=windows[0];list.push({...c,...w,filters:RadarCore.evaluate(w.amount,w.historical_market_cap,params)});
  }
  const sort=$('#sort').value;list.sort((a,b)=>sort==='amount'?b.amount-a.amount:sort==='date'?b.window_end.localeCompare(a.window_end):(b.analysis?.radar_score??-1)-(a.analysis?.radar_score??-1));
- $('#customStatus').textContent=`${list.length} società nel periodo cercato di ${days} giorni; mostro fino a 80, una scheda per società. Settimane già aggregate lato Python: il periodo seleziona la data di fine finestra, non somma gli acquisti dell’intero periodo. Il punteggio aziendale usa la migliore finestra del semestre e i dati attuali. Usa la ricerca per restringere.`;
+ $('#customStatus').textContent=`${list.length} società nel periodo cercato: ${period==='semester'?'sei mesi di calendario':days+' giorni'}; mostro fino a 80, una scheda per società. Settimane già aggregate lato Python: il periodo seleziona la data di fine finestra, non somma gli acquisti dell’intero periodo. Il punteggio aziendale usa la migliore finestra del semestre e i dati attuali. Usa la ricerca per restringere.`;
  $('#customResults').replaceChildren(...list.slice(0,80).map(g=>card(g,{custom:true})));
  if(!list.length)$('#customResults').innerHTML='<div class="panel">Nessuna società corrisponde ai criteri scelti. I dati mancanti non superano i filtri verificati.</div>';
 }
@@ -126,7 +126,7 @@ async function load(){try{
  renderCoverage();renderRadar();renderCustom();updateSECStatus();if(page==='favorites')setPage('favorites');if(page==='history')ensureSearchIndex().then(renderHistory);
  }catch(e){$('#criticalStatus').textContent='Errore critico: dati SEC non accessibili. '+e.message+'. Preferiti salvati consultabili.';$('#criticalStatus').classList.remove('hidden');renderRadar();}}
 $$('nav button').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
-$('#showPending').addEventListener('click',()=>{$('#visibility').value='pending';$('#searchPeriod').value='180';setPage('custom');});
+$('#showPending').addEventListener('click',()=>{$('#visibility').value='pending';$('#searchPeriod').value='semester';setPage('custom');});
 $('#scoreHelp').addEventListener('click',scoreHelp);$('#selectionHelp').addEventListener('click',selectionHelp);
 $('#closeDetail').addEventListener('click',()=>{const d=$('#detailDialog');if(d.close)d.close();else d.removeAttribute('open')});
 $('#filtersForm').addEventListener('submit',e=>{e.preventDefault();const p={min_market_cap:Number($('#minCap').value),min_weekly_amount:Number($('#minAmount').value),proportional_pct:Number($('#proportion').value),proportional_cap:Number($('#maxRequired').value)};try{RadarCore.evaluate(0,null,p);params=p;localStorage.setItem('radarazioni-filters-v1',JSON.stringify(params));$('#filterStatus').textContent='Filtri applicati e salvati su questo dispositivo.';}catch{$('#filterStatus').textContent='Parametri applicati solo in memoria oppure valori non validi.';}renderCustom();});

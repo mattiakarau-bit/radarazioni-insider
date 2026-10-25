@@ -97,7 +97,8 @@ def refresh_financials(root,companies,as_of,budget):
     cache=root/'data/analysis';cache.mkdir(parents=True,exist_ok=True)
     # Missing first, then oldest fetched first. Persistent queue advances each run.
     candidates=[c for c in companies if c['selection_status']=='pending']
-    candidates.sort(key=lambda c:(read(cache/f'{c["cik"]}.json',{}).get('attempted_on',''),-c['amount']))
+    listed={x['cik'] for x in read(root/'docs/data/bulk_issuers.json',{'issuers':[]})['issuers']}
+    candidates.sort(key=lambda c:(c['cik'] not in listed,read(cache/f'{c["cik"]}.json',{}).get('attempted_on',''),-c['amount']))
     refreshed=0;failed=0
     for company in candidates:
         path=cache/f'{company["cik"]}.json';old=read(path,{})
@@ -194,6 +195,10 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
                                   reconciliation=bridge,finance_refresh=refresh,
                                   latest_realtime_scan=read(root/'docs/data/results.json',{}).get('last_scan_utc'),
                                   note='Archivi trimestrali + depositi giornalieri già raccolti. Scansione giornaliera parziale: non copertura completa SEC. Legacy senza verifica titolo esclusi dalle soglie.')
+    listing={x['cik'] for x in read(root/'docs/data/bulk_issuers.json',{'issuers':[]})['issuers']}
+    in_period={x['cik'] for x in events if radar['search_start']<=x['transaction_date']<=as_of and x['filed']<=as_of}
+    radar['stats']['companies_observed_current_us_listing']=len(in_period & listing)
+    radar['stats']['weekly_base_companies_observed_current_us_listing']=sum(c['cik'] in listing for c in companies if c['selection_status'] in ('pending','selected'))
     radar['financial_cache_count']=len(list((root/'data/analysis').glob('*.json')))
     radar['source_policy_url']='./data/source_policy.json'
     status=read(root/'docs/data/results.json',{})
