@@ -1263,6 +1263,99 @@
       }
     },
     {
+      "id": "0001354719-26-000001#tx0",
+      "company": "NXG NextGen Infrastructure Income Fund",
+      "symbol": "NXG",
+      "cik": 1506488,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-23",
+      "insider": "Swank Jerry V",
+      "officer_title": "See Remarks",
+      "officer": true,
+      "director": false,
+      "ten_pct": false,
+      "shares": 10000.0,
+      "unit_price": 43.9493,
+      "security_title": "Common Shares of Beneficial Interest",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001354719"
+      ],
+      "amount": 439493.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1506488/0001354719-26-000001.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Swank Jerry V"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "NXG NextGen Infrastructure Income Fund"
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 16.5,
+        "radar_uncapped": 16.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 55,
+        "opportunity_score": 0,
+        "score": 16.5,
+        "insider_reasons": [
+          "Importo dichiarato: 439,493.00 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001213900-26-111971#tx0",
       "company": "Cascade Real Assets Fund",
       "symbol": "CRAFX",
@@ -2363,6 +2456,79 @@
       }
     },
     {
+      "id": "0001003078-26-000112#tx0",
+      "company": "MSC INDUSTRIAL DIRECT CO INC",
+      "symbol": "MSM",
+      "cik": 1003078,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-23",
+      "insider": "Slone Reuben E",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 370.0,
+      "unit_price": 115.645,
+      "security_title": "Class A Common Stock, $0.001 par value",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001518692"
+      ],
+      "amount": 42788.65,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1518692/0001003078-26-000112.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Slone Reuben E"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 12.0,
+        "radar_uncapped": 12.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 40,
+        "opportunity_score": 0,
+        "score": 12.0,
+        "insider_reasons": [
+          "Importo dichiarato: 42,788.65 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001510281-26-000376#tx0",
       "company": "MEXICO EQUITY & INCOME FUND INC",
       "symbol": "MXF",
@@ -2432,6 +2598,99 @@
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
           "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001899813-26-000003#tx0",
+      "company": "NXG NextGen Infrastructure Income Fund",
+      "symbol": "NXG",
+      "cik": 1506488,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-23",
+      "insider": "Nelson Blake",
+      "officer_title": "CFO & Treasurer",
+      "officer": true,
+      "director": false,
+      "ten_pct": false,
+      "shares": 900.0,
+      "unit_price": 43.98,
+      "security_title": "Common Shares of Beneficial Interest",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001899813"
+      ],
+      "amount": 39582.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1899813/0001899813-26-000003.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Nelson Blake"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "NXG NextGen Infrastructure Income Fund"
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 15.0,
+        "insider_reasons": [
+          "Importo dichiarato: 39,582.00 USD",
+          "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -2661,6 +2920,99 @@
         "valuation_verified": false,
         "fundamentals_verified": false,
         "financial_data_complete": true,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001398344-26-018733#tx0",
+      "company": "Bluerock Private Real Estate Fund",
+      "symbol": "BPRE",
+      "cik": 1551047,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-21",
+      "insider": "Ruddy Jordan B.",
+      "officer_title": "President",
+      "officer": true,
+      "director": false,
+      "ten_pct": false,
+      "shares": 2040.0,
+      "unit_price": 12.2484,
+      "security_title": "Common Shares of Beneficial Interest",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001575426"
+      ],
+      "amount": 24986.74,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1575426/0001398344-26-018733.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Ruddy Jordan B."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-23",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "BLUEROCK PRIVATE REAL ESTATE FUND"
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 8.4,
+        "insider_reasons": [
+          "Importo dichiarato: 24,986.74 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
         "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
@@ -3652,6 +4004,79 @@
       }
     },
     {
+      "id": "0001003078-26-000112#tx1",
+      "company": "MSC INDUSTRIAL DIRECT CO INC",
+      "symbol": "MSM",
+      "cik": 1003078,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-23",
+      "insider": "Slone Reuben E",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 63.0,
+      "unit_price": 116.5161,
+      "security_title": "Class A Common Stock, $0.001 par value",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001518692"
+      ],
+      "amount": 7340.51,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1518692/0001003078-26-000112.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Slone Reuben E"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 8.4,
+        "insider_reasons": [
+          "Importo dichiarato: 7,340.51 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001836969-26-000004#tx0",
       "company": "FIRST FINANCIAL CORP /IN/",
       "symbol": "THFF",
@@ -3776,6 +4201,79 @@
           "Snapshot precedente senza tag e date di fine periodo: ricavi da riconciliare con il bilancio completo",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001493152-26-048181#tx0",
+      "company": "Uxin Ltd",
+      "symbol": "UXIN",
+      "cik": 1729173,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-22",
+      "insider": "Dai Kun",
+      "officer_title": "Chief Executive Officer",
+      "officer": true,
+      "director": true,
+      "ten_pct": false,
+      "shares": 7000.0,
+      "unit_price": 0.8901,
+      "security_title": "American depositary shares",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001764279"
+      ],
+      "amount": 6230.7,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1764279/0001493152-26-048181.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "Dai Kun"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 11.4,
+        "radar_uncapped": 11.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 38,
+        "opportunity_score": 0,
+        "score": 11.4,
+        "insider_reasons": [
+          "Importo dichiarato: 6,230.70 USD",
+          "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
         ],
         "independence_verified": false,
         "verified_independent_insiders": null,
@@ -8744,6 +9242,79 @@
       }
     },
     {
+      "id": "0001493152-26-048187#tx0",
+      "company": "WASTE ENERGY CORP.",
+      "symbol": "WAST",
+      "cik": 1515139,
+      "filed": "2026-10-23",
+      "transaction_date": "2026-10-22",
+      "insider": "GALLAGHER SCOTT",
+      "officer_title": "Chairman & CEO",
+      "officer": true,
+      "director": true,
+      "ten_pct": false,
+      "shares": 219286.0,
+      "unit_price": 0.001,
+      "security_title": "Common",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001166846"
+      ],
+      "amount": 219.29,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1515139/0001493152-26-048187.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "GALLAGHER SCOTT"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 9.0,
+        "radar_uncapped": 9.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 30,
+        "opportunity_score": 0,
+        "score": 9.0,
+        "insider_reasons": [
+          "Importo dichiarato: 219.29 USD",
+          "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0002160363-26-000003#tx4",
       "company": "Nature's Miracle Holding Inc.",
       "symbol": "NMHI",
@@ -11697,6 +12268,544 @@
         "fundamentals_verified": false,
         "financial_data_complete": false,
         "financial_problem": true,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0000070858-26-000500#tx0",
+      "company": "Invesco Advantage Municipal Income Trust II",
+      "symbol": "VKI",
+      "cik": 908993,
+      "filed": "2026-10-22",
+      "transaction_date": "2026-10-20",
+      "insider": "BANK OF AMERICA CORP /DE/, MERRILL LYNCH, PIERCE, FENNER & SMITH INC.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 105.0,
+      "unit_price": 8.03,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0000070858",
+        "0000728612"
+      ],
+      "amount": 843.15,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/908993/0000070858-26-000500.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "BANK OF AMERICA CORP /DE/",
+        "MERRILL LYNCH, PIERCE, FENNER & SMITH INC."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 843.15 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001493152-26-047051#tx0",
+      "company": "QVC Group, Inc.",
+      "symbol": "QVCG",
+      "cik": 1254699,
+      "filed": "2026-10-14",
+      "transaction_date": "2026-10-09",
+      "insider": "GOLDENTREE ASSET MANAGEMENT LP, GoldenTree Asset Management LLC, Tananbaum Steven A.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 1352000.0,
+      "unit_price": 12.35,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001278951",
+        "0001435627",
+        "0001435626"
+      ],
+      "amount": 16697200.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1435627/0001493152-26-047051.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "GOLDENTREE ASSET MANAGEMENT LP",
+        "GoldenTree Asset Management LLC",
+        "Tananbaum Steven A."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [
+          {
+            "year": 2021,
+            "value": 11354000000,
+            "filed": "2024-02-28",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 9887000000,
+            "filed": "2025-02-27",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 9449000000,
+            "filed": "2026-04-15",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 8997000000,
+            "filed": "2026-04-15",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 8293000000,
+            "filed": "2026-04-15",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [],
+        "cashflow_years": [
+          {
+            "year": 2021,
+            "value": 1169000000,
+            "filed": "2024-02-28",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 409000000,
+            "filed": "2025-02-27",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 1094000000,
+            "filed": "2026-04-15",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 535000000,
+            "filed": "2026-04-15",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 419000000,
+            "filed": "2026-04-15",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": false,
+        "eps_growing": null,
+        "cashflow_positive": true,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": true,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-14",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "QVC Group, Inc."
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 29.0,
+        "radar_uncapped": 29.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 50,
+        "opportunity_score": 20,
+        "score": 29.0,
+        "insider_reasons": [
+          "Importo dichiarato: 16,697,200.00 USD"
+        ],
+        "reasons": [
+          "Cassa operativa positiva in tre esercizi"
+        ],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001398344-26-018199#tx0",
+      "company": "Bluerock Private Real Estate Fund",
+      "symbol": "BPRE",
+      "cik": 1551047,
+      "filed": "2026-10-14",
+      "transaction_date": "2026-10-12",
+      "insider": "KAMFAR RAMIN",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 158984.0,
+      "unit_price": 12.9589,
+      "security_title": "Common Shares of Beneficial Interest",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001111908"
+      ],
+      "amount": 2060257.76,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1551047/0001398344-26-018199.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "KAMFAR RAMIN"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-14",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "BLUEROCK PRIVATE REAL ESTATE FUND"
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 21.0,
+        "radar_uncapped": 21.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 70,
+        "opportunity_score": 0,
+        "score": 21.0,
+        "insider_reasons": [
+          "Importo dichiarato: 2,060,257.76 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001398344-26-018199#tx2",
+      "company": "Bluerock Private Real Estate Fund",
+      "symbol": "BPRE",
+      "cik": 1551047,
+      "filed": "2026-10-14",
+      "transaction_date": "2026-10-14",
+      "insider": "KAMFAR RAMIN",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 157661.0,
+      "unit_price": 12.6332,
+      "security_title": "Common Shares of Beneficial Interest",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001111908"
+      ],
+      "amount": 1991762.95,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1551047/0001398344-26-018199.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "KAMFAR RAMIN"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-14",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "BLUEROCK PRIVATE REAL ESTATE FUND"
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 21.0,
+        "radar_uncapped": 21.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 70,
+        "opportunity_score": 0,
+        "score": 21.0,
+        "insider_reasons": [
+          "Importo dichiarato: 1,991,762.95 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001398344-26-018199#tx1",
+      "company": "Bluerock Private Real Estate Fund",
+      "symbol": "BPRE",
+      "cik": 1551047,
+      "filed": "2026-10-14",
+      "transaction_date": "2026-10-13",
+      "insider": "KAMFAR RAMIN",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 110964.0,
+      "unit_price": 12.8506,
+      "security_title": "Common Shares of Beneficial Interest",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001111908"
+      ],
+      "amount": 1425953.98,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1551047/0001398344-26-018199.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "KAMFAR RAMIN"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-14",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "BLUEROCK PRIVATE REAL ESTATE FUND"
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 21.0,
+        "radar_uncapped": 21.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 70,
+        "opportunity_score": 0,
+        "score": 21.0,
+        "insider_reasons": [
+          "Importo dichiarato: 1,425,953.98 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
         "quality_pass": false,
         "priority": "Non verificabile",
         "notify": false,
