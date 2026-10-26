@@ -25,7 +25,7 @@ try{favorites=RadarCore.loadFavorites(localStorage);saveFavorites();}catch(e){st
 try{const p=JSON.parse(localStorage.getItem('radarazioni-filters-v1')||'null');if(p){RadarCore.evaluate(0,null,p);params={...RadarCore.defaults,...p};}}catch{}
 function saveFavorites(){try{localStorage.setItem('radarazioni-favorites-v1',JSON.stringify({version:1,items:favorites}));}catch{storageWarning('Spazio locale insufficiente o salvataggio bloccato: le modifiche ai Preferiti restano solo in memoria. I dati precedenti sono conservati.');}}
 function syncFilterInputs(){const ids={min_market_cap:'minCap',min_weekly_amount:'minAmount',proportional_pct:'proportion',proportional_cap:'maxRequired'};for(const [k,id]of Object.entries(ids))$('#'+id).value=params[k];}
-function isFavorite(g){return favorites.some(f=>g.cik?f.cik===g.cik||(!f.cik&&f.symbol===g.symbol):f.symbol===g.symbol);}
+function isFavorite(g){return favorites.some(f=>!f.legacy&&(g.cik?f.cik===g.cik||(!f.cik&&f.symbol===g.symbol):f.symbol===g.symbol));}
 function updateCount(){$('#favoriteCount').textContent=favorites.filter(f=>!f.legacy).length;}
 async function loadHistory(){
  if(events)return events;
@@ -42,7 +42,7 @@ async function ensureSearchIndex(){
  return searchPromise;
 }
 async function toggleFavorite(g){
- const index=favorites.findIndex(f=>f.cik===g.cik||(!f.cik&&f.symbol===g.symbol));
+ const index=favorites.findIndex(f=>!f.legacy&&(f.cik===g.cik||(!f.cik&&f.symbol===g.symbol)));
  if(index>=0)favorites.splice(index,1);
  else{
   let rows=g.transactions||[];
