@@ -29,6 +29,16 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     await page.locator('#morePreliminary').click();await page.waitForFunction(()=>document.querySelectorAll('#preliminaryResults .card').length===40);
     assert.equal(new Set(await page.locator('#preliminaryResults .card').evaluateAll(es=>es.map(e=>e.dataset.cik))).size,40);
     const candidate=page.locator('#preliminaryResults .card').first();
+    const amountButton=candidate.locator('.metrics .money-toggle').first();
+    assert.ok((await amountButton.textContent()).includes('Mln'),'Abbreviated amounts must be readable');
+    await amountButton.click();assert.equal(await amountButton.getAttribute('data-exact'),'true');
+    assert.ok((await amountButton.textContent()).includes('.'),'Exact amount must use Italian separators');
+    await amountButton.click();assert.equal(await amountButton.getAttribute('data-exact'),'false');
+    await candidate.locator('.card-more summary').click();
+    assert.ok(await candidate.locator('.card-more').evaluate(el=>el.open),'Additional checks expand on tap');
+    await page.locator('#themeToggle').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
+    await page.locator('#themeToggle').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');
+    assert.ok((await page.locator('#overviewCandidates').textContent()).length>0);
     await candidate.locator('.star').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===3);
     await page.reload();await page.waitForFunction(()=>document.querySelector('#windowStatus').textContent.includes('sei mesi'));
     assert.equal(await page.locator('#favoriteCount').textContent(),'3');

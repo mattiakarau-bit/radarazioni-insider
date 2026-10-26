@@ -1,4 +1,4 @@
-# RadarAzioni – Insider Intelligence · 0.8.3
+# RadarAzioni – Insider Intelligence · 0.9.0
 
 App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
 trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
@@ -198,3 +198,18 @@ società prequalificate su prezzi/cap, zero società verificate in homepage.
 Dettagli finanziari estesi nel layout esistente; Preferiti e scoring conservati.
 La pubblicazione su push è offline, gli aggiornamenti programmati restano attivi.
 [Metodi, risultati e limiti](research/financial-review-0.8.3.md).
+
+## 0.9.0 — interfaccia monocromatica e importi chiari
+
+Restyling frontend bianco/nero (modalità scura predefinita, modalità chiara opzionale),
+schede finanziarie alleggerite, riepilogo del semestre, microinterazioni su pulsanti
+e Preferiti, miglioramenti responsive per iPad e iPhone.
+
+Gli importi numerici si leggono in italiano come `4,43 Mln $` o `4,43 Mld $`;
+toccando la cifra si visualizza il valore esatto con separatori italiani.
+I dati sorgente, le soglie, la selezione e il punteggio rimangono invariati.
+Il valore intero non va perso dalla formattazione; i mancanti restano marcati come tali.
+
+Tema salvato in `radarazioni-ui-theme`, senza cambiare l'archivio Preferiti.
+L'interfaccia rispetta `prefers-reduced-motion` e la PWA aggiorna la versione
+e la cache statica a 0.9.0. Test Money + controlli WebKit/Chromium.
