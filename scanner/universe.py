@@ -175,7 +175,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     radar,companies,details=build(events,as_of,financial_evidence(root,as_of))
     refresh=dict(refreshed=0,failed=0,budget=0)
     if refresh_budget:
-        refresh=refresh_financials(root,companies,as_of,max(0,min(refresh_budget,25)))
+        refresh=refresh_financials(root,companies,as_of,max(0,min(refresh_budget,50)))
         radar,companies,details=build(events,as_of,financial_evidence(root,as_of))
     first_year=months_before(date.fromisoformat(as_of),12).isoformat()
     # Custom search receives WINDOW summaries, never bulk raw transactions.
