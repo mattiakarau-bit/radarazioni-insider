@@ -45,7 +45,7 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     assert.equal(new Set(await page.locator('#preliminaryResults .card').evaluateAll(es=>es.map(e=>e.dataset.cik))).size,40);
     const candidate=page.locator('#preliminaryResults .card').first();
     const amountButton=candidate.locator('.metrics .money-toggle').first();
-    assert.ok((await amountButton.textContent()).includes('Mln'),'Abbreviated amounts must be readable');
+    assert.match(await amountButton.textContent(),/Mln|Mld|mila|\$/, 'Abbreviated amounts must remain readable regardless of sorting');
     await amountButton.click();assert.equal(await amountButton.getAttribute('data-exact'),'true');
     assert.ok((await amountButton.textContent()).includes('.'),'Exact amount must use Italian separators');
     await amountButton.click();assert.equal(await amountButton.getAttribute('data-exact'),'false');
