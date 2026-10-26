@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from scanner.preliminary import rank, shares_observations, recent_filings
+from scanner.preliminary import rank, sec_fundamental_triage, shares_observations, recent_filings
 from scanner.universe import refresh_financials
 from scanner.financial_review import review
 
@@ -20,6 +20,45 @@ class PreliminaryTests(unittest.TestCase):
         self.assertTrue(all(c['analysis']['quality_pass'] is False for c in rows))
         cs[0]['selection_status']='selected'
         self.assertEqual([c['cik'] for c in rank(cs,rs)],[2])
+
+    def test_documented_sec_fundamentals_come_before_raw_amount_not_financial_buy(self):
+        companies = [
+            dict(cik=1, selection_status='pending', amount=50_000_000, aggregation_verified=True,
+                 historical_market_cap=None, analysis={'insider_strength_score': 90}),
+            dict(cik=2, selection_status='pending', amount=350_000, aggregation_verified=True,
+                 historical_market_cap=None, analysis={'insider_strength_score': 60}),
+        ]
+        row = lambda value, tag: dict(value=value, end='2025-12-31', filed='2026-02-20',
+                                      tag=tag, unit='USD')
+        complete = {
+            'annual': {
+                'revenue':row(100_000_000,'Revenues'), 'net_income':row(10_000_000,'NetIncomeLoss'),
+                'eps':row(2.4,'EarningsPerShareDiluted'), 'operating_cashflow':row(20_000_000,'NetCashProvidedByUsedInOperatingActivities'),
+                'free_cashflow':row(15_000_000,'derived_CFO_minus_cash_PPE')
+            },
+            'financial_rule_indicators': {'revenue_growing':True},
+            'risks':[], 'status':'in_verifica'
+        }
+        reviews={1:review(None,'2026-10-26'),2:complete}
+        rows=rank(companies,reviews)
+        self.assertEqual([c['cik'] for c in rows],[2,1])
+        self.assertTrue(rows[0]['sec_evidence']['sec_documented_for_review'])
+        self.assertEqual(rows[0]['sec_evidence']['available_count'],5)
+        self.assertIsNone(rows[0]['historical_market_cap'])
+        self.assertIsNone(rows[0]['analysis']['radar_score'])
+        self.assertEqual(rows[0]['analysis']['score_status'],'non_verificabile')
+
+    def test_negative_annual_observation_does_not_become_a_buy(self):
+        r={'annual':{'revenue':{'value':500,'end':'2025-12-31'},
+                     'eps':{'value':-2,'end':'2025-12-31'},
+                     'operating_cashflow':{'value':-900,'end':'2025-12-31'}},
+           'financial_rule_indicators':{'revenue_growing':True},
+           'risks':['EPS annuale negativo','Cassa operativa annuale negativa']}
+        result=sec_fundamental_triage(r)
+        self.assertFalse(result['sec_documented_for_review'])
+        self.assertEqual(result['available_count'],3)
+        self.assertEqual(len(result['observed_risks']),2)
+        self.assertIsNone(result['annual']['free_cashflow'])
 
     def test_extreme_amount_preserved_but_not_ranked_as_strongest(self):
         cs=[dict(cik=i,selection_status='pending',amount=a,aggregation_verified=True) for i,a in [(1,23e9),(2,200000)]]
