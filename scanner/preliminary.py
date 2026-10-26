@@ -2,6 +2,38 @@
 import math
 
 
+def sec_fundamental_triage(financial_review):
+    """Compact, dated SEC *observations*, not a valuation or investment score."""
+    annual = financial_review.get('annual') or {}
+    values = {}
+    for key in ('revenue', 'net_income', 'eps', 'operating_cashflow', 'free_cashflow'):
+        row = annual.get(key)
+        if isinstance(row, dict) and isinstance(row.get('value'), (int, float)) and math.isfinite(row['value']):
+            values[key] = {field: row.get(field) for field in ('value', 'end', 'filed', 'tag', 'unit')}
+        else:
+            values[key] = None
+    indicators = financial_review.get('financial_rule_indicators') or {}
+    positives = []
+    if indicators.get('revenue_growing') is True and values['revenue']:
+        positives.append('Ricavi in crescita negli esercizi osservati')
+    if values['eps'] and values['eps']['value'] > 0:
+        positives.append('EPS annuale positivo')
+    if values['operating_cashflow'] and values['operating_cashflow']['value'] > 0:
+        positives.append('Cassa operativa annuale positiva')
+    if values['free_cashflow'] and values['free_cashflow']['value'] > 0:
+        positives.append('FCF annuale positivo (cassa operativa meno capex)')
+    negatives = list(financial_review.get('risks') or [])
+    coverage = sum(v is not None for v in values.values())
+    # No claim of "financially strong"; a positive annual observation can still
+    # coexist with poor valuation, sector-specific debt or adverse new filings.
+    reviewed = coverage >= 3 and len(positives) >= 2 and not negatives
+    return dict(annual=values, available_count=coverage, positive_observations=positives,
+                observed_risks=negatives, sec_documented_for_review=reviewed,
+                label=('Bilanci SEC utili per approfondire' if reviewed else
+                       'Bilanci SEC parziali o segnali da verificare'),
+                note='Solo osservazioni annuali SEC datate; nessuna capitalizzazione, prezzo, giudizio di convenienza o BUY.')
+
+
 def rank(companies, reviews):
     rows = []
     for c in companies:
@@ -20,14 +52,26 @@ def rank(companies, reviews):
         row['amount_review_note'] = 'Importo estremo: verificare unità, note e corrispettivo nel Form 4 originale; valore non certificato' if row['amount_review_required'] else None
         row['analysis'] = dict(radar_score=None, score_status='non_verificabile', quality_pass=False,
                                insider_strength_score=c.get('analysis', {}).get('insider_strength_score'))
-        row['sec_observations'] = sum(v is not None for v in r['annual'].values())
-        row['sec_risks'] = r['risks']
+        evidence = sec_fundamental_triage(r)
+        row['sec_evidence'] = evidence
+        row['sec_observations'] = evidence['available_count']
+        row['sec_risks'] = evidence['observed_risks']
         cap = c.get('historical_market_cap')
         row['purchase_to_historical_cap_pct'] = c['amount']/cap*100 if cap and cap > 0 else None
         rows.append(row)
-    # Amount is the primary factual ranking. Tie breaks are disclosed, never a financial rating.
-    rows.sort(key=lambda c: (c['amount_review_required'], -c['amount'], -(c['analysis']['insider_strength_score'] or 0),
-                             -c['sec_observations'], c['cik']))
+    # Evidence-first triage (NOT a financial score). Never rank a 10-K-less
+    # billion-dollar outlier ahead of candidates just because of its price.
+    # Missing SEC evidence is not a negative financial finding.
+    rows.sort(key=lambda c: (
+        c['amount_review_required'],
+        not c['sec_evidence']['sec_documented_for_review'],
+        -len(c['sec_evidence']['positive_observations']),
+        -c['sec_observations'],
+        len(c['sec_risks']),
+        -(c['analysis']['insider_strength_score'] or 0),
+        -c['amount'],
+        c['cik']
+    ))
     return rows
 
 
