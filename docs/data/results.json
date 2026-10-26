@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_scan_utc": "2026-10-26T09:10:49+00:00",
+  "last_scan_utc": "2026-10-26T09:49:25+00:00",
   "status": "Parziale",
   "source": "SEC EDGAR index + SEC Form 4 + SEC XBRL companyfacts",
   "model_status": "NON addestrato/validato — punteggio basato su regole",
@@ -14,10 +14,10 @@
     "form4_listed_in_checked_days": 986,
     "new_forms_this_run": 180,
     "failed_forms_this_run": 0,
-    "unprocessed_listed_forms": 1129,
+    "unprocessed_listed_forms": 949,
     "known_indexed_forms": 2522,
-    "known_processed_forms": 1393,
-    "known_completion_pct": 55.23,
+    "known_processed_forms": 1573,
+    "known_completion_pct": 62.37,
     "oldest_pending_date": "2026-10-15",
     "retry_pending_forms": 0,
     "by_day": [
@@ -27,7 +27,7 @@
         "processed": 238,
         "pending": 0,
         "index_url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261023.idx",
-        "checked_utc": "2026-10-26T09:10:49+00:00"
+        "checked_utc": "2026-10-26T09:49:25+00:00"
       },
       {
         "day": "2026-10-22",
@@ -35,7 +35,7 @@
         "processed": 246,
         "pending": 0,
         "index_url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261022.idx",
-        "checked_utc": "2026-10-26T09:10:49+00:00"
+        "checked_utc": "2026-10-26T09:49:25+00:00"
       },
       {
         "day": "2026-10-21",
@@ -43,21 +43,21 @@
         "processed": 210,
         "pending": 0,
         "index_url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261021.idx",
-        "checked_utc": "2026-10-26T09:10:49+00:00"
+        "checked_utc": "2026-10-26T09:49:25+00:00"
       },
       {
         "day": "2026-10-20",
         "indexed": 292,
-        "processed": 279,
-        "pending": 13,
+        "processed": 292,
+        "pending": 0,
         "index_url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261020.idx",
-        "checked_utc": "2026-10-26T09:10:49+00:00"
+        "checked_utc": "2026-10-26T09:49:25+00:00"
       },
       {
         "day": "2026-10-19",
         "indexed": 480,
-        "processed": 0,
-        "pending": 480,
+        "processed": 107,
+        "pending": 373,
         "index_url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261019.idx",
         "checked_utc": "2026-10-26T01:05:55+00:00"
       },
@@ -72,8 +72,8 @@
       {
         "day": "2026-10-15",
         "indexed": 303,
-        "processed": 122,
-        "pending": 181,
+        "processed": 182,
+        "pending": 121,
         "index_url": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261015.idx",
         "checked_utc": "2026-10-25T09:44:16+00:00"
       },
@@ -89,7 +89,7 @@
     "note": "Copertura dei soli indici registrati; non totale SEC. Form 4/A conservati in revisione, esclusi dai segnali; latenza degli indici notturni.",
     "forms_already_in_structured_archives": 0,
     "lookback_days": 7,
-    "transactions_stored": 291,
+    "transactions_stored": 310,
     "index_retry_days": [
       "2026-10-26"
     ],
@@ -97,30 +97,22 @@
   },
   "errors": [
     "2026-10-26: HTTPError: HTTP Error 403: Forbidden",
-    "Companyfacts CIK 855887: HTTPError: HTTP Error 404: Not Found",
-    "Companyfacts CIK 858706: HTTPError: HTTP Error 404: Not Found",
-    "Companyfacts CIK 858706: RuntimeError: Companyfacts non accessibile in questa esecuzione",
-    "Companyfacts CIK 855887: RuntimeError: Companyfacts non accessibile in questa esecuzione",
-    "Companyfacts CIK 855887: RuntimeError: Companyfacts non accessibile in questa esecuzione",
-    "Companyfacts CIK 1506488: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 2114459: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 2114459: HTTPError: HTTP Error 404: Not Found",
     "Companyfacts CIK 863900: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1782303: RuntimeError: Budget fondamentali: analisi differita, non verificata",
     "Companyfacts CIK 863900: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 858706: RuntimeError: Companyfacts non accessibile in questa esecuzione",
+    "Companyfacts CIK 887396: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 793040: RuntimeError: Budget fondamentali: analisi differita, non verificata",
     "Companyfacts CIK 826675: RuntimeError: Budget fondamentali: analisi differita, non verificata",
     "Companyfacts CIK 826675: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 858706: RuntimeError: Budget fondamentali: analisi differita, non verificata",
     "Companyfacts CIK 33934: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1748137: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1506488: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 858706: RuntimeError: Companyfacts non accessibile in questa esecuzione",
-    "Companyfacts CIK 1144215: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1728328: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1852551: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1728328: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1795251: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1729173: RuntimeError: Budget fondamentali: analisi differita, non verificata",
-    "Companyfacts CIK 1802883: RuntimeError: Budget fondamentali: analisi differita, non verificata"
+    "Companyfacts CIK 2019804: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 855887: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 39368: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 1837493: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 41719: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 1396536: RuntimeError: Budget fondamentali: analisi differita, non verificata",
+    "Companyfacts CIK 1034957: RuntimeError: Budget fondamentali: analisi differita, non verificata"
   ],
   "filings": [
     {
@@ -1589,6 +1581,7 @@
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
       "fundamentals": {
         "schema_version": 2,
+        "extractor_version": 3,
         "revenue_years": [],
         "eps_years": [],
         "cashflow_years": [],
@@ -1603,12 +1596,13 @@
         "as_of": "2026-10-23",
         "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
         "data_warnings": [
-          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente"
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
         ],
-        "company_name": "NXG NextGen Infrastructure Income Fund"
+        "company_name": "NXG NextGen Infrastructure Income Fund",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
       },
       "analysis": {
         "radar_score": null,
@@ -1636,9 +1630,6 @@
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
           "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -3041,6 +3032,7 @@
           "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
+          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente"
         ],
         "company_name": ""
@@ -3070,6 +3062,7 @@
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
           "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
@@ -3122,6 +3115,7 @@
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
       "fundamentals": {
         "schema_version": 2,
+        "extractor_version": 3,
         "revenue_years": [],
         "eps_years": [],
         "cashflow_years": [],
@@ -3136,12 +3130,13 @@
         "as_of": "2026-10-23",
         "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
         "data_warnings": [
-          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente"
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
         ],
-        "company_name": "NXG NextGen Infrastructure Income Fund"
+        "company_name": "NXG NextGen Infrastructure Income Fund",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
       },
       "analysis": {
         "radar_score": null,
@@ -3169,9 +3164,6 @@
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
           "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
-          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -14304,6 +14296,7 @@
           "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
+          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente"
         ],
         "company_name": ""
@@ -14333,6 +14326,7 @@
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
           "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
           "Aggiornamento SEC non riuscito/differito: conservato snapshot precedente",
@@ -26583,7 +26577,31 @@
         "Sunderland Todd"
       ],
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": null,
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-20",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "NXG NextGen Infrastructure Income Fund",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
       "analysis": {
         "radar_score": null,
         "radar_provisional": 6.0,
@@ -26608,6 +26626,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -28252,6 +28271,1742 @@
       }
     },
     {
+      "id": "0001193125-26-425300#tx1",
+      "company": "Corebridge Financial, Inc.",
+      "symbol": "CRBG",
+      "cik": 1889539,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "NIPPON LIFE INSURANCE CO",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 361127.0,
+      "unit_price": 33.5659,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0000905591"
+      ],
+      "amount": 12121552.77,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/905591/0001193125-26-425300.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "NIPPON LIFE INSURANCE CO"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [
+          {
+            "year": 2021,
+            "value": 23257000000,
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 24697000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 18800000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 18707000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 18481000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [
+          {
+            "year": 2022,
+            "value": 12.6,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2023,
+            "value": 1.71,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2024,
+            "value": 3.72,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2025,
+            "value": -0.68,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          }
+        ],
+        "cashflow_years": [
+          {
+            "year": 2021,
+            "value": 2405000000,
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 2621000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 3357000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2151000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 2021000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": false,
+        "eps_growing": false,
+        "cashflow_positive": true,
+        "eps_latest_positive": false,
+        "cashflow_latest_positive": true,
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-10-19",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "Corebridge Financial, Inc.",
+        "net_income_years": [
+          {
+            "year": 2022,
+            "value": 8159000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 1104000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2230000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": -366000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          }
+        ],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": 29.0,
+        "radar_provisional": 29.0,
+        "radar_uncapped": 29.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Ultimo EPS o flusso di cassa negativo: massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "provvisorio",
+        "insider_strength_score": 50,
+        "opportunity_score": 20,
+        "score": 29.0,
+        "insider_reasons": [
+          "Importo dichiarato: 12,121,552.77 USD"
+        ],
+        "reasons": [
+          "Cassa operativa positiva in tre esercizi"
+        ],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
+          "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
+        "financial_problem": true,
+        "quality_pass": false,
+        "priority": "Provvisorio",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0002151678-26-000007#tx2",
+      "company": "Iambic Therapeutics, Inc.",
+      "symbol": "IAM",
+      "cik": 1997038,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-16",
+      "insider": "Rachlin Evan Lockwood",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 718750.0,
+      "unit_price": 16.0,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0002151678"
+      ],
+      "amount": 11500000.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2151678/0002151678-26-000007.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Rachlin Evan Lockwood"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-19",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "Iambic Therapeutics, Inc.",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 15.0,
+        "insider_reasons": [
+          "Importo dichiarato: 11,500,000.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001193125-26-425300#tx0",
+      "company": "Corebridge Financial, Inc.",
+      "symbol": "CRBG",
+      "cik": 1889539,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "NIPPON LIFE INSURANCE CO",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 122762.0,
+      "unit_price": 32.8031,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0000905591"
+      ],
+      "amount": 4026974.16,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/905591/0001193125-26-425300.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "NIPPON LIFE INSURANCE CO"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [
+          {
+            "year": 2021,
+            "value": 23257000000,
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 24697000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 18800000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 18707000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 18481000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [
+          {
+            "year": 2022,
+            "value": 12.6,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2023,
+            "value": 1.71,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2024,
+            "value": 3.72,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2025,
+            "value": -0.68,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          }
+        ],
+        "cashflow_years": [
+          {
+            "year": 2021,
+            "value": 2405000000,
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 2621000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 3357000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2151000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 2021000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": false,
+        "eps_growing": false,
+        "cashflow_positive": true,
+        "eps_latest_positive": false,
+        "cashflow_latest_positive": true,
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-10-19",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "Corebridge Financial, Inc.",
+        "net_income_years": [
+          {
+            "year": 2022,
+            "value": 8159000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 1104000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2230000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": -366000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          }
+        ],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": 29.0,
+        "radar_provisional": 29.0,
+        "radar_uncapped": 29.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Ultimo EPS o flusso di cassa negativo: massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "provvisorio",
+        "insider_strength_score": 50,
+        "opportunity_score": 20,
+        "score": 29.0,
+        "insider_reasons": [
+          "Importo dichiarato: 4,026,974.16 USD"
+        ],
+        "reasons": [
+          "Cassa operativa positiva in tre esercizi"
+        ],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
+          "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
+        "financial_problem": true,
+        "quality_pass": false,
+        "priority": "Provvisorio",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001104659-26-116966#tx3",
+      "company": "CITY THERAPEUTICS, INC.",
+      "symbol": "CTY",
+      "cik": 2143850,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-19",
+      "insider": "ARCH Venture Partners XII, LLC, ARCH Venture Partners XII, L.P., ARCH Venture Fund XII, L.P., CRANDELL KEITH, Burow Kristina, GILLIS STEVEN",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 170000.0,
+      "unit_price": 18.0,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001979548",
+        "0001979765",
+        "0001906837",
+        "0001219039",
+        "0001569248",
+        "0001229592"
+      ],
+      "amount": 3060000.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2143850/0001104659-26-116966.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "ARCH Venture Partners XII, LLC",
+        "ARCH Venture Partners XII, L.P.",
+        "ARCH Venture Fund XII, L.P.",
+        "CRANDELL KEITH",
+        "Burow Kristina",
+        "GILLIS STEVEN"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-19",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "CITY THERAPEUTICS, INC.",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 15.0,
+        "insider_reasons": [
+          "Importo dichiarato: 3,060,000.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001104659-26-116965#tx3",
+      "company": "CITY THERAPEUTICS, INC.",
+      "symbol": "CTY",
+      "cik": 2143850,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-19",
+      "insider": "NELSEN ROBERT",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": true,
+      "shares": 170000.0,
+      "unit_price": 18.0,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001219042"
+      ],
+      "amount": 3060000.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2143850/0001104659-26-116965.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "NELSEN ROBERT"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-19",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "CITY THERAPEUTICS, INC.",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 21.0,
+        "radar_uncapped": 21.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 70,
+        "opportunity_score": 0,
+        "score": 21.0,
+        "insider_reasons": [
+          "Importo dichiarato: 3,060,000.00 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001193125-26-425300#tx2",
+      "company": "Corebridge Financial, Inc.",
+      "symbol": "CRBG",
+      "cik": 1889539,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "NIPPON LIFE INSURANCE CO",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 26984.0,
+      "unit_price": 34.3787,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0000905591"
+      ],
+      "amount": 927674.84,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/905591/0001193125-26-425300.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "NIPPON LIFE INSURANCE CO"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [
+          {
+            "year": 2021,
+            "value": 23257000000,
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 24697000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 18800000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 18707000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 18481000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [
+          {
+            "year": 2022,
+            "value": 12.6,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2023,
+            "value": 1.71,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2024,
+            "value": 3.72,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2025,
+            "value": -0.68,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          }
+        ],
+        "cashflow_years": [
+          {
+            "year": 2021,
+            "value": 2405000000,
+            "filed": "2024-02-15",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 2621000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 3357000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2151000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 2021000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": false,
+        "eps_growing": false,
+        "cashflow_positive": true,
+        "eps_latest_positive": false,
+        "cashflow_latest_positive": true,
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-10-19",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "Corebridge Financial, Inc.",
+        "net_income_years": [
+          {
+            "year": 2022,
+            "value": 8159000000,
+            "filed": "2025-02-13",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 1104000000,
+            "filed": "2026-02-11",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2230000000,
+            "filed": "2026-02-11",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": -366000000,
+            "filed": "2026-02-11",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          }
+        ],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": 29.0,
+        "radar_provisional": 29.0,
+        "radar_uncapped": 29.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Ultimo EPS o flusso di cassa negativo: massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "provvisorio",
+        "insider_strength_score": 50,
+        "opportunity_score": 20,
+        "score": 29.0,
+        "insider_reasons": [
+          "Importo dichiarato: 927,674.84 USD"
+        ],
+        "reasons": [
+          "Cassa operativa positiva in tre esercizi"
+        ],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
+          "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
+        "financial_problem": true,
+        "quality_pass": false,
+        "priority": "Provvisorio",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001072613-26-000827#tx2",
+      "company": "EMPIRE PETROLEUM CORP",
+      "symbol": "EP",
+      "cik": 887396,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-14",
+      "insider": "Mulacek Phil E",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": true,
+      "shares": 69427.0,
+      "unit_price": 3.2,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001670677"
+      ],
+      "amount": 222166.4,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/887396/0001072613-26-000827.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Mulacek Phil E"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 16.5,
+        "radar_uncapped": 16.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 55,
+        "opportunity_score": 0,
+        "score": 16.5,
+        "insider_reasons": [
+          "Importo dichiarato: 222,166.40 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000358#tx0",
+      "company": "NEW GERMANY FUND INC",
+      "symbol": "GF",
+      "cik": 858706,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 16577.0,
+      "unit_price": 10.3,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 170743.1,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/858706/0001510281-26-000358.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 10.5,
+        "radar_uncapped": 10.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 35,
+        "opportunity_score": 0,
+        "score": 10.5,
+        "insider_reasons": [
+          "Importo dichiarato: 170,743.10 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000357#tx0",
+      "company": "ELLSWORTH GROWTH & INCOME FUND LTD",
+      "symbol": "ECF",
+      "cik": 793040,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 9969.0,
+      "unit_price": 11.62,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 115839.78,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/793040/0001510281-26-000357.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 10.5,
+        "radar_uncapped": 10.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 35,
+        "opportunity_score": 0,
+        "score": 10.5,
+        "insider_reasons": [
+          "Importo dichiarato: 115,839.78 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000359#tx0",
+      "company": "BNY MELLON STRATEGIC MUNICIPAL BOND FUND, INC.",
+      "symbol": "DSM",
+      "cik": 855887,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 13762.0,
+      "unit_price": 5.24,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 72112.88,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/855887/0001510281-26-000359.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 6.0,
+        "insider_reasons": [
+          "Importo dichiarato: 72,112.88 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001072613-26-000827#tx1",
+      "company": "EMPIRE PETROLEUM CORP",
+      "symbol": "EP",
+      "cik": 887396,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-12",
+      "insider": "Mulacek Phil E",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": true,
+      "shares": 20073.0,
+      "unit_price": 3.1996,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001670677"
+      ],
+      "amount": 64225.57,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/887396/0001072613-26-000827.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Mulacek Phil E"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 12.0,
+        "radar_uncapped": 12.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 40,
+        "opportunity_score": 0,
+        "score": 12.0,
+        "insider_reasons": [
+          "Importo dichiarato: 64,225.57 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0000041719-26-000051#tx0",
+      "company": "Magnera Corp",
+      "symbol": "MAGN",
+      "cik": 41719,
+      "filed": "2026-10-19",
+      "transaction_date": "2025-05-29",
+      "insider": "Brown Bruce",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 4235.0,
+      "unit_price": 11.8054,
+      "security_title": "Common Stock, Par Value $.01",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001436840"
+      ],
+      "amount": 49995.87,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/41719/0000041719-26-000051.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": true,
+      "original_filing_date": "2025-05-30",
+      "purchase_eligible": false,
+      "owners": [
+        "Brown Bruce"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 12.0,
+        "radar_uncapped": 12.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 40,
+        "opportunity_score": 0,
+        "score": 12.0,
+        "insider_reasons": [
+          "Importo dichiarato: 49,995.87 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001225208-26-008441#tx0",
+      "company": "FULLER H B CO",
+      "symbol": "FUL",
+      "cik": 39368,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-16",
+      "insider": "Malik Muhammad Shahbaz",
+      "officer_title": "Senior VP, BAS",
+      "officer": true,
+      "director": false,
+      "ten_pct": false,
+      "shares": 478.6594,
+      "unit_price": 52.2292,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001621150"
+      ],
+      "amount": 25000.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/39368/0001225208-26-008441.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Malik Muhammad Shahbaz"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 12.0,
+        "radar_uncapped": 12.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 40,
+        "opportunity_score": 0,
+        "score": 12.0,
+        "insider_reasons": [
+          "Importo dichiarato: 25,000.00 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001072613-26-000827#tx0",
+      "company": "EMPIRE PETROLEUM CORP",
+      "symbol": "EP",
+      "cik": 887396,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-09",
+      "insider": "Mulacek Phil E",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": true,
+      "shares": 5878.0,
+      "unit_price": 3.0774,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001670677"
+      ],
+      "amount": 18088.96,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/887396/0001072613-26-000827.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Mulacek Phil E"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 8.4,
+        "insider_reasons": [
+          "Importo dichiarato: 18,088.96 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001072613-26-000827#tx3",
+      "company": "EMPIRE PETROLEUM CORP",
+      "symbol": "EP",
+      "cik": 887396,
+      "filed": "2026-10-19",
+      "transaction_date": "2026-10-15",
+      "insider": "Mulacek Phil E",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": true,
+      "shares": 2603.0,
+      "unit_price": 3.2,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001670677"
+      ],
+      "amount": 8329.6,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/887396/0001072613-26-000827.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Mulacek Phil E"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 8.4,
+        "insider_reasons": [
+          "Importo dichiarato: 8,329.60 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001628280-26-065947#tx0",
       "company": "Borr Drilling Ltd",
       "symbol": "BORR",
@@ -28666,6 +30421,78 @@
       }
     },
     {
+      "id": "0002119764-26-000032#tx0",
+      "company": "CRESUD INC",
+      "symbol": "CRESY",
+      "cik": 1034957,
+      "filed": "2026-10-15",
+      "transaction_date": "2026-10-15",
+      "insider": "Elsztain Alejandro Gustavo",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 8295.0,
+      "unit_price": 11.18,
+      "security_title": "American Depositary Shares (ADS)",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0002119764"
+      ],
+      "amount": 92738.1,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2119764/0002119764-26-000032.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "Elsztain Alejandro Gustavo"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 6.0,
+        "insider_reasons": [
+          "Importo dichiarato: 92,738.10 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001045463-26-000021#tx1",
       "company": "PROTHENA CORP PUBLIC LTD CO",
       "symbol": "PRTA",
@@ -28715,6 +30542,79 @@
         "score": 6.0,
         "insider_reasons": [
           "Importo dichiarato: 84,569.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001079973-26-001363#tx0",
+      "company": "DUOS TECHNOLOGIES GROUP, INC.",
+      "symbol": "DUOT",
+      "cik": 1396536,
+      "filed": "2026-10-15",
+      "transaction_date": "2026-09-22",
+      "insider": "Recker Frank Douglas",
+      "officer_title": "Chief Executive Officer",
+      "officer": true,
+      "director": true,
+      "ten_pct": false,
+      "shares": 9250.0,
+      "unit_price": 9.1413,
+      "security_title": "Common Stock, $0.001 par value",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0002083730"
+      ],
+      "amount": 84557.02,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2083730/0001079973-26-001363.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": true,
+      "original_filing_date": "2026-09-23",
+      "purchase_eligible": false,
+      "owners": [
+        "Recker Frank Douglas"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 15.0,
+        "radar_uncapped": 15.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 50,
+        "opportunity_score": 0,
+        "score": 15.0,
+        "insider_reasons": [
+          "Importo dichiarato: 84,557.02 USD",
+          "Ruolo CEO/CFO dichiarato"
         ],
         "reasons": [],
         "warnings": [
@@ -29201,6 +31101,78 @@
       }
     },
     {
+      "id": "0001193125-26-423068#tx0",
+      "company": "Terrestrial Energy Inc. /DE/",
+      "symbol": "IMSR",
+      "cik": 2019804,
+      "filed": "2026-10-15",
+      "transaction_date": "2026-10-14",
+      "insider": "Pardee Charles G",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 7500.0,
+      "unit_price": 2.95,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001544340"
+      ],
+      "amount": 22125.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2019804/0001193125-26-423068.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Pardee Charles G"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 2.4,
+        "radar_uncapped": 2.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 8,
+        "opportunity_score": 0,
+        "score": 2.4,
+        "insider_reasons": [
+          "Importo dichiarato: 22,125.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001940272-26-000025#tx1",
       "company": "InMed Pharmaceuticals Inc.",
       "symbol": "INM",
@@ -29252,6 +31224,79 @@
         "score": 2.4,
         "insider_reasons": [
           "Importo dichiarato: 10,667.93 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001185185-26-004770#tx0",
+      "company": "QTREX Quantum Ltd.",
+      "symbol": "QTEX",
+      "cik": 1837493,
+      "filed": "2026-10-15",
+      "transaction_date": "2026-10-15",
+      "insider": "Parnes Tal",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 6666.0,
+      "unit_price": 1.5,
+      "security_title": "Ordinary Shares",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0002121639"
+      ],
+      "amount": 9999.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/2121639/0001185185-26-004770.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Parnes Tal"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 8.4,
+        "insider_reasons": [
+          "Importo dichiarato: 9,999.00 USD",
+          "Ruolo dirigente/amministratore dichiarato"
         ],
         "reasons": [],
         "warnings": [
