@@ -85,7 +85,7 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  <div><small>Flusso di cassa operativo</small><strong>${secValue(fin.operating_cashflow)}</strong></div>
  <div><small>Free cash flow</small><strong>${secValue(fin.free_cashflow)}</strong></div>
  </div><p class="sec-hint">Dati annuali SEC disponibili: ${esc(sec.available_count)}/5. Valori del rispettivo esercizio, non necessariamente dello stesso periodo né attuali.</p>`:'';
- const secSignals=sec?`<p><strong>Bilanci SEC:</strong> ${esc(sec.label)}. ${esc(sec.positive_observations?.length??0)} osservazioni favorevoli; ${esc(sec.observed_risks?.length??0)} segnali negativi riscontrati.</p>
+ const secSignals=sec&&sec.available_count>0?`<p><strong>Bilanci SEC:</strong> ${esc(sec.label)}. ${esc(sec.positive_observations?.length??0)} osservazioni favorevoli; ${esc(sec.observed_risks?.length??0)} segnali negativi riscontrati.</p>
  <p><strong>Osservazioni favorevoli:</strong> ${esc(sec.positive_observations?.join(' · ')||'Nessuna verificata.')}</p>
  <p><strong>Possibili rischi:</strong> ${esc(sec.observed_risks?.join(' · ')||'Nessun fattore negativo tra quelli analizzati; non equivale ad assenza di rischi.')}</p>
  <p>${esc(sec.note||'Mancano quotazioni e capitalizzazioni autorizzate per la verifica completa.')}</p>`:'';
