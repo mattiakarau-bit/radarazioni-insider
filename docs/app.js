@@ -1,11 +1,24 @@
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const usd=x=>Number.isFinite(x)?new Intl.NumberFormat('it-IT',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x):'Non disponibile';
+const usd=x=>Money.formatCompact(x);
+const moneyButton=x=>Number.isFinite(x)?`<button type="button" class="money-toggle" data-amount="${x}" data-exact="false" aria-label="Importo abbreviato ${esc(Money.formatCompact(x))}. Tocca per vedere l'importo esatto" title="Tocca per vedere la cifra completa"><span class="money-value">${esc(Money.formatCompact(x))}</span><span class="money-hint" aria-hidden="true">↗</span></button>`:esc(Money.formatCompact(x));
+function notify(message){const el=$('#toast');if(!el)return;el.textContent=message;el.classList.add('show');clearTimeout(notify.timer);notify.timer=setTimeout(()=>el.classList.remove('show'),2300);}
+document.addEventListener('click',e=>{
+ const button=e.target.closest('.money-toggle');if(!button)return;
+ const exact=button.dataset.exact!=='true',value=Number(button.dataset.amount);
+ button.dataset.exact=String(exact);
+ button.querySelector('.money-value').textContent=exact?Money.formatExact(value):Money.formatCompact(value);
+ button.setAttribute('aria-label',exact?'Importo completo '+Money.formatExact(value)+'. Tocca per abbreviare':'Importo abbreviato '+Money.formatCompact(value)+'. Tocca per vedere l’importo completo');
+});
 const price=x=>Number.isFinite(x)?new Intl.NumberFormat('it-IT',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:6}).format(x):'Non verificabile';
 const displayRadar=a=>['verificato','provvisorio'].includes(a?.score_status)&&Number.isFinite(a.radar_score)?a.radar_score:'—';
 let searchIndex=null,searchPromise=null,preliminaryIndex=null,preliminaryLimit=20;
 let radar=null, result=null, events=null, historyPromise=null, favorites=[], page='radar', params={...RadarCore.defaults};
+let uiTheme='dark';try{uiTheme=localStorage.getItem('radarazioni-ui-theme')==='light'?'light':'dark';}catch{}
+function applyTheme(){document.documentElement.dataset.theme=uiTheme;const button=$('#themeToggle');if(button){button.textContent=uiTheme==='dark'?'☀ Chiaro':'☾ Scuro';button.setAttribute('aria-label','Passa al tema '+(uiTheme==='dark'?'chiaro':'scuro'));button.setAttribute('aria-pressed',String(uiTheme==='light'));}}
+applyTheme();
+$('#themeToggle').addEventListener('click',()=>{uiTheme=uiTheme==='dark'?'light':'dark';applyTheme();try{localStorage.setItem('radarazioni-ui-theme',uiTheme);}catch{}notify(uiTheme==='dark'?'Modalità scura attiva':'Modalità chiara attiva');});
 function storageWarning(text){$('#storageStatus').textContent=text;$('#storageStatus').classList.remove('hidden');}
 try{favorites=RadarCore.loadFavorites(localStorage);saveFavorites();}catch(e){storageWarning('Preferiti: '+e.message+'. I dati precedenti non vengono cancellati.');}
 try{const p=JSON.parse(localStorage.getItem('radarazioni-filters-v1')||'null');if(p){RadarCore.evaluate(0,null,p);params={...RadarCore.defaults,...p};}}catch{}
@@ -36,14 +49,36 @@ async function toggleFavorite(g){
   favorites.push({key:RadarCore.key(g),cik:g.cik,symbol:g.symbol,company:g.company,group:g.archive_only?null:g,transactions:rows,saved_at:new Date().toISOString()});
  }
  saveFavorites();updateCount();renderRadar();if(page==='favorites')renderFavorites();if(page==='custom')renderCustom();
+ notify(index>=0?'Rimosso dai Preferiti':'Aggiunto ai Preferiti');
 }
 function setPage(name){page=name;$$('.page').forEach(el=>el.classList.toggle('hidden',el.id!==name+'Page'));$$('nav button').forEach(el=>{if(el.dataset.page===name)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});if(name==='favorites'){renderFavorites();loadHistory().then(rows=>{favorites=RadarCore.hydrate(favorites,rows,radar?.groups||[]);saveFavorites();updateCount();renderFavorites();}).catch(()=>storageWarning('Storico SEC non accessibile: mostro i dati già salvati.'));}if(name==='custom'){renderCustom();ensureSearchIndex().then(renderCustom).catch(e=>$('#customStatus').textContent=e.message);}if(name==='history'){renderHistory();ensureSearchIndex().then(renderHistory).catch(()=>{});}window.scrollTo(0,0);}
 function statusLabel(status){return {supera:'Conforme ai filtri · dati verificati',escluso:'Fuori dai filtri',non_verificabile:'Non verificabile · capitalizzazione assente'}[status];}
 function card(g,{historic=false,favorite=false,custom=false}={}){
  const el=document.createElement('article');el.className='card';el.dataset.cik=g.cik;
  const a=g.analysis||{},f=custom?RadarCore.evaluate(g.amount,g.historical_market_cap,params):(g.filters||RadarCore.evaluate(g.amount,g.market_cap,RadarCore.defaults));
- el.innerHTML=`<div class="card-head"><button class="star" aria-label="${isFavorite(g)?'Rimuovi dai':'Aggiungi ai'} Preferiti ${esc(g.symbol)}" aria-pressed="${isFavorite(g)}">${isFavorite(g)?'★':'☆'}</button><div class="card-title"><span class="ticker">${esc(g.symbol)}</span><h3>${esc(g.company)}</h3><small>${esc(g.window_start)} — ${esc(g.window_end)}</small></div><div class="score"><strong>${esc(g.preliminary?(g.amount_review_required?'—':a.insider_strength_score??'—'):displayRadar(a))}</strong><small>${g.preliminary?'Forza insider · Preliminare':'Radar Score'} · ${esc(a.score_status==='verificato'?'Verificato':a.score_status==='provvisorio'?'Provvisorio':'Non verificabile')}</small></div></div><div class="metrics"><div><strong>${esc(usd(g.amount))}</strong><small>${g.amount_review_required?'Importo da riconciliare in 7 giorni':g.aggregation_verified?'Totale dichiarato in 7 giorni':'Stima prudenziale in 7 giorni'}</small></div><div><strong>${esc(g.transaction_count)}</strong><small>${g.aggregation_verified?'Transazioni':'Unità dopo dedup prudenziale'} · ${esc(g.reported_transaction_count)} righe SEC</small></div><div><strong>Non verificati</strong><small>Insider indipendenti</small></div></div><span class="badge">${g.preliminary?'Candidata preliminare · verifiche incomplete':historic?'Confronto prezzo non verificabile':statusLabel(f.status)}</span><p>${g.aggregation_verified?'':'Possibili co-dichiarazioni: importo e conteggio non sono un totale verificato. '}${historic?'Prezzi correnti, split e analisi aggiornata non disponibili.':`Capitalizzazione corrente: ${esc(usd(g.market_cap))}. Capitalizzazione della settimana: ${esc(usd(g.historical_market_cap))}${g.historical_market_cap_as_of?' ('+esc(g.historical_market_cap_as_of)+')':''}. Soglia settimanale richiesta: ${f.required_amount==null?'non calcolabile':esc(usd(f.required_amount))}.`}</p><p>Prezzo corrente: ${esc(price(g.current_price))}${g.current_price_as_of?' · '+esc(g.current_price_as_of):''}. ${g.significant_window_count??1} finestre significative; non sommare finestre sovrapposte.</p><div class="card-actions"><button class="open-detail">Dettagli</button></div>`;
- if(g.preliminary){const info=document.createElement('p');info.className='muted';info.textContent=`${g.amount_review_note||''} Ruoli dichiarati: ${(g.insider_roles||[]).join(' · ')||'da verificare'}. Osservazioni annuali SEC disponibili: ${g.sec_observations??0}/6; disponibilità non significa solidità. ${g.sec_risks?.length?'Rischi osservati: '+g.sec_risks.join('; ')+'. ':''}Radar Score finanziario non disponibile. ${(g.selection_reasons||[]).join('; ')}.`;el.querySelector('.card-actions').before(info);}
+ const preliminary=!!g.preliminary;
+ const label=preliminary?'In verifica · dati finanziari incompleti':historic?'Storico · dati da verificare':statusLabel(f.status);
+ const score=preliminary?(g.amount_review_required?'—':a.insider_strength_score??'—'):displayRadar(a);
+ const scoreLabel=preliminary?'Forza insider · preliminare':'Radar Score · '+(a.score_status==='verificato'?'Verificato':'Non verificato');
+ const day=g.window_start&&g.window_end?`${esc(g.window_start)} — ${esc(g.window_end)}`:'Periodo non disponibile';
+ const rationale=preliminary?`<p>${esc(g.amount_review_note||'')} Ruoli dichiarati: ${esc((g.insider_roles||[]).join(' · ')||'da verificare')}. Osservazioni SEC disponibili: ${esc(g.sec_observations??0)}/6; disponibilità non significa solidità. ${g.sec_risks?.length?'Rischi osservati: '+esc(g.sec_risks.join('; '))+'. ':''}Nessun Radar Score finanziario verificato.</p>`:'';
+ const note=g.aggregation_verified?'':'<p>Possibili co-dichiarazioni: importo e conteggio non sono un totale verificato.</p>';
+ const details=`<details class="card-more"><summary>Verifiche, prezzi e dati mancanti</summary>
+ ${note}${rationale}
+ <p>Capitalizzazione corrente: ${moneyButton(g.market_cap)}. Capitalizzazione della settimana: ${moneyButton(g.historical_market_cap)}${g.historical_market_cap_as_of?' ('+esc(g.historical_market_cap_as_of)+')':''}. Soglia richiesta: ${moneyButton(f.required_amount)}.</p>
+ <p>Prezzo corrente: ${esc(price(g.current_price))}${g.current_price_as_of?' · '+esc(g.current_price_as_of):''}. ${esc(g.significant_window_count??1)} finestre significative: non sommare periodi sovrapposti.</p>
+ ${preliminary&&g.selection_reasons?.length?'<p>Controlli ancora necessari: '+esc(g.selection_reasons.join('; '))+'.</p>':''}
+ </details>`;
+ el.innerHTML=`<div class="card-head">
+ <button class="star" aria-label="${isFavorite(g)?'Rimuovi dai':'Aggiungi ai'} Preferiti ${esc(g.symbol)}" aria-pressed="${isFavorite(g)}" title="Salva nei Preferiti">${isFavorite(g)?'★':'☆'}</button>
+ <div class="card-title"><span class="ticker">${esc(g.symbol||'N/D')}</span><h3>${esc(g.company)}</h3><small>${day}</small></div>
+ <div class="score"><strong>${esc(score)}</strong><small>${esc(scoreLabel)}</small></div></div>
+ <div class="metrics">
+ <div><strong>${moneyButton(g.amount)}</strong><small>${g.amount_review_required?'Importo da riconciliare':g.aggregation_verified?'Acquisti dichiarati in 7 giorni':'Importo prudenziale in 7 giorni'}</small></div>
+ <div><strong>${esc(g.transaction_count??'—')}</strong><small>Operazioni nella settimana</small></div>
+ <div><strong>${esc(g.significant_window_count??1)}</strong><small>Finestre significative</small></div></div>
+ <div class="card-meta"><span class="badge">${esc(label)}</span></div>
+ ${details}<div class="card-actions"><button class="open-detail">Esplora azienda</button></div>`;
  el.querySelector('.star').addEventListener('click',()=>toggleFavorite(g));
  el.querySelector('.open-detail').addEventListener('click',()=>detail(g,favorite?favorites.find(f=>f.cik===g.cik)?.transactions:null));
  return el;
@@ -55,6 +90,10 @@ function renderRadar(){
  $('#recentTrack').textContent=` · ${selected.length} società selezionate oggi da tutto il semestre.`;
  $('#pendingTrack').textContent=` · ${pending} società con almeno una settimana sopra il minimo, ma verifiche ancora incomplete.`;
  $('#resultsCount').textContent=`${selected.length} società con tutti i criteri verificati`;
+ $('#overviewCandidates').textContent=new Intl.NumberFormat('it-IT').format(stats.companies_weekly_base_pass??pending);
+ $('#overviewVerified').textContent=new Intl.NumberFormat('it-IT').format(selected.length);
+ $('#overviewObserved').textContent=new Intl.NumberFormat('it-IT').format(stats.companies_with_purchase_rows??0);
+ $('#overviewDate').textContent=radar?.as_of||'—';
  $('#pendingStatus').textContent=`${stats.companies_with_purchase_rows??groups.length} aziende con righe di acquisto nel semestre; ${stats.companies_with_unambiguous_windows??0} con acquisti azionari utilizzabili, ${stats.companies_weekly_base_pass??0} sopra 100.000 USD dichiarati in almeno sette giorni. ${stats.companies_historical_cap_threshold_pass??0} superano capitalizzazione storica e soglia proporzionale; ${stats.companies_current_cap_pass??0} la capitalizzazione corrente; ${stats.companies_current_financials_verified??0} con bilanci/debito attuali verificati; ${stats.companies_current_prices_verified??0} con prezzi correnti verificati. ${stats.companies_without_usable_window??0} aziende senza finestre utilizzabili. Dati mancanti restano in attesa di verifica.`;
  const progress=radar?.financial_progress;if(progress)$('#pendingStatus').textContent+=` Cache finanziarie: ${progress.cached}/${progress.candidates}; osservazioni sulle azioni: ${progress.outstanding_share_observations}; indici societari: ${progress.corporate_indices}; ultimi tentativi falliti: ${progress.latest_attempt_errors}. Disponibilità di dati, non verifica finanziaria completa. Aggiornamento fino a 25 società per scansione.`;
  $('#results').replaceChildren(...selected.map(g=>card(g)));
