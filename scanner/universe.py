@@ -227,7 +227,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     radar['preliminary_groups']=preliminary[:20]
     radar['preliminary_total']=len(preliminary)
     radar['preliminary_amount_review_count']=sum(c['amount_review_required'] for c in preliminary)
-    radar['preliminary_order']='Prima importi senza allarme di unità; importo della migliore finestra, forza insider, osservazioni SEC disponibili, CIK'
+    radar['preliminary_order']='Priorità di approfondimento: prima osservazioni SEC annuali favorevoli e documentate, poi copertura dati, forza insider e importo. Non è una classifica di investimenti verificati.'
     write(root/'docs/data/pending_index.json',dict(as_of=as_of,companies=preliminary))
     manifest=read(root/'data/insider/manifest.json',{'quarters':{}})
     radar['source_coverage']=dict(archive_quarters=[q for q,r in manifest['quarters'].items() if r.get('status')=='complete'],
