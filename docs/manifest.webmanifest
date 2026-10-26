@@ -4,8 +4,8 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "theme_color": "#07111a",
-  "background_color": "#07111a",
+  "theme_color": "#08090b",
+  "background_color": "#08090b",
   "description": "Radar SEC Form 4 con screening fondamentale spiegabile",
   "icons": [
     {
