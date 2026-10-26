@@ -15,6 +15,7 @@ const price=x=>Number.isFinite(x)?new Intl.NumberFormat('it-IT',{style:'currency
 const displayRadar=a=>['verificato','provvisorio'].includes(a?.score_status)&&Number.isFinite(a.radar_score)?a.radar_score:'—';
 let searchIndex=null,searchPromise=null,preliminaryIndex=null,preliminaryLimit=20;
 let radar=null, result=null, events=null, historyPromise=null, favorites=[], page='radar', params={...RadarCore.defaults};
+let searchApplied=false;
 let uiTheme='dark';try{uiTheme=localStorage.getItem('radarazioni-ui-theme')==='light'?'light':'dark';}catch{}
 function applyTheme(){document.documentElement.dataset.theme=uiTheme;const button=$('#themeToggle');if(button){button.textContent=uiTheme==='dark'?'☀ Chiaro':'☾ Scuro';button.setAttribute('aria-label','Passa al tema '+(uiTheme==='dark'?'chiaro':'scuro'));button.setAttribute('aria-pressed',String(uiTheme==='light'));}}
 applyTheme();
@@ -24,8 +25,8 @@ try{favorites=RadarCore.loadFavorites(localStorage);saveFavorites();}catch(e){st
 try{const p=JSON.parse(localStorage.getItem('radarazioni-filters-v1')||'null');if(p){RadarCore.evaluate(0,null,p);params={...RadarCore.defaults,...p};}}catch{}
 function saveFavorites(){try{localStorage.setItem('radarazioni-favorites-v1',JSON.stringify({version:1,items:favorites}));}catch{storageWarning('Spazio locale insufficiente o salvataggio bloccato: le modifiche ai Preferiti restano solo in memoria. I dati precedenti sono conservati.');}}
 function syncFilterInputs(){const ids={min_market_cap:'minCap',min_weekly_amount:'minAmount',proportional_pct:'proportion',proportional_cap:'maxRequired'};for(const [k,id]of Object.entries(ids))$('#'+id).value=params[k];}
-function isFavorite(g){return favorites.some(f=>g.cik?f.cik===g.cik||(!f.cik&&f.symbol===g.symbol):f.symbol===g.symbol);}
-function updateCount(){$('#favoriteCount').textContent=favorites.length;}
+function isFavorite(g){return favorites.some(f=>!f.legacy&&(g.cik?f.cik===g.cik||(!f.cik&&f.symbol===g.symbol):f.symbol===g.symbol));}
+function updateCount(){$('#favoriteCount').textContent=favorites.filter(f=>!f.legacy).length;}
 async function loadHistory(){
  if(events)return events;
  if(!historyPromise)historyPromise=fetch('./data/events_history.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{events=d.filings||[];return events}).catch(e=>{historyPromise=null;throw e});
@@ -41,7 +42,7 @@ async function ensureSearchIndex(){
  return searchPromise;
 }
 async function toggleFavorite(g){
- const index=favorites.findIndex(f=>f.cik===g.cik||(!f.cik&&f.symbol===g.symbol));
+ const index=favorites.findIndex(f=>!f.legacy&&(f.cik===g.cik||(!f.cik&&f.symbol===g.symbol)));
  if(index>=0)favorites.splice(index,1);
  else{
   let rows=g.transactions||[];
@@ -51,7 +52,18 @@ async function toggleFavorite(g){
  saveFavorites();updateCount();renderRadar();if(page==='favorites')renderFavorites();if(page==='custom')renderCustom();
  notify(index>=0?'Rimosso dai Preferiti':'Aggiunto ai Preferiti');
 }
-function setPage(name){page=name;$$('.page').forEach(el=>el.classList.toggle('hidden',el.id!==name+'Page'));$$('nav button').forEach(el=>{if(el.dataset.page===name)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});if(name==='favorites'){renderFavorites();loadHistory().then(rows=>{favorites=RadarCore.hydrate(favorites,rows,radar?.groups||[]);saveFavorites();updateCount();renderFavorites();}).catch(()=>storageWarning('Storico SEC non accessibile: mostro i dati già salvati.'));}if(name==='custom'){renderCustom();ensureSearchIndex().then(renderCustom).catch(e=>$('#customStatus').textContent=e.message);}if(name==='history'){renderHistory();ensureSearchIndex().then(renderHistory).catch(()=>{});}window.scrollTo(0,0);}
+function setPage(name){
+ if(!['radar','custom','favorites'].includes(name))return;
+ page=name;
+ $$('.page').forEach(el=>el.classList.toggle('hidden',el.id!==name+'Page'));
+ $$('nav button').forEach(el=>{if(el.dataset.page===name)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});
+ if(name==='favorites'){
+  renderFavorites();
+  loadHistory().then(rows=>{favorites=RadarCore.hydrate(favorites,rows,[...(radar?.groups||[]),...(radar?.preliminary_groups||[])]);saveFavorites();updateCount();renderFavorites();}).catch(()=>storageWarning('Storico SEC non accessibile: mostro i dati già salvati.'));
+ }
+ if(name==='custom'&&searchApplied)renderCustom();
+ window.scrollTo(0,0);
+}
 function statusLabel(status){return {supera:'Conforme ai filtri · dati verificati',escluso:'Fuori dai filtri',non_verificabile:'Non verificabile · capitalizzazione assente'}[status];}
 function card(g,{historic=false,favorite=false,custom=false}={}){
  const el=document.createElement('article');el.className='card';el.dataset.cik=g.cik;
@@ -60,6 +72,8 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  const label=preliminary?'Candidata preliminare · verifiche incomplete':historic?'Storico · dati da verificare':statusLabel(f.status);
  const score=preliminary?(g.amount_review_required?'—':a.insider_strength_score??'—'):displayRadar(a);
  const scoreLabel=preliminary?'Forza insider · preliminare':'Radar Score · '+(a.score_status==='verificato'?'Verificato':'Non verificato');
+ const grade=Number(score),strengthTier=preliminary&&Number.isFinite(grade)?grade>=70?'high':grade>=40?'medium':'low':'none';
+ const strengthLabel=strengthTier==='high'?'verde':strengthTier==='medium'?'gialla':strengthTier==='low'?'rossa':'non disponibile';
  const day=g.window_start&&g.window_end?`${esc(g.window_start)} — ${esc(g.window_end)}`:'Periodo non disponibile';
  const rationale=preliminary?`<p>${esc(g.amount_review_note||'')} Ruoli dichiarati: ${esc((g.insider_roles||[]).join(' · ')||'da verificare')}. Osservazioni SEC disponibili: ${esc(g.sec_observations??0)}/6; disponibilità non significa solidità. ${g.sec_risks?.length?'Rischi osservati: '+esc(g.sec_risks.join('; '))+'. ':''}Nessun Radar Score finanziario verificato.</p>`:'';
  const note=g.aggregation_verified?'':'<p>Possibili co-dichiarazioni: importo e conteggio non sono un totale verificato.</p>';
@@ -72,7 +86,7 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  el.innerHTML=`<div class="card-head">
  <button class="star" aria-label="${isFavorite(g)?'Rimuovi dai':'Aggiungi ai'} Preferiti ${esc(g.symbol)}" aria-pressed="${isFavorite(g)}" title="Salva nei Preferiti">${isFavorite(g)?'★':'☆'}</button>
  <div class="card-title"><span class="ticker">${esc(g.symbol||'N/D')}</span><h3>${esc(g.company)}</h3><small>${day}</small></div>
- <div class="score"><strong>${esc(score)}</strong><small>${esc(scoreLabel)}</small></div></div>
+ <div class="score ${preliminary?`score-strength-${strengthTier}`:""}" ${preliminary?`aria-label="Forza insider ${esc(score)} su 100; fascia ${strengthLabel}"`:""}><strong>${esc(score)}</strong><small>${esc(scoreLabel)}</small></div></div>
  <div class="metrics">
  <div><strong>${moneyButton(g.amount)}</strong><small>${g.amount_review_required?'Importo da riconciliare':g.aggregation_verified?'Acquisti dichiarati in 7 giorni':'Importo prudenziale in 7 giorni'}</small></div>
  <div><strong>${esc(g.transaction_count??'—')}</strong><small>Operazioni nella settimana</small></div>
@@ -87,8 +101,6 @@ function renderRadar(){
  const groups=radar?.groups||[],selected=groups.filter(g=>RadarCore.homeDecision(g)==='selected').sort((a,b)=>b.analysis.radar_score-a.analysis.radar_score),stats=radar?.stats||{};
  const pending=stats.pending_base_candidates??groups.filter(g=>RadarCore.homeDecision(g)==='pending').length;
  $('#windowStatus').textContent=radar?`Universo degli ultimi sei mesi: ${radar.search_start||radar.window_start} — ${radar.as_of}. Ogni acquisto è aggregato in finestre mobili di sette giorni all’interno del semestre. Una scheda per società.`:'';
- $('#recentTrack').textContent=` · ${selected.length} società selezionate oggi da tutto il semestre.`;
- $('#pendingTrack').textContent=` · ${pending} società con almeno una settimana sopra il minimo, ma verifiche ancora incomplete.`;
  $('#resultsCount').textContent=`${selected.length} società con tutti i criteri verificati`;
  $('#overviewCandidates').textContent=new Intl.NumberFormat('it-IT').format(stats.companies_weekly_base_pass??pending);
  $('#overviewVerified').textContent=new Intl.NumberFormat('it-IT').format(selected.length);
@@ -116,7 +128,7 @@ $('#morePreliminary').addEventListener('click',async()=>{
 });
 
 function renderCustom(){
- if(!radar)return;
+ if(!radar||!searchApplied)return;
  if(!searchIndex){$('#customStatus').textContent='Caricamento indice compatto calcolato in Python; nessun archivio transazioni viene scaricato…';return;}
  const period=$('#searchPeriod').value,days=Number(period),minScore=Number($('#minScore').value),q=$('#search').value.trim().toLowerCase(),visibility=$('#visibility').value;
  const end=new Date(radar.as_of+'T00:00:00Z'),start=new Date(end);if(period!=='semester')start.setUTCDate(end.getUTCDate()-days+1);const first=period==='semester'?radar.search_start:start.toISOString().slice(0,10);
@@ -143,12 +155,23 @@ function renderCustom(){
 
 function renderFavorites(){
  const host=$('#favoriteItems');host.replaceChildren();
- for(const f of favorites){
-  const group=(radar?.groups||[]).find(g=>g.cik===f.cik)||f.group;
-  if(group){const el=card(group,{favorite:true});const info=document.createElement('p');info.className='muted';info.textContent=`Preferito · ${f.transactions?.length||0} righe SEC salvate, indipendentemente dai filtri. Finestra della scheda: ${group.window_start} — ${group.window_end}.`;el.append(info);host.append(el);}
-  else{const el=document.createElement('article');el.className='card';el.innerHTML=`<h3>${esc(f.company||f.symbol)} · ${esc(f.symbol)}</h3><p>Nessuna finestra aggregata disponibile. ${f.transactions?.length||0} operazioni salvate.</p><button class="saved-detail">Operazioni salvate</button> <button class="remove">Rimuovi dai Preferiti</button>`;el.querySelector('.saved-detail').addEventListener('click',()=>savedDetail(f));el.querySelector('.remove').addEventListener('click',()=>{favorites=favorites.filter(x=>x!==f);saveFavorites();updateCount();renderFavorites();renderRadar();});host.append(el);}
+ // Previously migrated legacy watchlist entries remain stored but are not shown as
+ // explicit starred favorites. Do not delete or rewrite historic user data.
+ const starred=favorites.filter(f=>!f.legacy);
+ for(const f of starred){
+  const group=[...(radar?.groups||[]),...(preliminaryIndex||radar?.preliminary_groups||[])].find(g=>g.cik===f.cik)||f.group;
+  if(group){
+   const el=card(group,{favorite:true});
+   host.append(el);
+  }else{
+   const el=document.createElement('article');el.className='card';
+   el.innerHTML=`<div class="card-head"><span class="ticker">${esc(f.symbol)}</span><h3>${esc(f.company||f.symbol)}</h3></div><p>Questa società non è presente nell'ultima classifica, ma il tuo preferito resta salvato.</p><button class="saved-detail">Operazioni salvate</button> <button class="remove">Rimuovi dai Preferiti</button>`;
+   el.querySelector('.saved-detail').addEventListener('click',()=>savedDetail(f));
+   el.querySelector('.remove').addEventListener('click',()=>{favorites=favorites.filter(x=>x!==f);saveFavorites();updateCount();renderFavorites();renderRadar();notify('Rimosso dai Preferiti');});
+   host.append(el);
+  }
  }
- if(!favorites.length)host.innerHTML='<div class="panel">Nessun Preferito. Usa la stellina nel radar o aggiungi un ticker.</div>';
+ if(!starred.length)host.innerHTML='<div class="favorites-empty"><span aria-hidden="true">☆</span><h2>Nessuna azienda nei Preferiti</h2><p>Tocca la stellina ☆ su un’azienda del Radar per ritrovarla qui.</p></div>';
 }
 function sourceRows(rows){return rows.length?`<ul class="source-list">${rows.map(x=>`<li><b>${esc(x.transaction_date)}</b> · ${esc(x.insider)} · ${(x.currency==='unknown'?esc(new Intl.NumberFormat('it-IT').format(x.amount)+' (valuta non verificata)'):moneyButton(x.amount))}<small>${x.purchase_eligible===false?'Esclusa/in revisione · ':''}${esc(x.shares)} azioni · ${esc(x.currency==='unknown'?String(x.unit_price)+' in valuta non verificata':price(x.unit_price))} dichiarati/azione · deposito ${esc(x.filed)} · ${esc(x.security_title||'Classe titolo non disponibile')}</small>${/^https:\/\/www\.sec\.gov\/Archives\//.test(x.form_url||'')?`<a href="${esc(x.form_url)}" target="_blank" rel="noopener noreferrer">Form 4 originale</a>`:''}</li>`).join('')}</ul>`:'<p>Nessuna operazione disponibile nello storico raccolto.</p>';}
 function openDialog(html){$('#detailContent').innerHTML=html;const d=$('#detailDialog');if(typeof d.showModal==='function'){if(!d.open)d.showModal();}else d.setAttribute('open','');}
@@ -180,65 +203,74 @@ async function detail(g,saved){
 }
 
 function specificFactors(g){const a=g.analysis||{};return `<h3>Motivazioni del punteggio</h3><p>Stato: ${esc(a.priority||'Non verificabile')}. Opportunità ${esc(a.opportunity_score??'—')}/100 · Forza insider ${esc(a.insider_strength_score??'—')}/100. Media 70/30 prima dei limiti: ${esc(a.radar_uncapped??'—')}. ${displayRadar(a)==='—'?'Punteggio non pubblicabile come rating attendibile; eventuale snapshot precedente resta conservato.':`Radar Score ${esc(a.radar_score)}/100 (${esc(a.score_status)}).`}</p><h3>Fattori favorevoli</h3><ul class="factor-positive">${[...(a.insider_reasons||[]),...(a.reasons||[])].map(x=>`<li>${esc(x)}</li>`).join('')||'<li>Nessuno verificato</li>'}</ul><h3>Rischi, dati mancanti e limiti</h3><ul class="factor-negative">${[...(a.radar_caps||[]),...(a.warnings||[])].map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;}
-function scoreHelp(){openDialog(`<h2 id="detailName">Come funziona il Radar Score?</h2><p>70% opportunità + 30% forza insider. Pesi iniziali non validati storicamente: non è una probabilità di rendimento né un BUY.</p><p>Opportunità: ricavi totali 25, EPS in crescita e positivi 25, cassa triennale 20, valutazione favorevole riconciliata 30. Forza: importo fino a 50 e ruolo fino a 30; nessun bonus per dichiaranti non indipendenti.</p><p>La media viene calcolata prima dei limiti: 49 per valutazione mancante, 39 per storico cassa non soddisfatto, 29 per dati non verificati o perdite/cassa negativa effettive. Mancata crescita non equivale a perdite. Fondamentali incompleti/non riconciliati: rating “Non verificabile”; senza valutazione verificata: “Provvisorio”.</p><p>Il Radar distingue opportunità completamente verificate e candidate preliminari SEC, senza Radar Score finanziario completo. Nei Dettagli trovi componenti, fattori favorevoli, rischi e motivi specifici. Nessun BUY o notifica.</p>`);}
+function scoreHelp(){
+ const secTime=result?.last_scan_utc;
+ const parsed=secTime?new Date(secTime):null;
+ const shown=parsed&&Number.isFinite(parsed.getTime())?parsed.toLocaleString('it-IT',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}):'Data non disponibile';
+ const backlog=result?.coverage?.unprocessed_listed_forms;
+ const secInfo=esc(shown);
+ openDialog(`<h2 id="detailName">Informazioni su RadarAzioni</h2>
+ <h3>Ultimo aggiornamento SEC</h3>
+ <p>Ultima scansione registrata: <strong>${secInfo}</strong> (ora del dispositivo). ${backlog!=null?esc(new Intl.NumberFormat('it-IT').format(backlog))+' depositi Form 4 ancora in coda.':''} La raccolta recente può essere parziale e la data della scansione non garantisce completezza.</p>
+ <h3>Come si calcola il Radar Score?</h3>
+ <p>Quando tutti i dati sono verificati, il punteggio combina il <strong>70% di qualità finanziaria</strong> e il <strong>30% di forza degli acquisti insider</strong>. È una regola sperimentale, non una probabilità di rendimento né una raccomandazione BUY.</p>
+ <p>La qualità finanziaria considera crescita dei ricavi, EPS, cassa e valutazione; la forza insider considera importo e ruolo dichiarato. I dati mancanti impediscono di attribuire un Radar Score completo.</p>
+ <h3>Come si distinguono le classifiche?</h3>
+ <p><strong>Le aziende selezionate dal Radar</strong> hanno superato tutti i controlli richiesti, inclusi prezzi, capitalizzazioni e fondamentali. <strong>Aziende con acquisti insider significativi</strong> significa solo che hanno superato il filtro iniziale degli acquisti negli ultimi sei mesi, raggruppati in finestre di 7 giorni.</p>
+ <p>Capitalizzazione minima prevista: 500 milioni USD; acquisti minimi 100.000 USD in 7 giorni; soglia proporzionale 0,002% della capitalizzazione della settimana, fino a 2 milioni USD. Questi filtri non sono cambiati.</p>
+ <p>La <strong>forza insider</strong> è una misura preliminare distinta dal Radar Score: verde da 70 a 100, giallo da 40 a 69, rosso sotto 40. Il colore non è un segnale BUY.</p>
+ <p>Fonte: SEC Form 4 e SEC XBRL. Prezzi correnti e capitalizzazioni non ancora disponibili da una fonte gratuita autorizzata per la redistribuzione pubblica. Le aziende prive di queste verifiche non vengono promosse.</p>`);
+}
 function selectionHelp(){openDialog(`<h2 id="detailName">Criteri automatici e fonti</h2><p>Ricerca automatica su tutti gli acquisti degli ultimi sei mesi di calendario, aggiornata a ogni scansione. Una sola scheda per società se almeno una finestra mobile di sette giorni supera i criteri. Capitalizzazione verificata minima 500 milioni USD. Acquisti aggregati in sette giorni almeno 100.000 USD. Soglia aggiuntiva: 0,002% della capitalizzazione, massimo 2 milioni USD; importo richiesto = max(100.000, min(2.000.000, capitalizzazione × 0,00002)).</p><p>La soglia proporzionale usa la capitalizzazione della settimana dell’acquisto; la selezione oggi richiede anche capitalizzazione/valutazione correnti, confronto prezzo rettificato per split e revisione dei cambiamenti successivi. Dati storici e correnti mancanti restano distinti e non confermano opportunità.</p><p>Richiesti anche aggregazione senza ambiguità, fondamentali completi e riconciliati con ricavi/EPS in crescita, EPS positivi, cassa triennale positiva, valutazione favorevole verificata e Radar Score attendibile. Ordine: Radar Score decrescente. Sono criteri sperimentali, non soglie scientificamente validate.</p><p>Fonti attive: archivi trimestrali SEC già importati + depositi giornalieri raccolti, Form 4 originali, <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces" target="_blank" rel="noopener noreferrer">SEC XBRL companyfacts</a>. Fonti prezzi/capitalizzazioni redistribuibili non ancora integrate (vedi anche il <a href="./data/source_policy.json" target="_blank" rel="noopener">registro fonti e soluzione richiesta</a>): i casi mancanti sono in attesa, non selezionati. Form 4/A in revisione ed esclusi dai segnali, copertura parziale. La Ricerca personalizzata non modifica questi criteri.</p>`);}
 
-function renderHistory(){
- const months=Number($('#historyMonths').value),end=new Date((radar?.as_of||new Date().toISOString().slice(0,10))+'T00:00:00Z'),start=new Date(end);start.setUTCMonth(start.getUTCMonth()-months);
- const windows=(searchIndex?.issuers||[]).flatMap(r=>(r.windows||[]).filter(w=>w.window_end>=start.toISOString().slice(0,10)).map(w=>({...r.company,...w})));
- $('#historyStatus').textContent=`${windows.length} finestre preaggregate osservate nel periodo; mostro fino a 80. Nessun ritorno al prezzo insider viene confermato senza prezzi e split verificati.`;
- $('#historyItems').replaceChildren(...windows.slice().sort((a,b)=>b.window_end.localeCompare(a.window_end)).slice(0,80).map(g=>card(g,{historic:true})));
-}
 
-function renderCoverage(){const c=result?.coverage||{};$('#coverageSummary').textContent=c.known_indexed_forms==null?'Statistiche persistenti disponibili dopo la prossima scansione.':`${c.known_processed_forms}/${c.known_indexed_forms} Form 4 processati negli indici registrati; ${c.unprocessed_listed_forms} in coda. Non è copertura totale SEC. Form 4/A in revisione ed esclusi dai segnali.`;$('#coverageDays').innerHTML=(c.by_day||[]).map(x=>`<p>${esc(x.day)} · ${esc(x.processed)}/${esc(x.indexed)} · ${esc(x.pending)} in coda · verificato ${esc(x.checked_utc)} ${/^https:\/\/www\.sec\.gov\/Archives\//.test(x.index_url||'')?`<a href="${esc(x.index_url)}" target="_blank" rel="noopener noreferrer">Indice SEC</a>`:''}</p>`).join('');}
+
 async function load(){try{
  const fetchJSON=async path=>{const r=await fetch(path+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json()};
  searchIndex=null;searchPromise=null;
  [radar,result]=await Promise.all([fetchJSON('./data/radar.json'),fetchJSON('./data/scan_status.json')]);
  preliminaryIndex=null;preliminaryLimit=20;searchIndex=null;searchPromise=null;
- $('#dataStatus').textContent=`SEC · Ultima scansione: ${result.last_scan_utc||'N/D'} · ${result.coverage?.unprocessed_listed_forms??'N/D'} documenti in coda. Fonti prezzi e capitalizzazioni non integrate; nessun dato mancante stimato.`;
- renderCoverage();renderRadar();renderCustom();updateSECStatus();if(page==='favorites')setPage('favorites');if(page==='history')ensureSearchIndex().then(renderHistory);
+ renderRadar();updateSECStatus();if(page==='favorites')renderFavorites();
  }catch(e){$('#criticalStatus').textContent='Errore critico: dati SEC non accessibili. '+e.message+'. Preferiti salvati consultabili.';$('#criticalStatus').classList.remove('hidden');renderRadar();}}
 $$('nav button').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
-$('#showPending').addEventListener('click',()=>{$('#visibility').value='pending';$('#searchPeriod').value='semester';setPage('custom');});
-$('#scoreHelp').addEventListener('click',scoreHelp);$('#selectionHelp').addEventListener('click',selectionHelp);
+$('#appInfoBtn').addEventListener('click',scoreHelp);
 $('#closeDetail').addEventListener('click',()=>{const d=$('#detailDialog');if(d.close)d.close();else d.removeAttribute('open')});
-$('#filtersForm').addEventListener('submit',e=>{e.preventDefault();const p={min_market_cap:Number($('#minCap').value),min_weekly_amount:Number($('#minAmount').value),proportional_pct:Number($('#proportion').value),proportional_cap:Number($('#maxRequired').value)};try{RadarCore.evaluate(0,null,p);params=p;localStorage.setItem('radarazioni-filters-v1',JSON.stringify(params));$('#filterStatus').textContent='Filtri applicati e salvati su questo dispositivo.';}catch{$('#filterStatus').textContent='Parametri applicati solo in memoria oppure valori non validi.';}renderCustom();});
-$('#resetFilters').addEventListener('click',()=>{params={...RadarCore.defaults};syncFilterInputs();renderCustom();try{localStorage.setItem('radarazioni-filters-v1',JSON.stringify(params));}catch{}});
-for(const id of ['search','visibility','sort'])$('#'+id).addEventListener(id==='search'?'input':'change',renderCustom);
-$('#historyMonths').addEventListener('change',renderHistory);$('#refreshBtn').addEventListener('click',load);
-$('#favoriteForm').addEventListener('submit',e=>{e.preventDefault();const symbol=$('#favoriteTicker').value.trim().toUpperCase();if(!/^[A-Z][A-Z0-9.\-]{0,9}$/.test(symbol))return;const g=(radar?.groups||[]).find(g=>g.symbol===symbol);if(g){if(!isFavorite(g))toggleFavorite(g);}else if(!favorites.some(f=>f.symbol===symbol)){favorites.push({key:'symbol:'+symbol,symbol,company:symbol,transactions:[]});saveFavorites();updateCount();setPage('favorites');}$('#favoriteTicker').value='';});
-$('#minScore').addEventListener('change',renderCustom);$('#searchPeriod').addEventListener('change',renderCustom);
-syncFilterInputs();updateCount();load();loadResearchState();
+$('#filtersForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const p={min_market_cap:Number($('#minCap').value),min_weekly_amount:Number($('#minAmount').value),proportional_pct:Number($('#proportion').value),proportional_cap:Number($('#maxRequired').value)};
+ try{RadarCore.evaluate(0,null,p);}catch{$('#filterStatus').textContent='Controlla i filtri: valori non validi.';return;}
+ params=p;searchApplied=true;$('#searchResults').classList.remove('hidden');
+ $('#customStatus').textContent='Sto caricando i risultati della ricerca…';
+ try{localStorage.setItem('radarazioni-filters-v1',JSON.stringify(params));$('#filterStatus').textContent='Filtri applicati.';}
+ catch{$('#filterStatus').textContent='Filtri applicati; non è stato possibile salvarli sul dispositivo.';}
+ try{await ensureSearchIndex();renderCustom();}catch(err){$('#customStatus').textContent='Impossibile caricare la ricerca: '+err.message;}
+});
+$('#resetFilters').addEventListener('click',()=>{
+ params={...RadarCore.defaults};syncFilterInputs();
+ $('#minScore').value=0;$('#searchPeriod').value='semester';$('#search').value='';
+ $('#visibility').value='candidates';$('#sort').value='amount';
+ searchApplied=false;$('#searchResults').classList.add('hidden');$('#customResults').replaceChildren();
+ $('#customStatus').textContent='';$('#filterStatus').textContent='Filtri ripristinati. Premi Applica filtri per cercare.';
+ try{localStorage.setItem('radarazioni-filters-v1',JSON.stringify(params));}catch{}
+});
+$('#filtersForm').addEventListener('input',()=>{
+ if(!searchApplied)return;
+ searchApplied=false;$('#searchResults').classList.add('hidden');
+ $('#filterStatus').textContent='Filtri modificati: premi Applica filtri per aggiornare i risultati.';
+});
+$('#filtersForm').addEventListener('change',()=>{
+ if(!searchApplied)return;
+ searchApplied=false;$('#searchResults').classList.add('hidden');
+ $('#filterStatus').textContent='Filtri modificati: premi Applica filtri per aggiornare i risultati.';
+});
+$('#refreshBtn').addEventListener('click',load);
+syncFilterInputs();updateCount();load();
+
 
 function updateSECStatus(){
  const stamp=Date.parse(result?.last_scan_utc||''),stale=!Number.isFinite(stamp)||Date.now()-stamp>48*3600000;
  const unavailable=!!result?.errors?.length && (result?.coverage?.days_checked||[]).length===0;
  $('#criticalStatus').classList.toggle('hidden',!stale&&!unavailable);
- if(stale||unavailable)$('#criticalStatus').textContent=unavailable?'Scansione SEC non riuscita: indici non accessibili. Copertura nel pannello informativo.':'Scansione SEC obsoleta o data assente (oltre 48 ore): nessun dato deve essere interpretato come aggiornato.';
+ if(stale||unavailable)$('#criticalStatus').textContent=unavailable?'Scansione SEC non riuscita: indici non accessibili. Controlla il pulsante informazioni ⓘ in alto.':'Scansione SEC obsoleta o data assente (oltre 48 ore): nessun dato deve essere interpretato come aggiornato.';
 }
 
-let bulkSummary=null,bulkRows=[],bulkCache={};
-async function loadResearchState(){
- try{const r=await fetch('./data/history_coverage.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('no history summary');bulkSummary=await r.json();
-  $('#bulkCoverage').textContent=bulkSummary.status==='import_blocked'?'Importazione bloccata: '+bulkSummary.error:`${bulkSummary.completed_count||0}/${bulkSummary.published_count??'N/D'} trimestri SEC pubblicati importati (${bulkSummary.published_archive_coverage_pct??'N/D'}%). ${bulkSummary.unique_candidate_events??bulkSummary.counts?.retained_purchase_candidates??0} eventi candidati unici, ${bulkSummary.unique_issuers_purchase_candidates??0} emittenti unici; ${bulkSummary.unique_issuers_us_listing_current??0} con acquisti azionari riconciliati e listing USA corrente nella mappa SEC.`;
-  $('#bulkLimits').textContent=`Dati riferiti ai depositi ${bulkSummary.period_filed_start||'N/D'} — ${bulkSummary.period_filed_end||'N/D'}. Listing corrente osservato ${bulkSummary.listing_observed_at||'N/D'}: non prova domicilio USA o listing storico. Emittenti verificabili finanziariamente: ${bulkSummary.financial_verified_issuers??0}; capitalizzazioni verificate: ${bulkSummary.market_cap_verified_issuers??0}. Copertura degli archivi, non copertura totale del mercato. Le date originali e le rettifiche restano separate.`;
-  $('#bulkQuarter').innerHTML=(bulkSummary.completed_quarters||[]).slice().sort().reverse().map(q=>`<option value="${esc(q)}">${esc(q)}</option>`).join('');
- }catch{$('#bulkCoverage').textContent='Nessun archivio trimestrale importato disponibile in questa pubblicazione. La scansione recente rimane separata.';}
- try{const r=await fetch('./data/ml_status.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error();const m=await r.json();
- $('#mlStatus').textContent=m.trained?'Modello di ricerca addestrato: consultare il rapporto fuori campione. Non usato per BUY o Radar Score.':`NON addestrato. ${m.events_stored||0} eventi strutturati, ${m.point_in_time_feature_rows||0} righe di caratteristiche point-in-time. Target verificati: 30 giorni ${m.verified_targets?.['30']||0}, 90 giorni ${m.verified_targets?.['90']||0}, 180 giorni ${m.verified_targets?.['180']||0}. Mancano prezzi total-return autorizzati e identità storiche/split/dividendi/delisting. Performance: non disponibili.`;
- if(m.trained){$('#mlMetrics').innerHTML=Object.entries(m.horizons||{}).filter(([,r])=>r.trained).map(([h,r])=>`<h3>${esc(h)} giorni · test fuori campione</h3><p>Train ${esc(r.split_counts?.train)}, validazione ${esc(r.split_counts?.validation)}, test ${esc(r.split_counts?.test)}. Benchmark: ${esc(r.benchmark)}. Modello scelto in validazione: ${esc(r.chosen_on_validation)}.</p><ul>${Object.entries(r.metrics||{}).map(([name,v])=>`<li>${esc(name)}: ROC AUC ${esc(v.roc_auc)}, Brier ${esc(v.brier)}, intervallo 95% cluster ${esc(JSON.stringify(v.roc_auc_95_cluster_bootstrap))}</li>`).join('')}</ul><p>Baseline costante Brier ${esc(r.constant_baseline_brier)}; regole AUC ${esc(r.rules_baseline_auc??'non disponibile')}. ${esc(r.uncertainty)}.</p>`).join('');}else{$('#mlMetrics').textContent='Performance fuori campione e confronto con benchmark: non disponibili; nessun modello effettivamente addestrato.';}
- }catch{$('#mlStatus').textContent='Modelli predisposti, nessun addestramento o risultato verificato disponibile.';}
-}
-async function loadBulkQuarter(){const q=$('#bulkQuarter').value;if(!q){$('#bulkCount').textContent='Nessun trimestre completato disponibile.';return;}
- $('#loadBulk').disabled=true;$('#bulkCount').textContent='Caricamento dati SEC strutturati…';
- try{if(!bulkCache[q]){const r=await fetch('./data/bulk/'+encodeURIComponent(q)+'.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);bulkCache[q]=(await r.json()).events||[];while(Object.keys(bulkCache).length>2)delete bulkCache[Object.keys(bulkCache)[0]];}bulkRows=bulkCache[q];renderBulk();}catch(e){$('#bulkCount').textContent='Archivio non accessibile: '+e.message;}finally{$('#loadBulk').disabled=false;}}
-function renderBulk(){const host=$('#bulkItems');host.replaceChildren();if($('#bulkMode').value==='returned'){$('#bulkCount').textContent='0 ritorni al prezzo insider verificati. Il confronto reale è bloccato finché prezzi rettificati e controlli aggiornati non sono disponibili.';return;}
- const q=$('#bulkSearch').value.toLowerCase(),all=$('#bulkReview').checked,byCik=new Map();
- for(const e of bulkRows){if(!all&&(!e.current_eligible||!e.us_listing_current))continue;if(![e.symbol,e.company].some(s=>String(s).toLowerCase().includes(q)))continue;if(!byCik.has(e.cik))byCik.set(e.cik,[]);byCik.get(e.cik).push(e);}
- $('#bulkCount').textContent=`${byCik.size} emittenti nel trimestre caricato; mostro fino a 80 società. Dati storici in verifica, non opportunità o importi settimanali. Usa la ricerca per restringere.`;
- for(const rows of [...byCik.values()].slice(0,80)){const latest=rows.slice().sort((a,b)=>b.filed.localeCompare(a.filed))[0],el=document.createElement('article');el.className='card';el.innerHTML=`<div class="card-head"><button class="star" aria-pressed="${isFavorite(latest)}" aria-label="Preferiti ${esc(latest.symbol)}">${isFavorite(latest)?'★':'☆'}</button><div><span class="ticker">${esc(latest.symbol)}</span><h3>${esc(latest.company)}</h3></div></div><p>${rows.length} righe di acquisti dichiarati nel trimestre · ultimo deposito ${esc(latest.filed)}. Categorie: ${esc([...new Set(rows.flatMap(e=>e.owner_categories||[]))].join(', '))}. Radar Score: Non verificabile. Insider indipendenti: non verificati.</p><button class="bulk-detail">Dettagli eventi SEC</button>`;
- const favorite={cik:latest.cik,symbol:latest.symbol,company:latest.company,transactions:rows,archive_only:true};
- el.querySelector('.star').addEventListener('click',async()=>{await toggleFavorite(favorite);renderBulk();});
- el.querySelector('.bulk-detail').addEventListener('click',()=>openDialog(`<h2 id="detailName">${esc(latest.company)}</h2><p>Archivio trimestrale as-filed: rettifiche/co-dichiarazioni non vengono sommate automaticamente. ${rows.length} righe; mostra fino a 100. Collegamenti indice SEC costruiti da CIK e accession, non verificati singolarmente. Le date di deposito sono diverse dalla data dell’operazione. Nessuna raccomandazione.</p>${sourceRows(rows.slice(0,100))}<h3>Stati di revisione</h3><ul>${[...new Set(rows.flatMap(e=>e.review_reasons||[]))].map(x=>`<li>${esc(x)}</li>`).join('')||'<li>In attesa di fondamentali, prezzi e valutazione verificati.</li>'}</ul>`));host.append(el);}}
-$('#loadBulk').addEventListener('click',loadBulkQuarter);$('#bulkSearch').addEventListener('input',renderBulk);$('#bulkReview').addEventListener('change',renderBulk);$('#bulkMode').addEventListener('change',renderBulk);
