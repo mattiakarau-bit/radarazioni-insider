@@ -65,9 +65,9 @@ def rank(companies, reviews):
     rows.sort(key=lambda c: (
         c['amount_review_required'],
         not c['sec_evidence']['sec_documented_for_review'],
+        bool(c['sec_risks']),
         -len(c['sec_evidence']['positive_observations']),
         -c['sec_observations'],
-        len(c['sec_risks']),
         -(c['analysis']['insider_strength_score'] or 0),
         -c['amount'],
         c['cik']
