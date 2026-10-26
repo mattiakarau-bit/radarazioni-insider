@@ -1,4 +1,4 @@
-# RadarAzioni – Insider Intelligence · 0.9.0
+# RadarAzioni – Insider Intelligence · 0.9.1
 
 App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
 trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
@@ -213,3 +213,17 @@ Il valore intero non va perso dalla formattazione; i mancanti restano marcati co
 Tema salvato in `radarazioni-ui-theme`, senza cambiare l'archivio Preferiti.
 L'interfaccia rispetta `prefers-reduced-motion` e la PWA aggiorna la versione
 e la cache statica a 0.9.0. Test Money + controlli WebKit/Chromium.
+
+## 0.9.1 — navigazione e filtraggio semplici
+
+Tre schede a tutta larghezza sempre visibili in basso: Radar, Ricerca,
+Preferiti. Storico eliminato dall'interfaccia, ma archivi SEC e dati
+personali precedenti conservati. Le classifiche sono chiaramente separate
+tra societa selezionate dopo tutti i controlli e acquisti insider significativi
+ancora da verificare. I valori Forza insider usano verde 70–100,
+giallo 40–69 e rosso sotto 40; non sono rating di investimento.
+
+Pulsante ⓘ in testata con metodologia e ultima scansione SEC. Ricerca mostra
+aziende soltanto dopo 'Applica filtri', senza caricare indici in anticipo.
+Preferiti mostra esclusivamente le societa salvate con stellina; le
+vecchie liste migrate sono conservate, non visualizzate come selezioni esplicite.
