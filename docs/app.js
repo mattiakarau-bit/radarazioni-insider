@@ -26,7 +26,7 @@ try{const p=JSON.parse(localStorage.getItem('radarazioni-filters-v1')||'null');i
 function saveFavorites(){try{localStorage.setItem('radarazioni-favorites-v1',JSON.stringify({version:1,items:favorites}));}catch{storageWarning('Spazio locale insufficiente o salvataggio bloccato: le modifiche ai Preferiti restano solo in memoria. I dati precedenti sono conservati.');}}
 function syncFilterInputs(){const ids={min_market_cap:'minCap',min_weekly_amount:'minAmount',proportional_pct:'proportion',proportional_cap:'maxRequired'};for(const [k,id]of Object.entries(ids))$('#'+id).value=params[k];}
 function isFavorite(g){return favorites.some(f=>g.cik?f.cik===g.cik||(!f.cik&&f.symbol===g.symbol):f.symbol===g.symbol);}
-function updateCount(){$('#favoriteCount').textContent=favorites.length;}
+function updateCount(){$('#favoriteCount').textContent=favorites.filter(f=>!f.legacy).length;}
 async function loadHistory(){
  if(events)return events;
  if(!historyPromise)historyPromise=fetch('./data/events_history.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{events=d.filings||[];return events}).catch(e=>{historyPromise=null;throw e});
@@ -203,7 +203,24 @@ async function detail(g,saved){
 }
 
 function specificFactors(g){const a=g.analysis||{};return `<h3>Motivazioni del punteggio</h3><p>Stato: ${esc(a.priority||'Non verificabile')}. Opportunità ${esc(a.opportunity_score??'—')}/100 · Forza insider ${esc(a.insider_strength_score??'—')}/100. Media 70/30 prima dei limiti: ${esc(a.radar_uncapped??'—')}. ${displayRadar(a)==='—'?'Punteggio non pubblicabile come rating attendibile; eventuale snapshot precedente resta conservato.':`Radar Score ${esc(a.radar_score)}/100 (${esc(a.score_status)}).`}</p><h3>Fattori favorevoli</h3><ul class="factor-positive">${[...(a.insider_reasons||[]),...(a.reasons||[])].map(x=>`<li>${esc(x)}</li>`).join('')||'<li>Nessuno verificato</li>'}</ul><h3>Rischi, dati mancanti e limiti</h3><ul class="factor-negative">${[...(a.radar_caps||[]),...(a.warnings||[])].map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;}
-function scoreHelp(){openDialog(`<h2 id="detailName">Come funziona il Radar Score?</h2><p>70% opportunità + 30% forza insider. Pesi iniziali non validati storicamente: non è una probabilità di rendimento né un BUY.</p><p>Opportunità: ricavi totali 25, EPS in crescita e positivi 25, cassa triennale 20, valutazione favorevole riconciliata 30. Forza: importo fino a 50 e ruolo fino a 30; nessun bonus per dichiaranti non indipendenti.</p><p>La media viene calcolata prima dei limiti: 49 per valutazione mancante, 39 per storico cassa non soddisfatto, 29 per dati non verificati o perdite/cassa negativa effettive. Mancata crescita non equivale a perdite. Fondamentali incompleti/non riconciliati: rating “Non verificabile”; senza valutazione verificata: “Provvisorio”.</p><p>Il Radar distingue opportunità completamente verificate e candidate preliminari SEC, senza Radar Score finanziario completo. Nei Dettagli trovi componenti, fattori favorevoli, rischi e motivi specifici. Nessun BUY o notifica.</p>`);}
+function scoreHelp(){
+ const secTime=result?.last_scan_utc;
+ const parsed=secTime?new Date(secTime):null;
+ const shown=parsed&&Number.isFinite(parsed.getTime())?parsed.toLocaleString('it-IT',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}):'Data non disponibile';
+ const backlog=result?.coverage?.unprocessed_listed_forms;
+ const secInfo=esc(shown);
+ openDialog(`<h2 id="detailName">Informazioni su RadarAzioni</h2>
+ <h3>Ultimo aggiornamento SEC</h3>
+ <p>Ultima scansione registrata: <strong>${secInfo}</strong> (ora del dispositivo). ${backlog!=null?esc(new Intl.NumberFormat('it-IT').format(backlog))+' depositi Form 4 ancora in coda.':''} La raccolta recente può essere parziale e la data della scansione non garantisce completezza.</p>
+ <h3>Come si calcola il Radar Score?</h3>
+ <p>Quando tutti i dati sono verificati, il punteggio combina il <strong>70% di qualità finanziaria</strong> e il <strong>30% di forza degli acquisti insider</strong>. È una regola sperimentale, non una probabilità di rendimento né una raccomandazione BUY.</p>
+ <p>La qualità finanziaria considera crescita dei ricavi, EPS, cassa e valutazione; la forza insider considera importo e ruolo dichiarato. I dati mancanti impediscono di attribuire un Radar Score completo.</p>
+ <h3>Come si distinguono le classifiche?</h3>
+ <p><strong>Le aziende selezionate dal Radar</strong> hanno superato tutti i controlli richiesti, inclusi prezzi, capitalizzazioni e fondamentali. <strong>Aziende con acquisti insider significativi</strong> significa solo che hanno superato il filtro iniziale degli acquisti negli ultimi sei mesi, raggruppati in finestre di 7 giorni.</p>
+ <p>Capitalizzazione minima prevista: 500 milioni USD; acquisti minimi 100.000 USD in 7 giorni; soglia proporzionale 0,002% della capitalizzazione della settimana, fino a 2 milioni USD. Questi filtri non sono cambiati.</p>
+ <p>La <strong>forza insider</strong> è una misura preliminare distinta dal Radar Score: verde da 70 a 100, giallo da 40 a 69, rosso sotto 40. Il colore non è un segnale BUY.</p>
+ <p>Fonte: SEC Form 4 e SEC XBRL. Prezzi correnti e capitalizzazioni non ancora disponibili da una fonte gratuita autorizzata per la redistribuzione pubblica. Le aziende prive di queste verifiche non vengono promosse.</p>`);
+}
 function selectionHelp(){openDialog(`<h2 id="detailName">Criteri automatici e fonti</h2><p>Ricerca automatica su tutti gli acquisti degli ultimi sei mesi di calendario, aggiornata a ogni scansione. Una sola scheda per società se almeno una finestra mobile di sette giorni supera i criteri. Capitalizzazione verificata minima 500 milioni USD. Acquisti aggregati in sette giorni almeno 100.000 USD. Soglia aggiuntiva: 0,002% della capitalizzazione, massimo 2 milioni USD; importo richiesto = max(100.000, min(2.000.000, capitalizzazione × 0,00002)).</p><p>La soglia proporzionale usa la capitalizzazione della settimana dell’acquisto; la selezione oggi richiede anche capitalizzazione/valutazione correnti, confronto prezzo rettificato per split e revisione dei cambiamenti successivi. Dati storici e correnti mancanti restano distinti e non confermano opportunità.</p><p>Richiesti anche aggregazione senza ambiguità, fondamentali completi e riconciliati con ricavi/EPS in crescita, EPS positivi, cassa triennale positiva, valutazione favorevole verificata e Radar Score attendibile. Ordine: Radar Score decrescente. Sono criteri sperimentali, non soglie scientificamente validate.</p><p>Fonti attive: archivi trimestrali SEC già importati + depositi giornalieri raccolti, Form 4 originali, <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces" target="_blank" rel="noopener noreferrer">SEC XBRL companyfacts</a>. Fonti prezzi/capitalizzazioni redistribuibili non ancora integrate (vedi anche il <a href="./data/source_policy.json" target="_blank" rel="noopener">registro fonti e soluzione richiesta</a>): i casi mancanti sono in attesa, non selezionati. Form 4/A in revisione ed esclusi dai segnali, copertura parziale. La Ricerca personalizzata non modifica questi criteri.</p>`);}
 
 
@@ -254,6 +271,6 @@ function updateSECStatus(){
  const stamp=Date.parse(result?.last_scan_utc||''),stale=!Number.isFinite(stamp)||Date.now()-stamp>48*3600000;
  const unavailable=!!result?.errors?.length && (result?.coverage?.days_checked||[]).length===0;
  $('#criticalStatus').classList.toggle('hidden',!stale&&!unavailable);
- if(stale||unavailable)$('#criticalStatus').textContent=unavailable?'Scansione SEC non riuscita: indici non accessibili. Copertura nel pannello informativo.':'Scansione SEC obsoleta o data assente (oltre 48 ore): nessun dato deve essere interpretato come aggiornato.';
+ if(stale||unavailable)$('#criticalStatus').textContent=unavailable?'Scansione SEC non riuscita: indici non accessibili. Controlla il pulsante informazioni ⓘ in alto.':'Scansione SEC obsoleta o data assente (oltre 48 ore): nessun dato deve essere interpretato come aggiornato.';
 }
 
