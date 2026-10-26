@@ -79,7 +79,7 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  const sec=g.sec_evidence||null;
  const fin=sec?.annual||{};
  const secValue=(row,eps=false)=>row&&Number.isFinite(row.value)?(eps?esc(price(row.value)):moneyButton(row.value)):'—';
- const secFacts=sec?`<div class="sec-facts" aria-label="Osservazioni annuali SEC">
+ const secFacts=sec&&sec.available_count>0?`<div class="sec-facts" aria-label="Osservazioni annuali SEC">
  <div><small>Ricavi SEC</small><strong>${secValue(fin.revenue)}</strong></div>
  <div><small>EPS annuale</small><strong>${secValue(fin.eps,true)}</strong></div>
  <div><small>Flusso di cassa operativo</small><strong>${secValue(fin.operating_cashflow)}</strong></div>
