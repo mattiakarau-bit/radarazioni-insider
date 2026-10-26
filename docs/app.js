@@ -57,7 +57,7 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  const el=document.createElement('article');el.className='card';el.dataset.cik=g.cik;
  const a=g.analysis||{},f=custom?RadarCore.evaluate(g.amount,g.historical_market_cap,params):(g.filters||RadarCore.evaluate(g.amount,g.market_cap,RadarCore.defaults));
  const preliminary=!!g.preliminary;
- const label=preliminary?'In verifica · dati finanziari incompleti':historic?'Storico · dati da verificare':statusLabel(f.status);
+ const label=preliminary?'Candidata preliminare · verifiche incomplete':historic?'Storico · dati da verificare':statusLabel(f.status);
  const score=preliminary?(g.amount_review_required?'—':a.insider_strength_score??'—'):displayRadar(a);
  const scoreLabel=preliminary?'Forza insider · preliminare':'Radar Score · '+(a.score_status==='verificato'?'Verificato':'Non verificato');
  const day=g.window_start&&g.window_end?`${esc(g.window_start)} — ${esc(g.window_end)}`:'Periodo non disponibile';
