@@ -130,7 +130,7 @@ function renderRadar(){
 function renderPreliminary(){
  const list=preliminaryIndex||radar?.preliminary_groups||[],total=radar?.preliminary_total??list.length;
  const visible=list.slice(0,preliminaryLimit);
- $('#preliminaryCount').textContent=`${visible.length} di ${total} aziende con acquisti insider visualizzate · bilanci SEC disponibili solo per alcune; senza prezzi e capitalizzazioni verificati non sono opportunità approvate.`;
+ $('#preliminaryCount').textContent=`${visible.length} di ${total} aziende visualizzate · ${radar?.sec_screening?.candidates_with_usable_sec_observations??'—'} con osservazioni finanziarie SEC utili per approfondire; senza prezzi e capitalizzazioni verificati non sono investimenti selezionati.`;
  $('#preliminaryResults').replaceChildren(...visible.map(g=>card(g)));
  $('#morePreliminary').classList.toggle('hidden',visible.length>=total);
 }
