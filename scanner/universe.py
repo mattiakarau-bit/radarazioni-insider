@@ -133,7 +133,7 @@ def refresh_financials(root,companies,as_of,budget):
             old.update(cik=company['cik'],attempted_on=as_of,error=f'{type(exc).__name__}: {str(exc)[:100]}')
             write(path,old);failed+=1
     return dict(refreshed=refreshed,failed=failed,budget=budget,ttl_days=7,
-                note='Cache di estrazioni SEC persistente; nessun prezzo/cap inventato. Debito ed eventi successivi non certificati automaticamente.')
+                note='Cache di estrazioni SEC persistente, massimo 50 società per scansione; nessun prezzo/cap inventato. Debito ed eventi successivi non certificati automaticamente.')
 
 
 def financial_evidence(root,as_of):
@@ -226,6 +226,12 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     # First page inline, further cards loaded on demand; never raw transactions.
     radar['preliminary_groups']=preliminary[:20]
     radar['preliminary_total']=len(preliminary)
+    radar['sec_screening'] = dict(
+        annual_observations_available=sum(bool(c['sec_evidence']['available_count']) for c in preliminary),
+        candidates_with_usable_sec_observations=sum(c['sec_evidence']['sec_documented_for_review'] for c in preliminary),
+        candidates_with_recorded_risks=sum(bool(c['sec_risks']) for c in preliminary),
+        note='Provenienza SEC XBRL, solo dati storici e incompleti; non sono verificate capitalizzazione, prezzi o convenienza.'
+    )
     radar['preliminary_amount_review_count']=sum(c['amount_review_required'] for c in preliminary)
     radar['preliminary_order']='Priorità di approfondimento: prima osservazioni SEC annuali favorevoli e documentate, poi copertura dati, forza insider e importo. Non è una classifica di investimenti verificati.'
     write(root/'docs/data/pending_index.json',dict(as_of=as_of,companies=preliminary))
