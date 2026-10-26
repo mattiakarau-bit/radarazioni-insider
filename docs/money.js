@@ -3,7 +3,7 @@
 const Money = (() => {
  const numeric = value => typeof value === 'number' && Number.isFinite(value);
  const group = (value, digits=0) => new Intl.NumberFormat('it-IT', {
-  minimumFractionDigits:0, maximumFractionDigits:digits
+  minimumFractionDigits:0, maximumFractionDigits:digits, useGrouping:'always'
  }).format(value);
  function formatCompact(value) {
   if (!numeric(value)) return 'Non disponibile';
