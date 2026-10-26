@@ -1,7 +1,7 @@
 {
   "name": "radarazioni-insider",
   "private": true,
-  "version": "0.9.0",
+  "version": "0.9.1",
   "scripts": {
     "test:ui": "node tests/mobile-ui.cjs"
   },
