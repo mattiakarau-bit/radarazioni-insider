@@ -21,6 +21,18 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     assert.equal(await page.locator('#favoriteCount').textContent(),'2');assert.equal(await page.locator('#results .card').count(),0);
     assert.ok((await page.locator('#pendingStatus').textContent()).includes('aziende'));
     assert.ok(!requests.some(u=>/search_index|events_history|\/companies\/|\/bulk\/\d/.test(u)),'Startup must not fetch raw archives or search index');
+    const prelim=JSON.parse(fs.readFileSync('docs/data/radar.json')).preliminary_groups;
+    assert.equal(await page.locator('#preliminaryResults .card').count(),Math.min(20,prelim.length));
+    assert.ok((await page.locator('#preliminaryResults').textContent()).includes('Candidata preliminare'));
+    assert.ok((await page.locator('#preliminaryResults .score').first().textContent()).includes('Forza insider'));
+    assert.ok(!requests.some(u=>/pending_index/.test(u)),'Initial candidate page is inline');
+    await page.locator('#morePreliminary').click();await page.waitForFunction(()=>document.querySelectorAll('#preliminaryResults .card').length===40);
+    assert.equal(new Set(await page.locator('#preliminaryResults .card').evaluateAll(es=>es.map(e=>e.dataset.cik))).size,40);
+    const candidate=page.locator('#preliminaryResults .card').first();
+    await candidate.locator('.star').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===3);
+    await page.reload();await page.waitForFunction(()=>document.querySelector('#windowStatus').textContent.includes('sei mesi'));
+    assert.equal(await page.locator('#favoriteCount').textContent(),'3');
+    await page.locator('#preliminaryResults .star').first().click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('radarazioni-favorites-v1')).items.length===2);
     await fits(page);
     await page.locator('#scoreHelp').click();assert.ok((await page.locator('#detailContent').textContent()).includes('70%'));await page.locator('#closeDetail').click();
     await page.locator('#selectionHelp').click();assert.ok((await page.locator('#detailContent').textContent()).includes('sei mesi'));await page.locator('#closeDetail').click();

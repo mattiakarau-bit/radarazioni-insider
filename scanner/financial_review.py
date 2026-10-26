@@ -163,6 +163,8 @@ def report(companies, reviews, radar):
     for key in ('cash', 'debt_observation', 'operating_cashflow', 'net_income'):
         counts['candidates_with_periodic_'+key] = sum(reviews[c['cik']]['balance_observations'][key] is not None for c in candidates)
     counts['candidates_with_observed_negative_factors'] = sum(bool(reviews[c['cik']]['risks']) for c in candidates)
+    counts['homepage_preliminary_total']=radar.get('preliminary_total',0)
+    counts['homepage_preliminary_initial']=len(radar.get('preliminary_groups',[]))
     return dict(version=VERSION, as_of=radar['as_of'], counts=counts,
-                note='Analisi offline delle cache SEC, non nuova acquisizione. Candidate insider distinte da società che superano prezzi/cap. Dettagli e mancanze nei JSON per CIK.',
-                homepage_ciks=[c['cik'] for c in selected], buy_signal=False, notify=False)
+                note='Analisi delle cache SEC aggiornate progressivamente; disponibilità distinta da verifica completa. Candidate insider distinte da società che superano prezzi/cap. Dettagli e mancanze nei JSON per CIK.',
+                progress=radar.get('financial_progress',{}), homepage_ciks=[c['cik'] for c in selected], buy_signal=False, notify=False)

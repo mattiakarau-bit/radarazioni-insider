@@ -13,7 +13,7 @@ from scanner.radar import months_before
 from scanner.fundamentals import summarize_company_facts,EXTRACTOR_VERSION
 
 ROOT=Path(__file__).resolve().parents[1]
-ENGINE_VERSION='semester-v1.4'
+ENGINE_VERSION='semester-v1.5'
 
 
 def read(path,default):
@@ -108,7 +108,7 @@ def refresh_financials(root,companies,as_of,budget):
     for company in candidates:
         path=cache/f'{company["cik"]}.json';old=read(path,{})
         attempted=old.get('attempted_on')
-        if attempted and old.get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION and 0<=(date.fromisoformat(as_of)-date.fromisoformat(attempted)).days<7:continue
+        if attempted and (old.get('error') or old.get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION) and 0<=(date.fromisoformat(as_of)-date.fromisoformat(attempted)).days<7:continue
         if refreshed+failed>=budget:break
         source=f'https://data.sec.gov/api/xbrl/companyfacts/CIK{company["cik"]:010d}.json'
         try:
@@ -117,6 +117,17 @@ def refresh_financials(root,companies,as_of,budget):
             fin=summarize_company_facts(raw,as_of);fin['source_url']=source
             snapshot=dict(cik=company['cik'],attempted_on=as_of,fetched_on=as_of,source_url=source,
                           financials=fin,balance=current_balance(raw,as_of))
+            from scanner.preliminary import shares_observations, recent_filings
+            snapshot['shares_observations']=shares_observations(raw,as_of)
+            # One additional small index request; no original filings/quarter archives.
+            try:
+                submissions=json.loads(get(f'https://data.sec.gov/submissions/CIK{company["cik"]:010d}.json'))
+                if int(submissions.get('cik',-1))!=company['cik']:raise ValueError('CIK submissions mismatch')
+                snapshot['corporate_filings']=recent_filings(submissions,company['window_start'],as_of)
+            except Exception as exc:
+                snapshot['corporate_filings']=old.get('corporate_filings')
+                snapshot['corporate_filings_error']=type(exc).__name__
+            snapshot['review_schema']=1
             write(path,snapshot);refreshed+=1
         except Exception as exc:
             old.update(cik=company['cik'],attempted_on=as_of,error=f'{type(exc).__name__}: {str(exc)[:100]}')
@@ -154,6 +165,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     digest.update((Path(__file__).parent/'semester.py').read_bytes())
     digest.update((Path(__file__).parent/'amendments.py').read_bytes())
     digest.update((Path(__file__).parent/'financial_review.py').read_bytes())
+    digest.update((Path(__file__).parent/'preliminary.py').read_bytes())
     for path in inputs:
         digest.update(str(path.relative_to(root)).encode());digest.update(path.read_bytes() if path.exists() else b'absent')
     marker=root/'data/cache/semester_checkpoint.json';old=read(marker,{})
@@ -209,8 +221,14 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
         return result
     for r in search.values():r['company']=index_company(r['company'])
     write(root/'docs/data/search_index.json',dict(as_of=as_of,search_start=first_year,aggregation_days=7,issuers=list(search.values())))
-    # Pending is separate from the homepage payload and is fetched only on request.
-    write(root/'docs/data/pending_index.json',dict(as_of=as_of,companies=[index_company(c) for c in companies if c['selection_status']=='pending']))
+    from scanner.preliminary import rank
+    preliminary=rank(companies,reviews)
+    # First page inline, further cards loaded on demand; never raw transactions.
+    radar['preliminary_groups']=preliminary[:20]
+    radar['preliminary_total']=len(preliminary)
+    radar['preliminary_amount_review_count']=sum(c['amount_review_required'] for c in preliminary)
+    radar['preliminary_order']='Prima importi senza allarme di unità; importo della migliore finestra, forza insider, osservazioni SEC disponibili, CIK'
+    write(root/'docs/data/pending_index.json',dict(as_of=as_of,companies=preliminary))
     manifest=read(root/'data/insider/manifest.json',{'quarters':{}})
     radar['source_coverage']=dict(archive_quarters=[q for q,r in manifest['quarters'].items() if r.get('status')=='complete'],
                                   reconciliation=bridge,finance_refresh=refresh,
@@ -223,6 +241,17 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     radar['financial_cache_count']=len(list((root/'data/analysis').glob('*.json')))
     radar['financial_extractor_version']=EXTRACTOR_VERSION
     radar['financial_cache_current_count']=sum(read(p,{}).get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION for p in (root/'data/analysis').glob('*.json'))
+    candidate_snapshots=[details[c['cik']].get('financial_snapshot') or {} for c in companies if c['selection_status'] in ('pending','selected')]
+    radar['financial_progress']=dict(
+        candidates=len(candidate_snapshots),
+        cached=sum(bool(s.get('financials')) for s in candidate_snapshots),
+        outstanding_share_observations=sum(bool(s.get('shares_observations')) for s in candidate_snapshots),
+        corporate_indices=sum(isinstance(s.get('corporate_filings'),dict) for s in candidate_snapshots),
+        latest_attempt_errors=sum(bool(s.get('error')) for s in candidate_snapshots),
+        complete_financial_checks=radar['stats']['companies_current_financials_verified'],
+        prices_verified=radar['stats']['companies_current_prices_verified'],
+        historical_caps_pass=radar['stats']['companies_historical_cap_threshold_pass'],
+        current_caps_pass=radar['stats']['companies_current_cap_pass'])
     radar['source_policy_url']='./data/source_policy.json'
     status=read(root/'docs/data/results.json',{})
     write(root/'docs/data/scan_status.json',{k:status.get(k) for k in ('last_scan_utc','status','coverage','errors','model_status')})
