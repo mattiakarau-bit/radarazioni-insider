@@ -1,4 +1,4 @@
-# RadarAzioni – Insider Intelligence · 0.9.1
+# RadarAzioni – Insider Intelligence · 0.9.2
 
 App statica PWA per screening di acquisti SEC Form 4. Nessun BUY, notifica d’investimento,
 trading automatico o servizio a pagamento. Compatibile con navigazione touch e standalone;
@@ -227,3 +227,28 @@ Pulsante ⓘ in testata con metodologia e ultima scansione SEC. Ricerca mostra
 aziende soltanto dopo 'Applica filtri', senza caricare indici in anticipo.
 Preferiti mostra esclusivamente le societa salvate con stellina; le
 vecchie liste migrate sono conservate, non visualizzate come selezioni esplicite.
+
+## 0.9.2 — bilanci SEC più visibili, selezione preliminare più documentata
+
+Le società con acquisti insider significativi vengono ordinate per **priorità
+di approfondimento**: prima i documenti SEC annuali con segnali favorevoli,
+poi le osservazioni disponibili, il punteggio insider preliminare e gli
+importi. Operazioni con importi estremi restano in revisione. La priorità
+NON equivale al Radar Score di investimento; missing = sconosciuto, non
+negativo.
+
+Quando verificabili nei file SEC, le schede mostrano ricavi, EPS, flusso di
+cassa operativo e FCF con note sui periodi. Gli importi di ciascun indicatore
+possono riferirsi a esercizi diversi; la provenienza dettagliata e i controlli
+rimangono nei dettagli societari. I segnali finanziari positivi e le criticità
+osservate sono espliciti, non interpretazioni BUY.
+
+Il recupero SEC Companyfacts + indice depositi è incrementale e autorizzato
+per un massimo di 50 candidate per scansione (in precedenza 25); manteniamo
+cache, source URL, throttling, test e backoff dopo errori. La funzione
+scarta dati futuri o obsoleti e non inventa debito/capitalizzazioni.
+
+**Limite fondamentale:** prezzi e capitalizzazioni storici e attuali,
+rettifiche split, P/E, P/FCF e controlli post-acquisto restano non verificati
+finché non è disponibile un fornitore con diritti di pubblicazione compatibili.
+Nessuna quota API non autorizzata, nessun provider di prezzi fittizio.

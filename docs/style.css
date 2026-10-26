@@ -303,3 +303,15 @@ html[data-theme="light"] .score-strength-low strong{color:#c52f43}
  #filtersForm .fields{grid-template-columns:1fr}
  .search-actions>*{flex:1 1 100%!important}
 }
+
+/* 0.9.2 SEC evidence-first candidate cards; no new BUY or price assertions */
+.sec-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.sec-facts>div{min-width:0;padding:10px 12px;border:1px solid var(--line);background:var(--surface-raised);border-radius:12px}
+.sec-facts small{font-size:10px;display:block;color:var(--muted);line-height:1.3}
+.sec-facts strong{display:block;margin-top:6px;font-size:15px;line-height:1.4;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.sec-hint{font-size:11px!important;color:var(--muted);margin:9px 1px 0}
+.badge-sec{border-color:var(--line-strong);background:var(--surface-soft);font-weight:700}
+.card-more p strong{color:var(--text)}
+@media(min-width:650px){.sec-facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:1050px){.sec-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.sec-facts strong{font-size:13px}}

@@ -76,9 +76,22 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  const strengthLabel=strengthTier==='high'?'verde':strengthTier==='medium'?'gialla':strengthTier==='low'?'rossa':'non disponibile';
  const day=g.window_start&&g.window_end?`${esc(g.window_start)} — ${esc(g.window_end)}`:'Periodo non disponibile';
  const rationale=preliminary?`<p>${esc(g.amount_review_note||'')} Ruoli dichiarati: ${esc((g.insider_roles||[]).join(' · ')||'da verificare')}. Osservazioni SEC disponibili: ${esc(g.sec_observations??0)}/6; disponibilità non significa solidità. ${g.sec_risks?.length?'Rischi osservati: '+esc(g.sec_risks.join('; '))+'. ':''}Nessun Radar Score finanziario verificato.</p>`:'';
+ const sec=g.sec_evidence||null;
+ const fin=sec?.annual||{};
+ const secValue=(row,eps=false)=>row&&Number.isFinite(row.value)?(eps?esc(price(row.value)):moneyButton(row.value)):'—';
+ const secFacts=sec&&sec.available_count>0?`<div class="sec-facts" aria-label="Osservazioni annuali SEC">
+ <div><small>Ricavi SEC</small><strong>${secValue(fin.revenue)}</strong></div>
+ <div><small>EPS annuale</small><strong>${secValue(fin.eps,true)}</strong></div>
+ <div><small>Flusso di cassa operativo</small><strong>${secValue(fin.operating_cashflow)}</strong></div>
+ <div><small>Free cash flow</small><strong>${secValue(fin.free_cashflow)}</strong></div>
+ </div><p class="sec-hint">Dati annuali SEC disponibili: ${esc(sec.available_count)}/5. Valori del rispettivo esercizio, non necessariamente dello stesso periodo né attuali.</p>`:'';
+ const secSignals=sec&&sec.available_count>0?`<p><strong>Bilanci SEC:</strong> ${esc(sec.label)}. ${esc(sec.positive_observations?.length??0)} osservazioni favorevoli; ${esc(sec.observed_risks?.length??0)} segnali negativi riscontrati.</p>
+ <p><strong>Osservazioni favorevoli:</strong> ${esc(sec.positive_observations?.join(' · ')||'Nessuna verificata.')}</p>
+ <p><strong>Possibili rischi:</strong> ${esc(sec.observed_risks?.join(' · ')||'Nessun fattore negativo tra quelli analizzati; non equivale ad assenza di rischi.')}</p>
+ <p>${esc(sec.note||'Mancano quotazioni e capitalizzazioni autorizzate per la verifica completa.')}</p>`:'';
  const note=g.aggregation_verified?'':'<p>Possibili co-dichiarazioni: importo e conteggio non sono un totale verificato.</p>';
  const details=`<details class="card-more"><summary>Verifiche, prezzi e dati mancanti</summary>
- ${note}${rationale}
+ ${note}${rationale}${secSignals}
  <p>Capitalizzazione corrente: ${moneyButton(g.market_cap)}. Capitalizzazione della settimana: ${moneyButton(g.historical_market_cap)}${g.historical_market_cap_as_of?' ('+esc(g.historical_market_cap_as_of)+')':''}. Soglia richiesta: ${moneyButton(f.required_amount)}.</p>
  <p>Prezzo corrente: ${esc(price(g.current_price))}${g.current_price_as_of?' · '+esc(g.current_price_as_of):''}. ${esc(g.significant_window_count??1)} finestre significative: non sommare periodi sovrapposti.</p>
  ${preliminary&&g.selection_reasons?.length?'<p>Controlli ancora necessari: '+esc(g.selection_reasons.join('; '))+'.</p>':''}
@@ -91,8 +104,8 @@ function card(g,{historic=false,favorite=false,custom=false}={}){
  <div><strong>${moneyButton(g.amount)}</strong><small>${g.amount_review_required?'Importo da riconciliare':g.aggregation_verified?'Acquisti dichiarati in 7 giorni':'Importo prudenziale in 7 giorni'}</small></div>
  <div><strong>${esc(g.transaction_count??'—')}</strong><small>Operazioni nella settimana</small></div>
  <div><strong>${esc(g.significant_window_count??1)}</strong><small>Finestre significative</small></div></div>
- <div class="card-meta"><span class="badge">${esc(label)}</span></div>
- ${details}<div class="card-actions"><button class="open-detail">Esplora azienda</button></div>`;
+ <div class="card-meta"><span class="badge">${esc(label)}</span>${sec?.sec_documented_for_review?'<span class="badge badge-sec">Bilanci SEC da approfondire</span>':''}</div>
+ ${secFacts}${details}<div class="card-actions"><button class="open-detail">Esplora azienda</button></div>`;
  el.querySelector('.star').addEventListener('click',()=>toggleFavorite(g));
  el.querySelector('.open-detail').addEventListener('click',()=>detail(g,favorite?favorites.find(f=>f.cik===g.cik)?.transactions:null));
  return el;
@@ -117,7 +130,7 @@ function renderRadar(){
 function renderPreliminary(){
  const list=preliminaryIndex||radar?.preliminary_groups||[],total=radar?.preliminary_total??list.length;
  const visible=list.slice(0,preliminaryLimit);
- $('#preliminaryCount').textContent=`${visible.length} di ${total} candidate preliminari visibili · nessuna verifica finanziaria completa implicita.`;
+ $('#preliminaryCount').textContent=`${visible.length} di ${total} aziende visualizzate · ${radar?.sec_screening?.candidates_with_usable_sec_observations??'—'} con osservazioni finanziarie SEC utili per approfondire; senza prezzi e capitalizzazioni verificati non sono investimenti selezionati.`;
  $('#preliminaryResults').replaceChildren(...visible.map(g=>card(g)));
  $('#morePreliminary').classList.toggle('hidden',visible.length>=total);
 }

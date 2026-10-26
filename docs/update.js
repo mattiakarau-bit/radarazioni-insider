@@ -1,5 +1,5 @@
 'use strict';
-const APP_VERSION = '0.9.1';
+const APP_VERSION = '0.9.2';
 function isNewVersion(remote, current) {
   if (typeof remote !== 'string' || !/^\d+\.\d+\.\d+$/.test(remote)) return false;
   const a=remote.split('.').map(Number), b=current.split('.').map(Number);

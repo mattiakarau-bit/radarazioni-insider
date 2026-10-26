@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-25",
+  "reviewed_on": "2026-10-26",
   "active_market_provider": null,
   "sec": {
     "enabled": true,
@@ -104,12 +104,12 @@
   "buy_signal": false,
   "notify": false,
   "market_data_audit": {
-    "reviewed_on": "2026-10-25",
+    "reviewed_on": "2026-10-26",
     "report_url": "./data/market_availability_report.json",
     "technical_report": "https://github.com/mattiakarau-bit/radarazioni-insider/blob/main/research/market-data-availability-2026-10-25.md",
     "status": "blocked_no_approved_free_public_price_source",
     "production_adapter_enabled": false,
     "sec_shares_alone_sufficient": false
   },
-  "latest_review": "0.8.4: SEC companyfacts/submissions active; Twelve Data, Tiingo, SimFin and Market Data external redistribution not approved at no cost. See research/preliminary-radar-0.8.4.md"
+  "latest_review": "0.9.2: rivalidati SEC Companyfacts (bilanci e filings pubblici, non quote) e condizioni Tiingo/FMP sui dati di mercato; nessuna autorizzazione gratuita di pubblicazione dei prezzi integrata. Il nuovo ordinamento mostra i fatti SEC annuali disponibili senza promuovere aziende alla classifica verificata."
 }

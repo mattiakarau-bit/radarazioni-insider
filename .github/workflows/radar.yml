@@ -49,7 +49,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
         run: |
           # Bounded incremental review; existing archives and caches are reused.
-          python -m scanner.universe --refresh-financials 25
+          python -m scanner.universe --refresh-financials 50
           python tests/verify_semester.py
       - name: Salva le ultime operazioni nel repository
         run: |

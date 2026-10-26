@@ -32,9 +32,16 @@ assert len({c['cik'] for c in pending})==len(pending)
 assert len(radar['preliminary_groups'])==min(20,len(pending))
 assert radar['preliminary_groups']==pending[:20]
 assert radar['preliminary_total']==len(pending)
-for flag in (False,True):
-    amounts=[c['amount'] for c in pending if c['amount_review_required']==flag]
-    assert amounts==sorted(amounts,reverse=True)
+def screening_order(c):
+    sec=c['sec_evidence']
+    return (c['amount_review_required'],not sec['sec_documented_for_review'],
+            bool(c['sec_risks']),-len(sec['positive_observations']),
+            -c['sec_observations'],-(c['analysis']['insider_strength_score'] or 0),
+            -c['amount'],c['cik'])
+assert pending==sorted(pending,key=screening_order)
+assert radar['sec_screening']['candidates_with_usable_sec_observations']==sum(
+    c['sec_evidence']['sec_documented_for_review'] for c in pending)
+assert all(not c['sec_evidence'].get('market_cap_verified') for c in pending)
 assert not ({c['cik'] for c in pending}&{c['cik'] for c in radar['groups']})
 assert all(c['analysis']['radar_score'] is None and c['preliminary'] for c in pending)
 may_windows=0
