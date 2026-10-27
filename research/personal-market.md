@@ -11,7 +11,7 @@ Il [Developer Program ufficiale](https://www.tiingo.com/documentation/appendix/d
 3. Metadata, prezzi EOD grezzi, split e dividendi sono conservati solo nella cartella ignorata `.private-market`, con permessi restrittivi. Non c'è endpoint pubblico, export verso Pages, invio di valori nei log o telemetria. Non condividere neppure risultati derivati se la licenza personale lo vieta.
 4. Il programma rifiuta CI/GitHub Actions, percorsi pubblici e symlink della cache. Usa esclusivamente api.tiingo.com, con token nell'header Authorization; nessun token nell'URL, nessun inoltro su redirect. Errori 401/403/429 fermano il recupero. Le cache precedenti sono conservate e gli aggiornamenti riacquisiscono solo gli ultimi sette giorni, per eventuali correzioni.
 
-La modalità è Python locale: **non è ancora una modalità utilizzabile direttamente sull'iPad**. Non è una soluzione già attiva per i prezzi dell'app pubblica. Per un uso sull'iPad servirà un client personale con le medesime garanzie, da collaudare con un account reale e con CORS/limiti effettivi prima di distribuirlo.
+La modalità è Python locale: **non è ancora una modalità utilizzabile direttamente sull'iPad**. Non è una soluzione già attiva per i prezzi dell'app pubblica. Il preflight OPTIONS non autenticato dal dominio Pages ha restituito HTTP 200 senza header Access-Control-Allow-Origin osservabili: non ho quindi integrato un client browser che potrebbe non funzionare. Per un uso sull'iPad servirà una soluzione personale con accesso effettivamente consentito dal browser (o un servizio privato), da collaudare con un account reale prima di distribuirla. Non è stato creato alcun proxy per aggirare CORS.
 
 ## Identità, capitalizzazione e confronto
 
