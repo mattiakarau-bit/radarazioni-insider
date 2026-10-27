@@ -101,14 +101,14 @@ def refresh_financials(root,companies,as_of,budget):
     listed={x['cik'] for x in read(root/'docs/data/bulk_issuers.json',{'issuers':[]})['issuers']}
     def priority(c):
         old=read(cache/f'{c["cik"]}.json',{})
-        outdated=bool(old.get('financials')) and old['financials'].get('extractor_version')!=EXTRACTOR_VERSION
+        outdated=bool(old.get('financials')) and (old['financials'].get('extractor_version')!=EXTRACTOR_VERSION or old.get('review_schema',0)<2)
         return (not outdated,c['cik'] not in listed,old.get('attempted_on',''),-c['amount'])
     candidates.sort(key=priority)
     refreshed=0;failed=0
     for company in candidates:
         path=cache/f'{company["cik"]}.json';old=read(path,{})
         attempted=old.get('attempted_on')
-        if attempted and (old.get('error') or old.get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION) and 0<=(date.fromisoformat(as_of)-date.fromisoformat(attempted)).days<7:continue
+        if attempted and (old.get('error') or old.get('financials',{}).get('extractor_version')==EXTRACTOR_VERSION and old.get('review_schema',0)>=2) and 0<=(date.fromisoformat(as_of)-date.fromisoformat(attempted)).days<7:continue
         if refreshed+failed>=budget:break
         source=f'https://data.sec.gov/api/xbrl/companyfacts/CIK{company["cik"]:010d}.json'
         try:
@@ -120,6 +120,7 @@ def refresh_financials(root,companies,as_of,budget):
             from scanner.preliminary import shares_observations, recent_filings
             snapshot['shares_observations']=shares_observations(raw,as_of)
             # One additional small index request; no original filings/quarter archives.
+            submissions={}
             try:
                 submissions=json.loads(get(f'https://data.sec.gov/submissions/CIK{company["cik"]:010d}.json'))
                 if int(submissions.get('cik',-1))!=company['cik']:raise ValueError('CIK submissions mismatch')
@@ -127,7 +128,9 @@ def refresh_financials(root,companies,as_of,budget):
             except Exception as exc:
                 snapshot['corporate_filings']=old.get('corporate_filings')
                 snapshot['corporate_filings_error']=type(exc).__name__
-            snapshot['review_schema']=1
+            from scanner.quarterly import analyze, compact
+            snapshot['quarterly_financials']=compact(analyze(raw,as_of,submissions.get('sic'),fin.get('revenue_scope_verified') is True),company['cik'])
+            snapshot['review_schema']=2
             write(path,snapshot);refreshed+=1
         except Exception as exc:
             old.update(cik=company['cik'],attempted_on=as_of,error=f'{type(exc).__name__}: {str(exc)[:100]}')
@@ -152,10 +155,10 @@ def compact_window(w):
     return {k:w.get(k) for k in ('window_start','window_end','amount','reported_amount','transaction_count','reported_transaction_count','aggregation_verified','weighted_price','historical_market_cap','historical_market_cap_as_of','weekly_economic_verified','split_comparison_verified','adjusted_insider_price','distance_from_insider_pct')}
 
 
-def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
+def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False,price_band_pct=15):
     root=Path(root);as_of=as_of or date.today().isoformat()
     # Fingerprint includes date, source content hashes, engine and cached financial evidence.
-    digest=hashlib.sha256((ENGINE_VERSION+as_of).encode())
+    digest=hashlib.sha256((ENGINE_VERSION+as_of+str(price_band_pct)).encode())
     inputs=[root/'data/insider/manifest.json',root/'docs/data/events_history.json',root/'docs/data/results.json',root/'docs/data/state.json']+sorted((root/'data/analysis').glob('*.json'))
     for path in sorted((root/'data/insider').glob('*.events.jsonl.gz')):
         digest.update(hashlib.sha256(path.read_bytes()).digest())
@@ -166,17 +169,19 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     digest.update((Path(__file__).parent/'amendments.py').read_bytes())
     digest.update((Path(__file__).parent/'financial_review.py').read_bytes())
     digest.update((Path(__file__).parent/'preliminary.py').read_bytes())
+    digest.update((Path(__file__).parent/'quarterly.py').read_bytes())
+    digest.update((Path(__file__).parent/'evidence_report.py').read_bytes())
     for path in inputs:
         digest.update(str(path.relative_to(root)).encode());digest.update(path.read_bytes() if path.exists() else b'absent')
     marker=root/'data/cache/semester_checkpoint.json';old=read(marker,{})
     # Cache marker is runner-local; persistent finance summaries are the cross-run cache.
     if not force and not refresh_budget and old.get('digest')==digest.hexdigest() and (root/'docs/data/radar.json').exists():return read(root/'docs/data/radar.json',{})
     events,bridge=load_sources(root,as_of)
-    radar,companies,details=build(events,as_of,financial_evidence(root,as_of))
+    radar,companies,details=build(events,as_of,financial_evidence(root,as_of),price_band_pct=price_band_pct)
     refresh=dict(refreshed=0,failed=0,budget=0)
     if refresh_budget:
         refresh=refresh_financials(root,companies,as_of,max(0,min(refresh_budget,50)))
-        radar,companies,details=build(events,as_of,financial_evidence(root,as_of))
+        radar,companies,details=build(events,as_of,financial_evidence(root,as_of),price_band_pct=price_band_pct)
     first_year=months_before(date.fromisoformat(as_of),12).isoformat()
     # Custom search receives WINDOW summaries, never bulk raw transactions.
     year_windows=issuer_windows(events,as_of,12);by_cik={c['cik']:c for c in companies};search={}
@@ -251,6 +256,8 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     radar['financial_progress']=dict(
         candidates=len(candidate_snapshots),
         cached=sum(bool(s.get('financials')) for s in candidate_snapshots),
+        quarterly_observations=sum(bool(s.get('quarterly_financials',{}).get('latest_period')) for s in candidate_snapshots),
+        fresh_quarterly_observations=sum(s.get('quarterly_financials',{}).get('fresh_latest_period') is True for s in candidate_snapshots),
         outstanding_share_observations=sum(bool(s.get('shares_observations')) for s in candidate_snapshots),
         corporate_indices=sum(isinstance(s.get('corporate_filings'),dict) for s in candidate_snapshots),
         latest_attempt_errors=sum(bool(s.get('error')) for s in candidate_snapshots),
@@ -264,13 +271,15 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     write(root/'docs/data/radar.json',radar)
     write(root/'docs/data/semester_report.json',radar)
     write(root/'docs/data/companies/financial/report.json',financial_report(companies,reviews,radar))
+    from scanner.evidence_report import coverage
+    write(root/'docs/data/companies/financial/market-gates.json',coverage(companies,details,radar,read(root/'docs/data/ml_status.json',{})))
     write(marker,dict(digest=digest.hexdigest(),as_of=as_of))
     print(json.dumps(dict(as_of=as_of,search_start=radar['search_start'],stats=radar['stats'],funnel=radar['funnel'],source_coverage=radar['source_coverage']),ensure_ascii=False))
     return radar
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--as-of',default=date.today().isoformat());p.add_argument('--refresh-financials',type=int,default=0);p.add_argument('--force',action='store_true')
-    args=p.parse_args();publish_from_archive(args.root,args.as_of,args.refresh_financials,args.force)
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--as-of',default=date.today().isoformat());p.add_argument('--refresh-financials',type=int,default=0);p.add_argument('--force',action='store_true');p.add_argument('--price-band-pct',type=float,default=15)
+    args=p.parse_args();publish_from_archive(args.root,args.as_of,args.refresh_financials,args.force,args.price_band_pct)
 
 if __name__=='__main__':main()

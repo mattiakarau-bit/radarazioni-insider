@@ -84,12 +84,13 @@ def current_checks(e,as_of,first):
                 current_valuation_verified=bool(valuation_valid(e.valuation,as_of) and price and e.valuation.as_of==e.price_as_of),post_purchase_changes_verified=changes)
 
 
-def build(events,as_of,evidence=None,months=6):
+def build(events,as_of,evidence=None,months=6,price_band_pct=15):
     """Pure backend selection. Explicit fixtures may supply typed evidence in tests.
 
     Production constructs CurrentEvidence from SEC summaries only; no licensed price
     provider is yet approved. Therefore missing market evidence cannot pass selection.
     """
+    if not isinstance(price_band_pct,(int,float)) or isinstance(price_band_pct,bool) or not isfinite(price_band_pct) or not 0<=price_band_pct<=100:raise ValueError('Invalid price band')
     evidence=evidence or {};first=months_before(date.fromisoformat(as_of),months).isoformat()
     rows=[dict(x) for x in events if first<=x.get('transaction_date','')<=as_of and x.get('filed','9999')<=as_of]
     suspend_security_aliases(rows)
@@ -103,7 +104,7 @@ def build(events,as_of,evidence=None,months=6):
               'companies_current_financials_verified','companies_current_prices_verified','companies_valuation_verified',
               'companies_post_purchase_review_verified','companies_split_comparison_verified','selected_companies',
               'pending_base_candidates','companies_below_weekly_minimum','companies_without_usable_window'):stats[k]=0
-    funnel=Counter({k:0 for k in ('weekly_base','historical_cap_and_threshold','current_cap','current_financials','current_price','valuation','split_comparison','post_purchase_review','homepage')})
+    funnel=Counter({k:0 for k in ('weekly_base','historical_cap_and_threshold','current_cap','current_financials','current_price','valuation','split_comparison','price_proximity','post_purchase_review','homepage')})
     companies=[];details={}
     for cik,source in sorted(by_cik.items()):
         windows=grouped[cik];e=evidence.get(cik,CurrentEvidence());checks=current_checks(e,as_of,first)
@@ -123,8 +124,10 @@ def build(events,as_of,evidence=None,months=6):
             w['split_comparison_verified']=bool(checks['current_price_verified'] and positive(w.get('weighted_price')) and e.split_review_reference and positive(adjusted))
             w['adjusted_insider_price']=adjusted if w['split_comparison_verified'] else None
             w['distance_from_insider_pct']=round((e.current_price/adjusted-1)*100,4) if w['split_comparison_verified'] else None
+            w['price_proximity_pass']=w['split_comparison_verified'] and abs(w['distance_from_insider_pct'])<=price_band_pct
         economic=[w for w in base if w['weekly_economic_verified']]
-        eligible=[w for w in economic if w['split_comparison_verified']]
+        comparison=[w for w in economic if w['split_comparison_verified']]
+        eligible=[w for w in comparison if w['price_proximity_pass']]
         cap_verified=valuation_valid(e.valuation,as_of)
         current_cap=e.valuation.market_cap if cap_verified else None
         current_cap_pass=current_cap is not None and current_cap>=DEFAULT_FILTERS['min_market_cap']
@@ -133,10 +136,10 @@ def build(events,as_of,evidence=None,months=6):
             if base and value and metric:stats[metric]+=1
         if current_cap_pass and base:stats['companies_current_cap_pass']+=1
         if economic:stats['companies_historical_cap_threshold_pass']+=1
-        if eligible:stats['companies_split_comparison_verified']+=1
+        if comparison:stats['companies_split_comparison_verified']+=1
         if base:stats['companies_weekly_base_pass']+=1;funnel['weekly_base']+=1
         elif clean:stats['companies_below_weekly_minimum']+=1
-        stages=[bool(base),bool(economic),current_cap_pass,checks['current_financials_verified'],checks['current_price_verified'],checks['current_valuation_verified'],bool(eligible),checks['post_purchase_changes_verified']]
+        stages=[bool(base),bool(economic),current_cap_pass,checks['current_financials_verified'],checks['current_price_verified'],checks['current_valuation_verified'],bool(comparison),bool(eligible),checks['post_purchase_changes_verified']]
         good=True
         for key,value in zip(list(funnel)[1:-1],stages[1:]):
             good=good and stages[0] and value
@@ -150,7 +153,7 @@ def build(events,as_of,evidence=None,months=6):
         analysis=screen(item,e.financials,valuation=e.valuation)
         confirmed=bool(all(stages) and analysis['quality_pass'] and analysis['score_status']=='verificato')
         reasons=[]
-        for okay,label in [(bool(base),'Nessuna finestra non ambigua raggiunge 100.000 USD dichiarati'),(bool(economic),'Capitalizzazione storica e soglia proporzionale non verificate'),(current_cap_pass,'Capitalizzazione corrente minima non verificata'),(checks['current_financials_verified'],'Bilancio, flussi e debito attuali non completamente verificati'),(checks['current_price_verified'],'Prezzo corrente verificato assente'),(checks['current_valuation_verified'],'Valutazione corrente verificata assente'),(bool(eligible),'Prezzo insider rettificato per split non verificato'),(checks['post_purchase_changes_verified'],'Cambiamenti successivi agli acquisti da verificare')]:
+        for okay,label in [(bool(base),'Nessuna finestra non ambigua raggiunge 100.000 USD dichiarati'),(bool(economic),'Capitalizzazione storica e soglia proporzionale non verificate'),(current_cap_pass,'Capitalizzazione corrente minima non verificata'),(checks['current_financials_verified'],'Bilancio, flussi e debito attuali non completamente verificati'),(checks['current_price_verified'],'Prezzo corrente verificato assente'),(checks['current_valuation_verified'],'Valutazione corrente verificata assente'),(bool(eligible),f'Confronto prezzo insider rettificato assente o fuori dalla fascia ±{price_band_pct:g}%'),(checks['post_purchase_changes_verified'],'Cambiamenti successivi agli acquisti da verificare')]:
             if not okay:reasons.append(label)
         if not checks['current_financials_verified']:
             analysis['radar_score']=None;analysis['score_status']='non_verificabile'
@@ -179,8 +182,8 @@ def build(events,as_of,evidence=None,months=6):
                           transactions=source,overlap_warning='Finestre sovrapposte: non sommare importi o conteggi tra finestre.',
                           currency_basis='Prezzi USD dichiarati secondo Form 4, istruzione 5; non verifica individuale del deposito',currency_source=FORM4_CURRENCY_SOURCE)
     companies.sort(key=lambda c:((c['analysis'].get('radar_score') if c['analysis'].get('radar_score') is not None else -1),c['amount']),reverse=True)
-    return dict(version=2,app_version='0.8.4',as_of=as_of,search_months=months,search_start=first,window_start=first,
-                aggregation_days=7,filters=DEFAULT_FILTERS,groups=[c for c in companies if c['selection_status']=='selected'],
+    return dict(version=2,app_version='0.10.0',as_of=as_of,search_months=months,search_start=first,window_start=first,
+                aggregation_days=7,price_band_pct=price_band_pct,filters=DEFAULT_FILTERS,groups=[c for c in companies if c['selection_status']=='selected'],
                 stats=dict(stats),funnel=dict(funnel),history_months_available=12,historical_windows=[],
                 search_index_url='./data/search_index.json',pending_index_url='./data/pending_index.json',
                 history_status='Semestre calcolato lato Python; dati mancanti non sono opportunità confermate',

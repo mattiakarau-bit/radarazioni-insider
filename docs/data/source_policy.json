@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-26",
+  "reviewed_on": "2026-10-27",
   "active_market_provider": null,
   "sec": {
     "enabled": true,
@@ -111,5 +111,21 @@
     "production_adapter_enabled": false,
     "sec_shares_alone_sufficient": false
   },
-  "latest_review": "0.9.2: rivalidati SEC Companyfacts (bilanci e filings pubblici, non quote) e condizioni Tiingo/FMP sui dati di mercato; nessuna autorizzazione gratuita di pubblicazione dei prezzi integrata. Il nuovo ordinamento mostra i fatti SEC annuali disponibili senza promuovere aziende alla classifica verificata."
+  "latest_review": "0.10.0: implemented own-token Tiingo internal-use adapter, disabled in CI/Pages. No free public price redistribution source approved. SEC quarterly analysis added; class/date/split gates remain conservative.",
+  "personal_market_adapter": {
+    "provider": "Tiingo",
+    "implemented": true,
+    "activated": false,
+    "redistribution_allowed": false,
+    "requires": "Own personal account/token supplied locally; no token received or account created",
+    "developer_terms": "https://www.tiingo.com/documentation/appendix/developers",
+    "pricing_url": "https://www.tiingo.com/about/pricing",
+    "free_limits": {
+      "symbols_per_month": 500,
+      "requests_per_hour": 50,
+      "requests_per_day": 1000,
+      "bandwidth_bytes_per_month": 1000000000
+    },
+    "docs": "https://github.com/mattiakarau-bit/radarazioni-insider/blob/main/research/personal-market.md"
+  }
 }

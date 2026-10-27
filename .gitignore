@@ -6,3 +6,6 @@ ui-artifacts/
 data/cache/
 *.part
 *.tmp
+
+# Personal licensed market data must never enter Git or Pages
+.private-market/
