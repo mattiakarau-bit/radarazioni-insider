@@ -155,10 +155,10 @@ def compact_window(w):
     return {k:w.get(k) for k in ('window_start','window_end','amount','reported_amount','transaction_count','reported_transaction_count','aggregation_verified','weighted_price','historical_market_cap','historical_market_cap_as_of','weekly_economic_verified','split_comparison_verified','adjusted_insider_price','distance_from_insider_pct')}
 
 
-def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
+def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False,price_band_pct=15):
     root=Path(root);as_of=as_of or date.today().isoformat()
     # Fingerprint includes date, source content hashes, engine and cached financial evidence.
-    digest=hashlib.sha256((ENGINE_VERSION+as_of).encode())
+    digest=hashlib.sha256((ENGINE_VERSION+as_of+str(price_band_pct)).encode())
     inputs=[root/'data/insider/manifest.json',root/'docs/data/events_history.json',root/'docs/data/results.json',root/'docs/data/state.json']+sorted((root/'data/analysis').glob('*.json'))
     for path in sorted((root/'data/insider').glob('*.events.jsonl.gz')):
         digest.update(hashlib.sha256(path.read_bytes()).digest())
@@ -177,11 +177,11 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
     # Cache marker is runner-local; persistent finance summaries are the cross-run cache.
     if not force and not refresh_budget and old.get('digest')==digest.hexdigest() and (root/'docs/data/radar.json').exists():return read(root/'docs/data/radar.json',{})
     events,bridge=load_sources(root,as_of)
-    radar,companies,details=build(events,as_of,financial_evidence(root,as_of))
+    radar,companies,details=build(events,as_of,financial_evidence(root,as_of),price_band_pct=price_band_pct)
     refresh=dict(refreshed=0,failed=0,budget=0)
     if refresh_budget:
         refresh=refresh_financials(root,companies,as_of,max(0,min(refresh_budget,50)))
-        radar,companies,details=build(events,as_of,financial_evidence(root,as_of))
+        radar,companies,details=build(events,as_of,financial_evidence(root,as_of),price_band_pct=price_band_pct)
     first_year=months_before(date.fromisoformat(as_of),12).isoformat()
     # Custom search receives WINDOW summaries, never bulk raw transactions.
     year_windows=issuer_windows(events,as_of,12);by_cik={c['cik']:c for c in companies};search={}
@@ -279,7 +279,7 @@ def publish_from_archive(root=ROOT,as_of=None,refresh_budget=0,force=False):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--as-of',default=date.today().isoformat());p.add_argument('--refresh-financials',type=int,default=0);p.add_argument('--force',action='store_true')
-    args=p.parse_args();publish_from_archive(args.root,args.as_of,args.refresh_financials,args.force)
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--as-of',default=date.today().isoformat());p.add_argument('--refresh-financials',type=int,default=0);p.add_argument('--force',action='store_true');p.add_argument('--price-band-pct',type=float,default=15)
+    args=p.parse_args();publish_from_archive(args.root,args.as_of,args.refresh_financials,args.force,args.price_band_pct)
 
 if __name__=='__main__':main()

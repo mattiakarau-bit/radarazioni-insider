@@ -43,3 +43,16 @@ class MarketMathTests(unittest.TestCase):
             self.assertIsNone(capitalization([c],'2026-10-20','2026-10-27',all_classes_review_reference='fixture')['value'])
         c=capclass();c['price']['currency']='EUR'
         self.assertIsNone(capitalization([c],'2026-10-20','2026-10-27',all_classes_review_reference='fixture')['value'])
+
+class PublicSelectionPriceBandTests(unittest.TestCase):
+    def test_same_evidence_requires_price_band_and_keeps_one_card(self):
+        from scanner.semester import build
+        from tests.test_semester import purchase,verified,ASOF
+        from dataclasses import replace
+        day='2026-05-12';events=[purchase(1,day)]
+        evidence=replace(verified([day]),current_price=120)
+        self.assertEqual(build(events,ASOF,{1:evidence})[0]['groups'],[])
+        r=build(events,ASOF,{1:evidence},price_band_pct=25)[0]
+        self.assertEqual(len(r['groups']),1)
+        self.assertEqual(r['price_band_pct'],25)
+        with self.assertRaises(ValueError):build(events,ASOF,price_band_pct=float('nan'))

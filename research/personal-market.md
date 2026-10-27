@@ -15,7 +15,7 @@ La modalità è Python locale: **non è ancora una modalità utilizzabile dirett
 
 ## Identità, capitalizzazione e confronto
 
-`python -m scanner.personal_analysis --cik 1031203 --tolerance 15` elabora i dati personali contro i Dettagli SEC locali. Produce esclusivamente `.private-market/analysis/1031203.json`. Il parametro ±15% è modificabile. Serve una revisione di classe/valuta e degli eventi nella cartella privata `reviews/1031203.json` con:
+`python -m scanner.personal_analysis --cik 1031203 --tolerance 15` elabora i dati personali contro i Dettagli SEC locali. Produce esclusivamente `.private-market/analysis/1031203.json`. Il parametro ±15% è modificabile. Anche il motore semestrale richiede per la classifica verificata un confronto rettificato entro ±15%: `scanner.universe --price-band-pct` configura la fascia lato Python, senza cambiare sei mesi o sette giorni. Le candidate incomplete restano visibili. Serve una revisione di classe/valuta e degli eventi nella cartella privata `reviews/1031203.json` con:
 
 - `cik`, `all_equity_classes_review_reference` e `security_titles` (titoli Form 4 esatti → ID stabili di classe);
 - `securities`: per ID, `symbol` Tiingo esatto (nessuna trasformazione BRK.B/BRK-A indovinata), `exchange`, `currency`, `valid_from`, `valid_to`, `identity_source_url` SEC, `class_review_reference`, `corporate_actions_review_reference`;
