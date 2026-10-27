@@ -1,5 +1,5 @@
-const CACHE='radarazioni-0.9.2-static';
-const FILES=['./','./index.html','./style.css?v=0.9.2','./app.js?v=0.9.2','./radar-core.js?v=0.9.2','./money.js?v=0.9.2','./update.js?v=0.9.2','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
+const CACHE='radarazioni-0.10.0-static';
+const FILES=['./','./index.html','./style.css?v=0.10.0','./app.js?v=0.10.0','./radar-core.js?v=0.10.0','./money.js?v=0.10.0','./update.js?v=0.10.0','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)))});
 self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING') self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('radarazioni-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
