@@ -11,16 +11,17 @@
  <p>Il Radar ha già acquisti e bilanci SEC, ma non può pubblicare prezzi di Borsa senza i diritti necessari. Qui puoi inserire prezzi e capitalizzazioni ottenuti da fonti che puoi utilizzare personalmente, oppure importare un CSV. <strong>I dati inseriti restano solo sul tuo iPad/iPhone, non sono inviati a GitHub o al server.</strong></p>
  <p class="notice">Questa è una <strong>verifica personale preliminare</strong>, non un collegamento automatico alle Borse né un Radar Score verificato. Il confronto con il prezzo insider richiede che tu abbia controllato classe azionaria e split.</p>
  <form id="personalQuoteForm">
+  <p><strong>Per iniziare bastano quattro campi:</strong> ticker, prezzo di chiusura, data e link alla fonte. Le capitalizzazioni sono facoltative e possono essere inserite dopo.</p>
   <div class="fields">
    <label>Ticker dell'azienda<input id="personalTicker" name="ticker" required placeholder="Esempio: UBER" maxlength="14" autocapitalize="characters"/></label>
    <label>Ultimo prezzo di chiusura (USD)<input id="personalPrice" name="price" type="number" min="0.000001" step="any" required placeholder="Prezzo per azione"/></label>
    <label>Data del prezzo<input id="personalDate" name="date" type="date" required/></label>
    <label>Link alla fonte del prezzo<input id="personalSource" name="source_url" type="url" required placeholder="https://..."/></label>
-   <label>Capitalizzazione attuale (USD), se disponibile<input id="personalCap" name="market_cap" type="number" min="0" step="any" placeholder="Facoltativa"/></label>
+   </div><details class="personal-cap-details"><summary>+ Aggiungi capitalizzazioni (facoltativo)</summary><div class="fields"><label>Capitalizzazione attuale (USD), se disponibile<input id="personalCap" name="market_cap" type="number" min="0" step="any" placeholder="Facoltativa"/></label>
    <label>Data della capitalizzazione attuale<input id="personalCapDate" name="market_cap_date" type="date"/></label>
    <label>Capitalizzazione nella settimana degli acquisti (USD)<input id="personalHistoricCap" name="historical_cap" type="number" min="0" step="any" placeholder="Facoltativa"/></label>
    <label>Data della capitalizzazione storica<input id="personalHistoricCapDate" name="historical_cap_date" type="date"/></label>
-  </div>
+  </div></details>
   <label class="personal-check"><input id="personalClass" name="class_verified" type="checkbox"/> Ho confrontato lo stesso tipo di azione e verificato che eventuali split siano stati rettificati. Senza questa verifica non calcolare la distanza dal prezzo insider.</label>
   <div class="search-actions"><button type="submit" class="apply-filters">Salva prezzo sul dispositivo e confronta</button></div>
  </form>
