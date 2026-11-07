@@ -34,6 +34,8 @@ jobs:
       - name: Verifica JavaScript e versione
         run: |
           node --check docs/app.js
+          node --check docs/personal-market.js
+          node --check docs/personal-ui.js
           node --check docs/sw.js
           node --test tests/*.test.cjs
       - name: Analizza i nuovi Form 4 SEC
