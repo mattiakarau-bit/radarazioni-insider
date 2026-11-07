@@ -43,7 +43,7 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     assert.ok(!requests.some(u=>/pending_index/.test(u)),'Initial candidate page is inline');
     await page.locator('#morePreliminary').click();await page.waitForFunction(()=>document.querySelectorAll('#preliminaryResults .card').length===40);
     assert.equal(new Set(await page.locator('#preliminaryResults .card').evaluateAll(es=>es.map(e=>e.dataset.cik))).size,40);
-    await page.locator('#personalMarketPanel summary').click();
+    await page.locator('#personalMarketPanel > summary').click();
     await page.locator('#personalTicker').fill('UBER');
     await page.locator('#personalPrice').fill('74');
     await page.locator('#personalDate').fill(new Date().toISOString().slice(0,10));
