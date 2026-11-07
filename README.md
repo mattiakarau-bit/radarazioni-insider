@@ -252,3 +252,42 @@ scarta dati futuri o obsoleti e non inventa debito/capitalizzazioni.
 rettifiche split, P/E, P/FCF e controlli post-acquisto restano non verificati
 finché non è disponibile un fornitore con diritti di pubblicazione compatibili.
 Nessuna quota API non autorizzata, nessun provider di prezzi fittizio.
+
+## 0.10.1 — ripristino scansioni e primo confronto prezzi personale su iPad
+
+Le email GitHub Actions di novembre 2026 erano causate da un aggiornamento
+dei runner `ubuntu-latest` a Ubuntu 26.04: Playwright 1.58.2 non supportava
+Chromium e WebKit su quell'ambiente. I test browser sono ora fissati su
+`ubuntu-24.04`, senza saltare controlli o disattivare scansioni/deploy.
+
+Nella homepage, appena sotto le aziende pienamente verificate, è presente la
+sezione espandibile **Analisi personale · aggiungi i prezzi delle aziende**.
+Dall'iPad, senza terminale né chiave API, si possono inserire manualmente
+ticker, prezzo USD dell'ultima chiusura, data e URL HTTPS della fonte, più
+capitalizzazioni con date facoltative. In alternativa è possibile scaricare
+il modello CSV e importarlo dall'app File dell'iPad. Le quotazioni personali
+sono memorizzate in `localStorage` SOLO nel browser/dispositivo corrente e
+non vengono caricate su GitHub o su Pages; non sono sincronizzate fra
+dispositivi. Nessun token Tiingo viene mai chiesto.
+
+La sezione collega la quotazione all'indice SEC pubblico e mostra, con
+evidenza separata, il prezzo medio insider non rettificato, la distanza
+percentuale nella fascia ±15%, ricavi ed EPS annuali SEC, capitalizzazione
+corrente e storica inserite dall'utente e soglia proporzionale. Il confronto
+si abilita solo con conferma esplicita di stessa classe/split, operazione
+univoca e prezzo non obsoleto (10 giorni); la cap storica deve essere datata
+nella stessa settimana degli acquisti. Fonti e date sono fornite dall'utente,
+non certificate automaticamente: il sistema **non** promuove queste aziende
+alla lista degli investimenti verificati, non fa scoring ML, non calcola
+prezzi inventati, non acquisisce quote di Borsa senza autorizzazione.
+
+Esempio di CSV (valori reali da riempire dall'utente):
+
+```csv
+ticker,price,date,source_url,class_verified,market_cap,market_cap_date,historical_cap,historical_cap_date
+UBER,,,,,,,,
+```
+
+Se il provider personale offre un export locale e ne consente l'uso, si
+possono adattare le colonne a questo schema. Tutte le righe devono avere
+ticker, prezzo, data e URL HTTPS. Nessuna ridistribuzione automatica.
