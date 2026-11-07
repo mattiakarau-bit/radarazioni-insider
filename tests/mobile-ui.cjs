@@ -16,7 +16,7 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
     await page.addInitScript(()=>localStorage.setItem('radarazioni-watchlist-v2','["AAPL","CRBG"]'));
     await page.goto(base);await page.waitForFunction(()=>document.querySelector('#windowStatus').textContent.includes('sei mesi'));
-    assert.equal(await page.locator('nav button').count(),3);assert.equal(await page.locator('#radarPage form,#radarPage select,#radarPage input').count(),0);
+    assert.equal(await page.locator('nav button').count(),3);assert.equal(await page.locator('#radarPage > form,#radarPage > select,#radarPage > input').count(),0);assert.equal(await page.locator('#personalMarketPanel').count(),1);
     assert.equal(await page.locator('nav [data-page=history]').count(),0);
     assert.equal(await page.locator('#historyPage,#radarTracks,#showPending').count(),0);
     const navBefore=await page.locator('nav').boundingBox();
@@ -43,6 +43,18 @@ const fixture=(cik,day,amount=300000)=>({id:'issuer:'+cik,cik,symbol:'TEST'+cik,
     assert.ok(!requests.some(u=>/pending_index/.test(u)),'Initial candidate page is inline');
     await page.locator('#morePreliminary').click();await page.waitForFunction(()=>document.querySelectorAll('#preliminaryResults .card').length===40);
     assert.equal(new Set(await page.locator('#preliminaryResults .card').evaluateAll(es=>es.map(e=>e.dataset.cik))).size,40);
+    await page.locator('#personalMarketPanel > summary').click();
+    await page.locator('#personalTicker').fill('UBER');
+    await page.locator('#personalPrice').fill('74');
+    await page.locator('#personalDate').fill(new Date().toISOString().slice(0,10));
+    await page.locator('#personalSource').fill('https://example.com/personal-price');
+    await page.locator('#personalClass').check();
+    await page.locator('#personalQuoteForm button[type=submit]').click();
+    await page.locator('#personalResults .personal-result').first().waitFor();
+    assert.ok((await page.locator('#personalResults').textContent()).includes('UBER'));
+    assert.ok((await page.locator('#personalStatus').textContent()).includes('prezzi personali'));
+    assert.ok((await page.evaluate(()=>localStorage.getItem('radarazioni-personal-market-v1'))||'').includes('UBER'));
+    assert.ok(!(await page.evaluate(()=>localStorage.getItem('radarazioni-favorites-v1'))||'').includes('personal-price'));
     const candidate=page.locator('#preliminaryResults .card').first();
     const amountButton=candidate.locator('.metrics .money-toggle').first();
     assert.match(await amountButton.textContent(),/Mln|Mld|mila|\$/, 'Abbreviated amounts must remain readable regardless of sorting');
