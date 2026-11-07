@@ -2,6 +2,2737 @@
   "version": 1,
   "filings": [
     {
+      "id": "0000064803-26-000112#tx0",
+      "company": "CVS HEALTH Corp",
+      "symbol": "CVS",
+      "cik": 64803,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-06",
+      "insider": "Shah Prem S",
+      "officer_title": "EVP and Group President",
+      "officer": true,
+      "director": false,
+      "ten_pct": false,
+      "shares": 23855.0,
+      "unit_price": 83.895,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001900910"
+      ],
+      "amount": 2001315.22,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/64803/0000064803-26-000112.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Shah Prem S"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [
+          {
+            "year": 2021,
+            "value": 292111000000,
+            "filed": "2024-02-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 322467000000,
+            "filed": "2025-02-12",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 357776000000,
+            "filed": "2026-02-10",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 372809000000,
+            "filed": "2026-02-10",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 402067000000,
+            "filed": "2026-02-10",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [
+          {
+            "year": 2021,
+            "value": 6.02,
+            "filed": "2024-02-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2022,
+            "value": 3.26,
+            "filed": "2025-02-12",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2023,
+            "value": 6.47,
+            "filed": "2026-02-10",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2024,
+            "value": 3.66,
+            "filed": "2026-02-10",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2025,
+            "value": 1.39,
+            "filed": "2026-02-10",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          }
+        ],
+        "cashflow_years": [
+          {
+            "year": 2021,
+            "value": 18265000000,
+            "filed": "2024-02-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 16177000000,
+            "filed": "2025-02-12",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 13426000000,
+            "filed": "2026-02-10",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 9107000000,
+            "filed": "2026-02-10",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 10639000000,
+            "filed": "2026-02-10",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": true,
+        "eps_growing": false,
+        "cashflow_positive": true,
+        "eps_latest_positive": true,
+        "cashflow_latest_positive": true,
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-11-06",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "CVS HEALTH Corp",
+        "net_income_years": [
+          {
+            "year": 2021,
+            "value": 8001000000,
+            "filed": "2024-02-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 4311000000,
+            "filed": "2025-02-12",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 8344000000,
+            "filed": "2026-02-10",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 4614000000,
+            "filed": "2026-02-10",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 1768000000,
+            "filed": "2026-02-10",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "NetIncomeLossAvailableToCommonStockholdersBasic",
+            "unit": "USD"
+          }
+        ],
+        "capex_years": [
+          {
+            "year": 2021,
+            "value": 2520000000,
+            "filed": "2024-02-07",
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2022,
+            "value": 2727000000,
+            "filed": "2025-02-12",
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 3031000000,
+            "filed": "2026-02-10",
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2781000000,
+            "filed": "2026-02-10",
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 2832000000,
+            "filed": "2026-02-10",
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          }
+        ],
+        "free_cashflow_years": [
+          {
+            "year": 2021,
+            "start": "2021-01-01",
+            "end": "2021-12-31",
+            "filed": "2024-02-07",
+            "value": 15745000000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2021,
+                "value": 18265000000,
+                "filed": "2024-02-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2021,
+                "value": 2520000000,
+                "filed": "2024-02-07",
+                "start": "2021-01-01",
+                "end": "2021-12-31",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2022,
+            "start": "2022-01-01",
+            "end": "2022-12-31",
+            "filed": "2025-02-12",
+            "value": 13450000000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2022,
+                "value": 16177000000,
+                "filed": "2025-02-12",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2022,
+                "value": 2727000000,
+                "filed": "2025-02-12",
+                "start": "2022-01-01",
+                "end": "2022-12-31",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2023,
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "filed": "2026-02-10",
+            "value": 10395000000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2023,
+                "value": 13426000000,
+                "filed": "2026-02-10",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2023,
+                "value": 3031000000,
+                "filed": "2026-02-10",
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2024,
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "filed": "2026-02-10",
+            "value": 6326000000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2024,
+                "value": 9107000000,
+                "filed": "2026-02-10",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2024,
+                "value": 2781000000,
+                "filed": "2026-02-10",
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2025,
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "filed": "2026-02-10",
+            "value": 7807000000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2025,
+                "value": 10639000000,
+                "filed": "2026-02-10",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2025,
+                "value": 2832000000,
+                "filed": "2026-02-10",
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          }
+        ],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": 49,
+        "radar_provisional": 49,
+        "radar_uncapped": 52.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "provvisorio",
+        "insider_strength_score": 70,
+        "opportunity_score": 45,
+        "score": 49,
+        "insider_reasons": [
+          "Importo dichiarato: 2,001,315.22 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [
+          "Ricavi totali annuali in crescita",
+          "Cassa operativa positiva in tre esercizi"
+        ],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Provvisorio",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000419#tx0",
+      "company": "MEXICO EQUITY & INCOME FUND INC",
+      "symbol": "MXF",
+      "cik": 863900,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 24115.0,
+      "unit_price": 20.72,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 499662.8,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/863900/0001510281-26-000419.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-11-06",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 10.5,
+        "radar_uncapped": 10.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 35,
+        "opportunity_score": 0,
+        "score": 10.5,
+        "insider_reasons": [
+          "Importo dichiarato: 499,662.80 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001292814-26-005166#tx0",
+      "company": "YPF SOCIEDAD ANONIMA",
+      "symbol": "YPF",
+      "cik": 904851,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-07-26",
+      "insider": "Francos Guillermo Alberto",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 6930.0,
+      "unit_price": 51.42,
+      "security_title": "American Depositary Shares",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0002120097"
+      ],
+      "amount": 356340.6,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/904851/0001292814-26-005166.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "Francos Guillermo Alberto"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 16.5,
+        "radar_uncapped": 16.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 55,
+        "opportunity_score": 0,
+        "score": 16.5,
+        "insider_reasons": [
+          "Importo dichiarato: 356,340.60 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000420#tx0",
+      "company": "JAPAN SMALLER CAPITALIZATION FUND INC",
+      "symbol": "JOF",
+      "cik": 859796,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 28208.0,
+      "unit_price": 10.61,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 299286.88,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/859796/0001510281-26-000420.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-11-06",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "JAPAN SMALLER CAPITALIZATION FUND, INC.",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 10.5,
+        "radar_uncapped": 10.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 35,
+        "opportunity_score": 0,
+        "score": 10.5,
+        "insider_reasons": [
+          "Importo dichiarato: 299,286.88 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0000891839-26-000478#tx0",
+      "company": "TRANSCAT INC",
+      "symbol": "TRNS",
+      "cik": 99302,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "IRICK JAIME A",
+      "officer_title": "President and CEO",
+      "officer": true,
+      "director": true,
+      "ten_pct": false,
+      "shares": 2275.0,
+      "unit_price": 101.26,
+      "security_title": "Common Stock, $.50 par value",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001695807"
+      ],
+      "amount": 230366.5,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/99302/0000891839-26-000478.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "IRICK JAIME A"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [
+          {
+            "year": 2022,
+            "value": 204959000,
+            "filed": "2024-05-28",
+            "start": "2021-03-28",
+            "end": "2022-03-26",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 230569000,
+            "filed": "2025-05-27",
+            "start": "2022-03-27",
+            "end": "2023-03-25",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 259481000,
+            "filed": "2026-05-27",
+            "start": "2023-03-26",
+            "end": "2024-03-30",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 278421000,
+            "filed": "2026-05-27",
+            "start": "2024-03-31",
+            "end": "2025-03-29",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 331877000,
+            "filed": "2026-05-27",
+            "start": "2025-03-30",
+            "end": "2026-03-28",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [
+          {
+            "year": 2022,
+            "value": 1.5,
+            "filed": "2024-05-28",
+            "start": "2021-03-28",
+            "end": "2022-03-26",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2023,
+            "value": 1.4,
+            "filed": "2025-05-27",
+            "start": "2022-03-27",
+            "end": "2023-03-25",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2024,
+            "value": 1.63,
+            "filed": "2026-05-27",
+            "start": "2023-03-26",
+            "end": "2024-03-30",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2025,
+            "value": 1.57,
+            "filed": "2026-05-27",
+            "start": "2024-03-31",
+            "end": "2025-03-29",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2026,
+            "value": 0.57,
+            "filed": "2026-05-27",
+            "start": "2025-03-30",
+            "end": "2026-03-28",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          }
+        ],
+        "cashflow_years": [
+          {
+            "year": 2022,
+            "value": 17618000,
+            "filed": "2024-05-28",
+            "start": "2021-03-28",
+            "end": "2022-03-26",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 16951000,
+            "filed": "2025-05-27",
+            "start": "2022-03-27",
+            "end": "2023-03-25",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 32616000,
+            "filed": "2026-05-27",
+            "start": "2023-03-26",
+            "end": "2024-03-30",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 38985000,
+            "filed": "2026-05-27",
+            "start": "2024-03-31",
+            "end": "2025-03-29",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 34850000,
+            "filed": "2026-05-27",
+            "start": "2025-03-30",
+            "end": "2026-03-28",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": true,
+        "eps_growing": false,
+        "cashflow_positive": true,
+        "eps_latest_positive": true,
+        "cashflow_latest_positive": true,
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-11-06",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "TRANSCAT, INC.",
+        "net_income_years": [
+          {
+            "year": 2022,
+            "value": 11380000,
+            "filed": "2024-05-28",
+            "start": "2021-03-28",
+            "end": "2022-03-26",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 10688000,
+            "filed": "2025-05-27",
+            "start": "2022-03-27",
+            "end": "2023-03-25",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 13647000,
+            "filed": "2026-05-27",
+            "start": "2023-03-26",
+            "end": "2024-03-30",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 14515000,
+            "filed": "2026-05-27",
+            "start": "2024-03-31",
+            "end": "2025-03-29",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 5376000,
+            "filed": "2026-05-27",
+            "start": "2025-03-30",
+            "end": "2026-03-28",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          }
+        ],
+        "capex_years": [
+          {
+            "year": 2022,
+            "value": 10152000,
+            "filed": "2024-05-28",
+            "start": "2021-03-28",
+            "end": "2022-03-26",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 9414000,
+            "filed": "2025-05-27",
+            "start": "2022-03-27",
+            "end": "2023-03-25",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 13280000,
+            "filed": "2026-05-27",
+            "start": "2023-03-26",
+            "end": "2024-03-30",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 13197000,
+            "filed": "2026-05-27",
+            "start": "2024-03-31",
+            "end": "2025-03-29",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 15298000,
+            "filed": "2026-05-27",
+            "start": "2025-03-30",
+            "end": "2026-03-28",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          }
+        ],
+        "free_cashflow_years": [
+          {
+            "year": 2022,
+            "start": "2021-03-28",
+            "end": "2022-03-26",
+            "filed": "2024-05-28",
+            "value": 7466000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2022,
+                "value": 17618000,
+                "filed": "2024-05-28",
+                "start": "2021-03-28",
+                "end": "2022-03-26",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2022,
+                "value": 10152000,
+                "filed": "2024-05-28",
+                "start": "2021-03-28",
+                "end": "2022-03-26",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2023,
+            "start": "2022-03-27",
+            "end": "2023-03-25",
+            "filed": "2025-05-27",
+            "value": 7537000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2023,
+                "value": 16951000,
+                "filed": "2025-05-27",
+                "start": "2022-03-27",
+                "end": "2023-03-25",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2023,
+                "value": 9414000,
+                "filed": "2025-05-27",
+                "start": "2022-03-27",
+                "end": "2023-03-25",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2024,
+            "start": "2023-03-26",
+            "end": "2024-03-30",
+            "filed": "2026-05-27",
+            "value": 19336000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2024,
+                "value": 32616000,
+                "filed": "2026-05-27",
+                "start": "2023-03-26",
+                "end": "2024-03-30",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2024,
+                "value": 13280000,
+                "filed": "2026-05-27",
+                "start": "2023-03-26",
+                "end": "2024-03-30",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2025,
+            "start": "2024-03-31",
+            "end": "2025-03-29",
+            "filed": "2026-05-27",
+            "value": 25788000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2025,
+                "value": 38985000,
+                "filed": "2026-05-27",
+                "start": "2024-03-31",
+                "end": "2025-03-29",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2025,
+                "value": 13197000,
+                "filed": "2026-05-27",
+                "start": "2024-03-31",
+                "end": "2025-03-29",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2026,
+            "start": "2025-03-30",
+            "end": "2026-03-28",
+            "filed": "2026-05-27",
+            "value": 19552000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2026,
+                "value": 34850000,
+                "filed": "2026-05-27",
+                "start": "2025-03-30",
+                "end": "2026-03-28",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2026,
+                "value": 15298000,
+                "filed": "2026-05-27",
+                "start": "2025-03-30",
+                "end": "2026-03-28",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          }
+        ],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": 49,
+        "radar_provisional": 49,
+        "radar_uncapped": 51.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "provvisorio",
+        "insider_strength_score": 65,
+        "opportunity_score": 45,
+        "score": 49,
+        "insider_reasons": [
+          "Importo dichiarato: 230,366.50 USD",
+          "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [
+          "Ricavi totali annuali in crescita",
+          "Cassa operativa positiva in tre esercizi"
+        ],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Provvisorio",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001782435-26-000005#tx0",
+      "company": "KENNAMETAL INC",
+      "symbol": "KMT",
+      "cik": 55242,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "Chowbey Sanjay",
+      "officer_title": "President and CEO",
+      "officer": true,
+      "director": true,
+      "ten_pct": false,
+      "shares": 7000.0,
+      "unit_price": 23.624,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001782435"
+      ],
+      "amount": 165368.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/55242/0001782435-26-000005.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Chowbey Sanjay"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [
+          {
+            "year": 2022,
+            "value": 2012456000,
+            "filed": "2024-08-12",
+            "start": "2021-07-01",
+            "end": "2022-06-30",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 2078184000,
+            "filed": "2025-08-12",
+            "start": "2022-07-01",
+            "end": "2023-06-30",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 2046899000,
+            "filed": "2026-08-12",
+            "start": "2023-07-01",
+            "end": "2024-06-30",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 1966845000,
+            "filed": "2026-08-12",
+            "start": "2024-07-01",
+            "end": "2025-06-30",
+            "tag": "Revenues",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 2356698000,
+            "filed": "2026-08-12",
+            "start": "2025-07-01",
+            "end": "2026-06-30",
+            "tag": "Revenues",
+            "unit": "USD"
+          }
+        ],
+        "eps_years": [
+          {
+            "year": 2022,
+            "value": 1.72,
+            "filed": "2024-08-12",
+            "start": "2021-07-01",
+            "end": "2022-06-30",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2023,
+            "value": 1.46,
+            "filed": "2025-08-12",
+            "start": "2022-07-01",
+            "end": "2023-06-30",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2024,
+            "value": 1.37,
+            "filed": "2026-08-12",
+            "start": "2023-07-01",
+            "end": "2024-06-30",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2025,
+            "value": 1.2,
+            "filed": "2026-08-12",
+            "start": "2024-07-01",
+            "end": "2025-06-30",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          },
+          {
+            "year": 2026,
+            "value": 4.42,
+            "filed": "2026-08-12",
+            "start": "2025-07-01",
+            "end": "2026-06-30",
+            "tag": "EarningsPerShareDiluted",
+            "unit": "USD/shares"
+          }
+        ],
+        "cashflow_years": [
+          {
+            "year": 2022,
+            "value": -181444000,
+            "filed": "2024-08-12",
+            "start": "2021-07-01",
+            "end": "2022-06-30",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 257945000,
+            "filed": "2025-08-12",
+            "start": "2022-07-01",
+            "end": "2023-06-30",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 277108000,
+            "filed": "2026-08-12",
+            "start": "2023-07-01",
+            "end": "2024-06-30",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 208324000,
+            "filed": "2026-08-12",
+            "start": "2024-07-01",
+            "end": "2025-06-30",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": -4008000,
+            "filed": "2026-08-12",
+            "start": "2025-07-01",
+            "end": "2026-06-30",
+            "tag": "NetCashProvidedByUsedInOperatingActivities",
+            "unit": "USD"
+          }
+        ],
+        "revenue_scope_verified": true,
+        "revenue_growing": false,
+        "eps_growing": false,
+        "cashflow_positive": false,
+        "eps_latest_positive": true,
+        "cashflow_latest_positive": false,
+        "fresh": true,
+        "evidence_valid": true,
+        "as_of": "2026-11-06",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [],
+        "company_name": "KENNAMETAL INC.",
+        "net_income_years": [
+          {
+            "year": 2022,
+            "value": 144623000,
+            "filed": "2024-08-12",
+            "start": "2021-07-01",
+            "end": "2022-06-30",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 118459000,
+            "filed": "2025-08-12",
+            "start": "2022-07-01",
+            "end": "2023-06-30",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 109323000,
+            "filed": "2026-08-12",
+            "start": "2023-07-01",
+            "end": "2024-06-30",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 93125000,
+            "filed": "2026-08-12",
+            "start": "2024-07-01",
+            "end": "2025-06-30",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 342389000,
+            "filed": "2026-08-12",
+            "start": "2025-07-01",
+            "end": "2026-06-30",
+            "tag": "NetIncomeLoss",
+            "unit": "USD"
+          }
+        ],
+        "capex_years": [
+          {
+            "year": 2022,
+            "value": 96924000,
+            "filed": "2024-08-12",
+            "start": "2021-07-01",
+            "end": "2022-06-30",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2023,
+            "value": 94385000,
+            "filed": "2025-08-12",
+            "start": "2022-07-01",
+            "end": "2023-06-30",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2024,
+            "value": 107561000,
+            "filed": "2026-08-12",
+            "start": "2023-07-01",
+            "end": "2024-06-30",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2025,
+            "value": 88971000,
+            "filed": "2026-08-12",
+            "start": "2024-07-01",
+            "end": "2025-06-30",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          },
+          {
+            "year": 2026,
+            "value": 76905000,
+            "filed": "2026-08-12",
+            "start": "2025-07-01",
+            "end": "2026-06-30",
+            "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+            "unit": "USD"
+          }
+        ],
+        "free_cashflow_years": [
+          {
+            "year": 2022,
+            "start": "2021-07-01",
+            "end": "2022-06-30",
+            "filed": "2024-08-12",
+            "value": -278368000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2022,
+                "value": -181444000,
+                "filed": "2024-08-12",
+                "start": "2021-07-01",
+                "end": "2022-06-30",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2022,
+                "value": 96924000,
+                "filed": "2024-08-12",
+                "start": "2021-07-01",
+                "end": "2022-06-30",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2023,
+            "start": "2022-07-01",
+            "end": "2023-06-30",
+            "filed": "2025-08-12",
+            "value": 163560000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2023,
+                "value": 257945000,
+                "filed": "2025-08-12",
+                "start": "2022-07-01",
+                "end": "2023-06-30",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2023,
+                "value": 94385000,
+                "filed": "2025-08-12",
+                "start": "2022-07-01",
+                "end": "2023-06-30",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2024,
+            "start": "2023-07-01",
+            "end": "2024-06-30",
+            "filed": "2026-08-12",
+            "value": 169547000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2024,
+                "value": 277108000,
+                "filed": "2026-08-12",
+                "start": "2023-07-01",
+                "end": "2024-06-30",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2024,
+                "value": 107561000,
+                "filed": "2026-08-12",
+                "start": "2023-07-01",
+                "end": "2024-06-30",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2025,
+            "start": "2024-07-01",
+            "end": "2025-06-30",
+            "filed": "2026-08-12",
+            "value": 119353000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2025,
+                "value": 208324000,
+                "filed": "2026-08-12",
+                "start": "2024-07-01",
+                "end": "2025-06-30",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2025,
+                "value": 88971000,
+                "filed": "2026-08-12",
+                "start": "2024-07-01",
+                "end": "2025-06-30",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          },
+          {
+            "year": 2026,
+            "start": "2025-07-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-12",
+            "value": -80913000,
+            "unit": "USD",
+            "tag": "derived_CFO_minus_cash_PPE",
+            "inputs": [
+              {
+                "year": 2026,
+                "value": -4008000,
+                "filed": "2026-08-12",
+                "start": "2025-07-01",
+                "end": "2026-06-30",
+                "tag": "NetCashProvidedByUsedInOperatingActivities",
+                "unit": "USD"
+              },
+              {
+                "year": 2026,
+                "value": 76905000,
+                "filed": "2026-08-12",
+                "start": "2025-07-01",
+                "end": "2026-06-30",
+                "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                "unit": "USD"
+              }
+            ]
+          }
+        ],
+        "additional_financial_fields_version": 1
+      },
+      "analysis": {
+        "radar_score": 19.5,
+        "radar_provisional": 19.5,
+        "radar_uncapped": 19.5,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39",
+          "Ultimo EPS o flusso di cassa negativo: massimo 29"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "provvisorio",
+        "insider_strength_score": 65,
+        "opportunity_score": 0,
+        "score": 19.5,
+        "insider_reasons": [
+          "Importo dichiarato: 165,368.00 USD",
+          "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: criterio non soddisfatto (non equivale da solo a dissesto)",
+          "EPS annuali in crescita e positivi: criterio non soddisfatto (non equivale da solo a dissesto)",
+          "Cassa operativa positiva in tre esercizi: criterio non soddisfatto (non equivale da solo a dissesto)"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": true,
+        "financial_data_complete": true,
+        "financial_problem": true,
+        "quality_pass": false,
+        "priority": "Provvisorio",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000418#tx0",
+      "company": "ELLSWORTH GROWTH & INCOME FUND LTD",
+      "symbol": "ECF",
+      "cik": 793040,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 7747.0,
+      "unit_price": 11.34,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 87850.98,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/793040/0001510281-26-000418.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 6.0,
+        "insider_reasons": [
+          "Importo dichiarato: 87,850.98 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001214659-26-013844#tx1",
+      "company": "FAIR ISAAC CORP",
+      "symbol": "FICO",
+      "cik": 814547,
+      "filed": "2026-11-06",
+      "transaction_date": "2025-10-15",
+      "insider": "Rey David A",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 8.0,
+      "unit_price": 1636.65,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001532167"
+      ],
+      "amount": 13093.2,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/814547/0001214659-26-013844.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Rey David A"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 2.4,
+        "radar_uncapped": 2.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 8,
+        "opportunity_score": 0,
+        "score": 2.4,
+        "insider_reasons": [
+          "Importo dichiarato: 13,093.20 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001213900-26-116801#tx0",
+      "company": "MEDIFAST INC",
+      "symbol": "MED",
+      "cik": 910329,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-04",
+      "insider": "Kiai Parsa",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 661.0,
+      "unit_price": 13.0255,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001766850"
+      ],
+      "amount": 8609.86,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/910329/0001213900-26-116801.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Kiai Parsa"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 8.4,
+        "radar_uncapped": 8.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 28,
+        "opportunity_score": 0,
+        "score": 8.4,
+        "insider_reasons": [
+          "Importo dichiarato: 8,609.86 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001214659-26-013844#tx3",
+      "company": "FAIR ISAAC CORP",
+      "symbol": "FICO",
+      "cik": 814547,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-09-22",
+      "insider": "Rey David A",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 8.0,
+      "unit_price": 920.93,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001532167"
+      ],
+      "amount": 7367.44,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/814547/0001214659-26-013844.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Rey David A"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 2.4,
+        "radar_uncapped": 2.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 8,
+        "opportunity_score": 0,
+        "score": 2.4,
+        "insider_reasons": [
+          "Importo dichiarato: 7,367.44 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx4",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 2000.0,
+      "unit_price": 2.82,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 5640.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 2.4,
+        "radar_uncapped": 2.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 8,
+        "opportunity_score": 0,
+        "score": 2.4,
+        "insider_reasons": [
+          "Importo dichiarato: 5,640.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx1",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-04",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 1930.0,
+      "unit_price": 2.82,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 5442.6,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 2.4,
+        "radar_uncapped": 2.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 8,
+        "opportunity_score": 0,
+        "score": 2.4,
+        "insider_reasons": [
+          "Importo dichiarato: 5,442.60 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx5",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 1641.0,
+      "unit_price": 2.85,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 4676.85,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 4,676.85 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001493152-26-050412#tx0",
+      "company": "AIM ImmunoTech Inc.",
+      "symbol": "AIM",
+      "cik": 946644,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-06",
+      "insider": "Equels Thomas K",
+      "officer_title": "CEO & President",
+      "officer": true,
+      "director": true,
+      "ten_pct": false,
+      "shares": 20299.0,
+      "unit_price": 0.156,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001450324"
+      ],
+      "amount": 3166.64,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/946644/0001493152-26-050412.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Equels Thomas K"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 9.0,
+        "radar_uncapped": 9.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 30,
+        "opportunity_score": 0,
+        "score": 9.0,
+        "insider_reasons": [
+          "Importo dichiarato: 3,166.64 USD",
+          "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx3",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 1000.0,
+      "unit_price": 2.85,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 2850.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 2,850.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001692983-26-000012#tx0",
+      "company": "APOGEE ENTERPRISES, INC.",
+      "symbol": "APOG",
+      "cik": 6845,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-04",
+      "insider": "Alvord Christina M",
+      "officer_title": "",
+      "officer": false,
+      "director": true,
+      "ten_pct": false,
+      "shares": 52.0,
+      "unit_price": 46.47,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001692983"
+      ],
+      "amount": 2416.44,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/6845/0001692983-26-000012.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Alvord Christina M"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 6.0,
+        "radar_uncapped": 6.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 20,
+        "opportunity_score": 0,
+        "score": 6.0,
+        "insider_reasons": [
+          "Importo dichiarato: 2,416.44 USD",
+          "Ruolo dirigente/amministratore dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx6",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-06",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 735.0,
+      "unit_price": 2.85,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 2094.75,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 2,094.75 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx2",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-04",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 201.0,
+      "unit_price": 2.85,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 572.85,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 572.85 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001510281-26-000421#tx0",
+      "company": "BNY MELLON STRATEGIC MUNICIPAL BOND FUND, INC.",
+      "symbol": "DSM",
+      "cik": 855887,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-05",
+      "insider": "Saba Capital Management, L.P.",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 100.0,
+      "unit_price": 5.55,
+      "security_title": "Common Stock",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001510281"
+      ],
+      "amount": 555.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/855887/0001510281-26-000421.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Saba Capital Management, L.P."
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 555.00 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001536588-26-000046#tx0",
+      "company": "JEWETT CAMERON TRADING CO LTD",
+      "symbol": "JCTC",
+      "cik": 885307,
+      "filed": "2026-11-06",
+      "transaction_date": "2026-11-04",
+      "insider": "AJB Investment Fund II, LP, AJB Capital, LLC, Bradley Adam James, Bradley Melinda Hodges",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": true,
+      "shares": 70.0,
+      "unit_price": 2.85,
+      "security_title": "JCTC",
+      "ownership_type": "I",
+      "owner_ciks": [
+        "0001536588",
+        "0002141914",
+        "0002141916",
+        "0002141919"
+      ],
+      "amount": 199.5,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/885307/0001536588-26-000046.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": false,
+      "owners": [
+        "AJB Investment Fund II, LP",
+        "AJB Capital, LLC",
+        "Bradley Adam James",
+        "Bradley Melinda Hodges"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 0.0,
+        "radar_uncapped": 0.0,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 0,
+        "opportunity_score": 0,
+        "score": 0.0,
+        "insider_reasons": [
+          "Importo dichiarato: 199.50 USD"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
       "id": "0001231919-26-001503#tx3",
       "company": "Lycia Therapeutics, Inc.",
       "symbol": "LYCA",
@@ -64183,7 +66914,31 @@
         "Saba Capital Management, L.P."
       ],
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": null,
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-20",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "JAPAN SMALLER CAPITALIZATION FUND, INC.",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
       "analysis": {
         "radar_score": null,
         "radar_provisional": 10.5,
@@ -64208,6 +66963,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -64473,7 +67229,31 @@
         "Saba Capital Management, L.P."
       ],
       "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
-      "fundamentals": null,
+      "fundamentals": {
+        "schema_version": 2,
+        "extractor_version": 3,
+        "revenue_years": [],
+        "eps_years": [],
+        "cashflow_years": [],
+        "revenue_scope_verified": false,
+        "revenue_growing": null,
+        "eps_growing": null,
+        "cashflow_positive": null,
+        "eps_latest_positive": null,
+        "cashflow_latest_positive": null,
+        "fresh": false,
+        "evidence_valid": false,
+        "as_of": "2026-10-20",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+        "data_warnings": [
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti"
+        ],
+        "company_name": "JAPAN SMALLER CAPITALIZATION FUND, INC.",
+        "net_income_years": [],
+        "capex_years": [],
+        "free_cashflow_years": [],
+        "additional_financial_fields_version": 1
+      },
       "analysis": {
         "radar_score": null,
         "radar_provisional": 10.5,
@@ -64498,6 +67278,7 @@
         "warnings": [
           "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
           "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali non riconciliati: serie assente, parziale o tag discordanti",
           "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
           "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
           "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
@@ -122596,6 +125377,78 @@
         "insider_reasons": [
           "Importo dichiarato: 203.50 USD",
           "Ruolo CEO/CFO dichiarato"
+        ],
+        "reasons": [],
+        "warnings": [
+          "Indipendenza dei dichiaranti non verificata: nessun bonus cluster",
+          "Pesi e soglie a regole, non probabilità di rendimento; nessun BUY o notifica",
+          "Ricavi totali annuali in crescita: dato non verificabile/insufficiente",
+          "EPS annuali in crescita e positivi: dato non verificabile/insufficiente",
+          "Cassa operativa positiva in tre esercizi: dato non verificabile/insufficiente"
+        ],
+        "independence_verified": false,
+        "verified_independent_insiders": null,
+        "valuation_verified": false,
+        "fundamentals_verified": false,
+        "financial_data_complete": false,
+        "financial_problem": false,
+        "quality_pass": false,
+        "priority": "Non verificabile",
+        "notify": false,
+        "buy_signal": false,
+        "model": "Radar Score v0.6.0 — regole non validate storicamente"
+      }
+    },
+    {
+      "id": "0001193125-26-414198#tx1",
+      "company": "AIRGAIN INC",
+      "symbol": "AIRG",
+      "cik": 1272842,
+      "filed": "2026-10-05",
+      "transaction_date": "2026-10-02",
+      "insider": "Memmen Stephan D",
+      "officer_title": "",
+      "officer": false,
+      "director": false,
+      "ten_pct": false,
+      "shares": 1500.0,
+      "unit_price": 4.55,
+      "security_title": "Common Stock",
+      "ownership_type": "D",
+      "owner_ciks": [
+        "0001365553"
+      ],
+      "amount": 6825.0,
+      "form_url": "https://www.sec.gov/Archives/edgar/data/1365553/0001193125-26-414198.txt",
+      "code": "P",
+      "source": "SEC Form 4",
+      "amendment": false,
+      "original_filing_date": "",
+      "purchase_eligible": true,
+      "owners": [
+        "Memmen Stephan D"
+      ],
+      "transaction_footnote": "Prezzo e quantità dichiarati nel Form 4; non necessariamente acquisto sul mercato regolamentato",
+      "fundamentals": null,
+      "analysis": {
+        "radar_score": null,
+        "radar_provisional": 2.4,
+        "radar_uncapped": 2.4,
+        "radar_caps": [
+          "Valutazione assente/non verificata: massimo provvisorio 49",
+          "Fondamentali incompleti, obsoleti o perimetro non verificato: massimo provvisorio 29",
+          "Storico cassa triennale non soddisfatto/verificato: massimo 39"
+        ],
+        "radar_weights": {
+          "opportunity": 0.7,
+          "insider": 0.3
+        },
+        "score_status": "non_verificabile",
+        "insider_strength_score": 8,
+        "opportunity_score": 0,
+        "score": 2.4,
+        "insider_reasons": [
+          "Importo dichiarato: 6,825.00 USD"
         ],
         "reasons": [],
         "warnings": [
