@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-25T09:49:29+00:00",
+  "updated_utc": "2026-11-08T05:35:05+00:00",
   "issuers": [
     {
       "cik": 1072627,
@@ -1934,6 +1934,27 @@
       "last_filed": "2026-09-23",
       "quarters": [
         "2023q3",
+        "2026q3"
+      ],
+      "status": "in_verifica",
+      "radar_score": null
+    },
+    {
+      "cik": 1339688,
+      "company": "Lion Copper Corp.",
+      "symbol": "LCU",
+      "exchange": "Nasdaq",
+      "events": 85,
+      "last_filed": "2026-09-23",
+      "quarters": [
+        "2023q3",
+        "2023q4",
+        "2024q2",
+        "2024q3",
+        "2024q4",
+        "2025q2",
+        "2025q3",
+        "2025q4",
         "2026q3"
       ],
       "status": "in_verifica",
@@ -27002,20 +27023,6 @@
       "radar_score": null
     },
     {
-      "cik": 1637873,
-      "company": "ACV Auctions Inc.",
-      "symbol": "ACVA",
-      "exchange": "NYSE",
-      "events": 9,
-      "last_filed": "2026-03-11",
-      "quarters": [
-        "2025q4",
-        "2026q1"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1964738,
       "company": "Solventum Corp",
       "symbol": "SOLV",
@@ -36415,6 +36422,26 @@
       "radar_score": null
     },
     {
+      "cik": 1011060,
+      "company": "Nordicus Partners Corp",
+      "symbol": "NORD",
+      "exchange": "Nasdaq",
+      "events": 57,
+      "last_filed": "2025-10-14",
+      "quarters": [
+        "2022q1",
+        "2023q3",
+        "2024q1",
+        "2024q2",
+        "2024q3",
+        "2024q4",
+        "2025q3",
+        "2025q4"
+      ],
+      "status": "in_verifica",
+      "radar_score": null
+    },
+    {
       "cik": 1517518,
       "company": "ClearBridge Energy Midstream Opportunity Fund Inc.",
       "symbol": "EMO",
@@ -39260,22 +39287,6 @@
       "radar_score": null
     },
     {
-      "cik": 1334978,
-      "company": "Clear Channel Outdoor Holdings, Inc.",
-      "symbol": "CCO",
-      "exchange": "NYSE",
-      "events": 38,
-      "last_filed": "2025-08-05",
-      "quarters": [
-        "2024q4",
-        "2025q1",
-        "2025q2",
-        "2025q3"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 764038,
       "company": "SouthState Corp",
       "symbol": "SSB",
@@ -39574,21 +39585,6 @@
       "radar_score": null
     },
     {
-      "cik": 1938109,
-      "company": "Pineapple Financial Inc.",
-      "symbol": "PAPL",
-      "exchange": "NYSE",
-      "events": 90,
-      "last_filed": "2025-07-18",
-      "quarters": [
-        "2024q3",
-        "2025q2",
-        "2025q3"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 916789,
       "company": "HELEN OF TROY LTD",
       "symbol": "HELE",
@@ -39799,7 +39795,7 @@
       "cik": 1585689,
       "company": "Hilton Worldwide Holdings Inc.",
       "symbol": "HLT",
-      "exchange": "NYSE",
+      "exchange": "Nasdaq",
       "events": 7,
       "last_filed": "2025-07-01",
       "quarters": [
@@ -41383,19 +41379,6 @@
       "radar_score": null
     },
     {
-      "cik": 1385632,
-      "company": "Voya Asia Pacific High Dividend Equity Income Fund",
-      "symbol": "IAE",
-      "exchange": "NYSE",
-      "events": 6,
-      "last_filed": "2025-05-22",
-      "quarters": [
-        "2025q2"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 2035149,
       "company": "Flowco Holdings Inc.",
       "symbol": "FLOC",
@@ -42121,20 +42104,6 @@
       "last_filed": "2025-05-12",
       "quarters": [
         "2024q2",
-        "2025q2"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
-      "cik": 915840,
-      "company": "BEAZER HOMES USA INC",
-      "symbol": "BZH",
-      "exchange": "NYSE",
-      "events": 9,
-      "last_filed": "2025-05-12",
-      "quarters": [
-        "2025q1",
         "2025q2"
       ],
       "status": "in_verifica",
@@ -44416,20 +44385,6 @@
       "radar_score": null
     },
     {
-      "cik": 1739445,
-      "company": "Arcosa, Inc.",
-      "symbol": "ACA",
-      "exchange": "NYSE",
-      "events": 7,
-      "last_filed": "2025-03-10",
-      "quarters": [
-        "2024q3",
-        "2025q1"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1984086,
       "company": "Septerna, Inc.",
       "symbol": "SEPN",
@@ -46169,6 +46124,20 @@
         "2021q4",
         "2022q2",
         "2022q3",
+        "2024q4"
+      ],
+      "status": "in_verifica",
+      "radar_score": null
+    },
+    {
+      "cik": 1815974,
+      "company": "Anebulo Pharmaceuticals, Inc.",
+      "symbol": "ANEB",
+      "exchange": "Nasdaq",
+      "events": 5,
+      "last_filed": "2024-12-26",
+      "quarters": [
+        "2021q4",
         "2024q4"
       ],
       "status": "in_verifica",
@@ -48245,19 +48214,6 @@
         "2021q3",
         "2022q1",
         "2022q3",
-        "2024q3"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
-      "cik": 2020987,
-      "company": "YHN Acquisition I Ltd",
-      "symbol": "YHNAU",
-      "exchange": "Nasdaq",
-      "events": 1,
-      "last_filed": "2024-09-19",
-      "quarters": [
         "2024q3"
       ],
       "status": "in_verifica",
@@ -51159,19 +51115,6 @@
       "exchange": "Nasdaq",
       "events": 1,
       "last_filed": "2024-04-25",
-      "quarters": [
-        "2024q2"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
-      "cik": 1506983,
-      "company": "GlucoTrack, Inc.",
-      "symbol": "GCTK",
-      "exchange": "Nasdaq",
-      "events": 1,
-      "last_filed": "2024-04-24",
       "quarters": [
         "2024q2"
       ],
@@ -57050,21 +56993,6 @@
       "radar_score": null
     },
     {
-      "cik": 1609151,
-      "company": "Weave Communications, Inc.",
-      "symbol": "WEAV",
-      "exchange": "NYSE",
-      "events": 10,
-      "last_filed": "2023-03-14",
-      "quarters": [
-        "2021q4",
-        "2022q1",
-        "2023q1"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1844862,
       "company": "Solid Power, Inc.",
       "symbol": "SLDP",
@@ -60050,19 +59978,6 @@
       "exchange": "NYSE",
       "events": 2,
       "last_filed": "2022-04-06",
-      "quarters": [
-        "2022q2"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
-      "cik": 1593538,
-      "company": "NAVIENT CORP",
-      "symbol": "NAVI",
-      "exchange": "Nasdaq",
-      "events": 2,
-      "last_filed": "2022-04-04",
       "quarters": [
         "2022q2"
       ],
