@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-08T05:35:05+00:00",
+  "updated_utc": "2026-11-15T05:40:59+00:00",
   "issuers": [
     {
       "cik": 1072627,
@@ -15486,20 +15486,6 @@
       "radar_score": null
     },
     {
-      "cik": 766829,
-      "company": "H2O AMERICA",
-      "symbol": "HTO",
-      "exchange": "Nasdaq",
-      "events": 3,
-      "last_filed": "2026-07-02",
-      "quarters": [
-        "2022q4",
-        "2026q3"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1792267,
       "company": "Burning Rock Biotech Ltd",
       "symbol": "BNR",
@@ -25928,24 +25914,6 @@
       "radar_score": null
     },
     {
-      "cik": 944148,
-      "company": "CBIZ, Inc.",
-      "symbol": "CBZ",
-      "exchange": "NYSE",
-      "events": 8,
-      "last_filed": "2026-03-17",
-      "quarters": [
-        "2022q1",
-        "2024q4",
-        "2025q1",
-        "2025q3",
-        "2025q4",
-        "2026q1"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1017303,
       "company": "TRANSACT TECHNOLOGIES INC",
       "symbol": "TACT",
@@ -32795,21 +32763,6 @@
       "radar_score": null
     },
     {
-      "cik": 1944048,
-      "company": "Kenvue Inc.",
-      "symbol": "KVUE",
-      "exchange": "NYSE",
-      "events": 4,
-      "last_filed": "2025-12-15",
-      "quarters": [
-        "2023q2",
-        "2023q3",
-        "2025q4"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 851310,
       "company": "HARMONIC INC.",
       "symbol": "HLIT",
@@ -38449,21 +38402,6 @@
       "radar_score": null
     },
     {
-      "cik": 733269,
-      "company": "LiveRamp Holdings, Inc.",
-      "symbol": "RAMP",
-      "exchange": "NYSE",
-      "events": 5,
-      "last_filed": "2025-08-14",
-      "quarters": [
-        "2021q2",
-        "2022q3",
-        "2025q3"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1281761,
       "company": "REGIONS FINANCIAL CORP",
       "symbol": "RF",
@@ -39579,6 +39517,21 @@
       "last_filed": "2025-07-18",
       "quarters": [
         "2022q1",
+        "2025q3"
+      ],
+      "status": "in_verifica",
+      "radar_score": null
+    },
+    {
+      "cik": 1938109,
+      "company": "Pineapple Financial Inc.",
+      "symbol": "PAPL",
+      "exchange": "NYSE",
+      "events": 90,
+      "last_filed": "2025-07-18",
+      "quarters": [
+        "2024q3",
+        "2025q2",
         "2025q3"
       ],
       "status": "in_verifica",
@@ -41387,6 +41340,19 @@
       "last_filed": "2025-05-21",
       "quarters": [
         "2025q1",
+        "2025q2"
+      ],
+      "status": "in_verifica",
+      "radar_score": null
+    },
+    {
+      "cik": 1964979,
+      "company": "ALLURION TECHNOLOGIES, INC.",
+      "symbol": "ALUR",
+      "exchange": "NYSE",
+      "events": 2,
+      "last_filed": "2025-05-21",
+      "quarters": [
         "2025q2"
       ],
       "status": "in_verifica",
@@ -50018,20 +49984,6 @@
       "radar_score": null
     },
     {
-      "cik": 910108,
-      "company": "LXP Industrial Trust",
-      "symbol": "LXP",
-      "exchange": "NYSE",
-      "events": 18,
-      "last_filed": "2024-06-14",
-      "quarters": [
-        "2022q2",
-        "2024q2"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1769663,
       "company": "Pioneer Bancorp, Inc./MD",
       "symbol": "PBFS",
@@ -55028,23 +54980,6 @@
       "radar_score": null
     },
     {
-      "cik": 39263,
-      "company": "CULLEN/FROST BANKERS, INC.",
-      "symbol": "CFR",
-      "exchange": "NYSE",
-      "events": 13,
-      "last_filed": "2023-07-28",
-      "quarters": [
-        "2021q1",
-        "2022q2",
-        "2023q1",
-        "2023q2",
-        "2023q3"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
       "cik": 1423689,
       "company": "AGNC Investment Corp.",
       "symbol": "AGNC",
@@ -59419,19 +59354,6 @@
       "last_filed": "2022-05-23",
       "quarters": [
         "2022q1",
-        "2022q2"
-      ],
-      "status": "in_verifica",
-      "radar_score": null
-    },
-    {
-      "cik": 1527728,
-      "company": "Enochian Biosciences Inc",
-      "symbol": "ENOB",
-      "exchange": "Nasdaq",
-      "events": 2,
-      "last_filed": "2022-05-20",
-      "quarters": [
         "2022q2"
       ],
       "status": "in_verifica",
